@@ -20,17 +20,19 @@
 		}
 
 	}
-
+	@media (max-width: 1480px) {
+		.container { width: 100%; }
+	}
 	@media (max-width: 1024px) {
 
 		.container { width: 80%; }
 		.column { width: 100% !important; margin-bottom: 25px; }
 		.column:last-child { margin-bottom: 0; }
-		.tjenester { width: 95%; max-width: 960px; }
+		.tjenester { width: 100%; max-width: 530px; }
 	}
 
 	@media (max-width: 960px) {
-
+        .tjenester { width: 100%; max-width: 530px; }
 		.site-menu {
 			width: 100%;
 			position: absolute;
@@ -97,11 +99,11 @@
 	}
 
 	@media (max-width: 768px) {
-
+		.tjenester { width: 100%; max-width: 270px; }
 	}
 
 	@media (max-width: 560px) {
-
+		.tjenester { width: 100%; max-width: 270px; }
 		.hero-header {
 			width: 90%;
 			padding: 50px 25px;
@@ -111,7 +113,7 @@
 	}
 
 	@media (max-width: 320px) {
-
+		.tjenester { width: 100%; max-width: 270px; }
 		.container { width: 80%; }
 
 		.filters li {
