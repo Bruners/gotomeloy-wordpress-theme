@@ -398,19 +398,13 @@
     }
 	.tjenester {
         width: 100%;
-        max-width: 270px;
+        max-width: 820px;
         margin: auto;
         padding: 0 0 20px 0;
     }
 
     .tjeneste {
-        margin: 5px 5px 5px 5px;
-        padding-bottom: 10px;
-        padding-left: 5px;
-        padding-right: 5px;
-        padding-top: 10px;
-        width: 270px;
-        height: 150px;
+        height: 160px;
     }
     .tjeneste a:hover, .tjeneste a:focus {
         text-decoration: none;
