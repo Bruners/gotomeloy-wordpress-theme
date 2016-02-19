@@ -1018,13 +1018,13 @@ footer {
         display: none;
     }
     #site-footer .language-selector img {
-        margin: 5px 5px 0 0;
         border: 1px solid #333;
     }
     #site-footer .social-media {
         list-style-type: none;
         margin: 0;
-        padding: 5px 15px;
+        padding-left: 15px;
+        padding-top: 3px;
         float: left;
         display: block;
     }
@@ -1101,7 +1101,7 @@ footer {
 	}
 
 	ul.language-selector {
-        margin: 3px 15px 0 0;
+        margin: auto 10px 0 auto;
         list-style: none;
         padding: 0;
         float: right;
