@@ -261,7 +261,7 @@
 	}
 
 	.hero-header-subtitle {
-		text-transform: uppercase;
+		text-transform: none;
 		font-size: 0.8em;
 		margin-top: 5px;
 		letter-spacing: 0.1em;
@@ -1002,7 +1002,7 @@ footer {
         line-height: 29px;
         z-index: 10;
         font-family: "source_sans_proregular","sans-serif",Helvetica,Arial,"Roboto Slab";
-        font-size: 14px;
+        font-size: 10px;
         color: white;
     }
     #site-footer:before, #site-footer:after {
@@ -1014,12 +1014,11 @@ footer {
     }
     #site-footer .credits {
         float: none;
-        margin-left: 20px;
         text-transform: uppercase;
         display: none;
     }
     #site-footer .language-selector img {
-        margin: 2px;
+        margin: 5px 5px 0 0;
         border: 1px solid #333;
     }
     #site-footer .social-media {
