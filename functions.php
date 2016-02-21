@@ -124,12 +124,13 @@
 
             // Enqueue
 
-            // font-awesome already gets loaded by wordpress
-            //wp_enqueue_style('font-awesome', GOTOMELOY_CSS_URI . '/lib/font-awesome.css', array('gotomeloy-style'));
-
+            // font-awesome and fonts from whitefox
+            wp_enqueue_style('font-awesome', GOTOMELOY_CSS_URI . '/lib/font-awesome.css', array('gotomeloy-style'));
             wp_enqueue_style('font-whitefox', GOTOMELOY_CSS_URI . '/lib/font-whitefox.css', array('gotomeloy-style'));
+            // Bootstrap style files
 			wp_enqueue_style('bootstrap-css', GOTOMELOY_CSS_URI . '/lib/bootstrap.css', array('gotomeloy-style'));
-			wp_enqueue_style('bootstrap-theme', GOTOMELOY_CSS_URI . '/lib/bootstrap-theme.css', array('gotomeloy-style'));
+            wp_enqueue_style('bootstrap-theme', GOTOMELOY_CSS_URI . '/lib/bootstrap-theme.css', array('gotomeloy-style'));
+            // Styles orginated from Lamark
 			wp_enqueue_style('gotomeloy-style', get_template_directory_uri() . '/style.css');
 			wp_enqueue_style('gotomeloy-base', GOTOMELOY_CSS_URI . '/base.css', array('gotomeloy-style'));
 			wp_enqueue_style('gotomeloy-main', GOTOMELOY_CSS_URI . '/main.css', array('gotomeloy-style'));
