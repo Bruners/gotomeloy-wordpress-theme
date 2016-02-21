@@ -46,7 +46,7 @@
 
 		// Suport for Post Thumbnails
 		add_theme_support( 'post-thumbnails' );
-		
+
 	    // Register WP3.0+ Menus
 	    add_action('init', 'gotomeloy_register_menu');
 
@@ -74,7 +74,7 @@
 	function gotomeloy_register_menu() {
 		register_nav_menu('gotomeloy-primary-navigation', esc_html__('Primary Navigation', 'gotomeloy'));
 	}
-	
+
 
 #-----------------------------------------------------------------#
 # Register Sidebar(s)
@@ -110,7 +110,7 @@
 			// Enqueue (conditional)
 			if ( is_singular() ) {
 				wp_enqueue_script( 'comment-reply' );
-			}			
+			}
 
 		}
 	}
@@ -122,15 +122,18 @@
 	function gotomeloy_frontend_styles() {
 		if ( !is_admin() ) {
 
-			// Enqueue 
+            // Enqueue
+
+            // font-awesome already gets loaded by wordpress
+            //wp_enqueue_style('font-awesome', GOTOMELOY_CSS_URI . '/lib/font-awesome.css', array('gotomeloy-style'));
+
+            wp_enqueue_style('font-whitefox', GOTOMELOY_CSS_URI . '/lib/font-whitefox.css', array('gotomeloy-style'));
+			wp_enqueue_style('bootstrap-css', GOTOMELOY_CSS_URI . '/lib/bootstrap.css', array('gotomeloy-style'));
+			wp_enqueue_style('bootstrap-theme', GOTOMELOY_CSS_URI . '/lib/bootstrap-theme.css', array('gotomeloy-style'));
 			wp_enqueue_style('gotomeloy-style', get_template_directory_uri() . '/style.css');
 			wp_enqueue_style('gotomeloy-base', GOTOMELOY_CSS_URI . '/base.css', array('gotomeloy-style'));
 			wp_enqueue_style('gotomeloy-main', GOTOMELOY_CSS_URI . '/main.css', array('gotomeloy-style'));
 			wp_enqueue_style('gotomeloy-responsive', GOTOMELOY_CSS_URI . '/media.css', array('gotomeloy-main'));
-			wp_enqueue_style('font-awesome', GOTOMELOY_CSS_URI . '/lib/font-awesome.css', array('gotomeloy-style'));
-			wp_enqueue_style('font-whitefox', GOTOMELOY_CSS_URI . '/lib/font-whitefox.css', array('gotomeloy-style'));
-			wp_enqueue_style('bootstrap-css', GOTOMELOY_CSS_URI . '/lib/bootstrap.css', array('gotomeloy-style'));
-			wp_enqueue_style('bootstrap-theme', GOTOMELOY_CSS_URI . '/lib/bootstrap-theme.css', array('gotomeloy-style'));
 
 			// Add Inline Styles (dynamic)
 			ob_start();
@@ -147,7 +150,7 @@
 	function gotomeloy_child_frontend_styles() {
 		if ( !is_admin() && is_child_theme() ) {
 
-			// Enqueue 
+			// Enqueue
 		    wp_enqueue_style( 'gotomeloy-child-style', get_stylesheet_directory_uri().'/style.css');
 
 		}
@@ -169,7 +172,7 @@
 
 	// require HELPER theme functions
 	require_once GOTOMELOY_INC . '/lib/lamark.inc.php';
-	
+
 #-----------------------------------------------------------------#
 # Stop jetpack from inserting itself
 #-----------------------------------------------------------------#
