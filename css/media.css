@@ -28,11 +28,11 @@
 		.container { width: 100%; }
 		.column { width: 100% !important; margin-bottom: 25px; }
 		.column:last-child { margin-bottom: 0; }
-		.tjenester { width: 100%; max-width: 560px; }
+		.tjenester { max-width: 835px; }
 	}
 
 	@media (max-width: 960px) {
-        .tjenester { width: 100%; max-width: 560px; }
+        .tjenester { max-width: 550px; }
 		.site-menu {
 			width: 100%;
 			position: absolute;
@@ -99,11 +99,11 @@
 	}
 
 	@media (max-width: 768px) {
-		.tjenester { width: 100%; max-width: 270px; }
+		.tjenester { max-width: 270px; }
 	}
 
 	@media (max-width: 560px) {
-		.tjenester { width: 100%; max-width: 270px; }
+		.tjenester { max-width: 270px; }
 		.hero-header {
 			width: 90%;
 			padding: 50px 25px;
@@ -113,7 +113,7 @@
 	}
 
 	@media (max-width: 320px) {
-		.tjenester { width: 100%; max-width: 270px; }
+		.tjenester { max-width: 270px; }
 		.container { width: 100%; }
 
 		.filters li {
