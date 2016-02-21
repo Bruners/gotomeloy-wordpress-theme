@@ -28,11 +28,11 @@
 		.container { width: 100%; }
 		.column { width: 100% !important; margin-bottom: 25px; }
 		.column:last-child { margin-bottom: 0; }
-		.tjenester { width: 100%; max-width: 530px; }
+		.tjenester { width: 100%; max-width: 560px; }
 	}
 
 	@media (max-width: 960px) {
-        .tjenester { width: 100%; max-width: 530px; }
+        .tjenester { width: 100%; max-width: 560px; }
 		.site-menu {
 			width: 100%;
 			position: absolute;
