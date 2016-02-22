@@ -105,7 +105,7 @@
 			wp_enqueue_script('isotope', GOTOMELOY_JS_URI . '/lib/isotope.pkgd.min.js', array('jquery'), null, true);
 			wp_enqueue_script('fitvids', GOTOMELOY_JS_URI . '/lib/fitvids.js', array('jquery'), null, true);
 			wp_enqueue_script('lamark-main', GOTOMELOY_JS_URI . '/lib/lamark.js', array('jquery'), null, true);
-			wp_enqueue_script('bootstrap', GOTOMELOY_JS_URI . '/lib/bootstrap.js', array('jquery'), 1, true);
+			wp_enqueue_script('bootstrap', GOTOMELOY_JS_URI . '/lib/bootstrap.min.js', array('jquery'), 1, true);
 
 			// Enqueue (conditional)
 			if ( is_singular() ) {
