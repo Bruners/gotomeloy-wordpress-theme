@@ -38,10 +38,10 @@
 
 		<!-- SHARE -->
 		<ul class="share share-project nostyle text-center">
-			<li class="share-title"><?php esc_html_e('Share:', 'lamark'); ?></li>
-			<li><a href="<?php echo esc_url('http://facebook.com/sharer/sharer.php?u='. get_the_permalink()); ?>"><?php esc_html_e('Facebook', 'lamark'); ?></a></li>
-			<li><a href="<?php echo esc_url('https://twitter.com/home?status='. get_the_permalink()); ?>"><?php esc_html_e('Twitter', 'lamark'); ?></a></li>
-			<li><a href="<?php echo esc_url('http://pinterest.com/pin/create/button/?url='. get_the_permalink()); ?>"><?php esc_html_e('Pinterest', 'lamark'); ?></a></li>
+			<li class="share-title"><?php esc_html_e('Share:', 'gotomeloy'); ?></li>
+			<li><a href="<?php echo esc_url('http://facebook.com/sharer/sharer.php?u='. get_the_permalink()); ?>"><?php esc_html_e('Facebook', 'gotomeloy'); ?></a></li>
+			<li><a href="<?php echo esc_url('https://twitter.com/home?status='. get_the_permalink()); ?>"><?php esc_html_e('Twitter', 'gotomeloy'); ?></a></li>
+			<li><a href="<?php echo esc_url('http://pinterest.com/pin/create/button/?url='. get_the_permalink()); ?>"><?php esc_html_e('Pinterest', 'gotomeloy'); ?></a></li>
 		</ul>
 
 	</div>

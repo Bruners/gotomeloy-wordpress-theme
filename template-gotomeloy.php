@@ -119,6 +119,72 @@ Template Name: Portfolio Meloy
             $kontakskjema_query = new WP_Query($kontaksjema_args);
         ?>
         <?php echo ( $kontaktskjema_forside ); ?>
+        <style>
+      		#map-container { height: 300px }
+    	</style>
+        <div class="row">
+      		<div id="map-outer" class="col-md-12">
+          		<div id="address" class="col-md-4">
+            		<address class="vcenter">
+		            	<strong>GO TO MELOY</strong><br />
+		                <a href="mailto:post@gotomeloy.no">post@gotomeloy.no</a><br />
+		                <abbr>Tlf:</abbr> +47 40021212
+           			</address>
+          		</div>
+        		<div id="map-container" class="col-md-8"></div>
+      		</div><!-- /map-outer -->
+  		</div> <!-- /row -->
+        <script src="http://maps.google.com/maps/api/js"></script>
+    	<script>	
+    	  	function init_map() {
+				// 67.28294499015232, 14.379660654813051	bodø			  
+				// 66.81707278018057, 13.944906760007143	glomfjord	  
+				// 66.92588045759415, 13.437868505716324	stott			  
+				// 66.86817417340465, 13.705768967047334    ørnes
+				var var_location = new google.maps.LatLng(67.0120865,13.8881624);
+	 			var var_stott = new google.maps.LatLng(66.92588045759415,13.437868505716324)
+	 			var var_ornes = new google.maps.LatLng(66.86817417340465, 13.705768967047334)
+				var var_glomfjord = new google.maps.LatLng(66.81707278018057,13.944906760007143)
+				var var_bodo = new google.maps.LatLng(67.28294499015232,14.379660654813051)
+
+		        var var_mapoptions = {
+	    	      center: var_location,
+	        	  zoom: 8
+	        	};
+	 
+				var stott_marker = new google.maps.Marker({
+					position: var_stott,
+					map: var_map,
+					title:"Støtt Brygge"
+				});
+				var ornes_marker = new google.maps.Marker({
+					position: var_ornes,
+					map: var_map,
+					title: "Ørnes Hotell"
+				});
+				var glomfjord_marker = new google.maps.Marker({
+					position: var_glomfjord,
+					map: var_map,
+					title: "Glomfjord Hotell"
+				});
+				var bodo_marker = new google.maps.Marker({
+					position: var_bodo,
+					map: var_map,
+					title: "Bodø Hotell"
+				});
+	 
+	        	var var_map = new google.maps.Map(document.getElementById("map-container"),
+    	        	var_mapoptions);
+ 
+				stott_marker.setMap(var_map);
+				ornes_marker.setMap(var_map);
+				glomfjord_marker.setMap(var_map);
+				bodo_marker.setMap(var_map);
+ 
+      		}
+ 
+      		google.maps.event.addDomListener(window, 'load', init_map);
+    	</script>
         </div>
         <div class="copyright">Copyright © GO TO MELØY <?php echo date(Y); ?> | Utviklet av <a href="http://www.github.com/bruners/">Lasse Brun</a></div>
     </div>
@@ -202,7 +268,16 @@ Template Name: Portfolio Meloy
                         <button class="close fa fa-close" type="button" data-dismiss="modal"></button>
                         <h5 class="modal-title"><?php the_title(); ?></h5>
                     </div>
-                    <div class="modal-body"><?php echo(types_render_field( "tjeneste-lang", array( 'raw' => false) )); ?></div>
+                    <div class="modal-body">
+                    	<?php echo(types_render_field( "tjeneste-lang", array( 'raw' => false) )); ?>
+				        <!-- SHARE -->
+						<ul class="share share-project nostyle text-center">
+							<li class="share-title"><?php esc_html_e('Share:', 'gotomeloy'); ?></li>
+							<li><a href="<?php echo esc_url('http://facebook.com/sharer/sharer.php?u='. get_the_permalink()); ?>"><?php esc_html_e('Facebook', 'gotomeloy'); ?></a></li>
+							<li><a href="<?php echo esc_url('https://twitter.com/home?status='. get_the_permalink()); ?>"><?php esc_html_e('Twitter', 'gotomeloy'); ?></a></li>
+							<li><a href="<?php echo esc_url('http://pinterest.com/pin/create/button/?url='. get_the_permalink()); ?>"><?php esc_html_e('Pinterest', 'gotomeloy'); ?></a></li>
+						</ul>
+					</div>
                     <div class="modal-footer">
                         <button class="btn btn-default" type="button" data-dismiss="modal">Lukk</button>
                     </div>

@@ -10,6 +10,27 @@
 #-----------------------------------------------------------------#
 
 #-----------------------------------------------------------------#
+# Stop jetpack from inserting itself
+#-----------------------------------------------------------------#
+
+function jptweak_remove_share() {
+    remove_filter( 'the_content', 'sharing_display',19 );
+    remove_filter( 'the_excerpt', 'sharing_display',19 );
+    if ( class_exists( 'Jetpack_Likes' ) ) {
+        remove_filter( 'the_content', array( Jetpack_Likes::init(), 'post_likes' ), 30, 1 );
+    }
+}
+
+add_action( 'loop_start', 'jptweak_remove_share' );
+
+#-----------------------------------------------------------------#
+# Don't publish to facebook by default
+#-----------------------------------------------------------------#
+
+add_filter( 'publicize_checkbox_default', '__return_false' );
+
+
+#-----------------------------------------------------------------#
 # Define Theme Constants
 #-----------------------------------------------------------------#
 
@@ -173,19 +194,6 @@
 
 	// require HELPER theme functions
 	require_once GOTOMELOY_INC . '/lib/lamark.inc.php';
-
-#-----------------------------------------------------------------#
-# Stop jetpack from inserting itself
-#-----------------------------------------------------------------#
-function jptweak_remove_share() {
-    remove_filter( 'the_content', 'sharing_display',19 );
-    remove_filter( 'the_excerpt', 'sharing_display',19 );
-    if ( class_exists( 'Jetpack_Likes' ) ) {
-        remove_filter( 'the_content', array( Jetpack_Likes::init(), 'post_likes' ), 30, 1 );
-    }
-}
-
-add_action( 'loop_start', 'jptweak_remove_share' );
 
 #-----------------------------------------------------------------#
 # WMPL language selector
