@@ -120,15 +120,15 @@ Template Name: Portfolio Meloy
         ?>
         <?php echo ( $kontaktskjema_forside ); ?>
         <style>
-      		#map-container { height: 300px }
+      		#map-container { height: 300px; }
     	</style>
         <div class="row">
       		<div id="map-outer" class="col-md-12">
-          		<div id="address" class="col-md-4">
-            		<address class="vcenter">
-		            	<strong>GO TO MELOY</strong><br />
-		                <a href="mailto:post@gotomeloy.no">post@gotomeloy.no</a><br />
-		                <abbr>Tlf:</abbr> +47 40021212
+          		<div id="address" class="col-md-4 text-center">
+            		<address>
+		            	<p><br /><img src="wp-content/themes/gotomeloy/img/gotomeloy_vertikal_logo_110x110.png"><br /></p>
+		                <p><a href="mailto:post@gotomeloy.no">post@gotomeloy.no</a><br />
+		                <abbr>Tlf:</abbr> +47 40021212</p>
            			</address>
           		</div>
         		<div id="map-container" class="col-md-8"></div>
