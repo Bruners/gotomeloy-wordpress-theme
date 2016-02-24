@@ -351,6 +351,7 @@ Template Name: Portfolio Meloy
                     </div>
                     <div class="modal-body">
                     	<?php echo(types_render_field( "tjeneste-lang", array( 'raw' => false) )); ?>
+                    	<br />
 				        <!-- SHARE -->
 						<?php if ( function_exists( 'sharing_display' ) ) { echo sharing_display(); } ?>
 					</div>
@@ -384,6 +385,7 @@ Template Name: Portfolio Meloy
                     </div>
                     <div class="modal-body aligncenter">
                         <?php the_content(); ?>
+                        <br />
                         <?php if ( function_exists( 'sharing_display' ) ) { echo sharing_display(); } ?>
                     </div>
                     <div class="modal-footer">
@@ -412,6 +414,7 @@ Template Name: Portfolio Meloy
                     </div>
                     <div class="modal-body">
                     	<?php echo(types_render_field( "meny-modal-body", array( 'raw' => false) )); ?>
+                    	<br />
                     	<?php if ( function_exists( 'sharing_display' ) ) { echo sharing_display(); } ?>
                     </div>
                     <div class="modal-footer">
