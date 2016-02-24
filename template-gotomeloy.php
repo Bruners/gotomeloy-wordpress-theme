@@ -147,29 +147,38 @@ Template Name: Portfolio Meloy
 				var var_glomfjord = new google.maps.LatLng(66.81707278018057,13.944906760007143)
 				var var_bodo = new google.maps.LatLng(67.28294499015232,14.379660654813051)
 
+				var pin_blue = 'wp-content/themes/gotomeloy/img/map-pins/pin-blue-15.png';
+				var pin_green = 'wp-content/themes/gotomeloy/img/map-pins/pin-green-15.png';
+				var pin_red = 'wp-content/themes/gotomeloy/img/map-pins/pin-red-16.png';
+				var pin_yellow = 'wp-content/themes/gotomeloy/map-pins/img/pin-yellow-16.png';
+
 		        var var_mapoptions = {
 	    	      center: var_location,
 	        	  zoom: 8
 	        	};
-	 
+
 				var stott_marker = new google.maps.Marker({
 					position: var_stott,
 					map: var_map,
+					icon: pin_blue,
 					title:"Støtt Brygge"
 				});
 				var ornes_marker = new google.maps.Marker({
 					position: var_ornes,
 					map: var_map,
+					icon: pin_yellow,
 					title: "Ørnes Hotell"
 				});
 				var glomfjord_marker = new google.maps.Marker({
 					position: var_glomfjord,
 					map: var_map,
+					icon: pin_green,
 					title: "Glomfjord Hotell"
 				});
 				var bodo_marker = new google.maps.Marker({
 					position: var_bodo,
 					map: var_map,
+					icon: pin_red,
 					title: "Bodø Hotell"
 				});
 	 
