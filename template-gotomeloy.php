@@ -245,6 +245,7 @@ Template Name: Portfolio Meloy
                             ?>
                             <?php endwhile; wp_reset_postdata(); ?>
                         </div> <!-- /.div-row -->
+                        <?php if ( function_exists( 'sharing_display' ) ) { echo sharing_display(); } ?>
                     </div> <!-- /.modal-body -->
                     <div class="modal-footer">
                         <button class="btn btn-default" type="button" data-dismiss="modal">Lukk</button>
@@ -271,12 +272,7 @@ Template Name: Portfolio Meloy
                     <div class="modal-body">
                     	<?php echo(types_render_field( "tjeneste-lang", array( 'raw' => false) )); ?>
 				        <!-- SHARE -->
-						<ul class="share share-project nostyle text-center">
-							<li class="share-title"><?php esc_html_e('Share:', 'gotomeloy'); ?></li>
-							<li><a href="<?php echo esc_url('http://facebook.com/sharer/sharer.php?u='. get_the_permalink()); ?>"><?php esc_html_e('Facebook', 'gotomeloy'); ?></a></li>
-							<li><a href="<?php echo esc_url('https://twitter.com/home?status='. get_the_permalink()); ?>"><?php esc_html_e('Twitter', 'gotomeloy'); ?></a></li>
-							<li><a href="<?php echo esc_url('http://pinterest.com/pin/create/button/?url='. get_the_permalink()); ?>"><?php esc_html_e('Pinterest', 'gotomeloy'); ?></a></li>
-						</ul>
+						<?php if ( function_exists( 'sharing_display' ) ) { echo sharing_display(); } ?>
 					</div>
                     <div class="modal-footer">
                         <button class="btn btn-default" type="button" data-dismiss="modal">Lukk</button>
@@ -332,9 +328,12 @@ Template Name: Portfolio Meloy
                 <div class="modal-content">
                     <div class="modal-header">
                         <button class="close" type="button" aria-label="Close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
-                            <h5 class="modal-title"><?php the_title(); ?></h5>
+                        <h5 class="modal-title"><?php the_title(); ?></h5>
                     </div>
-                    <div class="modal-body"><?php echo(types_render_field( "meny-modal-body", array( 'raw' => false) )); ?></div>
+                    <div class="modal-body">
+                    	<?php echo(types_render_field( "meny-modal-body", array( 'raw' => false) )); ?>
+                    	<?php if ( function_exists( 'sharing_display' ) ) { echo sharing_display(); } ?>
+                    </div>
                     <div class="modal-footer">
                         <button class="btn btn-default" type="button" aria-label="Close" data-dismiss="modal">Lukk</button>
                     </div>
