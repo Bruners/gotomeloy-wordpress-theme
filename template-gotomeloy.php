@@ -139,16 +139,18 @@ Template Name: Portfolio Meloy
     	  	function init_map() {
 				// Set gps locations for map and markers
 				var var_location = new google.maps.LatLng(67.0120865,13.8881624);
-	 			var var_stott = new google.maps.LatLng(66.92588045759415,13.437868505716324)
-	 			var var_ornes = new google.maps.LatLng(66.86817417340465, 13.705768967047334)
-				var var_glomfjord = new google.maps.LatLng(66.81707278018057,13.944906760007143)
-				var var_bodo = new google.maps.LatLng(67.28294499015232,14.379660654813051)
+	 			var var_stott = new google.maps.LatLng(66.925775,13.437980);
+	 			var var_ornes = new google.maps.LatLng(66.868162,13.705902);
+				var var_glomfjord = new google.maps.LatLng(66.817044,13.945002);
+				var var_bodo = new google.maps.LatLng(67.282916,14.379724);
+				var var_meloyadventure = new google.maps.LatLng(66.808303,13.975856);
 
 				// Define marker icons
 				var pin_blue = 'wp-content/themes/gotomeloy/img/map-pins/pin-blue-10.png';
 				var pin_green = 'wp-content/themes/gotomeloy/img/map-pins/pin-green-11.png';
 				var pin_red = 'wp-content/themes/gotomeloy/img/map-pins/pin-red-16.png';
 				var pin_yellow = 'wp-content/themes/gotomeloy/img/map-pins/pin-yellow-5.png';
+				var pin_magenta = 'wp-content/themes/gotomeloy/img/map-pins/pin-magenta-6.png';
 
 				// Define map options - https://developers.google.com/maps/documentation/javascript/controls
 		        var var_mapoptions = {
@@ -186,7 +188,8 @@ Template Name: Portfolio Meloy
 					'<p><strong>Ørnes Hotell AS</strong><br />'+
 					'Havneveien 12<br />'+
 					'8150 Ørnes<br />'+
-					'Norge</p>'+
+					'Norge<br />'+
+					'+47 75 75 45 99</p>'+
 					'<a href="http://www.orneshotell.no" target="_blank">orneshotell.no</a> | <a href="mailto:bjorn@orneshotell.no">bjorn@orneshotell.no</a>'+
 					'</div>';
 				var ornes_infowindow = new google.maps.InfoWindow({
@@ -205,7 +208,8 @@ Template Name: Portfolio Meloy
 					'<p><strong>Glomfjord Hotell AS</strong><br />'+
 					'Lars Evensens vei 3<br />'+
 					'8160 Glomfjord<br />'+
-					'Norge</p>'+
+					'Norge<br />'+
+					'+47 75 75 25 00</p>'+
 					'<a href="http://www.glomfjordhotell.no" target="_blank">glomfjordhotell.no</a> | <a href="mailto:info@glomfjordhotell.no">info@glomfjordhotell.no</a>'+
 					'</div>';
 				var glomfjord_infowindow = new google.maps.InfoWindow({
@@ -238,6 +242,26 @@ Template Name: Portfolio Meloy
 					maxWidth: 500
 				});
 
+				var meloyadventure_content_string =
+					'<div id="infowindow_content">'+
+					'<p><strong>Meløy Adventure</strong><br />'+
+					'Glomveien 62<br />'+
+					'8160 Glomfjord<br />'+
+					'Norge<br />'+
+					'+47 915 40 866</p>'+
+					'<a href="http://www.meloyadventure.no" target="_blank">meloyadventure.no</a> | <a href="mailto:post@meloyadventure.no">post@meloyadventure.no</a>'+
+					'</div>';
+				var meloyadventure_infowindow = new google.maps.InfoWindow({
+            		content: meloyadventure_content_string
+          		});
+				var meloyadventure_marker = new google.maps.Marker({
+					position: var_meloyadventure,
+					map: var_map,
+					icon: pin_magenta,
+					title: "Glomfjord Overnatting",
+					maxWidth: 500
+				});
+
 	 			// Create map
 	        	var var_map = new google.maps.Map(document.getElementById("map-container"),
     	        	var_mapoptions);
@@ -260,6 +284,11 @@ Template Name: Portfolio Meloy
 				bodo_marker.setMap(var_map);
 				google.maps.event.addListener(bodo_marker, 'click', function() {
 					bodo_infowindow.open(var_map,bodo_marker);
+ 				});
+ 				// Add marker and infobox for Meløy Adventure
+				meloyadventure_marker.setMap(var_map);
+				google.maps.event.addListener(meloyadventure_marker, 'click', function() {
+					meloyadventure_infowindow.open(var_map,meloyadventure_marker);
  				});
       		}
  
