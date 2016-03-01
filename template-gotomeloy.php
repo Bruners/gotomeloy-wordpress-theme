@@ -137,20 +137,21 @@ Template Name: Portfolio Meloy
         <script src="http://maps.google.com/maps/api/js"></script>
     	<script>	
     	  	function init_map() {
-				// Set gps locations for map and markers
-				var var_location = new google.maps.LatLng(67.0120865,13.8881624);
-	 			var var_stott = new google.maps.LatLng(66.925775,13.437980);
-	 			var var_ornes = new google.maps.LatLng(66.868162,13.705902);
-				var var_glomfjord = new google.maps.LatLng(66.817044,13.945002);
-				var var_bodo = new google.maps.LatLng(67.282916,14.379724);
-				var var_meloyadventure = new google.maps.LatLng(66.808303,13.975856);
+    	  		var enable_stott = true;
+    	  		var enable_bodo = true;
+    	  		var enable_glomfjord = true;
+    	  		var enable_ornes = true;
+    	  		var enable_meloyadventure = true;
 
-				// Define marker icons
+    	  		// Define marker icons
 				var pin_blue = 'wp-content/themes/gotomeloy/img/map-pins/pin-blue-10.png';
 				var pin_green = 'wp-content/themes/gotomeloy/img/map-pins/pin-green-11.png';
 				var pin_red = 'wp-content/themes/gotomeloy/img/map-pins/pin-red-16.png';
 				var pin_yellow = 'wp-content/themes/gotomeloy/img/map-pins/pin-yellow-5.png';
 				var pin_magenta = 'wp-content/themes/gotomeloy/img/map-pins/pin-magenta-6.png';
+
+				// Set gps location for map
+				var var_location = new google.maps.LatLng(67.0120865,13.8881624);
 
 				// Define map options - https://developers.google.com/maps/documentation/javascript/controls
 		        var var_mapoptions = {
@@ -163,134 +164,163 @@ Template Name: Portfolio Meloy
 					streetViewControl: false,
 	        	};
 
-	        	// Define infoboxes and marker for each place
-				var stott_content_string = 
-					'<div id="infowindow_content">'+
-            		'<p><strong>Støtt Brygge</strong><br>'+
-            		'8159 Støtt<br>' +
-            		'Norge<br>'+
-            		'+47 400 21 212</p>'+
-            		'<a href="http://www.stott.no" target="_blank">stott.no</a> | <a href="mailto:eaa@stott.no">eaa@stott.no</a>'+
-            		'</div>';
-        		var stott_infowindow = new google.maps.InfoWindow({
-            		content: stott_content_string
-          		});
-				var stott_marker = new google.maps.Marker({
-					position: var_stott,
-					map: var_map,
-					icon: pin_blue,
-					title:"Støtt Brygge",
-					maxWidth: 500
-				});
-
-				var ornes_content_string =
-					'<div id="infowindow_content">'+
-					'<p><strong>Ørnes Hotell AS</strong><br />'+
-					'Havneveien 12<br />'+
-					'8150 Ørnes<br />'+
-					'Norge<br />'+
-					'+47 75 75 45 99</p>'+
-					'<a href="http://www.orneshotell.no" target="_blank">orneshotell.no</a> | <a href="mailto:bjorn@orneshotell.no">bjorn@orneshotell.no</a>'+
-					'</div>';
-				var ornes_infowindow = new google.maps.InfoWindow({
-            		content: ornes_content_string
-          		});
-				var ornes_marker = new google.maps.Marker({
-					position: var_ornes,
-					map: var_map,
-					icon: pin_yellow,
-					title: "Ørnes Hotell",
-					maxWidth: 500
-				});
-
-				var glomfjord_content_string =
-					'<div id="infowindow_content">'+
-					'<p><strong>Glomfjord Hotell AS</strong><br />'+
-					'Lars Evensens vei 3<br />'+
-					'8160 Glomfjord<br />'+
-					'Norge<br />'+
-					'+47 75 75 25 00</p>'+
-					'<a href="http://www.glomfjordhotell.no" target="_blank">glomfjordhotell.no</a> | <a href="mailto:info@glomfjordhotell.no">info@glomfjordhotell.no</a>'+
-					'</div>';
-				var glomfjord_infowindow = new google.maps.InfoWindow({
-            		content: glomfjord_content_string
-          		});
-				var glomfjord_marker = new google.maps.Marker({
-					position: var_glomfjord,
-					map: var_map,
-					icon: pin_green,
-					title: "Glomfjord Hotell",
-					maxWidth: 500
-				});
-				
-				var bodo_content_string =
-					'<div id="infowindow_content">'+
-					'<p><strong>Bodø Hotell AS</strong><br />'+
-					'Professor Schyttes gate 5<br />'+
-					'8006 Bodø<br />'+
-					'Norge</p>'+
-					'<a href="http://www.bodohotell.no" target="_blank">bodohotell.no</a> | <a href="mailto:booking@bodohotell.no">booking@bodohotell.no</a>'+
-					'</div>';
-				var bodo_infowindow = new google.maps.InfoWindow({
-            		content: bodo_content_string
-          		});
-				var bodo_marker = new google.maps.Marker({
-					position: var_bodo,
-					map: var_map,
-					icon: pin_red,
-					title: "Bodø Hotell",
-					maxWidth: 500
-				});
-
-				var meloyadventure_content_string =
-					'<div id="infowindow_content">'+
-					'<p><strong>Meløy Adventure</strong><br />'+
-					'Glomveien 62<br />'+
-					'8160 Glomfjord<br />'+
-					'Norge<br />'+
-					'+47 915 40 866</p>'+
-					'<a href="http://www.meloyadventure.no" target="_blank">meloyadventure.no</a> | <a href="mailto:post@meloyadventure.no">post@meloyadventure.no</a>'+
-					'</div>';
-				var meloyadventure_infowindow = new google.maps.InfoWindow({
-            		content: meloyadventure_content_string
-          		});
-				var meloyadventure_marker = new google.maps.Marker({
-					position: var_meloyadventure,
-					map: var_map,
-					icon: pin_magenta,
-					title: "Glomfjord Overnatting",
-					maxWidth: 500
-				});
-
-	 			// Create map
+	        	// Create map
 	        	var var_map = new google.maps.Map(document.getElementById("map-container"),
     	        	var_mapoptions);
- 				// Add marker and infobox for Støtt Brygge
-				stott_marker.setMap(var_map);
-				google.maps.event.addListener(stott_marker, 'click', function() {
-					stott_infowindow.open(var_map,stott_marker);
- 				});
-				// Add marker and infobox for Ørnes Hotell
-				ornes_marker.setMap(var_map);
-				google.maps.event.addListener(ornes_marker, 'click', function() {
-					ornes_infowindow.open(var_map,ornes_marker);
- 				});
-				// Add marker and infobox for Glomfjord Hotell
-				glomfjord_marker.setMap(var_map);
-				google.maps.event.addListener(glomfjord_marker, 'click', function() {
-					glomfjord_infowindow.open(var_map,glomfjord_marker);
- 				});
-				// Add marker and infobox for Bodø Hotell
-				bodo_marker.setMap(var_map);
-				google.maps.event.addListener(bodo_marker, 'click', function() {
-					bodo_infowindow.open(var_map,bodo_marker);
- 				});
- 				// Add marker and infobox for Meløy Adventure
-				meloyadventure_marker.setMap(var_map);
-				google.maps.event.addListener(meloyadventure_marker, 'click', function() {
-					meloyadventure_infowindow.open(var_map,meloyadventure_marker);
- 				});
-      		}
+
+	        	// Define infoboxes and marker for each place
+	        	if (enable_stott) {
+	        		// GPS position for map marker
+	        		var var_stott = new google.maps.LatLng(66.925775,13.437980);
+		        	
+					var stott_content_string = 
+						'<div id="infowindow_content">'+
+	            		'<p><strong>Støtt Brygge</strong><br>'+
+	            		'8159 Støtt<br>' +
+	            		'Norge<br>'+
+	            		'+47 400 21 212</p>'+
+	            		'<a href="http://www.stott.no" target="_blank">stott.no</a> | <a href="mailto:eaa@stott.no">eaa@stott.no</a>'+
+	            		'</div>';
+	        		var stott_infowindow = new google.maps.InfoWindow({
+	            		content: stott_content_string
+	          		});
+					var stott_marker = new google.maps.Marker({
+						position: var_stott,
+						map: var_map,
+						icon: pin_blue,
+						title:"Støtt Brygge",
+						maxWidth: 500
+					});
+					// Add marker and infobox for Støtt Brygge
+					stott_marker.setMap(var_map);
+					google.maps.event.addListener(stott_marker, 'click', function() {
+						stott_infowindow.open(var_map,stott_marker);
+	 				});		
+				};
+
+				if (enable_ornes) {
+					// GPS position for map marker
+					var var_ornes = new google.maps.LatLng(66.868162,13.705902);
+
+					var ornes_content_string =
+						'<div id="infowindow_content">'+
+						'<p><strong>Ørnes Hotell AS</strong><br />'+
+						'Havneveien 12<br />'+
+						'8150 Ørnes<br />'+
+						'Norge<br />'+
+						'+47 75 75 45 99</p>'+
+						'<a href="http://www.orneshotell.no" target="_blank">orneshotell.no</a> | <a href="mailto:bjorn@orneshotell.no">bjorn@orneshotell.no</a>'+
+						'</div>';
+					var ornes_infowindow = new google.maps.InfoWindow({
+	            		content: ornes_content_string
+	          		});
+					var ornes_marker = new google.maps.Marker({
+						position: var_ornes,
+						map: var_map,
+						icon: pin_yellow,
+						title: "Ørnes Hotell",
+						maxWidth: 500
+					});
+
+					// Add marker and infobox for Ørnes Hotell
+					ornes_marker.setMap(var_map);
+					google.maps.event.addListener(ornes_marker, 'click', function() {
+						ornes_infowindow.open(var_map,ornes_marker);
+	 				});		
+				};
+
+				if (enable_glomfjord) {
+					// GPS position for map marker
+					var var_glomfjord = new google.maps.LatLng(66.817044,13.945002);
+
+					var glomfjord_content_string =
+						'<div id="infowindow_content">'+
+						'<p><strong>Glomfjord Hotell AS</strong><br />'+
+						'Lars Evensens vei 3<br />'+
+						'8160 Glomfjord<br />'+
+						'Norge<br />'+
+						'+47 75 75 25 00</p>'+
+						'<a href="http://www.glomfjordhotell.no" target="_blank">glomfjordhotell.no</a> | <a href="mailto:info@glomfjordhotell.no">info@glomfjordhotell.no</a>'+
+						'</div>';
+					var glomfjord_infowindow = new google.maps.InfoWindow({
+	            		content: glomfjord_content_string
+	          		});
+					var glomfjord_marker = new google.maps.Marker({
+						position: var_glomfjord,
+						map: var_map,
+						icon: pin_green,
+						title: "Glomfjord Hotell",
+						maxWidth: 500
+					});
+					
+					// Add marker and infobox for Glomfjord Hotell
+					glomfjord_marker.setMap(var_map);
+					google.maps.event.addListener(glomfjord_marker, 'click', function() {
+						glomfjord_infowindow.open(var_map,glomfjord_marker);
+	 				}); 
+				};
+
+				if (enable_bodo) {
+					// GPS position for map marker
+					var var_bodo = new google.maps.LatLng(67.282916,14.379724);
+
+					var bodo_content_string =
+						'<div id="infowindow_content">'+
+						'<p><strong>Bodø Hotell AS</strong><br />'+
+						'Professor Schyttes gate 5<br />'+
+						'8006 Bodø<br />'+
+						'Norge</p>'+
+						'<a href="http://www.bodohotell.no" target="_blank">bodohotell.no</a> | <a href="mailto:booking@bodohotell.no">booking@bodohotell.no</a>'+
+						'</div>';
+					var bodo_infowindow = new google.maps.InfoWindow({
+	            		content: bodo_content_string
+	          		});
+					var bodo_marker = new google.maps.Marker({
+						position: var_bodo,
+						map: var_map,
+						icon: pin_red,
+						title: "Bodø Hotell",
+						maxWidth: 500
+					});
+
+					// Add marker and infobox for Bodø Hotell
+					bodo_marker.setMap(var_map);
+					google.maps.event.addListener(bodo_marker, 'click', function() {
+						bodo_infowindow.open(var_map,bodo_marker);
+ 					});
+ 				};
+
+				if (enable_meloyadventure) {
+					// GPS position for map marker
+					var var_meloyadventure = new google.maps.LatLng(66.808303,13.975856);
+
+					var meloyadventure_content_string =
+						'<div id="infowindow_content">'+
+						'<p><strong>Meløy Adventure</strong><br />'+
+						'Glomveien 62<br />'+
+						'8160 Glomfjord<br />'+
+						'Norge<br />'+
+						'+47 915 40 866</p>'+
+						'<a href="http://www.meloyadventure.no" target="_blank">meloyadventure.no</a> | <a href="mailto:post@meloyadventure.no">post@meloyadventure.no</a>'+
+						'</div>';
+					var meloyadventure_infowindow = new google.maps.InfoWindow({
+            			content: meloyadventure_content_string
+          			});
+					var meloyadventure_marker = new google.maps.Marker({
+						position: var_meloyadventure,
+						map: var_map,
+						icon: pin_magenta,
+						title: "Glomfjord Overnatting",
+						maxWidth: 500
+					});
+
+					// Add marker and infobox for Meløy Adventure
+					meloyadventure_marker.setMap(var_map);
+					google.maps.event.addListener(meloyadventure_marker, 'click', function() {
+						meloyadventure_infowindow.open(var_map,meloyadventure_marker);
+ 					});
+				};
+      		};
  
       		google.maps.event.addDomListener(window, 'load', init_map);
     	</script>
