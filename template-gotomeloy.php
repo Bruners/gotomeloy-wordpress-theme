@@ -325,7 +325,7 @@ Template Name: Portfolio Meloy
       		google.maps.event.addDomListener(window, 'load', init_map);
     	</script>
         </div>
-        <div class="copyright">Copyright © GO TO MELØY <?php echo date(Y); ?> | Utviklet av <a href="http://www.github.com/bruners/">Lasse Brun</a></div>
+        <div class="copyright"><?php echo get_theme_mod('gotomeloy_copyright_text', esc_html__('Copyright © GO TO MELØY 2016', 'gotomeloy') ); ?> | Utviklet av <a href="http://www.github.com/bruners/">Lasse Brun</a></div>
     </div>
     <div class="tjeneste-modals">
         <!-- Modal 868 -->
