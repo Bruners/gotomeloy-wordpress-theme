@@ -114,11 +114,13 @@ Template Name: Portfolio Meloy
         <div class="kontakt-oss">
         <div class="fb-like" data-href="https://www.facebook.com/gotomeloy/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
         <?php
-            $kontaktskjema_forside = types_render_field("kontakskjema-forside", array('raw' => false));
+            $kontaktskjema_bunn = types_render_field("kontaktskjema-bunn", array('raw' => false));
+            $kontaktskjema_logo = types_render_field("kontaktskjema-logo", array('raw' => true));
+            $kontaktskjema_adresse = types_render_field("kontaktskjema-adress", array('raw' => false));
             $kontaktskjema_args = array( 'post_type' => 'page' );
             $kontakskjema_query = new WP_Query($kontaksjema_args);
         ?>
-        <?php echo ( $kontaktskjema_forside ); ?>
+        <?php echo ( $kontaktskjema_bunn ); ?>
         <style>
       		#map-container { height: 300px; }
     	</style>
@@ -126,9 +128,8 @@ Template Name: Portfolio Meloy
       		<div id="map-outer" class="col-md-12">
           		<div id="address" class="col-md-4 text-center">
             		<address>
-		            	<p><br /><img src="wp-content/themes/gotomeloy/img/gotomeloy_vertikal_logo_110x110.png"><br /></p>
-		                <p><a href="mailto:post@gotomeloy.no">post@gotomeloy.no</a><br />
-		                <abbr>Tlf:</abbr> +47 40021212</p>
+		            	<p><img src="<?php echo ( $kontaktskjema_logo ); ?>"><br /></p>
+		                <p><?php echo ( $kontaktskjema_adresse ); ?></p>
            			</address>
           		</div>
         		<div id="map-container" class="col-md-8"></div>
