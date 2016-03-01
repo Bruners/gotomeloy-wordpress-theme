@@ -3,39 +3,40 @@
 <section id="site-body" class="sections blog single-blog padding-size-l">
 
 	<div class="container">
+		<div class="innhold">
+			<section class="entry single-blog-content">
 
-		<section class="entry single-blog-content">
+				<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php while ( have_posts() ) : the_post(); ?>
+					<div class="entry-content">
+						<?php the_content( esc_html__( 'Read More', 'gotomeloy' ) ); ?>
+				    </div>
 
-				<div class="entry-content">
-					<?php the_content( esc_html__( 'Read More', 'gotomeloy' ) ); ?>
-			    </div>
+		        	<div class="float-wrapper">
 
-		        <div class="float-wrapper">
+			        	<?php if ( has_tag() ) { ?>
+							<div class="blog-tags">
+								<?php the_tags('',' '); ?>
+							</div>        
+			        	<?php } ?>
 
-			        <?php if ( has_tag() ) { ?>
-						<div class="blog-tags">
-							<?php the_tags('',' '); ?>
-						</div>        
-			        <?php } ?>
+			        	<div class="post-pages"><?php wp_link_pages(); ?></div>
 
-			        <div class="post-pages"><?php wp_link_pages(); ?></div>
+		        	</div>
 
-		        </div>
+					<?php get_template_part( 'parts/blog-meta.inc' ); ?> 
 
-				<?php get_template_part( 'parts/blog-meta.inc' ); ?> 
+				<?php endwhile; ?>
 
-			<?php endwhile; ?>
+			</section>
 
-		</section>
+			<?php if ( comments_open() ) { ?>
 
-		<?php if ( comments_open() ) { ?>
+				<?php comments_template( '', true ); ?>
 
-			<?php comments_template( '', true ); ?>
+			<?php } ?>
 
-		<?php } ?>
-
+		</div>
 	</div>
 
 </section><!-- #site-body -->
