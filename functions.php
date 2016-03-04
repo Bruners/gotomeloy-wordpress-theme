@@ -152,10 +152,10 @@ add_filter( 'publicize_checkbox_default', '__return_false' );
 			wp_enqueue_style('bootstrap-css', GOTOMELOY_CSS_URI . '/lib/bootstrap.css', array('gotomeloy-style'));
             wp_enqueue_style('bootstrap-theme', GOTOMELOY_CSS_URI . '/lib/bootstrap-theme.css', array('gotomeloy-style'));
             // Styles orginated from Lamark
-			wp_enqueue_style('gotomeloy-style', get_template_directory_uri() . '/style.css');
 			wp_enqueue_style('gotomeloy-base', GOTOMELOY_CSS_URI . '/base.css', array('gotomeloy-style'));
 			wp_enqueue_style('gotomeloy-main', GOTOMELOY_CSS_URI . '/main.css', array('gotomeloy-style'));
 			wp_enqueue_style('gotomeloy-responsive', GOTOMELOY_CSS_URI . '/media.css', array('gotomeloy-main'));
+			wp_enqueue_style('gotomeloy-style', get_template_directory_uri() . '/style.css');
 
 			// Add Inline Styles (dynamic)
 			ob_start();
