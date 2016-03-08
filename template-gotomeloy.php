@@ -326,7 +326,10 @@ Template Name: Portfolio Meloy
       		google.maps.event.addDomListener(window, 'load', init_map);
     	</script>
         </div>
-        <div class="copyright"><?php echo get_theme_mod('gotomeloy_copyright_text', esc_html__('Copyright © GO TO MELØY 2016', 'gotomeloy') ); ?> | Utviklet av <a href="http://www.github.com/bruners/">Lasse Brun</a></div>
+        <div class="copyright">
+        	<?php echo get_theme_mod('gotomeloy_copyright_text', esc_html__('Copyright © GO TO MELØY 2016', 'gotomeloy') ); ?> | <?php echo(esc_html__( 'Utviklet av', 'gotomeloy' )); ?> <a href="http://www.github.com/bruners/" target="_blank">Lasse Brun</a><br />
+        	<?php echo(esc_html__( 'Engelsk oversettelse av', 'gotomeloy' )); ?> <a href="http://mclean.no/" target="_blank">McLean.no Oversetting og undertekster</a>
+        </div>
     </div>
     <div class="tjeneste-modals">
         <!-- Modal 868 -->
