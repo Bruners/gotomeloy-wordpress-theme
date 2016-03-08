@@ -403,7 +403,7 @@
     }
 
     .tjeneste {
-        height: 160px;
+        min-height: 170px;
     }
     .tjeneste a:hover, .tjeneste a:focus {
         text-decoration: none;
@@ -420,7 +420,7 @@
         border-color: #68C8DD;
         background-color: #7DD0E2;
         color: #505050;
-        height: 150px;
+        min-height: 150px;
         width: 270px;
         margin: 0;
         padding-left: 5px;
