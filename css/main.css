@@ -172,7 +172,7 @@
 
 	/** Trigger */
 	.trigger-nav {
-		width: 30px;
+		width: 50px;
 		height: 50px;
 		position: relative;
 		overflow: hidden;
@@ -184,7 +184,7 @@
 		height: 18px;
 		position: absolute;
 		top: 50%;
-		left: 50%;
+		left: 80%;
 		margin: -9px 0 0 -9px;
 	}
 
@@ -218,7 +218,14 @@
 		-webkit-transform: rotate(-45deg);
 		transform: rotate(-45deg);
 	}
-
+	.trigger-nav #flags_language_selector {
+		position: absolute;
+		top: 25%;
+	}
+	.trigger-nav #flags_language_selector img{
+		margin:1px;
+		border:1px solid #333;
+	}
 
 
 /** == HEROS == */
@@ -1089,7 +1096,6 @@ footer {
 		color: #FFFFFF;
 		line-height: 35px;
 	}
-
 	ul.language-selector {
         margin: auto 10px 0 auto;
         list-style: none;
@@ -1098,9 +1104,9 @@ footer {
     }
     ul.language-selector li {
         display: inline-block;
-        width: 18px;
-        height: 12px;
-        padding-right: 5px;
+        width: 30px;
+        height: 14px;
+        padding-right: 30px;
     }
     ul.language-selector li a {
         display: block;

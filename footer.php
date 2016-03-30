@@ -20,7 +20,7 @@
                     <?php if(!empty($twitter_url)) echo '<li><a href="' . $twitter_url .   '" target="blank"><i class="fa fa-twitter-square"></i></a></li>'; ?>
                     <?php if(!empty($tripadvisor_url)) echo '<li><a href="' . $tripadvisor_url . '" target="blank"><i class="fa fa-tripadvisor"></i></a></li>'; ?>
                 </ul>
-                <span class="credits">go to meløy © 2016</span>
+                <span class="credits"><?php echo esc_html( get_bloginfo('name') ); ?> © 2016</span>
                 <ul class="language-selector">
                     <!-- Inserts a <li> list with flags -->
                     <?php language_selector_flags(); ?>

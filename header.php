@@ -96,12 +96,14 @@
                         <!-- MENU TRIGGER -->
                         <div class="float-right">
                             <div class="trigger-nav">
+                            <div id="flags_language_selector"><?php language_selector_flags_nolist(); ?></div>
                                 <div class="inner">
                                     <span class="icon-bar top"></span>
                                     <span class="icon-bar middle"></span>
                                     <span class="icon-bar bottom"></span>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>

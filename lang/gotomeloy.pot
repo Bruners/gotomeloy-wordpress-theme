@@ -47,7 +47,7 @@ msgid "Blog Layout"
 msgstr ""
 
 #: admin/customizer/functions.php:49 footer.php:7
-msgid "Lamark Copyright 2015. All rights reserved."
+msgid "GO TO MELOY Copyright 2015. All rights reserved."
 msgstr ""
 
 #: admin/customizer/functions.php:54
