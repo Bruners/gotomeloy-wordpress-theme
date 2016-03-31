@@ -221,11 +221,23 @@
 	.trigger-nav #flags_language_selector {
 		position: absolute;
 		top: 25%;
+		width: 48px;
 	}
-	.trigger-nav #flags_language_selector img{
-		margin:1px;
-		border:1px solid #333;
+	.trigger-nav #flags_language_selector a{
+		margin: 1px;
+		display: block;
+		width: 24px;
+		height: 24px;
 	}
+	.trigger-nav #flags_language_selector a.lang-en {
+		background: url("../img/flags/en.png") no-repeat center center;
+		background-size: contain;
+	}
+	.trigger-nav #flags_language_selector a.lang-nb {
+		background: url("../img/flags/nb.png") no-repeat center center;
+		background-size: contain;
+	}
+
 
 
 /** == HEROS == */

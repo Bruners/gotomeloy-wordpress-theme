@@ -204,7 +204,7 @@ function language_selector_flags(){
     if(!empty($languages)){
         foreach($languages as $l){
         	if(!$l['active']) 
-            	echo '<li><a href="'.$l['url'].'"><img src="'.$l['country_flag_url'].'" height="18" alt="'.$l['language_code'].'" width="24" /></a></li>';
+            	echo '<li><a href="'.$l['url'].'"><img class="lang-'.$l['language_code'].'" src="'.$l['country_flag_url'].'" height="18" alt="'.$l['language_code'].'" width="24" /></a></li>';
         }
     }
 }
@@ -214,7 +214,7 @@ function language_selector_flags_nolist(){
     if(!empty($languages)){
         foreach($languages as $l){
             if(!$l['active']) 
-            	echo '<a href="'.$l['url'].'"><img src="'.$l['country_flag_url'].'" height="18" alt="'.$l['language_code'].'" width="24" /></a>';
+            	echo '<a href="'.$l['url'].'" class="lang-'.$l['language_code'].'" alt="'.$l['language_code'].'"></a>';
         }
     }
 }
