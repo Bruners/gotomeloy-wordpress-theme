@@ -69,7 +69,7 @@ Template Name: Portfolio Meloy
                 $post_id = get_the_ID();
             ?>
                 <article id="tjeneste-<?php echo $post_id; ?>" class="tjeneste col-xs-12 col-sm-6 col-md-4">
-                    <?php if ($post_id == 1132) { ?>
+                    <?php if ($post_id == 868 || $post_id == 18085) { ?>
                         <a href="#tjeneste-modal-868" data-toggle="modal" class="tjeneste-link">
                     <?php } else { ?>
                         <a href="#tjeneste-modal-<?php echo $post_id; ?>" data-toggle="modal" class="tjeneste-link">
@@ -346,49 +346,59 @@ Template Name: Portfolio Meloy
                     </div>
                     <div class="modal-body">
                         <div><h4><?php echo(esc_html__( 'Liste over kommende aktiviteter:', 'gotomeloy' )); ?></h4></div>
-                        <div class="row">
-                            <?php
-                            setlocale (LC_TIME, "no_NO");
-                            $time = strtotime('now');
-                            $args = array(
-                                'post_type' => 'event',
-                                'meta_key' => 'wpcf-event-start',
-                                'orderby' => 'meta_value',
-                                'order' => 'ASC',
-                                'meta_query' => array(
-                                    array(
-                                        'key' => 'wpcf-event-start',
-                                        'compare' => '>',
-                                        'value' => $time
-                                    )
-                                )
-                            );
-                            $query = new WP_Query($args);
-                            $day_check = "";
-                            while($query -> have_posts()) : $query -> the_post();
-                            ?>
-                            <?php
-                            $event_start_date = types_render_field("event-start", array( 'raw' => true));
-                            $event_start_tid = types_render_field("event-start-tid", array( 'raw' => true));
-                            $event_slutt_date = types_render_field("event-slutt", array( 'raw' => true));
-                            $event_slutt_tid = types_render_field("event-slutt-tid", array( 'raw' => true));
-                            $day = date("d/m/y", $event_start_date);
-                            if ($day != $day_check) {
-                                if ($day_check != "") {
-                                    echo '<div class="col-sm-12 event-row-clear"></div>';
-                                }
-                                echo('<div class="col-sm-9 event-row">' . date("d/m/y", $event_start_date) . '</div><div class="col-sm-3 event-row">' . strftime("%A", $event_start_date) . '</div>' );
-                            }
-                            ?>
-                                <div class="col-sm-9"><a href="<?php echo(types_render_field( "event-url", array( 'raw' => true) )); ?>" target="blank"><?php echo(the_title()); ?></a></div>
-                                <div class="col-sm-3"><?php echo( $event_start_tid ); ?> - <?php echo( $event_slutt_tid ); ?></div>
-                            <?php
-                            $day_check = $day;
-                            if( have_posts()) : endif;
-                            ?>
-                            <?php endwhile; wp_reset_postdata(); ?>
-                        </div> <!-- /.div-row -->
                         <?php if ( function_exists( 'sharing_display' ) ) { echo sharing_display(); } ?>
+                        <?php 
+                            $currentdate = date("Y-m-d",mktime(0,0,0,date("m"),date("d")-1,date("Y")));
+                            
+                            $args = array (
+                                'meta_query'=> array(
+                                    array(
+                                        'key' => 'event_starts_sort_field',
+                                        'compare' => '>',
+                                        'value' => $currentdate,
+                                        'type' => 'DATE',
+                                    )),
+
+                                'post_type' => 'facebook_events',
+                                'posts_per_page' => -1,
+                                
+                                'meta_key' => 'event_starts_sort_field',
+                                'orderby' => 'meta_value',
+                                'order' => 'ASC'
+                            );
+                        
+                            $fbe_query = new WP_Query( $args );
+                            
+                            if( $fbe_query->have_posts() ): 
+                            while ( $fbe_query->have_posts() ) : $fbe_query->the_post();
+                                $current_time = strtotime('now');
+                                $event_title = get_the_title();
+                                $event_desc =  get_the_content();
+                                $event_image = get_fbe_image('list');
+                                $event_url =  get_fbe_field('fb_event_uri');
+                                $event_location = get_fbe_field('location');
+                                $event_starts = get_fbe_date('event_starts','U');
+                                $event_starts_month = get_fbe_date('event_starts','M');
+                                $event_starts_day = get_fbe_date('event_starts','j');
+                                $event_ends = get_fbe_date('event_ends','M j, Y @ g:i a');
+                        ?>
+                            <div class="fbecol fbecolhover"><a href="<?php echo $event_url; ?>">
+                                <div class="fbe_list_image" style="background-image:url(<?php echo $event_image; ?>)" />
+                                    <div class="fbe_list_bar">
+                                        <div class="fbe_list_date">
+                                            <div class="fbe_list_month"><?php echo $event_starts_month; ?></div>
+                                            <div class="fbe_list_day"><?php echo $event_starts_day; ?></div>
+                                        </div>
+                                        <div class="fbe_col_title"><h2><?php echo $event_title; ?></h2></div>
+                                        <div class="fbe_col_location"><?php echo $event_location; ?></div>
+                                    </div>
+                                </div>
+                            </a></div>
+                        <?php
+                            endwhile;
+                            endif;    
+                            wp_reset_query();  
+                        ?>
                     </div> <!-- /.modal-body -->
                     <div class="modal-footer">
                         <button class="btn btn-default" type="button" data-dismiss="modal">Lukk</button>
@@ -404,7 +414,7 @@ Template Name: Portfolio Meloy
             $post_id = get_the_ID();
         ?>
         <!-- Modal -->
-        <?php if ($post_id != 868) { ?>
+        <?php if ($post_id != 868 || $post_id != 18085) { ?>
         <div id="tjeneste-modal-<?php echo $post_id; ?>" class="modal fade" tabindex="-1">
             <div class="modal-dialog">
                 <div class="modal-content">
