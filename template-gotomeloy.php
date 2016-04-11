@@ -69,7 +69,7 @@ Template Name: Portfolio Meloy
                 $post_id = get_the_ID();
             ?>
                 <article id="tjeneste-<?php echo $post_id; ?>" class="tjeneste col-xs-12 col-sm-6 col-md-4">
-                    <?php if ($post_id == 868 || $post_id == 18085) { ?>
+                    <?php if ($post_id == 868 || $post_id == 1132 || $post_id == 18085 || $post_id == 19946) { ?>
                         <a href="#tjeneste-modal-868" data-toggle="modal" class="tjeneste-link">
                     <?php } else { ?>
                         <a href="#tjeneste-modal-<?php echo $post_id; ?>" data-toggle="modal" class="tjeneste-link">
@@ -371,16 +371,12 @@ Template Name: Portfolio Meloy
                             
                             if( $fbe_query->have_posts() ): 
                             while ( $fbe_query->have_posts() ) : $fbe_query->the_post();
-                                $current_time = strtotime('now');
                                 $event_title = get_the_title();
-                                $event_desc =  get_the_content();
-                                $event_image = get_fbe_image('list');
+                                $event_image = get_fbe_image('cover');
                                 $event_url =  get_fbe_field('fb_event_uri');
                                 $event_location = get_fbe_field('location');
-                                $event_starts = get_fbe_date('event_starts','U');
                                 $event_starts_month = get_fbe_date('event_starts','M');
                                 $event_starts_day = get_fbe_date('event_starts','j');
-                                $event_ends = get_fbe_date('event_ends','M j, Y @ g:i a');
                         ?>
                             <div class="fbecol fbecolhover"><a href="<?php echo $event_url; ?>">
                                 <div class="fbe_list_image" style="background-image:url(<?php echo $event_image; ?>)" />
@@ -414,7 +410,9 @@ Template Name: Portfolio Meloy
             $post_id = get_the_ID();
         ?>
         <!-- Modal -->
-        <?php if ($post_id != 868 || $post_id != 18085) { ?>
+        
+        <?php if ($post_id != 868 || $post_id != 1132 || $post_id != 18085 || $post_id != 19946) { ?>
+        <!-- 868 gotomeloy no, 1132 gotomeloy en, 18085 stott no , 19946 stott en-->
         <div id="tjeneste-modal-<?php echo $post_id; ?>" class="modal fade" tabindex="-1">
             <div class="modal-dialog">
                 <div class="modal-content">
