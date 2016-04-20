@@ -416,9 +416,14 @@
     }
 	.tjenester {
         width: 100%;
-        max-width: 835px;
         margin: auto;
         padding: 0 0 20px 0;
+    }
+    .tjenester-gotomeloy {
+    	max-width: 835px;
+    }
+    .tjenester-stott {
+    	max-width: 555px;
     }
 
     .tjeneste a:hover, .tjeneste a:focus {
