@@ -139,6 +139,10 @@ Template Name: Portfolio Stott
         <script>    
             function init_map() {
                 var enable_stott = true;
+                var enable_bodo = false;
+                var enable_glomfjord = false;
+                var enable_ornes = false;
+                var enable_meloyadventure = false;
 
                 // Define marker icons
                 var pin_blue = 'wp-content/themes/gotomeloy/img/map-pins/pin-blue-10.png';
