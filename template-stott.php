@@ -59,7 +59,7 @@ Template Name: Portfolio Stott
 
             <?php endwhile; ?>
         </div>
-        <div class="tjenester tjenester-stott">
+        <div class="tjenester tjenester-gotomeloy">
             <div class="row">
             <?php
                 $args = array('post_type' => 'tjeneste');
@@ -68,7 +68,7 @@ Template Name: Portfolio Stott
 
                 $post_id = get_the_ID();
             ?>
-                <article id="tjeneste-<?php echo $post_id; ?>" class="tjeneste col-xs-12 col-sm-6 col-md-6">
+                <article id="tjeneste-<?php echo $post_id; ?>" class="tjeneste col-xs-12 col-sm-6 col-md-4">
                     <?php if ($post_id == 868 || $post_id == 1132 || $post_id == 18085 || $post_id == 19946) { ?>
                         <a href="#tjeneste-modal-868" data-toggle="modal" class="tjeneste-link">
                     <?php } else { ?>
