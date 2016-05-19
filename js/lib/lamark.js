@@ -311,7 +311,7 @@
 
 	$(window).bind('load', function() {
 
-		$('.preloader').delay(1000).fadeOut();
+		$('.preloader').delay(200).fadeOut();
 
 		/** Load template functions */
 		templateFunctions.nav();

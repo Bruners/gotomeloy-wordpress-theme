@@ -117,8 +117,6 @@ Template Name: Portfolio Stott
             $kontaktskjema_bunn = types_render_field("kontaktskjema-bunn", array('raw' => false));
             $kontaktskjema_logo = types_render_field("kontaktskjema-logo", array('raw' => true));
             $kontaktskjema_adresse = types_render_field("kontaktskjema-adress", array('raw' => false));
-            $kontaktskjema_args = array( 'post_type' => 'page' );
-            $kontakskjema_query = new WP_Query($kontaksjema_args);
         ?>
         <?php echo ( $kontaktskjema_bunn ); ?>
         <style>
@@ -469,33 +467,6 @@ Template Name: Portfolio Stott
         </div><!-- /.modal -->
         <?php endwhile; wp_reset_postdata(); ?>
     </div> <!-- /.portfolio-modals -->
-    <div class="meny-modals">
-        <?php
-            $args = array('post_type' => 'meny-modal');
-            $query = new WP_Query($args);
-            while($query -> have_posts()) : $query -> the_post();
-        ?>
-        <!-- Modal -->
-        <div id="meny-modal-<?php echo(get_the_ID()); ?>" role="dialog" aria-labeledby="<?php the_title(); ?>" class="modal fade" tabindex="-1">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button class="close" type="button" aria-label="Close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
-                        <h5 class="modal-title"><?php the_title(); ?></h5>
-                    </div>
-                    <div class="modal-body">
-                        <?php echo(types_render_field( "meny-modal-body", array( 'raw' => false) )); ?>
-                        <br />
-                        <?php if ( function_exists( 'sharing_display' ) ) { echo sharing_display(); } ?>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-default" type="button" aria-label="Close" data-dismiss="modal">Lukk</button>
-                    </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
-        <?php endwhile; wp_reset_postdata(); ?>
-    </div> <!-- /.meny-modals -->
 </section>
 <!-- END: SITE BODY -->
 
