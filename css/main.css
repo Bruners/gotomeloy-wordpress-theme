@@ -1230,12 +1230,23 @@ footer {
 		top: 140px;
 		width: 100%;
 	}
-
+	.fbe-hidden {
+		display: none;
+	}
 	.fbe_col_title {
 		height: 30px;
 		overflow: hidden;
 	}
 	.fbe_col_title h2 {
+		font-size: 18px;
+		margin: 0px;
+		padding: 0px;
+	}
+	.fbe_col_single {
+		height: 70px;
+		overflow: visible;
+	}
+	.fbe_col_single h2 {
 		font-size: 18px;
 		margin: 0px;
 		padding: 0px;

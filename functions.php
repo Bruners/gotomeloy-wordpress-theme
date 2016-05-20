@@ -127,6 +127,8 @@ add_filter( 'publicize_checkbox_default', '__return_false' );
 			wp_enqueue_script('fitvids', GOTOMELOY_JS_URI . '/lib/fitvids.js', array('jquery'), null, true);
 			wp_enqueue_script('lamark-main', GOTOMELOY_JS_URI . '/lib/lamark.js', array('jquery'), null, true);
 			wp_enqueue_script('bootstrap', GOTOMELOY_JS_URI . '/lib/bootstrap.min.js', array('jquery'), 1, true);
+			wp_enqueue_script('gotomeloy-functions', GOTOMELOY_JS_URI . '/functions.js', array('jquery'), null, true);
+
 
 			// Enqueue (conditional)
 			if ( is_singular() ) {
