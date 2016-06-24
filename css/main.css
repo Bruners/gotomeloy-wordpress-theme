@@ -1230,6 +1230,15 @@ footer {
 		top: 140px;
 		width: 100%;
 	}
+	.fbe_list_bar_single {
+		background-color: rgba(255,255,255,0.6);
+		left: 0px;
+		padding: 5px 10px 10px 10px;
+		height: 90px;
+		position: relative;
+		top: 140px;
+		width: 100%;
+	}
 	.fbe-hidden {
 		display: none;
 	}
@@ -1315,6 +1324,9 @@ footer {
         height: 4px;
     }
 
+    .link_underline {
+    	text-decoration: underline;
+    }
 
     .copyright {
         margin-top: 20px;
