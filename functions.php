@@ -123,6 +123,7 @@ add_filter( 'publicize_checkbox_default', '__return_false' );
 		if ( !is_admin() ) {
 
 			// Enqueue
+    		wp_enqueue_script('jquery');
 			wp_enqueue_script('isotope', GOTOMELOY_JS_URI . '/lib/isotope.pkgd.min.js', array('jquery'), null, true);
 			wp_enqueue_script('fitvids', GOTOMELOY_JS_URI . '/lib/fitvids.js', array('jquery'), null, true);
 			wp_enqueue_script('lamark-main', GOTOMELOY_JS_URI . '/lib/lamark.js', array('jquery'), null, true);

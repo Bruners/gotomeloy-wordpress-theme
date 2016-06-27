@@ -329,6 +329,30 @@ Template Name: Portfolio Stott
             <?php echo(esc_html__( 'Engelsk oversettelse av', 'gotomeloy' )); ?> <a href="http://mclean.no/" target="_blank">McLean.no Oversetting og undertekster</a>
         </div>
     </div>
+
+    <div class="action-button-modal">
+        <!-- Modal -->
+        <div id="action-button-webcam-modal" role="dialog" aria-labeledby="Støtt Brygge Webcam" class="modal fade" tabindex="-1">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button class="close" type="button" aria-label="Close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                        <h5 class="modal-title">Støtt Brygge Webkamera</h5>
+                    </div>
+                    <div class="modal-body aligncenter">
+                        <a href="" rel="lightbox" id="webcam-url"><img id="webcam-img" alt="Webkamera" src="" /></a>
+                        <br/>
+                        <?php if ( function_exists( 'sharing_display' ) ) { echo sharing_display(); } ?>
+                    </div>
+                    <div class="modal-footer">
+                        <ul class="nostyle clearfix">
+                            <li class="btn btn-default" type="button" data-dismiss="modal"><i class="fa fa-times"></i></li>
+                        </ul>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+    </div> <!-- /.action-button-modal -->
     <div class="tjeneste-modals">
         <!-- Modal 868 -->
         <?php
