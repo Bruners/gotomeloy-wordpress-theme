@@ -11,14 +11,6 @@
         ================================================== -->
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         
-        <!-- Facebook metadata
-        ================================================== -->
-        <meta property="og:url" content="http://www.gotomeloy.no/" />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="GO TO MELØY" />
-        <meta property="og:description" content="Vi er et reiselivsnettverk som består av Ørnes Hotell, Glomfjord Hotell, Meløy Adventure, Rocks n'Rivers, Støtt Brygge, Bodø Hotell og Sixt Bilutleie. Vi leverer opplevelsesprodukter til bedrifter og private grupper, og har både nasjonale og internasjonale gjester."/>
-        <meta property="og:image" content="http://www.gotomeloy.no/wordpress/wp-content/themes/gotomeloy/screenshot.png" />
-        
         <!-- Pingback
         ================================================== -->
         <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
@@ -111,3 +103,4 @@
             <!-- END: SITE HEADER -->
             
             <?php get_template_part( 'parts/hero-module.inc' ); ?> 
+

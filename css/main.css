@@ -1327,7 +1327,7 @@ footer {
     .link_underline {
     	text-decoration: underline;
     }
-    .link_no_underline {
+    .link_nounderline {
     	text-decoration: none;
     }
     .link_nounderline:hover {
