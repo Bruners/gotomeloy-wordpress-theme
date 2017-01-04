@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Portfolio Stott
+Template Name: Portfolio Glomfjord
 */
 ?>
 
@@ -59,30 +59,6 @@ Template Name: Portfolio Stott
 
             <?php endwhile; ?>
         </div>
-        <div class="tjenester tjenester-gotomeloy">
-            <div class="row">
-            <?php
-                $args = array('post_type' => 'tjeneste');
-                $query = new WP_Query($args);
-                while($query -> have_posts()) : $query -> the_post();
-
-                $post_id = get_the_ID();
-            ?>
-                <article id="tjeneste-<?php echo $post_id; ?>" class="tjeneste col-xs-12 col-sm-6 col-md-4">
-                    <?php if ($post_id == 868 || $post_id == 1132 || $post_id == 18085 || $post_id == 19946) { ?>
-                        <a href="#tjeneste-modal-868" data-toggle="modal" class="tjeneste-link">
-                    <?php } else { ?>
-                        <a href="#tjeneste-modal-<?php echo $post_id; ?>" data-toggle="modal" class="tjeneste-link">
-                    <?php } ?>
-                        <div class="tjeneste-post">
-                            <div class="tjeneste-tittel"><?php the_title(); ?></div>
-                            <div class="tjeneste-kort"><p><?php echo(types_render_field( "tjeneste-kort", array( 'raw' => true) )); ?></p></div>
-                        </div>
-                    </a>
-                </article>
-            <?php endwhile; wp_reset_postdata(); ?>
-            </div>
-        </div>
         <div id="opplevelser" class="portfolio">
             <?php if ( $is_filtration ) { ?>
 
@@ -136,9 +112,9 @@ Template Name: Portfolio Stott
         <script src="http://maps.google.com/maps/api/js"></script>
         <script>    
             function init_map() {
-                var enable_stott = true;
+                var enable_stott = false;
                 var enable_bodo = false;
-                var enable_glomfjord = false;
+                var enable_glomfjord = true;
                 var enable_ornes = false;
                 var enable_meloyadventure = false;
 
