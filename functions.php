@@ -123,7 +123,7 @@ add_filter( 'publicize_checkbox_default', '__return_false' );
 		if ( !is_admin() ) {
 
 			// Enqueue
-    		wp_enqueue_script('jquery');
+      wp_enqueue_script('jquery');
 			wp_enqueue_script('isotope', GOTOMELOY_JS_URI . '/lib/isotope.pkgd.min.js', array('jquery'), null, true);
 			wp_enqueue_script('fitvids', GOTOMELOY_JS_URI . '/lib/fitvids.js', array('jquery'), null, true);
 			wp_enqueue_script('lamark-main', GOTOMELOY_JS_URI . '/lib/lamark.js', array('jquery'), null, true);
@@ -146,19 +146,19 @@ add_filter( 'publicize_checkbox_default', '__return_false' );
 	function gotomeloy_frontend_styles() {
 		if ( !is_admin() ) {
 
-            // Enqueue
+      // Enqueue
 
-            // font-awesome and fonts from whitefox
-            wp_enqueue_style('font-awesome', GOTOMELOY_CSS_URI . '/lib/font-awesome.css', array('gotomeloy-style'));
-            wp_enqueue_style('font-whitefox', GOTOMELOY_CSS_URI . '/lib/font-whitefox.css', array('gotomeloy-style'));
-            // Bootstrap style files
-			wp_enqueue_style('bootstrap-css', GOTOMELOY_CSS_URI . '/lib/bootstrap.css', array('gotomeloy-style'));
-            wp_enqueue_style('bootstrap-theme', GOTOMELOY_CSS_URI . '/lib/bootstrap-theme.css', array('gotomeloy-style'));
-            // Styles orginated from Lamark
-			wp_enqueue_style('gotomeloy-base', GOTOMELOY_CSS_URI . '/base.css', array('gotomeloy-style'));
-			wp_enqueue_style('gotomeloy-main', GOTOMELOY_CSS_URI . '/main.css', array('gotomeloy-style'));
-			wp_enqueue_style('gotomeloy-responsive', GOTOMELOY_CSS_URI . '/media.css', array('gotomeloy-main'));
-			wp_enqueue_style('gotomeloy-style', get_template_directory_uri() . '/style.css');
+      // font-awesome and fonts from whitefox
+      wp_enqueue_style('font-awesome', GOTOMELOY_CSS_URI . '/lib/font-awesome.css', array('gotomeloy-style'));
+      wp_enqueue_style('font-whitefox', GOTOMELOY_CSS_URI . '/lib/font-whitefox.css', array('gotomeloy-style'));
+      // Bootstrap style files
+      wp_enqueue_style('bootstrap-css', GOTOMELOY_CSS_URI . '/lib/bootstrap.css', array('gotomeloy-style'));
+      wp_enqueue_style('bootstrap-theme', GOTOMELOY_CSS_URI . '/lib/bootstrap-theme.css', array('gotomeloy-style'));
+      // Styles orginated from Lamark
+      wp_enqueue_style('gotomeloy-base', GOTOMELOY_CSS_URI . '/base.css', array('gotomeloy-style'));
+      wp_enqueue_style('gotomeloy-main', GOTOMELOY_CSS_URI . '/main.css', array('gotomeloy-style'));
+      wp_enqueue_style('gotomeloy-responsive', GOTOMELOY_CSS_URI . '/media.css', array('gotomeloy-main'));
+		  wp_enqueue_style('gotomeloy-style', get_template_directory_uri() . '/style.css');
 
 			// Add Inline Styles (dynamic)
 			ob_start();
