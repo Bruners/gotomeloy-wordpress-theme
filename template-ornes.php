@@ -109,7 +109,7 @@ Template Name: Portfolio Ørnes
                 <div id="map-container" class="col-md-8"></div>
             </div><!-- /map-outer -->
         </div> <!-- /row -->
-        <script src="http://maps.google.com/maps/api/js?key=AIzaSyCEqK7ZsOUSKIEwiIazGNjm1GnXLQrnO44"></script>
+        <script src="http://maps.google.com/maps/api/js?key=AIzaSyD_jY8WgpA6B1eEkKuBnOxq5WE_zY1dYqA"></script>
         <script>    
             function init_map() {
                 var enable_stott = false;
