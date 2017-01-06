@@ -1,7 +1,7 @@
 <?php
 
 // Disable ACF setup in admin panel
-define( 'ACF_LITE', false );
+//define( 'ACF_LITE', false );
 
 // Meta Panel Configuration
 if(function_exists("register_field_group"))
@@ -266,8 +266,36 @@ if(function_exists("register_field_group"))
 				array (
 					'param' => 'page_template',
 					'operator' => '==',
-					'value' => 'template-gotomeloy.php',
+					'value' => 'archive-portfolio.php',
 					'order_no' => 0,
+					'group_no' => 0,
+				),
+				array (
+					'param' => 'page_template',
+					'operator' => '==',
+					'value' => 'template-glomfjord.php',
+					'order_no' => 1,
+					'group_no' => 0,
+				),
+				array (
+					'param' => 'page_template',
+					'operator' => '==',
+					'value' => 'template-gotomeloy.php',
+					'order_no' => 2,
+					'group_no' => 0,
+				),
+				array (
+					'param' => 'page_template',
+					'operator' => '==',
+					'value' => 'template-ornes.php',
+					'order_no' => 3,
+					'group_no' => 0,
+				),
+				array (
+					'param' => 'page_template',
+					'operator' => '==',
+					'value' => 'template-stott.php',
+					'order_no' => 4,
 					'group_no' => 0,
 				),
 			),

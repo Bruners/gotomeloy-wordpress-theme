@@ -109,7 +109,7 @@ Template Name: Portfolio Glomfjord
                 <div id="map-container" class="col-md-8"></div>
             </div><!-- /map-outer -->
         </div> <!-- /row -->
-        <script src="http://maps.google.com/maps/api/js"></script>
+        <script src="http://maps.google.com/maps/api/js?key=AIzaSyA192IA2u_d3D6FACLeRr_lDRLcU7Hxn5I"></script>
         <script>    
             function init_map() {
                 var enable_stott = false;
@@ -119,11 +119,11 @@ Template Name: Portfolio Glomfjord
                 var enable_meloyadventure = false;
 
                 // Define marker icons
-                var pin_blue = 'wp-content/themes/gotomeloy/img/map-pins/pin-blue-10.png';
-                var pin_green = 'wp-content/themes/gotomeloy/img/map-pins/pin-green-11.png';
-                var pin_red = 'wp-content/themes/gotomeloy/img/map-pins/pin-red-16.png';
-                var pin_yellow = 'wp-content/themes/gotomeloy/img/map-pins/pin-yellow-5.png';
-                var pin_magenta = 'wp-content/themes/gotomeloy/img/map-pins/pin-magenta-6.png';
+                var pin_blue = 'wp-content/themes/gotomeloy-wordpress-theme/img/map-pins/pin-blue-10.png';
+                var pin_green = 'wp-content/themes/gotomeloy-wordpress-theme/img/map-pins/pin-green-11.png';
+                var pin_red = 'wp-content/themes/gotomeloy-wordpress-theme/img/map-pins/pin-red-16.png';
+                var pin_yellow = 'wp-content/themes/gotomeloy-wordpress-theme/img/map-pins/pin-yellow-5.png';
+                var pin_magenta = 'wp-content/themes/gotomeloy-wordpress-theme/img/map-pins/pin-magenta-6.png';
 
                 // Set gps location for map
                 var var_location = new google.maps.LatLng(67.0120865,13.8881624);

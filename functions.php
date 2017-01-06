@@ -124,6 +124,7 @@ add_filter( 'publicize_checkbox_default', '__return_false' );
 
 			// Enqueue
       wp_enqueue_script('jquery');
+      wp_enqueue_script('jquery.fancybox.js', GOTOMELOY_JS_URI . '/fancybox/jquery.fancybox.js', array('jquery'), null, true);
 			wp_enqueue_script('isotope', GOTOMELOY_JS_URI . '/lib/isotope.pkgd.min.js', array('jquery'), null, true);
 			wp_enqueue_script('fitvids', GOTOMELOY_JS_URI . '/lib/fitvids.js', array('jquery'), null, true);
 			wp_enqueue_script('lamark-main', GOTOMELOY_JS_URI . '/lib/lamark.js', array('jquery'), null, true);
@@ -154,6 +155,8 @@ add_filter( 'publicize_checkbox_default', '__return_false' );
       // Bootstrap style files
       wp_enqueue_style('bootstrap-css', GOTOMELOY_CSS_URI . '/lib/bootstrap.css', array('gotomeloy-style'));
       wp_enqueue_style('bootstrap-theme', GOTOMELOY_CSS_URI . '/lib/bootstrap-theme.css', array('gotomeloy-style'));
+      // Fancybox
+      wp_enqueue_style('fancybox-css', GOTOMELOY_JS_URI . '/lib/fancybox/fancybox.css', array('gotomeloy-style'));
       // Styles orginated from Lamark
       wp_enqueue_style('gotomeloy-base', GOTOMELOY_CSS_URI . '/base.css', array('gotomeloy-style'));
       wp_enqueue_style('gotomeloy-main', GOTOMELOY_CSS_URI . '/main.css', array('gotomeloy-style'));

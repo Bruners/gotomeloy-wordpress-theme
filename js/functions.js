@@ -2,7 +2,7 @@
 jQuery(document).ready(function( $ ) {
     /* Apply fancybox to multiple items */
 
-    $("a.iframe").fancybox({
+    jQuery("a.iframe").fancybox({
         openEffect  : 'none',
         closeEffect : 'none',
         autoSize: true,
