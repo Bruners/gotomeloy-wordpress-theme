@@ -306,41 +306,18 @@ Template Name: Portfolio Ørnes
         </div>
     </div>
 
-    <div class="action-button-modal">
-        <!-- Modal -->
-        <div id="action-button-webcam-modal" role="dialog" aria-labeledby="Støtt Brygge Webcam" class="modal fade" tabindex="-1">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button class="close" type="button" aria-label="Close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
-                        <h5 class="modal-title">Støtt Brygge Webkamera</h5>
-                    </div>
-                    <div class="modal-body aligncenter">
-                        <a href="" rel="lightbox" id="webcam-url"><img id="webcam-img" alt="Webkamera" src="" /></a>
-                        <br/>
-                        <?php if ( function_exists( 'sharing_display' ) ) { echo sharing_display(); } ?>
-                    </div>
-                    <div class="modal-footer">
-                        <ul class="nostyle clearfix">
-                            <li class="btn btn-default" type="button" data-dismiss="modal"><i class="fa fa-times"></i></li>
-                        </ul>
-                    </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
-    </div> <!-- /.action-button-modal -->
-    <div class="tjeneste-modals">
-        <!-- Modal 868 -->
+    <div class="portfolio-modals">
+    <!-- Modal 1513 -->
         <?php
-            $tjeneste_868_post = get_post( 868 );
-            $tjeneste_868_title = $tjeneste_868_post->post_title;
+            $portfolio_1513_post = get_post( 1513 );
+            $portfolio_1513_title = $portfolio_1513_post->post_title;
         ?>
-        <div id="tjeneste-modal-868" class="modal fade" tabindex="-1">
+        <div id="portfolio-modal-1513" class="modal fade" tabindex="-1">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button class="close fa fa-close" type="button" data-dismiss="modal"></button>
-                        <h5 class="modal-title"><?php echo ( $tjeneste_868_title ); ?></h5>
+                        <h5 class="modal-title"><?php echo ( $portfolio_1513_title ); ?></h5>
                     </div>
                     <div class="modal-body">
                         <div><h4><?php echo(esc_html__( 'Liste over kommende aktiviteter:', 'gotomeloy' )); ?></h4></div>
@@ -400,41 +377,8 @@ Template Name: Portfolio Ørnes
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
-        <?php
-            $args = array('post_type' => 'tjeneste');
-            $query = new WP_Query($args);
-            while($query -> have_posts()) : $query -> the_post();
 
-            $post_id = get_the_ID();
-        ?>
-        <!-- Modal -->
-        
-        <?php if ($post_id != 868 || $post_id != 1132 || $post_id != 18085 || $post_id != 19946) { ?>
-        <!-- 868 gotomeloy no, 1132 gotomeloy en, 18085 stott no , 19946 stott en-->
-        <div id="tjeneste-modal-<?php echo $post_id; ?>" class="modal fade" tabindex="-1">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button class="close fa fa-close" type="button" data-dismiss="modal"></button>
-                        <h5 class="modal-title"><?php the_title(); ?></h5>
-                    </div>
-                    <div class="modal-body">
-                        <?php echo(types_render_field( "tjeneste-lang", array( 'raw' => false) )); ?>
-                        <br />
-                        <!-- SHARE -->
-                        <?php if ( function_exists( 'sharing_display' ) ) { echo sharing_display(); } ?>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-default" type="button" data-dismiss="modal">Lukk</button>
-                    </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
-        <?php } ?>
-        <?php endwhile; wp_reset_postdata(); ?>
-    </div><!-- /.tjeneste-modals -->
 
-    <div class="portfolio-modals">
         <?php
             $args = array(
                 'post_type' => 'portfolio',
@@ -443,7 +387,7 @@ Template Name: Portfolio Ørnes
             $query = new WP_Query($args);
             while($query -> have_posts()) : $query -> the_post();
         ?>
-
+        <?php if ($post_id != 1513) { ?>
         <!-- Modal -->
         <div id="portfolio-modal-<?php echo(get_the_ID()); ?>" role="dialog" aria-labeledby="<?php the_title(); ?>" class="modal fade" tabindex="-1">
             <div class="modal-dialog" role="document">
@@ -465,6 +409,7 @@ Template Name: Portfolio Ørnes
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
+        <?php } ?>
         <?php endwhile; wp_reset_postdata(); ?>
     </div> <!-- /.portfolio-modals -->
 </section>
