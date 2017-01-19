@@ -232,7 +232,7 @@ add_filter( 'nav_menu_link_attributes', 'gotomeloy_menu_atts', 10, 3 );
 function gotomeloy_menu_atts( $atts, $item, $args )
 {
   // Provide the id of the targeted menu item
-  $menu_target = array(23,24,959,1141,1142,1143,1144,18145,18146,18147);
+  $menu_target = array(23,24,959,1141,1142,1143,1144,18145,18146,18147,1533,1534,1535);
 
   // inspect $item
 
@@ -337,7 +337,6 @@ function gotomeloy_menu_modal_18145( $atts, $item, $args )
   }
   return $atts;
 }
-
 add_filter( 'nav_menu_link_attributes', 'gotomeloy_menu_modal_18146', 10, 3 );
 function gotomeloy_menu_modal_18146( $atts, $item, $args )
 {
@@ -361,6 +360,45 @@ function gotomeloy_menu_modal_18147( $atts, $item, $args )
 
   if ($item->ID == $menu_target) {
     $atts['data-target'] = '#meny-modal-18138';
+  }
+  return $atts;
+}
+add_filter( 'nav_menu_link_attributes', 'gotomeloy_menu_modal_1532', 10, 3 );
+function gotomeloy_menu_modal_1532( $atts, $item, $args )
+{
+  // Provide the id of the targeted menu item
+  $menu_target = 1533;
+
+  // inspect $item
+
+  if ($item->ID == $menu_target) {
+    $atts['data-target'] = '#meny-modal-1532';
+  }
+  return $atts;
+}
+add_filter( 'nav_menu_link_attributes', 'gotomeloy_menu_modal_1531', 10, 3 );
+function gotomeloy_menu_modal_1531( $atts, $item, $args )
+{
+  // Provide the id of the targeted menu item
+  $menu_target = 1534;
+
+  // inspect $item
+
+  if ($item->ID == $menu_target) {
+    $atts['data-target'] = '#meny-modal-1531';
+  }
+  return $atts;
+}
+add_filter( 'nav_menu_link_attributes', 'gotomeloy_menu_modal_1530', 10, 3 );
+function gotomeloy_menu_modal_1530( $atts, $item, $args )
+{
+  // Provide the id of the targeted menu item
+  $menu_target = 1535;
+
+  // inspect $item
+
+  if ($item->ID == $menu_target) {
+    $atts['data-target'] = '#meny-modal-1530';
   }
   return $atts;
 }
