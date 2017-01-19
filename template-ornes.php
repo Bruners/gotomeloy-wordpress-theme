@@ -317,7 +317,7 @@ Template Name: Portfolio Ørnes
                 <div class="modal-content">
                     <div class="modal-header">
                         <button class="close fa fa-close" type="button" data-dismiss="modal"></button>
-                        <h5 class="modal-title"><?php echo ( $portfolio_1513_title ); ?></h5>
+                        <h5 class="modal-title">!!<?php echo ( $portfolio_1513_title ); ?></h5>
                     </div>
                     <div class="modal-body">
                         <div><h4><?php echo(esc_html__( 'Liste over kommende aktiviteter:', 'gotomeloy' )); ?></h4></div>
