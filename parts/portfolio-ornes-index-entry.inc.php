@@ -23,11 +23,8 @@
     <a href="#portfolio-modal-<?php the_ID(); ?>" title="<?php the_title(); ?>" data-toggle="modal">
 		<div class="entry-image iBG" data-img="<?php echo $thumbnail_data['src']; ?>"></div>
 		<div class="entry-hover text-center">
-			<div class="fbe_list_bar">
-				<div class="fbe_col_title"><h2>?php the_title(); ?></h2></div>
-				<?php if ( $project_cats_name ) { ?>
-					<div class="fbe_col_location"><?php echo esc_html( $project_cats_name ); ?></div>
-				<?php } ?>
+			<div class="vcenter">
+				<div class="entry-title"><?php the_title(); ?></div>
 			</div>
 		</div>
 	</a>    
