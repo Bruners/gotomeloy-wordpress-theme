@@ -76,7 +76,7 @@ Template Name: Portfolio Ørnes
             <section class="grid clearfix" data-col="<?php echo get_post_meta(get_the_ID(), 'portfolio_columns', true); ?>" data-margin="25" data-height="0.8" data-double-height="1.6" data-masonry="<?php echo $is_masonry; ?>">
 
             <?php if ( $portfolio_query->have_posts() ) : while ( $portfolio_query->have_posts() ) : $portfolio_query->the_post(); ?>
-            <?php get_template_part( 'parts/portfolio-index-entry.inc' ); ?>
+            <?php get_template_part( 'parts/portfolio-ornes-index-entry.inc' ); ?>
             <?php endwhile; wp_reset_postdata(); else: ?>
 
                 <p class="entry"><?php printf( esc_html__( 'Ready to publish your first entry? <a href="%1$s">Get started here</a>.', 'gotomeloy' ), esc_url( admin_url() ) ); ?></p>
@@ -317,7 +317,7 @@ Template Name: Portfolio Ørnes
                 <div class="modal-content">
                     <div class="modal-header">
                         <button class="close fa fa-close" type="button" data-dismiss="modal"></button>
-                        <h5 class="modal-title">!!<?php echo ( $portfolio_1513_title ); ?></h5>
+                        <h5 class="modal-title">?php echo ( $portfolio_1513_title ); ?></h5>
                     </div>
                     <div class="modal-body">
                         <div><h4><?php echo(esc_html__( 'Liste over kommende aktiviteter:', 'gotomeloy' )); ?></h4></div>
