@@ -88,7 +88,7 @@ Template Name: Portfolio Ørnes
     </div> <!-- END: CONTAINER DIV -->
     <div class="container-bunn">
         <div class="kontakt-oss">
-        <div class="fb-like" data-href="https://www.facebook.com/gotomeloy/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+        <div class="fb-like" data-href="https://www.facebook.com/Ørnes-Hotell-879538312107349/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
         <?php
             $kontaktskjema_bunn = types_render_field("kontaktskjema-bunn", array('raw' => false));
             $kontaktskjema_logo = types_render_field("kontaktskjema-logo", array('raw' => true));
