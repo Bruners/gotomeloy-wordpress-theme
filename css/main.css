@@ -1239,6 +1239,15 @@ footer {
 		top: 140px;
 		width: 100%;
 	}
+	.fbe_list_bar_single_small {
+		background-color: rgba(255,255,255,0.6);
+		left: 0px;
+		padding: 5px 10px 10px 10px;
+		height: 38px;
+		position: relative;
+		top: 185px;
+		width: 100%;
+	}
 	.fbe-hidden {
 		display: none;
 	}
