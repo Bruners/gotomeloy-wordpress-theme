@@ -396,6 +396,11 @@ Template Name: Portfolio Stott
                                 $event_title = get_the_title();
                                 $event_image = get_fbe_image('cover');
                                 $event_url =  get_fbe_field('fb_event_uri');
+                                $event_facebook = get_fbe_field('facebook');
+                                $event_string = array('https://facebook.com','/');
+                                $event_string2 = array('','');
+                                $event_site = str_replace($event_string, $event_string2, $event_facebook);
+                                $event_site = ucfirst($event_site);
                                 $event_location = get_fbe_field('location');
                                 $event_starts_month = get_fbe_date('event_starts','M');
                                 $event_starts_day = get_fbe_date('event_starts','j');
@@ -408,7 +413,7 @@ Template Name: Portfolio Stott
                                             <div class="fbe_list_day"><?php echo $event_starts_day; ?></div>
                                         </div>
                                         <div class="fbe_col_title"><h2><?php echo $event_title; ?></h2></div>
-                                        <div class="fbe_col_location"><?php echo $event_location; ?></div>
+                                        <div class="fbe_col_location"><?php echo $event_site; ?></div>
                                     </div>
                                 </div>
                             </a></div>
