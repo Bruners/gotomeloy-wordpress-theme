@@ -110,10 +110,11 @@ Template Name: Portfolio Stott
             <!-- END: PORTFOLIO GRID -->
         </div>
     </div> <!-- END: CONTAINER DIV -->
+    <!-- BEGIN: BOTTOM WIDGETS -->
     <div class="container">
         <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("widgetized-page-bottom") ) : ?>
         <?php endif; ?>
-    </div>
+    </div><!-- END: BOTTOM WIDGETS -->
     <div class="container-bunn">
         <div class="kontakt-oss">
         <div class="fb-like" data-href="https://www.facebook.com/StottBrygge/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
