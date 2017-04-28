@@ -2,10 +2,10 @@
 
 #-----------------------------------------------------------------#
 #
-#	Here define all the custom functions for the child theme.
-#	Please be extremely cautious editing this file,
-#	When things go wrong, they intend to go wrong in a big way.
-#	You have been warned!
+# Here define all the custom functions for the child theme.
+# Please be extremely cautious editing this file,
+# When things go wrong, they intend to go wrong in a big way.
+# You have been warned!
 #
 #-----------------------------------------------------------------#
 
@@ -34,67 +34,67 @@ add_filter( 'publicize_checkbox_default', '__return_false' );
 # Define Theme Constants
 #-----------------------------------------------------------------#
 
-	define('GOTOMELOY_ADMIN', get_template_directory() .'/admin');
-	define('GOTOMELOY_ADMIN_URI', get_template_directory_uri() .'/admin');
-	define('GOTOMELOY_JS', get_template_directory() .'/js');
-	define('GOTOMELOY_JS_URI', get_template_directory_uri() .'/js');
-	define('GOTOMELOY_CSS', get_template_directory() .'/css');
-	define('GOTOMELOY_CSS_URI', get_template_directory_uri() .'/css');
-	define('GOTOMELOY_INC', get_template_directory() .'/inc');
-	define('GOTOMELOY_INC_URI', get_template_directory_uri() .'/inc');
+  define('GOTOMELOY_ADMIN', get_template_directory() .'/admin');
+  define('GOTOMELOY_ADMIN_URI', get_template_directory_uri() .'/admin');
+  define('GOTOMELOY_JS', get_template_directory() .'/js');
+  define('GOTOMELOY_JS_URI', get_template_directory_uri() .'/js');
+  define('GOTOMELOY_CSS', get_template_directory() .'/css');
+  define('GOTOMELOY_CSS_URI', get_template_directory_uri() .'/css');
+  define('GOTOMELOY_INC', get_template_directory() .'/inc');
+  define('GOTOMELOY_INC_URI', get_template_directory_uri() .'/inc');
 
 #-----------------------------------------------------------------#
 # Theme Setup
 #-----------------------------------------------------------------#
 
-	function gotomeloy_theme_setup() {
+  function gotomeloy_theme_setup() {
 
-		global $content_width;
+    global $content_width;
 
-		// Set Content Width
-		if ( !isset($content_width) ) {
-			$content_width = 960;
-		}
+    // Set Content Width
+    if ( !isset($content_width) ) {
+      $content_width = 960;
+    }
 
-		// Load Translation Text Domain
-		load_theme_textdomain( 'gotomeloy', get_template_directory() . '/lang' );
+    // Load Translation Text Domain
+    load_theme_textdomain( 'gotomeloy', get_template_directory() . '/lang' );
 
-		// Support for Feed Links
-		add_theme_support('automatic-feed-links');
+    // Support for Feed Links
+    add_theme_support('automatic-feed-links');
 
-		// Support for Title Tag
-		add_theme_support( 'title-tag' );
+    // Support for Title Tag
+    add_theme_support( 'title-tag' );
 
-		// Suport for Post Thumbnails
-		add_theme_support( 'post-thumbnails' );
+    // Suport for Post Thumbnails
+    add_theme_support( 'post-thumbnails' );
 
-	    // Register WP3.0+ Menus
-	    add_action('init', 'gotomeloy_register_menu');
+      // Register WP3.0+ Menus
+      add_action('init', 'gotomeloy_register_menu');
 
-	    // Register Sidebars
-	    add_action('widgets_init', 'gotomeloy_register_sidebar');
+      // Register Sidebars
+      add_action('widgets_init', 'gotomeloy_register_sidebar');
 
-	    // Register and Enqueue Frontend JS
-	    add_action('wp_enqueue_scripts', 'gotomeloy_frontend_js');
+      // Register and Enqueue Frontend JS
+      add_action('wp_enqueue_scripts', 'gotomeloy_frontend_js');
 
-	    // Register and Enqueue Frontend CSS
-	    add_action('wp_enqueue_scripts', 'gotomeloy_frontend_styles');
-		add_action('wp_enqueue_scripts', 'gotomeloy_child_frontend_styles', 20);
+      // Register and Enqueue Frontend CSS
+      add_action('wp_enqueue_scripts', 'gotomeloy_frontend_styles');
+    add_action('wp_enqueue_scripts', 'gotomeloy_child_frontend_styles', 20);
 
-	    // Register and Enqueue Backend CSS
-	    add_action('admin_enqueue_scripts', 'gotomeloy_backend_styles');
+      // Register and Enqueue Backend CSS
+      add_action('admin_enqueue_scripts', 'gotomeloy_backend_styles');
 
-	}
+  }
 
-	add_action('after_setup_theme', 'gotomeloy_theme_setup');
+  add_action('after_setup_theme', 'gotomeloy_theme_setup');
 
 #-----------------------------------------------------------------#
 # Register WP3.0+ Menu(s)
 #-----------------------------------------------------------------#
 
-	function gotomeloy_register_menu() {
-		register_nav_menu('gotomeloy-primary-navigation', esc_html__('Primary Navigation', 'gotomeloy'));
-	}
+  function gotomeloy_register_menu() {
+    register_nav_menu('gotomeloy-primary-navigation', esc_html__('Primary Navigation', 'gotomeloy'));
+  }
 
 
 #-----------------------------------------------------------------#
@@ -106,13 +106,13 @@ add_filter( 'publicize_checkbox_default', '__return_false' );
   // Register sidebar the theme
     if ( function_exists('register_sidebar') ) {
       register_sidebar( array(
-  			'name' => esc_html__( 'Primary Sidebar', 'gotomeloy' ),
-  			'id' => 'primary-sidebar',
-  			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-  			'after_widget' => '</div>',
-  			'before_title' => '<h3>',
-  			'after_title' => '</h3>',
-  		) );
+        'name' => esc_html__( 'Primary Sidebar', 'gotomeloy' ),
+        'id' => 'primary-sidebar',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>',
+      ) );
 
       register_sidebars( 1, array(
         'name' => 'widgetized-page-bottom',
@@ -128,33 +128,33 @@ add_filter( 'publicize_checkbox_default', '__return_false' );
 # Register and Enqueue Frontend JS
 #-----------------------------------------------------------------#
 
-	function gotomeloy_frontend_js() {
-		if ( !is_admin() ) {
+  function gotomeloy_frontend_js() {
+    if ( !is_admin() ) {
 
-			// Enqueue
+      // Enqueue
       wp_enqueue_script('jquery');
       wp_enqueue_script('jquery.fancybox.js', GOTOMELOY_JS_URI . '/fancybox/jquery.fancybox.js', array('jquery'), null, true);
-			wp_enqueue_script('isotope', GOTOMELOY_JS_URI . '/lib/isotope.pkgd.min.js', array('jquery'), null, true);
-			wp_enqueue_script('fitvids', GOTOMELOY_JS_URI . '/lib/fitvids.min.js', array('jquery'), null, true);
-			wp_enqueue_script('lamark-main', GOTOMELOY_JS_URI . '/lib/lamark.min.js', array('jquery'), null, true);
-			wp_enqueue_script('bootstrap', GOTOMELOY_JS_URI . '/lib/bootstrap.min.js', array('jquery'), 1, true);
-			wp_enqueue_script('gotomeloy-functions', GOTOMELOY_JS_URI . '/functions.js', array('jquery'), null, true);
+      wp_enqueue_script('isotope', GOTOMELOY_JS_URI . '/lib/isotope.pkgd.min.js', array('jquery'), null, true);
+      wp_enqueue_script('fitvids', GOTOMELOY_JS_URI . '/lib/fitvids.min.js', array('jquery'), null, true);
+      wp_enqueue_script('lamark-main', GOTOMELOY_JS_URI . '/lib/lamark.min.js', array('jquery'), null, true);
+      wp_enqueue_script('bootstrap', GOTOMELOY_JS_URI . '/lib/bootstrap.min.js', array('jquery'), 1, true);
+      wp_enqueue_script('gotomeloy-functions', GOTOMELOY_JS_URI . '/functions.js', array('jquery'), null, true);
 
 
-			// Enqueue (conditional)
-			if ( is_singular() ) {
-				wp_enqueue_script( 'comment-reply' );
-			}
+      // Enqueue (conditional)
+      if ( is_singular() ) {
+        wp_enqueue_script( 'comment-reply' );
+      }
 
-		}
-	}
+    }
+  }
 
 #-----------------------------------------------------------------#
 # Register and Enqueue Frontend CSS
 #-----------------------------------------------------------------#
 
-	function gotomeloy_frontend_styles() {
-		if ( !is_admin() ) {
+  function gotomeloy_frontend_styles() {
+    if ( !is_admin() ) {
 
       // Enqueue
 
@@ -170,45 +170,45 @@ add_filter( 'publicize_checkbox_default', '__return_false' );
       wp_enqueue_style('gotomeloy-base', GOTOMELOY_CSS_URI . '/base.min.css', array('gotomeloy-style'));
       wp_enqueue_style('gotomeloy-main', GOTOMELOY_CSS_URI . '/main.min.css', array('gotomeloy-style'));
       wp_enqueue_style('gotomeloy-responsive', GOTOMELOY_CSS_URI . '/media.min.css', array('gotomeloy-main'));
-		  wp_enqueue_style('gotomeloy-style', get_template_directory_uri() . '/style.css');
+      wp_enqueue_style('gotomeloy-style', get_template_directory_uri() . '/style.css');
 
-			// Add Inline Styles (dynamic)
-			ob_start();
-			require( GOTOMELOY_CSS .'/dynamic.php' );
-			$dynamic_css = ob_get_clean();
+      // Add Inline Styles (dynamic)
+      ob_start();
+      require( GOTOMELOY_CSS .'/dynamic.php' );
+      $dynamic_css = ob_get_clean();
 
-	        wp_add_inline_style('gotomeloy-style', $dynamic_css);
-			wp_add_inline_style('gotomeloy-style', get_theme_mod('gotomeloy_custom_css'));
+          wp_add_inline_style('gotomeloy-style', $dynamic_css);
+      wp_add_inline_style('gotomeloy-style', get_theme_mod('gotomeloy_custom_css'));
 
-		}
-	}
-
-
-	function gotomeloy_child_frontend_styles() {
-		if ( !is_admin() && is_child_theme() ) {
-
-			// Enqueue
-		    wp_enqueue_style( 'gotomeloy-child-style', get_stylesheet_directory_uri().'/style.css');
-
-		}
-	}
+    }
+  }
 
 
-	function gotomeloy_backend_styles() {
-	    wp_enqueue_style('gotomeloy-plugins', GOTOMELOY_ADMIN_URI . '/plugins/css/style.css');
-	}
+  function gotomeloy_child_frontend_styles() {
+    if ( !is_admin() && is_child_theme() ) {
+
+      // Enqueue
+        wp_enqueue_style( 'gotomeloy-child-style', get_stylesheet_directory_uri().'/style.css');
+
+    }
+  }
+
+
+  function gotomeloy_backend_styles() {
+      wp_enqueue_style('gotomeloy-plugins', GOTOMELOY_ADMIN_URI . '/plugins/css/style.css');
+  }
 
 #-----------------------------------------------------------------#
 # Require PHP Theme Resources
 #-----------------------------------------------------------------#
 
-	// require ADMIN resources
-	require_once GOTOMELOY_ADMIN . '/customizer/functions.php';
-	require_once GOTOMELOY_ADMIN . '/plugins/functions.php';
-	require_once GOTOMELOY_ADMIN . '/metaboxes/functions.php';
+  // require ADMIN resources
+  require_once GOTOMELOY_ADMIN . '/customizer/functions.php';
+  require_once GOTOMELOY_ADMIN . '/plugins/functions.php';
+  require_once GOTOMELOY_ADMIN . '/metaboxes/functions.php';
 
-	// require HELPER theme functions
-	require_once GOTOMELOY_INC . '/lib/lamark.inc.php';
+  // require HELPER theme functions
+  require_once GOTOMELOY_INC . '/lib/lamark.inc.php';
 
 #-----------------------------------------------------------------#
 # WMPL language selector
@@ -218,8 +218,8 @@ function language_selector_flags(){
     $languages = icl_get_languages('skip_missing=0&orderby=code');
     if(!empty($languages)){
         foreach($languages as $l){
-        	if(!$l['active']) 
-            	echo '<li><a href="'.$l['url'].'"><img class="lang-'.$l['language_code'].'" src="'.$l['country_flag_url'].'" height="18" alt="'.$l['language_code'].'" width="24" /></a></li>';
+          if(!$l['active']) 
+              echo '<li><a href="'.$l['url'].'"><img class="lang-'.$l['language_code'].'" src="'.$l['country_flag_url'].'" height="18" alt="'.$l['language_code'].'" width="24" /></a></li>';
         }
     }
 }
@@ -229,7 +229,7 @@ function language_selector_flags_nolist(){
     if(!empty($languages)){
         foreach($languages as $l){
             if(!$l['active']) 
-            	echo '<a href="'.$l['url'].'" class="lang-'.$l['language_code'].'" alt="'.$l['language_code'].'"></a>';
+              echo '<a href="'.$l['url'].'" class="lang-'.$l['language_code'].'" alt="'.$l['language_code'].'"></a>';
         }
     }
 }
