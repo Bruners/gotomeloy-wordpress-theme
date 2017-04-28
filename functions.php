@@ -101,19 +101,28 @@ add_filter( 'publicize_checkbox_default', '__return_false' );
 # Register Sidebar(s)
 #-----------------------------------------------------------------#
 
-	function gotomeloy_register_sidebar() {
+  function gotomeloy_register_sidebar() {
 
-		// Register sidebar the theme
-		register_sidebar( array(
-			'name' => esc_html__( 'Primary Sidebar', 'gotomeloy' ),
-			'id' => 'primary-sidebar',
-			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget' => '</div>',
-			'before_title' => '<h3>',
-			'after_title' => '</h3>',
-		) );
+  // Register sidebar the theme
+    if ( function_exists('register_sidebar') ) {
+      register_sidebar( array(
+  			'name' => esc_html__( 'Primary Sidebar', 'gotomeloy' ),
+  			'id' => 'primary-sidebar',
+  			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+  			'after_widget' => '</div>',
+  			'before_title' => '<h3>',
+  			'after_title' => '</h3>',
+  		) );
 
-	}
+      register_sidebars( 1, array(
+        'name' => 'widgetized-page-bottom',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h4 class="kontakt-oss widgettitle">',
+        'after_title' => '</h4>'
+      ) );
+    }
+  }
 
 #-----------------------------------------------------------------#
 # Register and Enqueue Frontend JS
