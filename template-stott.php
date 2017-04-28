@@ -345,7 +345,9 @@ Template Name: Portfolio Stott
                     </div>
                     <div class="modal-body aligncenter">
                         <a href="" rel="lightbox" id="webcam-url"><img id="webcam-img" alt="Webkamera" src="" /></a>
-                        <br/>
+                        <br />
+                        <iframe width="315" scrolling="no" height="400" frameborder="0" allowfullscreen src="http://www.kartverket.no/sehavniva/sehavniva-lokasjonside/?cityid=265573&city=St%C3%B8tt&widget=true"></iframe>
+                        <br />
                         <?php if ( function_exists( 'sharing_display' ) ) { echo sharing_display(); } ?>
                     </div>
                     <div class="modal-footer">
