@@ -362,13 +362,10 @@ Template Name: Portfolio Stott
                                     $totime = date("Y-m-d",mktime(0,0,0,date("m"),date("d")+1,date("Y")));
                                     $xmlurl = "http://api.sehavniva.no/tideapi.php?lat=".$lat."&lon=".$lon."&fromtime=".$fromtime."&totime=".$totime."&datatype=tab&refcode=cd&place=St%C3%B8tt&file=&lang=nb&interval=60&dst=1&tzone=&tide_request=locationdata";
                                     $xml = simplexml_load_file($xmlurl);
-                                    $search = array('high', 'low');
-                                    $replace = array('&uarr;', '&darr;');
                                     $dir = get_stylesheet_directory_uri() . "/img/";
                                     foreach ($xml->locationdata->data->waterlevel as $level):
                                         $value=round($level['value']);
                                         $realtime=date("H:i",strtotime($level['time']));
-                                        //$flag=str_replace($search,$replace,$level['flag']);
                                         $flag=$level['flag'];
                                         echo "<tr><td align='center'><img src='",$dir, $flag,".png' alt='",$flag,"' height='26' width='26'></td><td>",$realtime,"</td><td>",$value," cm</td></tr>";
                                     endforeach;
