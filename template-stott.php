@@ -347,7 +347,34 @@ Template Name: Portfolio Stott
                     <div class="modal-body aligncenter">
                         <a href="" rel="lightbox" id="webcam-url"><img id="webcam-img" alt="Webkamera" src="" /></a>
                         <br />
-                        <iframe width="315" scrolling="no" height="400" frameborder="0" allowfullscreen src="http://www.kartverket.no/sehavniva/sehavniva-lokasjonside/?cityid=265573&city=St%C3%B8tt&widget=true"></iframe>
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <tr>
+                                    <th>Høy/Lav</th>
+                                    <th>Tid</th>
+                                    <th>Beregnet vannstand</th>
+                                </tr>
+                                <?php
+                                    date_default_timezone_set('Europe/Oslo');
+                                    $lat = 66.925775;
+                                    $lon = 13.437980;
+                                    $fromtime = date("Y-m-d");
+                                    $totime = date("Y-m-d",mktime(0,0,0,date("m"),date("d")+1,date("Y")));
+                                    $xmlurl = "http://api.sehavniva.no/tideapi.php?lat=".$lat."&lon=".$lon."&fromtime=".$fromtime."&totime=".$totime."&datatype=tab&refcode=cd&place=St%C3%B8tt&file=&lang=nb&interval=60&dst=1&tzone=&tide_request=locationdata";
+                                    $xml = simplexml_load_file($xmlurl);
+                                    $search = array('high', 'low');
+                                    $replace = array('&uarr;', '&darr;');
+                                    $dir = get_stylesheet_directory_uri() . "/img/";
+                                    foreach ($xml->locationdata->data->waterlevel as $level):
+                                        $value=round($level['value']);
+                                        $realtime=date("H:i",strtotime($level['time']));
+                                        //$flag=str_replace($search,$replace,$level['flag']);
+                                        $flag=$level['flag'];
+                                        echo "<tr><td align='center'><img src='",$dir, $flag,".png' alt='",$flag,"' height='26' width='26'></td><td>",$realtime,"</td><td>",$value," cm</td></tr>";
+                                    endforeach;
+                                ?>
+                            </table>
+                        </div>
                         <br />
                         <?php if ( function_exists( 'sharing_display' ) ) { echo sharing_display(); } ?>
                     </div>
