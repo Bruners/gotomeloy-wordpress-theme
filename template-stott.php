@@ -365,12 +365,10 @@ Template Name: Portfolio Stott
                                     $xml = simplexml_load_file($xmlurl);
                                     $dir = get_stylesheet_directory_uri() . "/img/";
                                     foreach ($xml->locationdata->data->waterlevel as $level):
-                                        $value = round($level['value']);
-                                        $time = strtotime($level['time']);
-                                        $realtime = new DateTime("@$time");
-                                        $realtime->setTimezone(new DateTimezone("Europe/Oslo"));
                                         $flag = $level['flag'];
-                                        echo "<tr><td align='center'><img src='",$dir, $flag,".png' alt='",$flag,"' height='26' width='26'></td><td>",$realtime->format('H:i'),"</td><td>",$value," cm</td></tr>";
+                                        $time = DateTime::createFromFormat('Y-m-d\TH:i:s+P',$level['time'])->format('H:i');
+                                        $value = round($level['value']);
+                                        echo "<tr><td align='center'><img src='",$dir, $flag,".png' alt='",$flag,"' height='26' width='26'></td><td>",$time,"</td><td>",$value," cm</td></tr>";
                                     endforeach;
                                 ?>
                             </table>
