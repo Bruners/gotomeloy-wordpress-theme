@@ -355,19 +355,22 @@ Template Name: Portfolio Stott
                                     <th>Beregnet vannstand</th>
                                 </tr>
                                 <?php
-                                    date_default_timezone_set('Europe/Oslo');
                                     $lat = 66.925775;
                                     $lon = 13.437980;
-                                    $fromtime = date("Y-m-d");
-                                    $totime = date("Y-m-d",mktime(0,0,0,date("m"),date("d")+1,date("Y")));
-                                    $xmlurl = "http://api.sehavniva.no/tideapi.php?lat=".$lat."&lon=".$lon."&fromtime=".$fromtime."&totime=".$totime."&datatype=tab&refcode=cd&place=St%C3%B8tt&file=&lang=nb&interval=60&dst=1&tzone=&tide_request=locationdata";
+                                    $fromtime = new DateTime('NOW');
+                                    $fromtime->format("Y-m-d");
+                                    $totime = clone $fromtime;
+                                    $totime->modify('+1 day');
+                                    $xmlurl = "http://api.sehavniva.no/tideapi.php?lat=".$lat."&lon=".$lon."&fromtime=".$fromtime->format('c')."&totime=".$totime->format('c')."&datatype=tab&refcode=cd&place=St%C3%B8tt&file=&lang=nb&interval=60&dst=1&tzone=&tide_request=locationdata";
                                     $xml = simplexml_load_file($xmlurl);
                                     $dir = get_stylesheet_directory_uri() . "/img/";
                                     foreach ($xml->locationdata->data->waterlevel as $level):
-                                        $value=round($level['value']);
-                                        $realtime=date("H:i",strtotime($level['time']));
-                                        $flag=$level['flag'];
-                                        echo "<tr><td align='center'><img src='",$dir, $flag,".png' alt='",$flag,"' height='26' width='26'></td><td>",$realtime,"</td><td>",$value," cm</td></tr>";
+                                        $value = round($level['value']);
+                                        $time = strtotime($level['time']);
+                                        $realtime = new DateTime("@$time");
+                                        $realtime->setTimezone(new DateTimezone("Europe/Oslo"));
+                                        $flag = $level['flag'];
+                                        echo "<tr><td align='center'><img src='",$dir, $flag,".png' alt='",$flag,"' height='26' width='26'></td><td>",$realtime->format('H:i'),"</td><td>",$value," cm</td></tr>";
                                     endforeach;
                                 ?>
                             </table>
