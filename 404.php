@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php get_header( 'blog' ); ?>
 
 <!-- BEGIN: SITE BODY -->
 <section id="site-body" class="sections error-404 padding-size-l">

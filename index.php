@@ -1,4 +1,12 @@
-<?php get_header(); ?>
+<?php 
+	if ( is_front_page() ) :
+		get_header();
+	elseif ( is_404() ) :
+		get_header( 'blog' );
+	else :
+		get_header( 'blog' );
+	endif;
+?>
 
 <?php
 

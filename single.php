@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php get_header( 'blog' ); ?>
 
 <section id="site-body" class="sections blog single-blog padding-size-l">
 
