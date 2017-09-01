@@ -53,9 +53,11 @@
         }
         
         if ( $is_hero_module ) { 
-            $hero_subtitle = !empty($hero_subtitle) ? $hero_subtitle : get_the_date('j M, Y');
+            $hero_subtitle = '';
+            //$hero_subtitle = !empty($hero_subtitle) ? $hero_subtitle : get_the_date('j M, Y');
         } else {
-            $hero_subtitle = get_the_date('j M, Y');
+            $hero_subtitle = '';
+            //$hero_subtitle = get_the_date('j M, Y');
         }
     } else if( is_page() ) {
 

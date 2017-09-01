@@ -448,8 +448,9 @@ Template Name: Portfolio Stott
                         <?php
                             endwhile;
                             endif;    
-                            wp_reset_query();  
+                            wp_reset_query();
                         ?>
+                        <p><a href="http://www.stott.no/tjeneste/aktivitetskalender/" target="_blank">Åpne innholdet i eget vindu</a></p><br />
                     </div> <!-- /.modal-body -->
                     <div class="modal-footer">
                         <button class="btn btn-default" type="button" data-dismiss="modal">Lukk</button>
@@ -478,6 +479,7 @@ Template Name: Portfolio Stott
                     <div class="modal-body">
                         <?php echo(types_render_field( "tjeneste-lang", array( 'raw' => false) )); ?>
                         <br />
+                        <p><a href="<?php echo(get_permalink($post_id)); ?>" target="_blank">Åpne innholdet i eget vindu</a></p><br />
                         <!-- SHARE -->
                         <?php if ( function_exists( 'sharing_display' ) ) { echo sharing_display(); } ?>
                     </div>
@@ -512,6 +514,7 @@ Template Name: Portfolio Stott
                     <div class="modal-body aligncenter">
                         <?php the_content(); ?>
                         <br />
+                        <p><a href="<?php echo(get_permalink(get_the_ID())); ?>" target="_blank">Åpne innholdet i eget vindu</a></p><br />
                         <?php if ( function_exists( 'sharing_display' ) ) { echo sharing_display(); } ?>
                     </div>
                     <div class="modal-footer">

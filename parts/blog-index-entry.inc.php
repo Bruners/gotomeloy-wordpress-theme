@@ -19,7 +19,7 @@
 		<?php } else { ?>
 			<span class="category"><a href="<?php echo get_category_link( $category[0]->term_id ); ?>"><?php echo $category[0]->cat_name; ?></a></span>
 		<?php } ?>
-		<h2 class="title"><a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title(); ?></a></h2>
+		<h3 class="title"><a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title(); ?></a></h3>
 		<p class="date"><?php echo get_the_time('j M, Y'); ?></p>
 	</header>
 
