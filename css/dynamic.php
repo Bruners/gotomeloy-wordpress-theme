@@ -1,8 +1,4 @@
 /* Accent Color */
-input[type="submit"], input[type="reset"], input[type="button"], button:not(.blog-search-btn), .btn,
-.filters li a.active,
-.entry-header .category,
-.widget h3,
 
 @media (min-width: 961px) {
 

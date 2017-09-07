@@ -56,6 +56,10 @@ add_filter( 'publicize_checkbox_default', '__return_false' );
       $content_width = 960;
     }
 
+    // Register and Enqueue Frontend CSS
+    add_action('wp_enqueue_scripts', 'gotomeloy_frontend_styles');
+    add_action('wp_enqueue_scripts', 'gotomeloy_child_frontend_styles', 20);
+
     // Load Translation Text Domain
     load_theme_textdomain( 'gotomeloy', get_template_directory() . '/lang' );
 
@@ -68,21 +72,17 @@ add_filter( 'publicize_checkbox_default', '__return_false' );
     // Suport for Post Thumbnails
     add_theme_support( 'post-thumbnails' );
 
-      // Register WP3.0+ Menus
-      add_action('init', 'gotomeloy_register_menu');
+    // Register WP3.0+ Menus
+    add_action('init', 'gotomeloy_register_menu');
 
-      // Register Sidebars
-      add_action('widgets_init', 'gotomeloy_register_sidebar');
+    // Register Sidebars
+    add_action('widgets_init', 'gotomeloy_register_sidebar');
 
-      // Register and Enqueue Frontend JS
-      add_action('wp_enqueue_scripts', 'gotomeloy_frontend_js');
+    // Register and Enqueue Frontend JS
+    add_action('wp_enqueue_scripts', 'gotomeloy_frontend_js');
 
-      // Register and Enqueue Frontend CSS
-      add_action('wp_enqueue_scripts', 'gotomeloy_frontend_styles');
-    add_action('wp_enqueue_scripts', 'gotomeloy_child_frontend_styles', 20);
-
-      // Register and Enqueue Backend CSS
-      add_action('admin_enqueue_scripts', 'gotomeloy_backend_styles');
+    // Register and Enqueue Backend CSS
+    add_action('admin_enqueue_scripts', 'gotomeloy_backend_styles');
 
   }
 
@@ -125,31 +125,6 @@ add_filter( 'publicize_checkbox_default', '__return_false' );
   }
 
 #-----------------------------------------------------------------#
-# Register and Enqueue Frontend JS
-#-----------------------------------------------------------------#
-
-  function gotomeloy_frontend_js() {
-    if ( !is_admin() ) {
-
-      // Enqueue
-      wp_enqueue_script('jquery');
-      wp_enqueue_script('jquery.fancybox.js', GOTOMELOY_JS_URI . '/fancybox/jquery.fancybox.js', array('jquery'), null, true);
-      wp_enqueue_script('isotope', GOTOMELOY_JS_URI . '/lib/isotope.pkgd.min.js', array('jquery'), null, true);
-      wp_enqueue_script('fitvids', GOTOMELOY_JS_URI . '/lib/fitvids.min.js', array('jquery'), null, true);
-      wp_enqueue_script('lamark-main', GOTOMELOY_JS_URI . '/lib/lamark.min.js', array('jquery'), null, true);
-      wp_enqueue_script('bootstrap', GOTOMELOY_JS_URI . '/lib/bootstrap.min.js', array('jquery'), 1, true);
-      wp_enqueue_script('gotomeloy-functions', GOTOMELOY_JS_URI . '/functions.js', array('jquery'), null, true);
-
-
-      // Enqueue (conditional)
-      if ( is_singular() ) {
-        wp_enqueue_script( 'comment-reply' );
-      }
-
-    }
-  }
-
-#-----------------------------------------------------------------#
 # Register and Enqueue Frontend CSS
 #-----------------------------------------------------------------#
 
@@ -159,17 +134,20 @@ add_filter( 'publicize_checkbox_default', '__return_false' );
       // Enqueue
 
       // font-awesome and fonts from whitefox
-      wp_enqueue_style('font-awesome', GOTOMELOY_CSS_URI . '/lib/font-awesome.css', array('gotomeloy-style'));
-      wp_enqueue_style('font-whitefox', GOTOMELOY_CSS_URI . '/lib/font-whitefox.css', array('gotomeloy-style'));
+      //wp_enqueue_style('font-awesome', GOTOMELOY_CSS_URI . '/lib/font-awesome.css', array('gotomeloy-style'));
+      //wp_enqueue_style('font-whitefox', GOTOMELOY_CSS_URI . '/lib/font-whitefox.css', array('gotomeloy-style'));
       // Bootstrap style files
-      wp_enqueue_style('bootstrap-css', GOTOMELOY_CSS_URI . '/lib/bootstrap.min.css', array('gotomeloy-style'));
-      wp_enqueue_style('bootstrap-theme', GOTOMELOY_CSS_URI . '/lib/bootstrap-theme.min.css', array('gotomeloy-style'));
+      //wp_enqueue_style('bootstrap-css', GOTOMELOY_CSS_URI . '/lib/bootstrap.min.css', array('gotomeloy-style'));
+      //wp_enqueue_style('bootstrap-theme', GOTOMELOY_CSS_URI . '/lib/bootstrap-theme.min.css', array('gotomeloy-style'));
       // Fancybox
-      wp_enqueue_style('fancybox-css', GOTOMELOY_JS_URI . '/lib/fancybox/fancybox.css', array('gotomeloy-style'));
+      //wp_enqueue_style('fancybox-css', GOTOMELOY_JS_URI . '/lib/fancybox/fancybox.css', array('gotomeloy-style'));
       // Styles orginated from Lamark
-      wp_enqueue_style('gotomeloy-base', GOTOMELOY_CSS_URI . '/base.min.css', array('gotomeloy-style'));
-      wp_enqueue_style('gotomeloy-main', GOTOMELOY_CSS_URI . '/main.min.css', array('gotomeloy-style'));
-      wp_enqueue_style('gotomeloy-responsive', GOTOMELOY_CSS_URI . '/media.min.css', array('gotomeloy-main'));
+      //wp_enqueue_style('gotomeloy-base', GOTOMELOY_CSS_URI . '/base.min.css', array('gotomeloy-style'));
+      //wp_enqueue_style('gotomeloy-main', GOTOMELOY_CSS_URI . '/main.min.css', array('gotomeloy-style'));
+      //wp_enqueue_style('gotomeloy-responsive', GOTOMELOY_CSS_URI . '/media.min.css', array('gotomeloy-main'));
+
+      // wp_enqueue_style( $handle, $src, $deps, $ver, $media );
+      wp_enqueue_style('gotomeloy', GOTOMELOY_CSS_URI . '/gotomeloy.min.css', array('gotomeloy-style'), 1.0);
       wp_enqueue_style('gotomeloy-style', get_template_directory_uri() . '/style.css');
 
       // Add Inline Styles (dynamic)
@@ -196,6 +174,33 @@ add_filter( 'publicize_checkbox_default', '__return_false' );
 
   function gotomeloy_backend_styles() {
       wp_enqueue_style('gotomeloy-plugins', GOTOMELOY_ADMIN_URI . '/plugins/css/style.css');
+  }
+
+
+#-----------------------------------------------------------------#
+# Register and Enqueue Frontend JS
+#-----------------------------------------------------------------#
+
+  function gotomeloy_frontend_js() {
+    if ( !is_admin() ) {
+
+      // Enqueue
+      wp_enqueue_script('jquery');
+      //wp_enqueue_script('jquery.fancybox.js', GOTOMELOY_JS_URI . '/fancybox/jquery.fancybox.js', array('jquery'), null, true);
+      //wp_enqueue_script('isotope', GOTOMELOY_JS_URI . '/lib/isotope.pkgd.min.js', array('jquery'), null, true);
+      //wp_enqueue_script('fitvids', GOTOMELOY_JS_URI . '/lib/fitvids.min.js', array('jquery'), null, true);
+      //wp_enqueue_script('lamark-main', GOTOMELOY_JS_URI . '/lib/lamark.min.js', array('jquery'), null, true);
+      //wp_enqueue_script('bootstrap', GOTOMELOY_JS_URI . '/lib/bootstrap.min.js', array('jquery'), 1, true);
+      wp_enqueue_script('gotomeloy-theme-functions', GOTOMELOY_JS_URI . '/gotomeloy.min.js', array('jquery'), 1.1, true);
+      wp_enqueue_script('gotomeloy-site-functions', GOTOMELOY_JS_URI . '/functions.js', array('jquery'), null, true);
+
+
+      // Enqueue (conditional)
+      if ( is_singular() ) {
+        wp_enqueue_script( 'comment-reply' );
+      }
+
+    }
   }
 
 #-----------------------------------------------------------------#

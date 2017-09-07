@@ -419,7 +419,7 @@ Template Name: Portfolio Stott
                                 'meta_key' => 'event_starts_sort_field',
                                 'orderby' => 'meta_value',
                                 'order' => 'ASC'
-                            );
+                            ); 
                         
                             $fbe_query = new WP_Query( $args );
                             
@@ -447,7 +447,7 @@ Template Name: Portfolio Stott
                             </a></div>
                         <?php
                             endwhile;
-                            endif;    
+                            endif;
                             wp_reset_query();
                         ?>
                         <p><a href="http://www.stott.no/tjeneste/aktivitetskalender/" target="_blank">Åpne innholdet i eget vindu</a></p><br />

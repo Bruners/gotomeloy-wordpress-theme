@@ -66,9 +66,9 @@
 	                    </a></div>
 	                        <div id="<?php echo('event-' . $event_id .'-body'); ?>" class="panel-body panel-collapse collapse" role="tabpanel" aria-labelledby="<?php echo('event-' . $event_id .'-head'); ?>">
             					<div class="panel-body well">
-            						<a class="btn btn-primary btn-lg link_nounderline" href="<?php echo $event_url; ?>" role="button">Meld deg på nå!</a><br/>
+            						<a class="btn btn-primary" href="<?php echo $event_url; ?>" role="button">Meld deg på nå!</a><br/>
             						<?php the_content(); ?><br />
-            						<a class="btn btn-primary btn-lg link_nounderline" href="<?php echo $event_url; ?>" role="button">Meld deg på nå!</a>
+            						<a class="btn btn-primary" href="<?php echo $event_url; ?>" role="button">Meld deg på nå!</a>
 				            	</div>
         					</div>
 	                    </div>
