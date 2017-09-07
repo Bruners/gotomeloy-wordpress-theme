@@ -874,18 +874,27 @@ pre code {
   .container {
     width: 750px;
   }
-  .tjenester {
-    max-width: 555px;
+  .tjenester-stott,
+  .tjenester-gotomeloy {
+    max-width: 270px;
   }
 }
 @media (min-width: 992px) {
   .container {
     width: 970px;
   }
+  .tjenester-stott,
+  .tjenester-gotomeloy {
+    max-width: 530px;
+  }
 }
 @media (min-width: 1200px) {
   .container {
     width: 1170px;
+  }
+  .tjenester-stott,
+  .tjenester-gotomeloy {
+    max-width: 835px;
   }
 }
 @media (min-width: 1025px) {
@@ -897,6 +906,10 @@ pre code {
 }
 @media (max-width: 1480px) {
   .container { width: 100%; }
+  .tjenester-stott,
+  .tjenester-gotomeloy {
+    max-width: 835px;
+  }
 }
 @media (max-width: 1024px) {
   .container {
@@ -909,13 +922,20 @@ pre code {
   .column:last-child {
     margin-bottom: 0;
   }
-  .tjenester {
+  .tjenester-stott,
+  .tjenester-gotomeloy {
     max-width: 835px;
   }
 }
 @media (max-width: 992px) {
-  .tjenester {
-    max-width: 555px;
+  .tjenester-gotomeloy {
+    max-width: 530px;
+  }
+  .tjenester-stott {
+    max-width: 530px;
+  }
+  .innhold {
+    max-width: 550px;
   }
   .site-menu {
     width: 100%;
@@ -977,18 +997,21 @@ pre code {
   }
 }
 @media (max-width: 690px) {
-  .tjenester {
-    max-width: 310px;
+  .tjenester-stott,
+  .tjenester-gotomeloy {
+    max-width: 270px;
   }
 }
 @media (max-width: 568px) {
-  .tjenester {
-    max-width: 310px;
+  .tjenester-stott,
+  .tjenester-gotomeloy {
+    max-width: 270px;
   }
 }
 @media (max-width: 560px) {
-  .tjenester {
-    max-width: 310px;
+  .tjenester-stott,
+  .tjenester-gotomeloy {
+    max-width: 270px;
   }
   .hero-header {
     width: 90%;
@@ -997,8 +1020,9 @@ pre code {
   }
 }
 @media (max-width: 320px) {
-  .tjenester {
-    max-width: 300px;
+  .tjenester-stott,
+  .tjenester-gotomeloy {
+    max-width: 270px;
   }
   .container {
     width: 100%;
@@ -3889,19 +3913,17 @@ fieldset[disabled] .btn-danger.active {
   margin: 0 auto;
   padding: 0 0 20px 0;
 }
-.tjenester {
+.tjenester-stott,
+.tjenester-gotomeloy {
   width: 100%;
   margin: auto;
   padding: 0 0 20px 0;
 }
-.tjenester-gotomeloy {
-  max-width: 835px;
-}
-.tjenester-stott {
-  max-width: 270px;
-}
-.tjeneste a:hover,
-.tjeneste a:focus {
+
+.tjeneste-gotomeloy a:hover,
+.tjeneste-gotomeloy a:focus,
+.tjeneste-gotomeloy a:hover,
+.tjeneste-gotomeloy a:focus {
   text-decoration: none;
 }
 .tjeneste-post:hover,
@@ -4846,6 +4868,7 @@ ul.language-selector li a.lang-en {
        url('/wp-content/themes/gotomeloy/fonts/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular') format('svg');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 .fa {
   display: inline-block;
@@ -6921,39 +6944,6 @@ ul.language-selector li a.lang-en {
   content: "\f295";
 }
 @font-face {
-  font-family: 'source_sans_probold';
-  src: url('/wp-content/themes/gotomeloy/fonts/sourcesanspro-bold-webfont.eot');
-  src: url('/wp-content/themes/gotomeloy/fonts/sourcesanspro-bold-webfont.eot?#iefix') format('embedded-opentype'),
-       url('/wp-content/themes/gotomeloy/fonts/sourcesanspro-bold-webfont.woff2') format('woff2'),
-       url('/wp-content/themes/gotomeloy/fonts/sourcesanspro-bold-webfont.woff') format('woff'),
-       url('/wp-content/themes/gotomeloy/fonts/sourcesanspro-bold-webfont.ttf') format('truetype'),
-       url('/wp-content/themes/gotomeloy/fonts/sourcesanspro-bold-webfont.svg#source_sans_probold') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'source_sans_probold_italic';
-  src: url('/wp-content/themes/gotomeloy/fonts/sourcesanspro-bolditalic-webfont.eot');
-  src: url('/wp-content/themes/gotomeloy/fonts/sourcesanspro-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
-       url('/wp-content/themes/gotomeloy/fonts/sourcesanspro-bolditalic-webfont.woff2') format('woff2'),
-       url('/wp-content/themes/gotomeloy/fonts/sourcesanspro-bolditalic-webfont.woff') format('woff'),
-       url('/wp-content/themes/gotomeloy/fonts/sourcesanspro-bolditalic-webfont.ttf') format('truetype'),
-       url('/wp-content/themes/gotomeloy/fonts/sourcesanspro-bolditalic-webfont.svg#source_sans_probold_italic') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'source_sans_proitalic';
-  src: url('/wp-content/themes/gotomeloy/fonts/sourcesanspro-italic-webfont.eot');
-  src: url('/wp-content/themes/gotomeloy/fonts/sourcesanspro-italic-webfont.eot?#iefix') format('embedded-opentype'),
-       url('/wp-content/themes/gotomeloy/fonts/sourcesanspro-italic-webfont.woff2') format('woff2'),
-       url('/wp-content/themes/gotomeloy/fonts/sourcesanspro-italic-webfont.woff') format('woff'),
-       url('/wp-content/themes/gotomeloy/fonts/sourcesanspro-italic-webfont.ttf') format('truetype'),
-       url('/wp-content/themes/gotomeloy/fonts/sourcesanspro-italic-webfont.svg#source_sans_proitalic') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
   font-family: 'source_sans_proregular';
   src: url('/wp-content/themes/gotomeloy/fonts/sourcesanspro-regular-webfont.eot');
   src: url('/wp-content/themes/gotomeloy/fonts/sourcesanspro-regular-webfont.eot?#iefix') format('embedded-opentype'),
@@ -6963,17 +6953,7 @@ ul.language-selector li a.lang-en {
        url('/wp-content/themes/gotomeloy/fonts/sourcesanspro-regular-webfont.svg#source_sans_proregular') format('svg');
   font-weight: normal;
   font-style: normal;
-}
-@font-face {
-  font-family: 'source_sans_prosemibold';
-  src: url('/wp-content/themes/gotomeloy/fonts/sourcesanspro-semibold-webfont.eot');
-  src: url('/wp-content/themes/gotomeloy/fonts/sourcesanspro-semibold-webfont.eot?#iefix') format('embedded-opentype'),
-       url('/wp-content/themes/gotomeloy/fonts/sourcesanspro-semibold-webfont.woff2') format('woff2'),
-       url('/wp-content/themes/gotomeloy/fonts/sourcesanspro-semibold-webfont.woff') format('woff'),
-       url('/wp-content/themes/gotomeloy/fonts/sourcesanspro-semibold-webfont.ttf') format('truetype'),
-       url('/wp-content/themes/gotomeloy/fonts/sourcesanspro-semibold-webfont.svg#source_sans_prosemibold') format('svg');
-  font-weight: normal;
-  font-style: normal;
+  font-display: optional;
 }
 #fancybox-loading {
   position: fixed;

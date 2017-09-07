@@ -59,7 +59,7 @@ Template Name: Portfolio Meloy
 
             <?php endwhile; ?>
         </div>
-        <div class="tjenester tjenester-gotomeloy">
+        <div class="tjenester-gotomeloy">
             <div class="row">
             <?php
                 $args = array('post_type' => 'tjeneste');
