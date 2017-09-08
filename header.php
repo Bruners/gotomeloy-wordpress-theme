@@ -35,7 +35,7 @@
         <main id="main-structure">
 
             <!-- BEGIN: SITE HEADER -->
-            <header class="site-header">
+            <header id="header" class="headroom header header--fixed" role="banner">
                 <div class="header-inner">
                     <div class="container clearfix">
 
