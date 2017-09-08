@@ -29,6 +29,48 @@ add_action( 'loop_start', 'jptweak_remove_share' );
 
 add_filter( 'publicize_checkbox_default', '__return_false' );
 
+
+
+/*  
+* Getting script tags
+* Thanks http://wordpress.stackexchange.com/questions/54064/how-do-i-get-the-handle-for-all-enqueued-scripts
+*/
+
+/* add_action( 'wp_print_scripts', 'wsds_detect_enqueued_scripts' );
+function wsds_detect_enqueued_scripts() {
+  global $wp_scripts;
+  foreach( $wp_scripts->queue as $handle ) :
+    echo $handle . ' | ';
+  endforeach;
+}
+*/
+
+add_filter( 'script_loader_tag', 'wsds_defer_scripts', 10, 3 );
+function wsds_defer_scripts( $tag, $handle, $src ) {
+
+  // The handles of the enqueued scripts we want to defer
+  $defer_scripts = array( 
+    'admin-bar',
+    'contact-form-7',
+    'sb_instagram_scripts',
+    'devicepx',
+    'wpml-legacy-dropdown-0',
+    'gotomeloy-theme-functions',
+    'gotomeloy-site-functions',
+    'comment-reply',
+    'jquery-migrate',
+  );
+
+    if ( in_array( $handle, $defer_scripts ) ) {
+        return '<script src="' . $src . '" defer="defer" type="text/javascript"></script>' . "\n";
+    }
+    
+    return $tag;
+} 
+
+
+// admin-bar | contact-form-7 | sb_instagram_scripts | devicepx | wpml-legacy-dropdown-0 | jquery | gotomeloy-theme-functions | gotomeloy-site-functions | comment-reply | 
+
 #-----------------------------------------------------------------#
 # Define Theme Constants
 #-----------------------------------------------------------------#
