@@ -1,2 +1,4 @@
 error_log
 guider_tur.php
+**/*.beautified.js
+**/*.beautified.css
