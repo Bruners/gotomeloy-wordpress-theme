@@ -3684,6 +3684,7 @@ fieldset[disabled] .btn-danger.active {
 }
 .site-menu li a:hover {
   text-decoration: none;
+  box-shadow: 0 3px 0px #269abc
 }
 .site-menu li ul {
   display: none;
