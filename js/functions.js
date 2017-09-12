@@ -1,7 +1,7 @@
 
 jQuery(document).ready(function( $ ) {
     /* Apply fancybox to multiple items */
-
+    jQuery("a[href$='.jpg'],a[href$='.png'],a[href$='.gif']").fancybox();
     jQuery("a.iframe").fancybox({
         openEffect  : 'none',
         closeEffect : 'none',
@@ -12,6 +12,17 @@ jQuery(document).ready(function( $ ) {
             preload: false
         }
     });
+    jQuery("a#webcam-url").fancybox({
+        openEffect  : 'none',
+        closeEffect : 'none',
+        autoSize: true,
+        width: '95%',
+        height: '95%',
+        hideOnContentClick: true,
+        iframe : {
+            preload: false
+        }
+    })
 });
 
 /* jQuery('div.hero-header-title').click(function(){
@@ -26,12 +37,12 @@ jQuery("#stottfilm").click(function() {
             'transitionIn'  : 'none',
             'transitionOut' : 'none',
             'title'         : this.title,
-            'width'     : 680,
+            'width'         : 680,
             'height'        : 495,
             'href'          : this.href.replace(new RegExp("watch\\?v=", "i"), 'v/'),
             'type'          : 'swf',
             'swf'           : {
-                 'wmode'        : 'transparent',
+                'wmode'             : 'transparent',
                 'allowfullscreen'   : 'true'
             }
         });
