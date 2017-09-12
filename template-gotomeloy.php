@@ -70,9 +70,9 @@ Template Name: Portfolio Meloy
             ?>
                 <article id="tjeneste-<?php echo $post_id; ?>" class="tjeneste col-xs-12 col-sm-6 col-md-4">
                     <?php if ($post_id == 868 || $post_id == 1132 || $post_id == 18085 || $post_id == 19946) { ?>
-                        <a href="#tjeneste-modal-868" data-toggle="modal" class="tjeneste-link">
+                        <a href="#tjeneste-modal-868" data-toggle="modal" class="tjeneste-link link_nounderline">
                     <?php } else { ?>
-                        <a href="#tjeneste-modal-<?php echo $post_id; ?>" data-toggle="modal" class="tjeneste-link">
+                        <a href="#tjeneste-modal-<?php echo $post_id; ?>" data-toggle="modal" class="tjeneste-link link_nounderline">
                     <?php } ?>
                         <div class="tjeneste-post">
                             <div class="tjeneste-tittel"><?php the_title(); ?></div>
@@ -403,7 +403,7 @@ Template Name: Portfolio Meloy
                             endif;    
                             wp_reset_query();  
                         ?>
-                        <p><a href="http://www.gotomeloy.no/tjeneste/aktivitetskalender/" target="_blank">Åpne innholdet i eget vindu</a></p><br />
+                        <p><a href="http://www.gotomeloy.no/tjeneste/aktivitetskalender/" target="_blank"><?php esc_html_e('Åpne innholdet i eget vindu', 'gotomeloy'); ?></a></p><br />
                     </div> <!-- /.modal-body -->
                     <div class="modal-footer">
                         <button class="btn btn-default" type="button" data-dismiss="modal">Lukk</button>
@@ -432,7 +432,7 @@ Template Name: Portfolio Meloy
                     <div class="modal-body">
                     	<?php echo(types_render_field( "tjeneste-lang", array( 'raw' => false) )); ?>
                     	<br />
-                        <p><a href="<?php echo(get_permalink($post_id)); ?>" target="_blank">Åpne innholdet i eget vindu</a></p><br />
+                        <p><a href="<?php echo(get_permalink($post_id)); ?>" target="_blank"><?php esc_html_e('Åpne innholdet i eget vindu', 'gotomeloy'); ?></a></p><br />
 				        <!-- SHARE -->
 						<?php if ( function_exists( 'sharing_display' ) ) { echo sharing_display(); } ?>
 					</div>
@@ -467,7 +467,7 @@ Template Name: Portfolio Meloy
                     <div class="modal-body aligncenter">
                         <?php the_content(); ?>
                         <br />
-                        <p><a href="<?php echo(get_permalink(get_the_ID())); ?>" target="_blank">Åpne innholdet i eget vindu</a></p><br />
+                        <p><a href="<?php echo(get_permalink(get_the_ID())); ?>" target="_blank"><?php esc_html_e('Åpne innholdet i eget vindu', 'gotomeloy'); ?></a></p><br />
                         <?php if ( function_exists( 'sharing_display' ) ) { echo sharing_display(); } ?>
                     </div>
                     <div class="modal-footer">
