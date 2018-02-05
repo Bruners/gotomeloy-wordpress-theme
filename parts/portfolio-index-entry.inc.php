@@ -21,7 +21,12 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class("$project_class $project_cats_slug"); ?>>
 
     <a href="#portfolio-modal-<?php the_ID(); ?>" title="<?php the_title(); ?>" data-toggle="modal">
-		<div class="entry-image iBG" data-img="<?php echo $thumbnail_data['src']; ?>"></div>
+		<div class="entry-image iBG" data-img="<?php echo $thumbnail_data['src']; ?>">
+			<div class="entry-bottomtext">
+				<?php the_title(); ?>
+			</div>
+		</div>
+	<!--
 		<div class="entry-hover text-center">
 			<div class="vcenter">
 				<div class="entry-title"><?php the_title(); ?></div>
@@ -30,6 +35,7 @@
 				<?php } ?>
 			</div>
 		</div>
+	-->
 	</a>    
 
 </article>

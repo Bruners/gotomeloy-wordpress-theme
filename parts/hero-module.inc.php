@@ -87,6 +87,7 @@
         <div class="hero-header text-center">
             <div class="hero-header-title"><?php echo $hero_title; ?></div>
             <div class="hero-header-subtitle"><?php echo $hero_subtitle; ?></div>
+            <div><a href="#site-body" class="scroll-down"><i class="scroll-down-icon fa fa-4x fa-inverse fa-chevron-circle-down" aria-hidden="true"></i></a></div>
         </div>
     </div>
 </section>

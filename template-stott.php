@@ -345,28 +345,33 @@ Template Name: Portfolio Stott
                         <h5 class="modal-title">Støtt Brygge Webkamera</h5>
                     </div>
                     <div class="modal-body aligncenter">
-                        <a href="" rel="lightbox" id="webcam-url"><img id="webcam-img" alt="Webkamera" src="" /></a>
+                        <a data-fancybox href="" id="webcam-url"><img id="webcam-img" alt="Webkamera" src="" /></a>
                         <br />
                         <div class="table-responsive">
                             <table class="table table-hover">
-                                <tr>
-                                    <th>Høy/Lav</th>
-                                    <th>Tid</th>
-                                    <th>Beregnet vannstand</th>
-                                </tr>
                                 <?php
                                     $lat = 66.925775;
                                     $lon = 13.437980;
                                     $fromtime = new DateTime('NOW');
                                     $fromtime->format("Y-m-d");
+                                    
                                     $totime = clone $fromtime;
-                                    $totime->modify('+1 day');
-                                    $xmlurl = "http://api.sehavniva.no/tideapi.php?lat=".$lat."&lon=".$lon."&fromtime=".$fromtime->format('c')."&totime=".$totime->format('c')."&datatype=tab&refcode=cd&place=St%C3%B8tt&file=&lang=nb&interval=60&dst=1&tzone=&tide_request=locationdata";
+                                    $totime->modify('+2 day');
+
+                                    $tdtime = clone $fromtime;
+                                    $tdtime->format('d.m');
+
+                                    $xmlurl = "http://api.sehavniva.no/tideapi.php?lat=".$lat."&lon=".$lon."&fromtime=".$fromtime->format('c')."&totime=".$totime->format('c')."&datatype=tab&refcode=cd&place=St%C3%B8tt&file=&lang=nb&interval=10&dst=1&tzone=&tide_request=locationdata";
                                     $xml = simplexml_load_file($xmlurl);
                                     $dir = get_stylesheet_directory_uri() . "/img/";
                                     foreach ($xml->locationdata->data->waterlevel as $level):
                                         $flag = $level['flag'];
                                         $time = DateTime::createFromFormat('Y-m-d\TH:i:s+P',$level['time'])->format('H:i');
+                                        $datetime = DateTime::createFromFormat('Y-m-d\TH:i:s+P',$level['time'])->format('d.m');
+                                        if ($tdtime != $datetime) { 
+                                            echo "<tr><th>".$datetime."</th><th>Tid</th><th>Beregnet vannstand</th></tr>";
+                                            $tdtime = $datetime;
+                                        };
                                         $value = round($level['value']);
                                         echo "<tr><td align='center'><img src='",$dir, $flag,".png' alt='",$flag,"' height='26' width='26'></td><td>",$time,"</td><td>",$value," cm</td></tr>";
                                     endforeach;

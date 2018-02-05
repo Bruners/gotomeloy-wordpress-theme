@@ -321,7 +321,6 @@ Template Name: Portfolio Ørnes
                     </div>
                     <div class="modal-body">
                         <div><h4><?php echo(esc_html__( 'Liste over kommende aktiviteter:', 'gotomeloy' )); ?></h4></div>
-                        <?php if ( function_exists( 'sharing_display' ) ) { echo sharing_display(); } ?>
                         <?php 
                             $currentdate = date("Y-m-d",mktime(0,0,0,date("m"),date("d")-1,date("Y")));
                             
@@ -375,6 +374,8 @@ Template Name: Portfolio Ørnes
                             endif;    
                             wp_reset_query();  
                         ?>
+                        <p><a href="http://www.stott.no/tjeneste/aktivitetskalender/" target="_blank"><?php esc_html_e('Åpne innholdet i eget vindu', 'gotomeloy'); ?></a></p><br />
+                        <?php if ( function_exists( 'sharing_display' ) ) { echo sharing_display(); } ?>
                     </div> <!-- /.modal-body -->
                     <div class="modal-footer">
                         <button class="btn btn-default" type="button" data-dismiss="modal">Lukk</button>
@@ -404,6 +405,7 @@ Template Name: Portfolio Ørnes
                     <div class="modal-body aligncenter">
                         <?php the_content(); ?>
                         <br />
+                        <p><a href="<?php echo(get_permalink(get_the_ID())); ?>" target="_blank"><?php esc_html_e('Åpne innholdet i eget vindu', 'gotomeloy'); ?></a></p><br />
                         <?php if ( function_exists( 'sharing_display' ) ) { echo sharing_display(); } ?>
                     </div>
                     <div class="modal-footer">

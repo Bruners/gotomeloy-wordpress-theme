@@ -1,52 +1,33 @@
 jQuery(document).ready(function($) {
     /* Apply fancybox to multiple items */
-    jQuery("a[href$='.jpg'],a[href$='.png'],a[href$='.gif']").fancybox();
-    jQuery("a.iframe").fancybox({
-        openEffect: "none",
-        closeEffect: "none",
-        autoSize: true,
-        width: "95%",
-        height: "95%",
-        iframe: {
-            preload: false
-        }
-    });
-    jQuery("a#webcam-url").fancybox({
-        openEffect: "none",
-        closeEffect: "none",
-        autoSize: true,
-        width: "95%",
-        height: "95%",
-        hideOnContentClick: true,
-        iframe: {
-            preload: false
-        }
-    });
+    jQuery(".fancybox").fancybox();
+    jQuery("[data-fancybox]").fancybox();
+    jQuery("a.iframe").fancybox();
 });
 
-/* jQuery('div.hero-header-title').click(function(){
-    video = '<iframe src="'+ jQuery('div.hero-image').attr('data-video') +'" frameborder="0" allowfullscreen></iframe>';
-    jQuery('div.hero-image').replaceWith(video);
-}); */
-jQuery("#stottfilm").click(function() {
-    jQuery.fancybox({
-        padding: 0,
-        autoScale: false,
-        transitionIn: "none",
-        transitionOut: "none",
-        title: this.title,
-        width: 680,
-        height: 495,
-        href: this.href.replace(new RegExp("watch\\?v=", "i"), "v/"),
-        type: "swf",
-        swf: {
-            wmode: "transparent",
-            allowfullscreen: "true"
-        }
-    });
-    return false;
+jQuery(".scroll-down").click(function() {
+    event.preventDefault();
+    jQuery('html, body').animate({
+        scrollTop: jQuery("#site-body").offset().top
+    }, 'slow', 'swing' );
 });
 
+(function() {
+    var header = document.querySelector("#header");
+    if (window.location.hash) {
+        header.classList.add("headroom--unpinned");
+    }
+    var headroom = new Headroom(header, {
+        tolerance: {
+            down: 10,
+            up: 20
+        },
+        offset: 205
+    });
+    headroom.init();
+})();
+
+// Støtt
 (function($) {
     "use strict";
     function getImage() {
@@ -70,17 +51,21 @@ jQuery("#stottfilm").click(function() {
     updateImage();
 })(jQuery);
 
-(function() {
-    var header = document.querySelector("#header");
-    if (window.location.hash) {
-        header.classList.add("headroom--unpinned");
-    }
-    var headroom = new Headroom(header, {
-        tolerance: {
-            down: 10,
-            up: 20
-        },
-        offset: 205
+jQuery("#stottfilm").click(function() {
+    jQuery.fancybox({
+        padding: 0,
+        autoScale: false,
+        transitionIn: "none",
+        transitionOut: "none",
+        title: this.title,
+        width: 680,
+        height: 495,
+        href: this.href.replace(new RegExp("watch\\?v=", "i"), "v/"),
+        type: "swf",
+        swf: {
+            wmode: "transparent",
+            allowfullscreen: "true"
+        }
     });
-    headroom.init();
-})();
+    return false;
+});

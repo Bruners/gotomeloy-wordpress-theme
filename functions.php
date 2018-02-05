@@ -23,12 +23,28 @@ function jptweak_remove_share() {
 
 add_action( 'loop_start', 'jptweak_remove_share' );
 
+
+function disable_devicepx() {
+  wp_dequeue_script( 'devicepx' );
+}
+
+add_action( 'wp_enqueue_scripts', 'disable_devicepx' );
+
+#-----------------------------------------------------------------#
+# Remove comment-reply.min.js from footer
+#-----------------------------------------------------------------#
+
+function disable_comment_reply_js(){
+  wp_deregister_script( 'comment-reply' );
+         }
+add_action('init','disable_comment_reply_js');
+
+
 #-----------------------------------------------------------------#
 # Don't publish to facebook by default
 #-----------------------------------------------------------------#
 
 add_filter( 'publicize_checkbox_default', '__return_false' );
-
 
 
 /*  
@@ -172,8 +188,11 @@ function wsds_defer_scripts( $tag, $handle, $src ) {
   function gotomeloy_frontend_styles() {
     if ( !is_admin() ) {
       // wp_enqueue_style( $handle, $src, $deps, $ver, $media );
-      wp_enqueue_style('gotomeloy', GOTOMELOY_CSS_URI . '/gotomeloy.min.css', array('gotomeloy-style'), 1.0);
+      //wp_enqueue_style('gotomeloy', GOTOMELOY_CSS_URI . '/gotomeloy.min.css', array('gotomeloy-style'), 1.0);
+      wp_enqueue_style('gotomeloy', GOTOMELOY_CSS_URI . '/gotomeloy.min.css', array('gotomeloy-style'), 1.1 );
       wp_enqueue_style('gotomeloy-style', get_template_directory_uri() . '/style.css');
+      
+
 
       // Add Inline Styles (dynamic)
       ob_start();
@@ -259,6 +278,10 @@ function language_selector_flags_nolist(){
     }
 }
 
+//* Add new featured portfolio image size
+add_image_size( 'portfolio-featured', 586, 478, TRUE );
+
+
 #-----------------------------------------------------------------#
 # Legg til atributter for å åpne modals fra menyene
 #-----------------------------------------------------------------#
@@ -266,7 +289,7 @@ add_filter( 'nav_menu_link_attributes', 'gotomeloy_menu_atts', 10, 3 );
 function gotomeloy_menu_atts( $atts, $item, $args )
 {
   // Provide the id of the targeted menu item
-  $menu_target = array(23,24,959,1141,1142,1143,1144,18145,18146,18147,1533,1534,1535);
+  $menu_target = array(23,24,959,1141,1142,1143,1144,18145,18146,18147,1533,1534,1535,22544,22545,22547);
 
   // inspect $item
 
@@ -433,6 +456,49 @@ function gotomeloy_menu_modal_1530( $atts, $item, $args )
 
   if ($item->ID == $menu_target) {
     $atts['data-target'] = '#meny-modal-1530';
+  }
+  return $atts;
+}
+
+add_filter( 'nav_menu_link_attributes', 'gotomeloy_menu_modal_22544', 10, 3 );
+function gotomeloy_menu_modal_22544( $atts, $item, $args )
+{
+  // Provide the id of the targeted menu item
+  // Støtt Brygge Travel Here
+  $menu_target = 22544;
+
+  // inspect $item
+
+  if ($item->ID == $menu_target) {
+    $atts['data-target'] = '#meny-modal-22519';
+  }
+  return $atts;
+}
+add_filter( 'nav_menu_link_attributes', 'gotomeloy_menu_modal_22545', 10, 3 );
+function gotomeloy_menu_modal_22545( $atts, $item, $args )
+{
+  // Provide the id of the targeted menu item
+  // Støtt Brygge About us
+  $menu_target = 22545;
+
+  // inspect $item
+
+  if ($item->ID == $menu_target) {
+    $atts['data-target'] = '#meny-modal-22510';
+  }
+  return $atts;
+}
+add_filter( 'nav_menu_link_attributes', 'gotomeloy_menu_modal_22547', 10, 3 );
+function gotomeloy_menu_modal_22547( $atts, $item, $args )
+{
+  // Provide the id of the targeted menu item
+  // Støtt Brygge Contact us
+  $menu_target = 22547;
+
+  // inspect $item
+
+  if ($item->ID == $menu_target) {
+    $atts['data-target'] = '#meny-modal-22520';
   }
   return $atts;
 }
