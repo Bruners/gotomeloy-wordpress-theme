@@ -81,16 +81,22 @@
 <?php if ($is_hero_module) { ?>
 
 <!-- BEGIN: HERO MODULE -->
-<section id="hero-module" class="sections hero <?php echo $hero_height. ' ' .$hero_img_class; ?>">
-    <div class="hero-image iBG noparalax" data-img="<?php echo $hero_img; ?>"></div>
-    <div class="hero-content">
-        <div class="hero-header text-center">
-            <div class="hero-header-title"><?php echo $hero_title; ?></div>
-            <div class="hero-header-subtitle"><?php echo $hero_subtitle; ?></div>
-            <div><a href="#site-body" class="scroll-down"><i class="scroll-down-icon fa fa-4x fa-inverse fa-chevron-circle-down" aria-hidden="true"></i></a></div>
-        </div>
+    <div id="home-featured" class="video-container jquery-background-video-wrapper" style="background-image: url(http://www.stott.no/wp-content/uploads/2016/02/stottgjestehavn_1920x1080_50op.jpg);">
+        <video autoplay loop muted class="my-background-video jquery-background-video" poster="http://www.stott.no/wp-content/uploads/2016/02/stottgjestehavn_1920x1080_50op.jpg">
+            <source src="http://www.stott.no/wp-content/themes/gotomeloy/stott_brygge_v4_720p24_1250kbps_web_i5gs.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+       </video>
+        <header>
+            <div class="hero-content">
+                <div class="hero-header text-center">
+                    <div class="hero-header-title"><?php echo $hero_title; ?></div>
+                    <div class="hero-header-subtitle"><?php echo $hero_subtitle; ?></div>
+                    <div><a href="#site-body" class="scroll-down"><i class="scroll-down-icon fa fa-3x fa-inverse fa-chevron-circle-down" aria-hidden="true"></i></a></div>
+                </div>
+            </div>
+        </header>
+    <a id="stottfilm2" data-fancybox class="action-button btn btn-info link_nounderline" href="http://www.stott.no/wp-content/themes/gotomeloy/støtt_brygge_v4.mp4">Se video med lyd her</a>
     </div>
-</section>
 <!-- END: HERO MODULE -->
 
 <?php } else { ?>

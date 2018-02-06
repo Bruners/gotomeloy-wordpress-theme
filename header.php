@@ -35,58 +35,32 @@
         <main id="main-structure">
 
             <!-- BEGIN: SITE HEADER -->
-            <header id="header" class="headroom header header--fixed" role="banner">
-                <div class="header-inner">
-                    <div class="container clearfix">
+<div id="wrapper">
+            <header id="site-header">    
+                <a id="logo" title="<?php echo esc_attr( get_bloginfo('name') ); ?>" href="<?php echo esc_url( home_url('/') ); ?>"></a>
+                <h5><?php echo esc_attr( get_bloginfo('name') ); ?></h5>
+                <?php 
+                    $args = array(
+                        'theme_location'  => 'gotomeloy-primary-navigation',
+                        'container'       => 'nav',
+                        'container_id'    => 'primary-nav',
+                        'menu_class'      => 'primary-menu',
+                        'fallback_cb'     => 'gotomeloy_default_menu'
+                    );
 
-                        <!-- LOGO -->
-                        <div class="float-left">
-                            <div class="site-logo">
-
-                                <?php if ( get_theme_mod('gotomeloy_img_logo') ) { ?>
-                                    <a href="<?php echo esc_url( home_url('/') ); ?>">
-                                        <img src="<?php echo esc_url( get_theme_mod('gotomeloy_img_logo') ); ?>" alt="<?php echo esc_attr( get_bloginfo('name') ); ?>">
-                                    </a>
-                                <?php } else { ?>
-                                    <a href="<?php echo esc_url( home_url('/') ); ?>"><?php echo esc_html( get_bloginfo('name') ); ?></a>
-                                <?php } ?>
-
-                            </div>
-                        </div>
-
-                        <!-- MENU -->
-                        <div class="float-right">
-
-                            <?php 
-                            $args = array(
-                                'theme_location'  => 'gotomeloy-primary-navigation',
-                                'container'       => 'nav',
-                                'container_id'    => 'primary-nav',
-                                'menu_class'      => 'site-menu nostyle',
-                                'fallback_cb'     => 'gotomeloy_default_menu'
-                            );
-
-                            wp_nav_menu($args);
-                            ?>
-
-                        </div>
-
-                        <!-- MENU TRIGGER -->
-                        <div class="float-right">
-                            <div class="trigger-nav">
-                            <div id="flags_language_selector"><?php language_selector_flags_nolist(); ?></div>
-                                <div class="inner">
-                                    <span class="icon-bar top"></span>
-                                    <span class="icon-bar middle"></span>
-                                    <span class="icon-bar bottom"></span>
-                                </div>
-                            </div>
-
-                        </div>
+                    wp_nav_menu($args);
+                ?>
+                <div class="language-selector" id="language-selector"><?php language_selector_flags_nolist(); ?></div>
+                <div id="menu-toggle">
+                    <div class="inner">
+                        <span class="icon-bar top"></span>
+                        <span class="icon-bar middle"></span>
+                        <span class="icon-bar bottom"></span>
                     </div>
                 </div>
             </header>
             <!-- END: SITE HEADER -->
             
             <?php get_template_part( 'parts/hero-module.inc' ); ?> 
+</div>
 
