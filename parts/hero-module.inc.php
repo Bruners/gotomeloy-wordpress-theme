@@ -99,7 +99,7 @@
                 </div>
             </div>
         </header>
-    <a id="stottfilm2" data-fancybox class="action-button btn btn-info link_nounderline" href="http://www.youtube.com/watch?v=OBBdQBFGGLk">Se video med lyd her</a>
+    <a id="stottfilm2" data-fancybox class="action-button btn btn-info link_nounderline" href="http://www.youtube.com/watch?v=OBBdQBFGGLk"><?php esc_html_e('Se video med lyd her', 'gotomeloy'); ?></a>
     </div>
 <!-- END: HERO MODULE -->
 
