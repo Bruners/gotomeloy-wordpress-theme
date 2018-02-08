@@ -27,7 +27,6 @@
     /** TEMPLATE FUNCTIONS */
     /** ================================================== */
     var templateFunctions = {
-       
         /** Portfolio */
         grid: function() {
             /** Container */
@@ -125,7 +124,7 @@
                     filter: filter
                 });
             });
-        }
+        },
     };
     /** FIX */
     /** ================================================== */

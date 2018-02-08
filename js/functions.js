@@ -50,6 +50,10 @@ jQuery(document).ready(function($) {
         pausePlayYOffset: '60%' // pixels or percent from top/bottom - ignored if positioned center
     });
 
+    jQuery(".iBG").each(function() {
+        jQuery(this).css("background-image", "url(" + $(this).attr("data-img") + ")");
+    });
+
     jQuery("#site-body").fitVids();
 
     jQuery(".scroll-down").click(function() {
@@ -168,5 +172,5 @@ jQuery(document).ready(function($) {
         }
 
     updateImage();
-
+    });
 });

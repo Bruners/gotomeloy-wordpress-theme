@@ -1,7 +1,8 @@
 <?php
 $folder = "../../../../webcam"; // the folder with images
 
-function getImages($dir) {
+function getImages($directory) {
+    $dir = realpath($directory);
     $allFiles = scandir($dir);
     $files = array_diff($allFiles, array('.', '..'));
     foreach ($files as $f) {
@@ -21,7 +22,7 @@ function getImages($dir) {
 
     foreach ($files as $k => $file) {
         if ($k > 99) {               // delete old images, leave 100 freshest on server
-            unlink(__DIR__ . '/' . $dir . '/' . $file);
+            unlink($dir . '/' . $file);
         }
     }
 
