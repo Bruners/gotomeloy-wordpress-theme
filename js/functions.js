@@ -109,68 +109,29 @@ jQuery(document).ready(function($) {
 
 
     /*  stott.no specific */
-    /* Apply fancybox on movies */
-
-    jQuery("#stottfilm").click(function() {
-        jQuery.fancybox({
-            'padding'       : 0,
-            'autoScale'     : false,
-            'transitionIn'  : 'none',
-            'transitionOut' : 'none',
-            'title'         : this.title,
-            'width'     : 680,
-            'height'        : 495,
-            'href'          : this.href.replace(new RegExp("watch\\?v=", "i"), 'v/'),
-            'type'          : 'swf',
-            'swf'           : {
-                 'wmode'        : 'transparent',
-                'allowfullscreen'   : 'true'
-            }
-        });
-
-    return false;
-    });
-
-    jQuery("#stottfilm2").click(function() {
-        jQuery.fancybox({
-            'padding'       : 0,
-            'autoScale'     : false,
-            'transitionIn'  : 'none',
-            'transitionOut' : 'none',
-            'title'         : this.title,
-            'width'         : 680,
-            'height'        : 495,
-            'href'          : this.href,
-            'type'          : $(this).data("type")
-        });
-        return false;
-    });
-
-
     /* Update webcam image with the most up to date image  */ 
-    (function($) {
-
-    'use strict';
-    function getImage() {
-        var src = '';
-        var lastimageurl = "http://www.stott.no/wp-content/themes/gotomeloy/parts/ajax-get-webcam-image.inc.php?t="
-        jQuery.ajax({
-            url: lastimageurl  + new Date().getTime(),
-            async: false,
-            success: function(data){
-              src = data;
-            }
-        });
-        return src;
-    }
-
-    function updateImage() {
-            var src = getImage();
-            jQuery("#webcam-img").attr("src", src + "?timestamp=" + new Date().getTime());
-            jQuery("#webcam-url").attr("href", src + "?timestamp=" + new Date().getTime());
-            setTimeout(updateImage, 10000);
+    jQuery(function($) {
+        'use strict';
+        function getImage() {
+            var src = '';
+            var lastimageurl = "http://www.stott.no/wp-content/themes/gotomeloy/parts/ajax-get-webcam-image.inc.php?t="
+            jQuery.ajax({
+                url: lastimageurl  + new Date().getTime(),
+                async: false,
+                success: function(data){
+                  src = data;
+                }
+            });
+            return src;
         }
 
-    updateImage();
+        function updateImage() {
+                var src = getImage();
+                jQuery("#webcam-img").attr("src", src + "?timestamp=" + new Date().getTime());
+                jQuery("#webcam-url").attr("href", src + "?timestamp=" + new Date().getTime());
+                setTimeout(updateImage, 10000);
+            }
+
+        updateImage();
     });
 });
