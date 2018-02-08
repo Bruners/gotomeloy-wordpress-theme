@@ -41,7 +41,7 @@ jQuery(document).ready(function($) {
         
     }
     
-    $('.my-background-video').bgVideo({
+    jQuery('.my-background-video').bgVideo({
         pauseAfter: 120,
         showPausePlay: true, // Show pause/play button
         pausePlayXPos: 'center', // left|right|center
@@ -50,6 +50,8 @@ jQuery(document).ready(function($) {
         pausePlayYOffset: '60%' // pixels or percent from top/bottom - ignored if positioned center
     });
 
+    jQuery("#site-body").fitVids();
+
     jQuery(".scroll-down").click(function() {
         event.preventDefault();
         jQuery('html, body').animate({
@@ -57,6 +59,11 @@ jQuery(document).ready(function($) {
         }, 'slow', 'swing' );
     });
 
+    jQuery(".back2top").on("click", function() {
+        jQuery("html, body").animate({
+            scrollTop: 0 
+        }, 1e3);
+    });
 
     jQuery(function($) {
  
@@ -95,15 +102,49 @@ jQuery(document).ready(function($) {
         });
      
     });
-});
 
 
-/* jQuery('div.hero-header-title').click(function(){
-    video = '<iframe src="'+ jQuery('div.hero-image').attr('data-video') +'" frameborder="0" allowfullscreen></iframe>';
-    jQuery('div.hero-image').replaceWith(video);
-}); */
+    /*  stott.no specific */
+    /* Apply fancybox on movies */
 
-(function($) {
+    jQuery("#stottfilm").click(function() {
+        jQuery.fancybox({
+            'padding'       : 0,
+            'autoScale'     : false,
+            'transitionIn'  : 'none',
+            'transitionOut' : 'none',
+            'title'         : this.title,
+            'width'     : 680,
+            'height'        : 495,
+            'href'          : this.href.replace(new RegExp("watch\\?v=", "i"), 'v/'),
+            'type'          : 'swf',
+            'swf'           : {
+                 'wmode'        : 'transparent',
+                'allowfullscreen'   : 'true'
+            }
+        });
+
+    return false;
+    });
+
+    jQuery("#stottfilm2").click(function() {
+        jQuery.fancybox({
+            'padding'       : 0,
+            'autoScale'     : false,
+            'transitionIn'  : 'none',
+            'transitionOut' : 'none',
+            'title'         : this.title,
+            'width'         : 680,
+            'height'        : 495,
+            'href'          : this.href,
+            'type'          : $(this).data("type")
+        });
+        return false;
+    });
+
+
+    /* Update webcam image with the most up to date image  */ 
+    (function($) {
 
     'use strict';
     function getImage() {
@@ -128,23 +169,4 @@ jQuery(document).ready(function($) {
 
     updateImage();
 
-})(jQuery);
-
-/*(function() {
-    var header = document.querySelector("#header");
-
-    if(window.location.hash) {
-      header.classList.add("headroom--unpinned");
-    }
-
-    var headroom = new Headroom(header, {
-        tolerance: {
-          down : 10,
-          up : 20
-        },
-        offset : 205
-    });
-    headroom.init();
-
-}());
-*/
+});

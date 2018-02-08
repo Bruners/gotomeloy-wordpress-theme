@@ -38,7 +38,6 @@
 <div id="wrapper">
             <header id="site-header">    
                 <a id="logo" title="<?php echo esc_attr( get_bloginfo('name') ); ?>" href="<?php echo esc_url( home_url('/') ); ?>"></a>
-                <h5><?php echo esc_attr( get_bloginfo('name') ); ?></h5>
                 <?php 
                     $args = array(
                         'theme_location'  => 'gotomeloy-primary-navigation',

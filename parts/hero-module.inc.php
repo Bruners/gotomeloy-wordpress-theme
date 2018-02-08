@@ -82,8 +82,12 @@
 
 <!-- BEGIN: HERO MODULE -->
     <div id="home-featured" class="video-container jquery-background-video-wrapper" style="background-image: url(http://www.stott.no/wp-content/uploads/2016/02/stottgjestehavn_1920x1080_50op.jpg);">
-        <video autoplay loop muted class="my-background-video jquery-background-video" poster="http://www.stott.no/wp-content/uploads/2016/02/stottgjestehavn_1920x1080_50op.jpg">
-            <source src="http://www.stott.no/wp-content/themes/gotomeloy/stott_brygge_v4_720p24_1250kbps_web_i5gs.mp4" type="video/mp4">
+
+        <video autoplay loop class="my-background-video jquery-background-video" poster="http://www.stott.no/wp-content/uploads/2016/02/stottgjestehavn_1920x1080_50op.jpg" muted plays-inline>
+            <source src="http://www.stott.no/video/stott_brygge_v4_720p24_1250kbps_web_apple.mp4" type="video/mp4">
+            <source src="http://www.stott.no/video/stott_brygge_v4_720p24_1250kbps_web_legacy_baseline.mp4" type="video/mp4">
+            <source src="http://www.stott.no/video/stott_brygge_v4.mp4" type="video/mp4">
+            <source src="http://www.stott.no/video/stott_brygge_v4_720p24_1250kbps_web_i5gs.mp4" type="video/mp4">
             Your browser does not support the video tag.
        </video>
         <header>
@@ -95,7 +99,7 @@
                 </div>
             </div>
         </header>
-    <a id="stottfilm2" data-fancybox class="action-button btn btn-info link_nounderline" href="http://www.stott.no/wp-content/themes/gotomeloy/støtt_brygge_v4.mp4">Se video med lyd her</a>
+    <a id="stottfilm2" data-fancybox class="action-button btn btn-info link_nounderline" href="http://www.youtube.com/watch?v=OBBdQBFGGLk">Se video med lyd her</a>
     </div>
 <!-- END: HERO MODULE -->
 
