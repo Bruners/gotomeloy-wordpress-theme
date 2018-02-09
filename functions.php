@@ -231,6 +231,7 @@ function wsds_defer_scripts( $tag, $handle, $src ) {
       // Enqueue
       wp_enqueue_script('jquery');
 
+      wp_enqueue_script('gotomeloy-theme-functions', GOTOMELOY_JS_URI . '/gotomeloy.min.js', array('jquery'), 1.5, true);
 
       wp_register_script( 'fancybox', 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js', 'jquery', '3.2.5', true );
       wp_enqueue_script('fancybox');
