@@ -78,16 +78,21 @@
     $hero_height = get_post_meta($post_ID, 'hero_height', true) ? get_post_meta($post_ID, 'hero_height', true) : 'small';
 ?>
 
-<?php if ($is_hero_module) { ?>
+<script>
+    function fallback(video) {
+        var img = video.querySelector('img');
+        if (img)
+            video.parentNode.replaceChild(img, video);
+        }
+</script>
 
+<?php if ($is_hero_module) { ?>
 <!-- BEGIN: HERO MODULE -->
-    <div id="home-featured" class="video-container jquery-background-video-wrapper" style="background-image: url(http://www.stott.no/wp-content/uploads/2016/02/stottgjestehavn_1920x1080_50op.jpg);">
-        <video autoplay loop muted plays-inline playsinline src="http://www.stott.no/video/stott_brygge_v4_720p24_1250kbps_web_apple.mp4" type="video/mp4" poster="http://www.stott.no/wp-content/uploads/2016/02/stottgjestehavn_1920x1080_50op.jpg" class="my-background-video jquery-background-video">
-            <source src="http://www.stott.no/video/stott_brygge_v4_720p24_1250kbps_web_apple.mp4" type="video/mp4">
-            <source src="http://www.stott.no/video/stott_brygge_v4_720p24_1250kbps_web_legacy_baseline.mp4" type="video/mp4">
-            <source src="http://www.stott.no/video/stott_brygge_v4.mp4" type="video/mp4">
-            <source src="http://www.stott.no/video/stott_brygge_v4_720p24_1250kbps_web_i5gs.mp4" type="video/mp4">
-            Your browser does not support the video tag.
+    <div id="home-featured" class="video-container jquery-background-video-wrapper">
+        <video autoplay loop muted webkit-playsinline playsinline plays-inline class="my-background-video jquery-background-video">
+            <source src="http://www.stott.no/video/stott_brygge_720x406_1500kbps_baseline3_web.mp4" type="video/mp4">
+            <source src="http://www.stott.no/video/stott_brygge_720p30_5000kbps_main_3.1.mp4" type="video/mp4" onerror="fallback(parentNode)">
+            <img src="http://www.stott.no/wp-content/uploads/2016/02/stottgjestehavn_1920x1080_50op.jpg">
        </video>
         <header>
             <div class="hero-content">
