@@ -90,8 +90,8 @@
 <!-- BEGIN: HERO MODULE -->
     <div id="home-featured" class="video-container jquery-background-video-wrapper">
         <video autoplay loop muted webkit-playsinline playsinline plays-inline class="my-background-video jquery-background-video">
-            <source src="http://www.stott.no/video/stott_brygge_720x406_1500kbps_baseline3_web.mp4" type="video/mp4">
-            <source src="http://www.stott.no/video/stott_brygge_720p30_5000kbps_main_3.1.mp4" type="video/mp4" onerror="fallback(parentNode)">
+            <source src="http://www.stott.no/video/stott_brygge_720p30_5000kbps_main_3.1.mp4" type="video/mp4">
+            <source src="http://www.stott.no/video/stott_brygge_720x406_1500kbps_baseline3_web.mp4" type="video/mp4" onerror="fallback(parentNode)">
             <img src="http://www.stott.no/wp-content/uploads/2016/02/stottgjestehavn_1920x1080_50op.jpg">
        </video>
         <header>

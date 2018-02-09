@@ -8,8 +8,8 @@
  * Copyright 2011-2017 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  *
-* Generated using the Bootstrap Customizer (http://getbootstrap.com/docs/3.3/customize/?id=43828ce99abdf17a1aaa76304722438c)
- * Config saved to config.json and https://gist.github.com/43828ce99abdf17a1aaa76304722438c
+ * Generated using the Bootstrap Customizer (http://getbootstrap.com/docs/3.3/customize/?id=f58e6343403e98691b57a57d160b1310)
+ * Config saved to config.json and https://gist.github.com/f58e6343403e98691b57a57d160b1310
  */
 
 
@@ -4990,7 +4990,8 @@ video {
     top: 90%;
     bottom: auto;
     margin: 0 auto;
-    width: 200px;
+    width: 10vw;
+    font-size: 1em;
 }
 
 #home-featured .scroll-down-icon {
