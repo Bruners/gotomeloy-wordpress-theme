@@ -82,8 +82,7 @@
 
 <!-- BEGIN: HERO MODULE -->
     <div id="home-featured" class="video-container jquery-background-video-wrapper" style="background-image: url(http://www.stott.no/wp-content/uploads/2016/02/stottgjestehavn_1920x1080_50op.jpg);">
-
-        <video autoplay loop class="my-background-video jquery-background-video" poster="http://www.stott.no/wp-content/uploads/2016/02/stottgjestehavn_1920x1080_50op.jpg" muted plays-inline>
+        <video autoplay loop muted plays-inline playsinline src="http://www.stott.no/video/stott_brygge_v4_720p24_1250kbps_web_apple.mp4" type="video/mp4" poster="http://www.stott.no/wp-content/uploads/2016/02/stottgjestehavn_1920x1080_50op.jpg" class="my-background-video jquery-background-video">
             <source src="http://www.stott.no/video/stott_brygge_v4_720p24_1250kbps_web_apple.mp4" type="video/mp4">
             <source src="http://www.stott.no/video/stott_brygge_v4_720p24_1250kbps_web_legacy_baseline.mp4" type="video/mp4">
             <source src="http://www.stott.no/video/stott_brygge_v4.mp4" type="video/mp4">

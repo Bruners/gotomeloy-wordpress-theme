@@ -35,7 +35,7 @@
         <main id="main-structure">
 
             <!-- BEGIN: SITE HEADER -->
-<div id="wrapper">
+            <div id="wrapper">
             <header id="site-header">    
                 <a id="logo" title="<?php echo esc_attr( get_bloginfo('name') ); ?>" href="<?php echo esc_url( home_url('/') ); ?>"></a>
                 <?php 
@@ -61,5 +61,5 @@
             <!-- END: SITE HEADER -->
             
             <?php get_template_part( 'parts/hero-module.inc' ); ?> 
-</div>
+            </div>
 
