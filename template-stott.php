@@ -111,11 +111,67 @@ Template Name: Portfolio Stott
         </div>
     </div> <!-- END: CONTAINER DIV -->
     <!-- BEGIN: BOTTOM WIDGETS -->
-    <div class="container">
+    <div class="container-fluid container-bunn">
         <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("widgetized-page-bottom") ) : ?>
         <?php endif; ?>
     </div><!-- END: BOTTOM WIDGETS -->
-    <div class="container-bunn">
+    <div class="container-fluid">
+        <div class="textwidget text-center"><h4><i class="fa fa-video-camera">Video</i></h4></div>
+        <div class="container-promo-video">
+            <div id="carousel-promo-video" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-promo-video" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-promo-video" data-slide-to="1"></li>
+                    <li data-target="#carousel-promo-video" data-slide-to="2"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active" >
+                        <div class="embed-responsive embed-responsive-16by9" >
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/xM7d2HHvAR0?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        </div>
+                        <div class="carousel-caption">
+                            <h5 class="text-center">Go to Meløy</h5>
+                            <p>Visit Meløy and experience the coast in Helgaland, the gateway to Lofoten. Together with Meløy Adventure, Glomfjord Hotell, Ørnes Hotell, Støtt Brygge and Rocks'n Rivers we can give you amazing experiences in unique locations in Norway.</p>
+                        </div>
+                    </div>
+                    <div class="item" >
+                        <div class="embed-responsive embed-responsive-16by9" >
+                            <iframe src="https://player.vimeo.com/video/199325238" width="560" height="315" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                        </div>
+                        <div class="carousel-caption">
+                            <h5 class="text-center">Go to Meløy</h5>
+                            <p><a href="https://vimeo.com/199325238">Go to Mel&oslash;y </a>by <a href="https://vimeo.com/user39330606">Mel&oslash;y Adventure</a></p>
+                        </div>
+                    </div>
+                    <div class="item" >
+                        <div class="embed-responsive embed-responsive-16by9" >
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/OBBdQBFGGLk?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        </div>
+                        <div class="carousel-caption">
+                            <h5 class="text-center">Støtt Brygge Promo 2018</h5>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-promo-video" role="button" data-slide="prev">
+                    <span class="fa fa-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carousel-promo-video" role="button" data-slide="next">
+                    <span class="fa fa-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+            <div class="new-caption-area"></div>
+        </div>
+    </div>
+
+    <div class="container-fluid container-bunn">
         <div class="kontakt-oss">
         <div class="fb-like" data-href="https://www.facebook.com/StottBrygge/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
         <?php

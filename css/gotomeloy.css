@@ -3363,9 +3363,9 @@ button.close {
 
 .carousel-control {
     position: absolute;
-    top: 0;
+    top: 50%;
+    height: 15%;
     left: 0;
-    bottom: 0;
     width: 15%;
     opacity: 0.5;
     filter: alpha(opacity=50);
@@ -3407,8 +3407,8 @@ button.close {
 
 .carousel-control .icon-prev,
 .carousel-control .icon-next,
-.carousel-control .glyphicon-chevron-left,
-.carousel-control .glyphicon-chevron-right {
+.carousel-control .fa-chevron-left,
+.carousel-control .fa-chevron-right {
     position: absolute;
     top: 50%;
     margin-top: -10px;
@@ -3417,13 +3417,13 @@ button.close {
 }
 
 .carousel-control .icon-prev,
-.carousel-control .glyphicon-chevron-left {
+.carousel-control .fa-chevron-left {
     left: 50%;
     margin-left: -10px;
 }
 
 .carousel-control .icon-next,
-.carousel-control .glyphicon-chevron-right {
+.carousel-control .fa-chevron-right {
     right: 50%;
     margin-right: -10px;
 }
@@ -3484,9 +3484,11 @@ button.close {
     z-index: 10;
     padding-top: 20px;
     padding-bottom: 20px;
-    color: #ffffff;
+    color: #000;
     text-align: center;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 25px;
 }
 
 .carousel-caption .btn {
@@ -3494,8 +3496,8 @@ button.close {
 }
 
 @media screen and (min-width: 768px) {
-    .carousel-control .glyphicon-chevron-left,
-    .carousel-control .glyphicon-chevron-right,
+    .carousel-control .fa-chevron-left,
+    .carousel-control .fa-chevron-right,
     .carousel-control .icon-prev,
     .carousel-control .icon-next {
         width: 30px;
@@ -3503,11 +3505,11 @@ button.close {
         margin-top: -10px;
         font-size: 30px;
     }
-    .carousel-control .glyphicon-chevron-left,
+    .carousel-control .fa-chevron-left,
     .carousel-control .icon-prev {
         margin-left: -10px;
     }
-    .carousel-control .glyphicon-chevron-right,
+    .carousel-control .fa-chevron-right,
     .carousel-control .icon-next {
         margin-right: -10px;
     }
@@ -4566,14 +4568,15 @@ fieldset[disabled] .btn-danger.active {
 
 /** == main == */
 
+.container-promo-video, .new-caption-area{
+    margin: 10px auto 10px;
+    max-width: 960px;
+}
+
 .container-bunn {
-    background: #F5F5F5;
-    padding: 0;
-    margin-bottom: -18px;
+    background: #eee;
     margin-top: 25px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
+    padding: 20px;
 }
 
 .kontakt-oss {
@@ -4990,7 +4993,8 @@ video {
     top: 90%;
     bottom: auto;
     margin: 0 auto;
-    width: 10vw;
+}
+#home-featured .action-button a {
     font-size: 1em;
 }
 
@@ -5026,7 +5030,15 @@ video {
         margin-top: 20px
     }
     #home-featured a {
-        display: none
+        bottom: 5px;
+    }
+    #home-featured .action-button {
+        font-size: 0.8em;
+    }
+    .hero-header {
+        width: 250px;
+        padding: 10px;
+        font-size: 0.6em;
     }
 }
 

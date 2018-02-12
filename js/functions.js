@@ -23,24 +23,26 @@ jQuery(document).ready(function($) {
         }
     });
 
-    jQuery('#menu-toggle').click(function(){
-        
-        jQuery('body').toggleClass('menu-open');
-        return false;
-    });
-    
-    var windowwidth = $(window).width();
-    
-    if (windowwidth <= 1000){
-        
-        jQuery('#primary-menu li a').click(function(){
-        
-            jQuery('#menu-toggle').trigger('click');
-        
+    // Carousel Auto-Cycle
+    jQuery('.carousel').carousel({
+      interval: 0
+    })
+
+    // Move carousel caption into new-caption-area
+    jQuery(function ($) {
+        jQuery('.carousel').carousel();
+        var caption = jQuery('div.item:nth-child(1) .carousel-caption');
+        jQuery('.new-caption-area').html(caption.html());
+        caption.css('display', 'none');
+
+        jQuery(".carousel").on('slide.bs.carousel', function (evt) {
+            var caption = jQuery('div.item:nth-child(' + (jQuery(evt.relatedTarget).index() + 1) + ') .carousel-caption');
+            jQuery('.new-caption-area').html(caption.html());
+            caption.css('display', 'none');
         });
-        
-    }
-    
+    });
+
+    // Resize header video container
     jQuery('.my-background-video').bgVideo({
         pauseAfter: 120,
         showPausePlay: true, // Show pause/play button
@@ -50,11 +52,10 @@ jQuery(document).ready(function($) {
         pausePlayYOffset: '60%' // pixels or percent from top/bottom - ignored if positioned center
     });
 
+    // Resize image containers using background-image
     jQuery(".iBG").each(function() {
-        jQuery(this).css("background-image", "url(" + $(this).attr("data-img") + ")");
+        jQuery(this).css("background-image", "url(" + jQuery(this).attr("data-img") + ")");
     });
-
-    jQuery("#site-body").fitVids();
 
     jQuery(".scroll-down").click(function() {
         event.preventDefault();
@@ -68,6 +69,19 @@ jQuery(document).ready(function($) {
             scrollTop: 0 
         }, 1e3);
     });
+
+    jQuery('#menu-toggle').click(function(){   
+        jQuery('body').toggleClass('menu-open');
+        return false;
+    });
+    
+    var windowwidth = $(window).width();
+
+    if (windowwidth <= 1000) {
+        jQuery('#primary-menu li a').click(function(){
+            jQuery('#menu-toggle').trigger('click');
+        });
+    }
 
     jQuery(function($) {
  
@@ -83,18 +97,13 @@ jQuery(document).ready(function($) {
             // otherwise change it back to relative
             if ( (scroll_top + 70) >= content_offset_top) { 
                 jQuery('body').addClass('sticky');
-                
-    
             } else {
                 jQuery('body').removeClass('sticky'); 
             }   
         };
          
         // run our function on load
-        
-        jQuery(document).ready(function() {
-            sticky_navigation();
-        });
+        sticky_navigation();
          
         // and run it again every time you scroll
         jQuery(window).scroll(function() {
@@ -106,7 +115,6 @@ jQuery(document).ready(function($) {
         });
      
     });
-
 
     /*  stott.no specific */
     /* Update webcam image with the most up to date image  */ 
