@@ -18,7 +18,7 @@
         <!-- WP Head
         ================================================== -->
         <?php wp_head(); ?>
-
+        <link href="https://fonts.googleapis.com/css?family=Oswald:400|Source+Sans+Pro:400,700" rel="stylesheet">
 
     </head>
 

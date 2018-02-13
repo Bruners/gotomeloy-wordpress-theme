@@ -89,7 +89,7 @@
 <?php if ($is_hero_module) { ?>
 <!-- BEGIN: HERO MODULE -->
     <div id="home-featured" class="video-container jquery-background-video-wrapper">
-        <video autoplay loop muted webkit-playsinline playsinline plays-inline class="my-background-video jquery-background-video" poster="http://www.stott.no/wp-content/uploads/2016/02/stottgjestehavn_1920x1080_50op.jpg">
+        <video autoplay loop muted webkit-playsinline playsinline plays-inline class="my-background-video jquery-background-video" poster="<?php echo $hero_img; ?>">
             <source src="http://www.stott.no/video/stott_brygge_V4-2_720p30_3000kbps_main_3.1.mp4" type='video/mp4; codecs="avc1.42001E"'>
             <source src="http://www.stott.no/video/stott_brygge_V4-2_720x406_1500kbps_baseline3.mp4" type='video/mp4; codecs="avc1.58A01E"'>
             Your browser does not support the video tag

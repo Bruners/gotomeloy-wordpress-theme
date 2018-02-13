@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+
 /* Set the encoding of the style sheet to Unicode UTF-8 for fancybox */
 
 
@@ -319,7 +320,7 @@ html {
 }
 
 body {
-    font-family: 'source_sans_proregular', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
     font-size: 1.5em;
     line-height: 1.6;
     color: #333333;
@@ -3180,7 +3181,6 @@ button.close {
 .modal-header .modal-title {
     color: white;
     text-transform: uppercase;
-    font-family: "source_sans_proregular";
 }
 
 .modal-header .close {
@@ -3843,6 +3843,7 @@ button.close {
 
 
 
+
 /** == WP CAPTIONS == */
 
 .wp-caption {
@@ -3862,6 +3863,7 @@ button.close {
     text-align: center;
     margin: 0;
 }
+
 
 
 
@@ -3916,6 +3918,7 @@ img.aligncenter {
 .gallery-caption {}
 
 .bypostauthor {}
+
 
 
 
@@ -4566,9 +4569,117 @@ fieldset[disabled] .btn-danger.active {
 }
 
 
+
 /** == main == */
 
-.container-promo-video, .new-caption-area{
+.wrapper-tjenester {
+    width: 92.5%;
+    padding: 1em;
+    margin: 0 auto;
+}
+
+.masonry {
+    -moz-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    -moz-column-gap: 30px;
+    -webkit-column-gap: 30px;
+    column-gap: 30px;
+    -moz-column-fill: initial;
+    -webkit-column-fill: initial;
+    column-fill: initial;
+}
+
+.masonry .brick {
+    margin-bottom: 30px;
+}
+
+.masonry .brick img {
+    -moz-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+}
+
+.masonry .brick:hover img {
+    opacity: .75;
+}
+
+@media only screen and (min-width: 1024px) {
+    .wrapper-tjenester {
+        width: 90%;
+        padding: 2em;
+    }
+
+    .masonry {
+        -moz-column-count: 3;
+        -webkit-column-count: 3;
+        column-count: 3;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .wrapper-tjenester {
+        width: 85%;
+        padding: 1.5em;
+    }
+
+    .masonry {
+        -moz-column-count: 2;
+        -webkit-column-count: 2;
+        column-count: 2;
+    }
+}
+
+.tjeneste-post:hover,
+.tjeneste-post:focus {
+    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#a7dfeb, EndColorStr=#53c1d9);
+    background-image: linear-gradient(to bottom, #a7dfeb 0, #53c1d9 100%);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.tjeneste-post:active {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#7dd0e2, EndColorStr=#68c9de);
+    background-image: linear-gradient(to bottom, #7dd0e2 0, #68c9de 100%);
+}
+
+.tjeneste-post {
+    min-height: 170px;
+    overflow: auto;
+    border-radius: 2px;
+    background-color: #68c8dd;
+    background-image: linear-gradient(to bottom, #92d8e7 0, #3eb9d4 100%);
+    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#92d8e7, EndColorStr=#3eb9d4);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    max-width: 100%;
+    vertical-align: bottom;
+}
+
+.tjeneste-tittel {
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .6);
+    color: #fff;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.tjeneste-kort {
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    color: #505050;
+    padding-left: 10px;
+    padding-right: 10px
+}
+
+
+.container-promo-video,
+.new-caption-area {
     margin: 10px auto 10px;
     max-width: 960px;
 }
@@ -4762,7 +4873,6 @@ video {
     display: block;
     margin: 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    font-family: "source_sans_proregular", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 400;
     /*font-size: 24px; */
     text-transform: uppercase;
@@ -4978,7 +5088,7 @@ video {
 
 #site-header h5 {
     color: #fff;
-    font-family: source_sans_proregular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
     text-shadow: 2px 2px 4px #000;
     float: left;
     position: absolute;
@@ -4994,6 +5104,7 @@ video {
     bottom: auto;
     margin: 0 auto;
 }
+
 #home-featured .action-button a {
     font-size: 1em;
 }
@@ -5212,23 +5323,19 @@ div.hero-header.text-center:hover .scroll-down-icon {
 }
 
 .hero-header-title {
-    text-transform: none;
-    font-size: 1.9em;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    font-family: "source_sans_proregular", "sans-serif", Helvetica, Arial, "Roboto Slab";
+    font-family: 'Oswald', sans-serif;
+    font-size: 2em;
+    font-weight: 400;
     color: white;
-    text-shadow: 2px 2px 4px #000000;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.45);
 }
 
 .hero-header-subtitle {
-    text-transform: none;
-    font-size: 1em;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.1em;
     margin-top: 5px;
-    letter-spacing: 0.1em;
-    font-family: "source_sans_proregular", "sans-serif", Helvetica, Arial, "Roboto Slab";
     color: white;
-    text-shadow: 2px 2px 4px #000000;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.45);
 }
 
 .sections {
@@ -5291,6 +5398,7 @@ div.hero-header.text-center:hover .scroll-down-icon {
 
 
 
+
 /*.entry-image, */
 
 .entry-hover {
@@ -5337,8 +5445,7 @@ div.hero-header.text-center:hover .scroll-down-icon {
     bottom: 0;
     width: 100%;
     font-size: 1.2em;
-    font-family: "source_sans_proregular", "Roboto Slab", Arial, Helvetica, sans-serif;
-    font-weight: bold;
+    font-weight: 700;
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
@@ -5407,7 +5514,6 @@ div.hero-header.text-center:hover .scroll-down-icon {
     margin: 0 auto;
 }
 
-.tjenester-stott,
 .tjenester-gotomeloy {
     width: 100%;
     margin: auto;
@@ -5419,54 +5525,6 @@ div.hero-header.text-center:hover .scroll-down-icon {
 .tjeneste-gotomeloy a:hover,
 .tjeneste-gotomeloy a:focus {
     text-decoration: none;
-}
-
-.tjeneste-post:hover,
-.tjeneste-post:focus {
-    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#a7dfeb, EndColorStr=#53c1d9);
-    background-image: linear-gradient(to bottom, #a7dfeb 0, #53c1d9 100%);
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-}
-
-.tjeneste-post:active {
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#7dd0e2, EndColorStr=#68c9de);
-    background-image: linear-gradient(to bottom, #7dd0e2 0, #68c9de 100%);
-}
-
-.tjeneste-post {
-    min-height: 170px;
-    width: 270px;
-    margin: 0 0 5px 0;
-    padding-left: 5px;
-    padding-right: 5px;
-    border-radius: 2px;
-    background-color: #68c8dd;
-    background-image: linear-gradient(to bottom, #92d8e7 0, #3eb9d4 100%);
-    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#92d8e7, EndColorStr=#3eb9d4);
-    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-}
-
-.tjeneste-tittel {
-    font-family: "source_sans_proregular", "sans-serif", Helvetica, Arial, "Roboto Slab";
-    font-weight: bold;
-    font-size: 16px;
-    text-align: center;
-    text-decoration: none;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, .6);
-    color: #fff;
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
-
-.tjeneste-kort {
-    font-family: "source_sans_proregular", "sans-serif", Helvetica, Arial, "Roboto Slab";
-    font-weight: normal;
-    font-size: 14px;
-    text-align: center;
-    text-decoration: none;
-    color: #505050;
 }
 
 .wpcf7-form>p {
@@ -6133,7 +6191,6 @@ footer {
     padding: 0 0px;
     line-height: 29px;
     z-index: 10;
-    font-family: "source_sans_proregular", "sans-serif", Helvetica, Arial, "Roboto Slab";
     font-size: 10px;
     color: white;
 }
@@ -6562,32 +6619,6 @@ ul.language-selector li a.lang-en {
 
 .vcenter {
     position: relative;
-}
-
-@font-face {
-    font-family: 'source_sans_proregular';
-    src: url('../fonts/sourcesanspro-regular-webfont.eot');
-    src: url('../fonts/sourcesanspro-regular-webfont.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/sourcesanspro-regular-webfont.woff2') format('woff2'),
-    url('../fonts/sourcesanspro-regular-webfont.woff') format('woff'),
-    url('../fonts/sourcesanspro-regular-webfont.ttf') format('truetype'),
-    url('../fonts/sourcesanspro-regular-webfont.svg#source_sans_proregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-    font-display: optional;
-}
-
-@font-face {
-    font-family: 'source_sans_pro_bold';
-    src: url('../fonts/sourcesanspro-bold-webfont.eot');
-    src: url('../fonts/sourcesanspro-bold-webfont.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/sourcesanspro-bold-webfont.woff2') format('woff2'),
-    url('../fonts/sourcesanspro-bold-webfont.woff') format('woff'),
-    url('../fonts/sourcesanspro-bold-webfont.ttf') format('truetype'),
-    url('../fonts/sourcesanspro-bold-webfont.svg#source_sans_proregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-    font-display: optional;
 }
 
 
@@ -7437,6 +7468,7 @@ li.fancybox-thumbs-loading {
 }
 
 
+
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -7462,6 +7494,7 @@ li.fancybox-thumbs-loading {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
 
 
 
@@ -7537,6 +7570,7 @@ li.fancybox-thumbs-loading {
 .fa.fa-pull-right {
     margin-left: .3em;
 }
+
 
 
 
@@ -7661,6 +7695,7 @@ li.fancybox-thumbs-loading {
 .fa-inverse {
     color: #ffffff;
 }
+
 
 
 
@@ -10500,6 +10535,7 @@ li.fancybox-thumbs-loading {
 }
 
 
+
 /**
  * The MIT License (MIT)
  * 
@@ -10557,6 +10593,7 @@ li.fancybox-thumbs-loading {
 }
 
 
+
 /**
  * Fade in videos
  * Note the .js class - so non js users still
@@ -10572,6 +10609,7 @@ li.fancybox-thumbs-loading {
 .js .jquery-background-video.is-visible {
     opacity: 1;
 }
+
 
 
 /**

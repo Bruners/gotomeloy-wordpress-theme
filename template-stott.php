@@ -44,8 +44,8 @@ Template Name: Portfolio Stott
 ?>
 
 <!-- BEGIN: SITE BODY -->
-<section id="site-body" class="sections portfolio padding-size-m">
-    <div class="container">
+<section id="site-body" class="sections padding-size-m">
+    <div class="container container-content">
         <div class="innhold">
         <?php while( have_posts() ) : the_post(); ?>
             <!-- PAGE CONTENT -->
@@ -59,30 +59,34 @@ Template Name: Portfolio Stott
 
             <?php endwhile; ?>
         </div>
-        <div class="tjenester-stott">
-            <div class="row">
-            <?php
-                $args = array('post_type' => 'tjeneste');
-                $query = new WP_Query($args);
-                while($query -> have_posts()) : $query -> the_post();
+    </div>
+    <div class="container container-tjenester">
+        <div class="wrapper-tjenester">
+            <div class="masonry">
+                <?php
+                    $args = array('post_type' => 'tjeneste');
+                    $query = new WP_Query($args);
+                    while($query -> have_posts()) : $query -> the_post();
 
-                $post_id = get_the_ID();
-            ?>
-                <article id="tjeneste-<?php echo $post_id; ?>" class="tjeneste col-xs-12 col-sm-6 col-md-4">
-                    <?php if ($post_id == 868 || $post_id == 1132 || $post_id == 18085 || $post_id == 19946) { ?>
-                        <a href="#tjeneste-modal-868" data-toggle="modal" class="tjeneste-link link_nounderline">
-                    <?php } else { ?>
-                        <a href="#tjeneste-modal-<?php echo $post_id; ?>" data-toggle="modal" class="tjeneste-link link_nounderline">
-                    <?php } ?>
-                        <div class="tjeneste-post">
-                            <div class="tjeneste-tittel"><?php the_title(); ?></div>
-                            <div class="tjeneste-kort"><p><?php echo(types_render_field( "tjeneste-kort", array( 'raw' => true) )); ?></p></div>
-                        </div>
-                    </a>
-                </article>
-            <?php endwhile; wp_reset_postdata(); ?>
+                    $post_id = get_the_ID();
+                ?>
+                    <div id="tjeneste-<?php echo $post_id; ?>" class="brick">
+                        <?php if ($post_id == 868 || $post_id == 1132 || $post_id == 18085 || $post_id == 19946) { ?>
+                            <a href="#tjeneste-modal-868" data-toggle="modal" class="tjeneste-link2 link_nounderline">
+                        <?php } else { ?>
+                            <a href="#tjeneste-modal-<?php echo $post_id; ?>" data-toggle="modal" class="tjeneste-link link_nounderline">
+                        <?php } ?>
+                            <div class="tjeneste-post">
+                                <div class="tjeneste-tittel"><?php the_title(); ?></div>
+                                <div class="tjeneste-kort"><p><?php echo(types_render_field( "tjeneste-kort", array( 'raw' => true) )); ?></p></div>
+                            </div>
+                        </a>
+                    </div>
+                <?php endwhile; wp_reset_postdata(); ?>
             </div>
         </div>
+    </div>
+    <div class="container container-portofolio">
         <div id="opplevelser" class="portfolio">
             <?php if ( $is_filtration ) { ?>
 
