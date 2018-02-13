@@ -104,6 +104,13 @@
                 }
             }
         },
+        /** Masonry portfolio */
+        masonry: function() {
+            var container = $(".grid");
+            container.isotope({
+                itemSelector: ".entry"
+            });
+        },
         /** Filters */
         filtering: function() {
             var container = $(".grid");
@@ -878,7 +885,7 @@ if (typeof jQuery === "undefined") {
     // The plugin
     $.fn.bgVideo = function(options) {
         // @bool iOS
-        //var iOS = /iPad|iPhone|iPod/.test(navigator.platform) || /iPad|iPhone|iPod/.test(navigator.userAgent);
+        var iOS = /iPad|iPhone|iPod/.test(navigator.platform) || /iPad|iPhone|iPod/.test(navigator.userAgent);
         // Settings
         var settings = $.extend({}, $.fn.bgVideo.defaults, options);
         // Do the things
@@ -962,12 +969,12 @@ if (typeof jQuery === "undefined") {
             // Fade in video by setting the transition duration
             $video.css("transition-duration", el_settings.fadeIn + "ms");
             // Remove on iOS
-            //if (iOS) {
+            if (iOS) {
                 // Unset sources to prevent them from continuing to download
-            //    $video.attr("src", "");
-            //    $video.find("source").attr("src", "");
-            //    $video.remove();
-            //}
+                $video.attr("src", "");
+                $video.find("source").attr("src", "");
+                $video.remove();
+            }
             // Mimic background-size: cover with video element
             $.fn.bgVideo.fitVideo($video);
             $(window).resize(function() {
@@ -987,8 +994,7 @@ if (typeof jQuery === "undefined") {
                 });
             }
             // Play / pause button
-            //if (el_settings.showPausePlay && !iOS) {
-            if (el_settings.showPausePlay) {
+            if (el_settings.showPausePlay && !iOS) {
                 // Append pauseplay element created earlier
                 $container.append($pauseplay);
                 // Position element
