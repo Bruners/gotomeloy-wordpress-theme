@@ -130,7 +130,7 @@ Template Name: Portfolio Stott
                 <div class="carousel-inner" role="listbox">
                     <div class="item active" >
                         <div class="embed-responsive embed-responsive-16by9" >
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/xM7d2HHvAR0?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/xM7d2HHvAR0?rel=0" webkitallowfullscreen mozallowfullscreen allowfullscreen</iframe>
                         </div>
                         <div class="carousel-caption">
                             <h5 class="text-center">Go to Meløy</h5>
@@ -139,7 +139,7 @@ Template Name: Portfolio Stott
                     </div>
                     <div class="item" >
                         <div class="embed-responsive embed-responsive-16by9" >
-                            <iframe src="https://player.vimeo.com/video/199325238" width="560" height="315" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                            <iframe src="https://player.vimeo.com/video/199325238" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                         </div>
                         <div class="carousel-caption">
                             <h5 class="text-center">Go to Meløy</h5>
@@ -148,7 +148,7 @@ Template Name: Portfolio Stott
                     </div>
                     <div class="item" >
                         <div class="embed-responsive embed-responsive-16by9" >
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/OBBdQBFGGLk?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/OBBdQBFGGLk?rel=0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                         </div>
                         <div class="carousel-caption">
                             <h5 class="text-center">Støtt Brygge Promo 2018</h5>
