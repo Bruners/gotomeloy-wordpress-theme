@@ -1076,10 +1076,6 @@ pre code {
     .innhold {
         max-width: 550px;
     }
-    .hero-header {
-        width: 70%;
-        padding: 50px 25px;
-    }
     .parallax {
         background-position: center center;
     }
@@ -1103,12 +1099,6 @@ pre code {
     .tjenester-stott,
     .tjenester-gotomeloy {
         max-width: 270px;
-    }
-    .hero-header {
-        width: 90%;
-        padding: 50px 25px;
-        outline-offset: 4px;
-        padding: 15px;
     }
 }
 
