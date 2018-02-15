@@ -18,16 +18,12 @@
         <!-- WP Head
         ================================================== -->
         <?php wp_head(); ?>
-        <link href="https://fonts.googleapis.com/css?family=Oswald:400|Source+Sans+Pro:400,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Oswald:400|Roboto:400,700" rel="stylesheet">
 
     </head>
 
     <body <?php body_class(); ?>>
 
-        <!-- PRELOADER -->
-        <div class="preloader">
-            <div class="loader"></div>
-        </div>
         <?php include_once("analyticstracking.php") ?>
         <?php include_once("facebooktracking.php") ?>
 

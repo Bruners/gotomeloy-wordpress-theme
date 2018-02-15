@@ -90,8 +90,8 @@
 <!-- BEGIN: HERO MODULE -->
     <div id="home-featured" class="video-container jquery-background-video-wrapper">
         <video autoplay loop muted webkit-playsinline playsinline plays-inline class="my-background-video jquery-background-video" poster="<?php echo $hero_img; ?>">
-            <source src="http://www.stott.no/video/stott_brygge_V4-2_720p30_3000kbps_main_3.1.mp4" type='video/mp4; codecs="avc1.42001E"'>
             <source src="http://www.stott.no/video/stott_brygge_V4-2_720x406_1500kbps_baseline3.mp4" type='video/mp4; codecs="avc1.58A01E"'>
+            <source src="http://www.stott.no/video/stott_brygge_V4-2_720p30_3000kbps_main_3.1.mp4" type='video/mp4; codecs="avc1.42001E"'>
             Your browser does not support the video tag
        </video>
         <header>
@@ -104,7 +104,7 @@
             </div>
         </header>
     <div class="action-button text-center">
-        <a id="stottfilm2" data-fancybox class="btn btn-info" href="http://www.youtube.com/watch?v=OBBdQBFGGLk"><?php esc_html_e('Se video med lyd her', 'gotomeloy'); ?></a>
+        <a id="stottfilm2" data-fancybox class="btn btn-info" href="http://www.youtube.com/watch?v=CkxmJ592_TY"><?php esc_html_e('Se video med lyd her', 'gotomeloy'); ?></a>
     </div>
     </div>
 <!-- END: HERO MODULE -->

@@ -62,7 +62,7 @@ Template Name: Portfolio Stott
     </div>
     <div class="container container-tjenester">
         <div class="wrapper-tjenester">
-            <div class="masonry">
+            <div class="masonry masonry-tjenester">
                 <?php
                     $args = array('post_type' => 'tjeneste');
                     $query = new WP_Query($args);
@@ -326,7 +326,7 @@ Template Name: Portfolio Stott
             $tjeneste_868_title = $tjeneste_868_post->post_title;
         ?>
         <div id="tjeneste-modal-868" class="modal fade" tabindex="-1">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button class="close fa fa-close" type="button" data-dismiss="modal"></button>
@@ -404,7 +404,7 @@ Template Name: Portfolio Stott
         <?php if ($post_id != 868 || $post_id != 1132 || $post_id != 18085 || $post_id != 19946) { ?>
         <!-- 868 gotomeloy no, 1132 gotomeloy en, 18085 stott no , 19946 stott en-->
         <div id="tjeneste-modal-<?php echo $post_id; ?>" class="modal fade" tabindex="-1">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button class="close fa fa-close" type="button" data-dismiss="modal"></button>
@@ -439,7 +439,7 @@ Template Name: Portfolio Stott
 
         <!-- Modal -->
         <div id="portfolio-modal-<?php echo(get_the_ID()); ?>" role="dialog" aria-labeledby="<?php the_title(); ?>" class="modal fade" tabindex="-1">
-            <div class="modal-dialog" role="document">
+            <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button class="close" type="button" aria-label="Close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>

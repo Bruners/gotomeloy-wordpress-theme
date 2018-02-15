@@ -1,6 +1,7 @@
 @charset "UTF-8";
 
 
+
 /* Set the encoding of the style sheet to Unicode UTF-8 for fancybox */
 
 
@@ -320,7 +321,7 @@ html {
 }
 
 body {
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 1.5em;
     line-height: 1.6;
     color: #333333;
@@ -3834,6 +3835,7 @@ button.close {
 
 
 
+
 /** == WP CAPTIONS == */
 
 .wp-caption {
@@ -3853,6 +3855,7 @@ button.close {
     text-align: center;
     margin: 0;
 }
+
 
 
 
@@ -3908,6 +3911,7 @@ img.aligncenter {
 .gallery-caption {}
 
 .bypostauthor {}
+
 
 
 
@@ -4560,7 +4564,21 @@ fieldset[disabled] .btn-danger.active {
 
 
 
+
 /** == main == */
+
+article.portfolio {
+    width: 289px;
+    height: 231px;
+    margin: 12px;
+    background-repeat: no-repeat;
+    background-image: radial-gradient(circle 16px, white 99%, transparent 0),
+    linear-gradient(gray 100%, transparent 0);
+    background-size: 32px 32px,
+    100% 100%;
+    background-position: 128px 115px,
+    0 0;
+}
 
 .wrapper-tjenester {
     width: 92.5%;
@@ -4594,16 +4612,26 @@ fieldset[disabled] .btn-danger.active {
     opacity: .75;
 }
 
+.masonry article {
+    width: 289px;
+    height: 231px;
+}
+
 @media only screen and (min-width: 1024px) {
     .wrapper-tjenester {
         width: 90%;
         padding: 2em;
     }
 
-    .masonry {
+    .masonry-tjenester {
         -moz-column-count: 3;
         -webkit-column-count: 3;
         column-count: 3;
+    }
+    .masonry-portfolio {
+        -moz-column-count: 4;
+        -webkit-column-count: 4;
+        column-count: 4;
     }
 }
 
@@ -4613,7 +4641,12 @@ fieldset[disabled] .btn-danger.active {
         padding: 1.5em;
     }
 
-    .masonry {
+    .masonry-tjenester {
+        -moz-column-count: 2;
+        -webkit-column-count: 2;
+        column-count: 2;
+    }
+    .masonry-portfolio {
         -moz-column-count: 2;
         -webkit-column-count: 2;
         column-count: 2;
@@ -4648,7 +4681,7 @@ fieldset[disabled] .btn-danger.active {
 
 .tjeneste-tittel {
     font-weight: 700;
-    font-size: 16px;
+    font-size: 1.2em;
     text-align: center;
     text-decoration: none;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, .6);
@@ -4659,14 +4692,13 @@ fieldset[disabled] .btn-danger.active {
 
 .tjeneste-kort {
     font-weight: 400;
-    font-size: 14px;
+    font-size: .9em;
     text-align: center;
     text-decoration: none;
     color: #505050;
     padding-left: 10px;
     padding-right: 10px
 }
-
 
 .container-promo-video,
 .new-caption-area {
@@ -4744,7 +4776,7 @@ dl dd {
     padding: 0 1.15385rem;
     height: 70px;
     transition: all 0.5s ease-out;
-    background: transparent
+    background: transparent;
 }
 
 #site-header .language-selector {
@@ -4768,15 +4800,15 @@ dl dd {
 
 
 #site-header>.row {
-    position: relative
+    position: relative;
 }
 
 .sticky {
-    display: block
+    display: block;
 }
 
 .sticky #site-header {
-    background: rgba(0, 0, 0, 0.9)
+    background: rgba(0, 0, 0, 0.9);
 }
 
 #logo {
@@ -4789,19 +4821,19 @@ dl dd {
     text-align: center;
     background: url("../img/stottbrygge_logo_notext_60x60.png") no-repeat top left;
     background-size: 60px auto;
-    width: 70px
+    width: 70px;
 }
 
 @media only screen and (min-width: 40.063em) {
     #logo {
         float: left;
-        line-height: 70px
+        line-height: 70px;
     }
     #site-header {
-        padding: 0 2.30769rem
+        padding: 0 2.30769rem;
     }
     #site-header .language-selector {
-        display: none
+        display: none;
     }
 }
 
@@ -4823,11 +4855,11 @@ dl dd {
 #wrapper:before,
 #wrapper:after {
     content: " ";
-    display: table
+    display: table;
 }
 
 #wrapper:after {
-    clear: both
+    clear: both;
 }
 
 video {
@@ -4849,25 +4881,23 @@ video {
     -o-transition: .4s all ease;
     -ms-transition: .4s all ease;
     transition: .4s all ease;
-    background-color: #68c8dd;
-    background-image: linear-gradient(to bottom, #92d8e7 0, #3eb9d4 100%);
-    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#92d8e7, EndColorStr=#3eb9d4);
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 #primary-nav ul {
     list-style: none;
-    margin: 0
+    margin: 0;
 }
 
 #primary-nav ul li {
     display: block;
     margin: 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.8);
     font-weight: 400;
     /*font-size: 24px; */
     text-transform: uppercase;
     float: left;
-    width: 50%;
+    width: 90%;
     font-size: 1.2em;
     font-weight: bold;
     text-decoration: none;
@@ -4877,12 +4907,12 @@ video {
 }
 
 #primary-nav ul li:last-child {
-    border: none
+    border: none;
 }
 
 #primary-nav ul li:nth-child(1n),
 #primary-nav ul li:nth-child(2n) {
-    border-right: 1px solid rgba(255, 255, 255, 0.2)
+    border-right: 1px solid rgba(0, 0, 0, 0.8);
 }
 
 #primary-nav ul li a {
@@ -4898,29 +4928,27 @@ video {
 
 .primary-menu li a:visited {
     text-decoration: none;
-    box-shadow: 0 3px 0px #5e7075
+    box-shadow: 0 3px 0px #5e7075;
 }
 
-.primary-menu li a:hover {
+.primary-menu li:hover a:hover {
     text-decoration: none;
-    box-shadow: 0 3px 0px #269abc
+    box-shadow: 0 3px 0px #269abc;
 }
 
 .primary-menu li a:focus {
     text-decoration: none;
-    box-shadow: 0 3px 0px #67b8d0
+    box-shadow: 0 3px 0px #67b8d0;
 }
 
 .primary-menu li a:active {
     text-decoration: none;
-    box-shadow: 0 3px 0px #bc269a
+    box-shadow: 0 3px 0px #bc269a;
 }
-
-
 
 @media only screen and (max-width: 640px) and (orientation: landscape) {
     #primary-nav ul li {
-        width: 33.33%
+        width: 33.33%;
     }
 }
 
@@ -4930,7 +4958,7 @@ video {
     -moz-transition: .4s all ease;
     -o-transition: .4s all ease;
     -ms-transition: .4s all ease;
-    transition: .4s all ease
+    transition: .4s all ease;
 }
 
 #menu-toggle {
@@ -4939,7 +4967,7 @@ video {
     width: 20px;
     height: 20px;
     top: 25px;
-    right: 2.30769rem
+    right: 2.30769rem;
 }
 
 #menu-toggle {
@@ -4960,7 +4988,7 @@ video {
     height: 2px;
     position: absolute;
     left: 0;
-    background: #1E2023;
+    background: #4d4e4e;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 }
@@ -5000,7 +5028,7 @@ video {
 
 @media only screen and (min-width: 40.063em) {
     #menu-toggle {
-        display: none
+        display: none;
     }
     #primary-nav {
         width: auto;
@@ -5009,11 +5037,11 @@ video {
         float: right;
         text-align: right;
         position: static;
-        padding: 25px 0
+        padding: 25px 0;
     }
     #primary-nav ul {
         display: inline-block;
-        margin-top: 0px
+        margin-top: 0px;
     }
     #primary-nav ul li {
         display: inline-block;
@@ -5022,22 +5050,22 @@ video {
         font-size: 1em;
         float: none;
         width: auto;
-        border: none !important
+        border: none !important;
     }
     #primary-nav ul li a {
         padding: 0;
-        line-height: 1
+        line-height: 1;
     }
     #primary-nav ul li.current-menu-item a {
-        border-bottom: 2px solid #ffb225
+        border-bottom: 2px solid #ffb225;
     }
     #primary-nav ul li.active-menu-item a {
-        border-bottom: 2px solid #ffb225 !important
+        border-bottom: 2px solid #ffb225 !important;
     }
 }
 
 .home #primary-nav ul li.current-menu-item a {
-    border-color: transparent
+    border-color: transparent;
 }
 
 #home-featured {
@@ -5047,7 +5075,7 @@ video {
     width: 100vw;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center
+    background-position: center center;
 }
 
 #home-featured header {
@@ -5058,7 +5086,7 @@ video {
     text-align: center;
     width: 100%;
     padding: 0 40px;
-    margin-top: -70px
+    margin-top: -70px;
 }
 
 #home-featured header h1,
@@ -5067,18 +5095,18 @@ video {
     width: 100%;
     max-width: 92.30769rem;
     margin: 0 auto;
-    color: #fff
+    color: #fff;
 }
 
 #home-featured header h1 {
     color: #fff;
     text-transform: uppercase;
-    font-size: 9vw
+    font-size: 9vw;
 }
 
 #site-header h5 {
     color: #fff;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Roboto', sans-serif;
     text-shadow: 2px 2px 4px #000;
     float: left;
     position: absolute;
@@ -5128,7 +5156,7 @@ video {
 
 @media only screen and (max-width: 640px) and (orientation: landscape) {
     #home-featured header h1 {
-        margin-top: 20px
+        margin-top: 20px;
     }
     #home-featured a {
         bottom: 5px;
@@ -5145,38 +5173,102 @@ video {
 
 @media only screen and (min-width: 641px) and (max-width: 1024px) and (orientation: landscape) {
     #home-featured header {
-        margin-top: -90px
+        margin-top: -90px;
     }
     #home-featured a {
-        bottom: 160px
+        bottom: 160px;
     }
 }
 
 @media only screen and (min-width: 641px) and (max-width: 1024px) and (orientation: portrait) {
     #home-featured header {
-        margin-top: -80px
+        margin-top: -80px;
     }
     #home-featured a {
-        bottom: 240px
+        bottom: 240px;
     }
 }
 
 @media only screen and (min-width: 64.063em) {
     #home-featured header {
-        margin-top: -100px
+        margin-top: -100px;
     }
 }
 
 @media only screen and (min-width: 90.063em) {
     #home-featured header {
-        margin-top: -110px
+        margin-top: -110px;
     }
 }
 
 @media only screen and (min-width: 120.063em) {
     #home-featured header h1 {
-        font-size: 7vw
+        font-size: 7vw;
     }
+}
+
+
+
+
+.icon-bar-portfolio {
+    width: 100%;
+    min-height: 46px;
+    line-height: 1;
+    border-radius: 3px;
+}
+
+.icon-div-portfolio {
+    float: left;
+    max-width: 100%;
+    transition: all 0.3s ease;
+    height: 46px;
+}
+
+.icon-div-portfolio:hover {}
+
+.icon-bar-portfolio .icon-div-portfolio:not(:last-child) {
+    border-bottom-width: 0px;
+    border-top-width: 0px;
+    border-right-width: 1px;
+    border-left-width: 0px;
+    border-style: groove;
+    border-color: rgba(0, 0, 0, .1);
+}
+
+.icon-icon {
+    float: left;
+    vertical-align: middle;
+    font-size: 3em;
+    margin: 0 2px;
+    max-width: 40%;
+    color: #337ab7;
+}
+
+.icon-icon .fa-calendar,
+.icon-icon .fa-users,
+.icon-icon .fa-map-pin,
+.icon-icon .fa-credit-card {
+    font-size: .8em;
+}
+
+.icon-text {
+    float: left;
+    font-size: 1em;
+    max-width: 100%;
+    font-size: 1em;
+    margin: 0 2px;
+}
+
+.icon-text p {
+    margin: 0;
+    text-align: center;
+}
+
+.icon-text .icon-title {
+    margin: 2px 0 0 0;
+    font-size: 1em;
+    font-weight: 700;
+    text-align: center;
 }
 
 .preloader {
@@ -5186,7 +5278,7 @@ video {
     top: 0;
     left: 0;
     z-index: 1000;
-    background: #FFFFFF;
+    background: rgba(0, 0, 0, 0.1);
 }
 
 .loader {
@@ -5316,6 +5408,7 @@ div.hero-header.text-center:hover .scroll-down-icon {
     font-family: 'Oswald', sans-serif;
     font-size: 2em;
     font-weight: 400;
+    letter-spacing: 3px;
     color: white;
     text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.45);
 }
@@ -5323,6 +5416,7 @@ div.hero-header.text-center:hover .scroll-down-icon {
 .hero-header-subtitle {
     font-family: 'Oswald', sans-serif;
     font-size: 1.1em;
+    letter-spacing: .7px;
     margin-top: 5px;
     color: white;
     text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.45);
@@ -5385,6 +5479,7 @@ div.hero-header.text-center:hover .scroll-down-icon {
 [id^=grid-] {
     margin-top: 0 !important;
 }
+
 
 
 
@@ -6612,6 +6707,7 @@ ul.language-selector li a.lang-en {
 }
 
 
+
 /* fancybox */
 
 body.fancybox-active {
@@ -7459,6 +7555,7 @@ li.fancybox-thumbs-loading {
 
 
 
+
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -7484,6 +7581,7 @@ li.fancybox-thumbs-loading {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
 
 
 
@@ -7560,6 +7658,7 @@ li.fancybox-thumbs-loading {
 .fa.fa-pull-right {
     margin-left: .3em;
 }
+
 
 
 
@@ -7685,6 +7784,7 @@ li.fancybox-thumbs-loading {
 .fa-inverse {
     color: #ffffff;
 }
+
 
 
 
@@ -10526,6 +10626,7 @@ li.fancybox-thumbs-loading {
 
 
 
+
 /**
  * The MIT License (MIT)
  * 
@@ -10584,6 +10685,7 @@ li.fancybox-thumbs-loading {
 
 
 
+
 /**
  * Fade in videos
  * Note the .js class - so non js users still
@@ -10599,6 +10701,7 @@ li.fancybox-thumbs-loading {
 .js .jquery-background-video.is-visible {
     opacity: 1;
 }
+
 
 
 
