@@ -877,6 +877,9 @@ pre code {
     .container {
         width: 970px;
     }
+    .innhold {
+        max-width: 550px;
+    }
 }
 
 @media (min-width: 1200px) {
@@ -884,6 +887,55 @@ pre code {
         width: 1170px;
     }
 }
+
+@media (max-width: 320px) {
+    .container {
+        width: 100%;
+    }
+    .filters li {
+        display: block;
+        position: relative;
+        margin-top: 5px;
+    }
+    .filters li:first-child {
+        margin-top: 0;
+    }
+    .filters li a {
+        display: block;
+        padding: 10px 0;
+        background: #F1F1F1;
+    }
+    .hero-header-title {
+        font-size: 1.4em;
+    }
+    .entry-fix-caption {
+        display: none;
+    }
+    .share li {
+        display: block;
+        position: relative;
+    }
+    .share.share-project li,
+    .share.share-blog li {
+        margin: 5px 0 0;
+    }
+    .share.share-project li:first-child,
+    .share.share-blog li:first-child {
+        margin-top: 0;
+    }
+    .share.share-blog li a {
+        padding: 10px 0;
+    }
+    .blog .entry .blog-meta>div {
+        width: 100%;
+    }
+    .blog .entry .blog-meta .social-icons {
+        border-right: 0;
+        border-left: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+ }
 
 .container-fluid {
     margin-right: auto;
@@ -4378,9 +4430,9 @@ button.close {
 
 .carousel-control {
     position: absolute;
-    top: 0;
+    top: 50%;
+    height: 15%
     left: 0;
-    bottom: 0;
     width: 15%;
     opacity: 0.5;
     filter: alpha(opacity=50);
@@ -4422,8 +4474,8 @@ button.close {
 
 .carousel-control .icon-prev,
 .carousel-control .icon-next,
-.carousel-control .glyphicon-chevron-left,
-.carousel-control .glyphicon-chevron-right {
+.carousel-control .fa-chevron-left,
+.carousel-control .fa-chevron-right {
     position: absolute;
     top: 50%;
     margin-top: -10px;
@@ -4432,13 +4484,13 @@ button.close {
 }
 
 .carousel-control .icon-prev,
-.carousel-control .glyphicon-chevron-left {
+.carousel-control .fa-chevron-left {
     left: 50%;
     margin-left: -10px;
 }
 
 .carousel-control .icon-next,
-.carousel-control .glyphicon-chevron-right {
+.carousel-control .fa-chevron-right {
     right: 50%;
     margin-right: -10px;
 }
@@ -4509,8 +4561,8 @@ button.close {
 }
 
 @media screen and (min-width: 768px) {
-    .carousel-control .glyphicon-chevron-left,
-    .carousel-control .glyphicon-chevron-right,
+    .carousel-control .fa-chevron-left,
+    .carousel-control .fa-chevron-right,
     .carousel-control .icon-prev,
     .carousel-control .icon-next {
         width: 30px;
@@ -4518,11 +4570,11 @@ button.close {
         margin-top: -10px;
         font-size: 30px;
     }
-    .carousel-control .glyphicon-chevron-left,
+    .carousel-control .fa-chevron-left,
     .carousel-control .icon-prev {
         margin-left: -10px;
     }
-    .carousel-control .glyphicon-chevron-right,
+    .carousel-control .fa-chevron-right,
     .carousel-control .icon-next {
         margin-right: -10px;
     }
