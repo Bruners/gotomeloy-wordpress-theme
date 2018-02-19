@@ -85,11 +85,37 @@
             video.parentNode.replaceChild(img, video);
         }
 </script>
-
-<?php if ($is_hero_module) { ?>
+<?php if ( !is_front_page() && $is_hero_module ) { ?>
+<!-- BEGIN: HERO MODULE -->
+    <section id="hero-module" class="sections hero <?php echo $hero_height. ' ' .$hero_img_class; ?>">
+        <div class="hero-image iBG noparalax" data-img="<?php echo $hero_img; ?>"></div>
+        <div class="hero-content">
+            <div class="hero-header text-center">
+                <div class="hero-header-title"><?php echo $hero_title; ?></div>
+                <div class="hero-header-subtitle"><?php echo $hero_subtitle; ?></div>
+                <div><a href="#site-body" class="scroll-down"><i class="scroll-down-icon fa fa-4x fa-inverse fa-chevron-circle-down" aria-hidden="true"></i></a></div>
+            </div>
+        </div>
+    </section>
+    <div class="container">
+        <div class="single-header">
+            <div class="single-header-title"><p><?php echo $hero_title; ?></p></div>
+            <div class="single-header-content"><p>Har du lyst på en havfisketur eller en ørnesafari?</p></div>
+            <div class="row">
+                <div class="col-xs-12 col-md-6">
+                    <div class="single-header-icon single-header-first"></div>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                    <div class="single-header-icon single-header-second"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- END: HERO MODULE -->
+<?php } elseif ( is_front_page() && $is_hero_module ) { ?>
 <!-- BEGIN: HERO MODULE -->
     <div id="home-featured" class="video-container jquery-background-video-wrapper">
-        <video autoplay loop muted webkit-playsinline playsinline plays-inline class="my-background-video jquery-background-video" poster="<?php echo $hero_img; ?>">
+        <video autoplay loop muted webkit-playsinline playsinline plays-inline data-bgvideo class="my-background-video jquery-background-video" poster="<?php echo $hero_img; ?>">
             <source src="http://www.stott.no/video/stott_brygge_V4-2_720x406_1500kbps_baseline3.mp4" type='video/mp4; codecs="avc1.58A01E"'>
             <source src="http://www.stott.no/video/stott_brygge_V4-2_720p30_3000kbps_main_3.1.mp4" type='video/mp4; codecs="avc1.42001E"'>
             Your browser does not support the video tag

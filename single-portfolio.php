@@ -12,11 +12,9 @@
 <section id="site-body" class="sections project padding-size-l">
 
 	<div class="container">
-		<div class="innhold-single">
 			<?php while ( have_posts() ) : the_post(); ?>
 				<?php the_content(); ?>
 			<?php endwhile; ?>
-		</div>
 	</div>
 
 </section>
@@ -25,7 +23,6 @@
 <!-- BEGIN: PAGINATION -->
 <section class="sections paginations padding-size-m">
 	<div class="container">
-		<div class="innhold-single">
 			<!-- PAGINATE -->
 			<ul class="project-pagination nostyle clearfix">
 				<li class="prev <?php echo $have_olders_posts; ?>"><a href="<?php echo esc_url( get_permalink(get_adjacent_post(false,'',true)) ); ?> "><i class="fa fa-angle-left"></i></a></li>
@@ -36,7 +33,6 @@
 
 			<!-- SHARE -->
 			<?php if ( function_exists( 'sharing_display' ) ) { echo sharing_display(); } ?>
-		</div>
 	</div>
 </section>
 <!-- END: PAGINATION -->

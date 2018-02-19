@@ -132,27 +132,27 @@ Template Name: Portfolio Stott
 
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
-                    <div class="item active" >
-                        <div class="embed-responsive embed-responsive-16by9" >
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/xM7d2HHvAR0?rel=0" webkitallowfullscreen mozallowfullscreen allowfullscreen</iframe>
+                    <div class="item active">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe width="560" height="315" src="" data-src="https://www.youtube.com/embed/xM7d2HHvAR0?rel=0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                         </div>
                         <div class="carousel-caption">
                             <h5 class="text-center">Go to Meløy</h5>
                             <p>Visit Meløy and experience the coast in Helgaland, the gateway to Lofoten. Together with Meløy Adventure, Glomfjord Hotell, Ørnes Hotell, Støtt Brygge and Rocks'n Rivers we can give you amazing experiences in unique locations in Norway.</p>
                         </div>
                     </div>
-                    <div class="item" >
-                        <div class="embed-responsive embed-responsive-16by9" >
-                            <iframe src="https://player.vimeo.com/video/199325238" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    <div class="item">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe width="560" height="315" src="" data-src="https://player.vimeo.com/video/199325238" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                         </div>
                         <div class="carousel-caption">
                             <h5 class="text-center">Go to Meløy</h5>
                             <p><a href="https://vimeo.com/199325238">Go to Mel&oslash;y </a>by <a href="https://vimeo.com/user39330606">Mel&oslash;y Adventure</a></p>
                         </div>
                     </div>
-                    <div class="item" >
-                        <div class="embed-responsive embed-responsive-16by9" >
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/OBBdQBFGGLk?rel=0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    <div class="item">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe width="560" height="315" src="" data-src="https://www.youtube.com/embed/CkxmJ592_TY?rel=0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                         </div>
                         <div class="carousel-caption">
                             <h5 class="text-center">Støtt Brygge Promo 2018</h5>
@@ -399,7 +399,7 @@ Template Name: Portfolio Stott
 
             $post_id = get_the_ID();
         ?>
-        <!-- Modal -->
+        <!-- Modal 868 × 488-->
         
         <?php if ($post_id != 868 || $post_id != 1132 || $post_id != 18085 || $post_id != 19946) { ?>
         <!-- 868 gotomeloy no, 1132 gotomeloy en, 18085 stott no , 19946 stott en-->

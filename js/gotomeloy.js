@@ -13,17 +13,7 @@
     /** Viewport dimensions */
     var ww = $(window).width();
     var wh = $(window).height();
-    /** Adjust components to viewport dimensions */
-    $(".fh").css("height", wh + "px");
-    var hh = wh - $(".site-header").height();
-    $(".hero.small").css("height", hh * .7 + "px");
-    $(".hero.medium").css("height", hh * .8 + "px");
-    $(".hero.big").css("height", hh * .9 + "px");
-    $(".hero.full").css("height", hh + "px");
-    /** Vertical center */
-    $(".vcenter").each(function() {
-        $(this).css("top", ($(this).parent().height() - $(this).height()) / 2 + "px");
-    });
+
     /** TEMPLATE FUNCTIONS */
     /** ================================================== */
     var templateFunctions = {
@@ -121,29 +111,13 @@
             });
         }
     };
-    /** FIX */
-    /** ================================================== */
-    function fix() {
-        /** Adjust components to viewport dimensions */
-        $(".fh").css("height", wh + "px");
-        /** Hero heights */
-        var hh = wh - $(".site-header").height();
-        $(".hero.small").css("height", hh * .7 + "px");
-        $(".hero.medium").css("height", hh * .8 + "px");
-        $(".hero.big").css("height", hh * .9 + "px");
-        $(".hero.full").css("height", hh + "px");
-        /** Vertical center */
-        $(".vcenter").each(function() {
-            $(this).css("top", ($(this).parent().height() - $(this).height()) / 2 + "px");
-        });
-    }
+
     /** LOAD */
     /** ================================================== */
     $(window).bind("load", function() {
         /** Load template functions */
         templateFunctions.grid();
         templateFunctions.filtering();
-        fix();
     });
     /** RESIZE */
     /** ================================================== */
@@ -153,7 +127,6 @@
         wh = $(window).height();
         /** Load template functions */
         templateFunctions.grid();
-        fix();
     });
 })(jQuery);
 
@@ -407,5 +380,15 @@ jQuery(document).ready(function($) {
     // Auto run based on data attributes
     $(document).ready(function() {
         $("[data-bgvideo]").bgVideo();
+
+        // Resize header video container
+        $('.my-background-video').bgVideo({
+            pauseAfter: 120,
+            showPausePlay: true, // Show pause/play button
+            pausePlayXPos: 'center', // left|right|center
+            pausePlayYPos: 'top', // top|bottom|center
+            //pausePlayXOffset: '15px', // pixels or percent from side - ignored if positioned center
+            pausePlayYOffset: '60%' // pixels or percent from top/bottom - ignored if positioned center
+        });
     });
 })(jQuery);

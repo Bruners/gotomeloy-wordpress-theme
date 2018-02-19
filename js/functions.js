@@ -680,14 +680,16 @@ jQuery(document).ready(function($) {
         });
     });
 
-    // Resize header video container
-    jQuery('.my-background-video').bgVideo({
-        pauseAfter: 120,
-        showPausePlay: true, // Show pause/play button
-        pausePlayXPos: 'center', // left|right|center
-        pausePlayYPos: 'top', // top|bottom|center
-        //pausePlayXOffset: '15px', // pixels or percent from side - ignored if positioned center
-        pausePlayYOffset: '60%' // pixels or percent from top/bottom - ignored if positioned center
+    jQuery(function ($) {
+        var header = jQuery('.single-header');
+        var iconbar = jQuery('div#pt-havfiske');
+        var iconbar2 = jQuery('div#pt-havfiske2');
+        if ( header.length ) {
+            jQuery('.single-header-first').html(iconbar.html());
+            jQuery('.single-header-second').html(iconbar2.html());
+            iconbar.css('display', 'none');
+            iconbar2.css('display', 'none');
+        }
     });
 
     // Resize image containers using background-image
@@ -754,3 +756,53 @@ jQuery(document).ready(function($) {
      
     });
 });
+
+(function($) {
+    "use strict";
+    /** GENERALS */
+    /** ================================================== */
+    /** Viewport dimensions */
+    var ww = $(window).width();
+    var wh = $(window).height();
+    /** Adjust components to viewport dimensions */
+    $(".fh").css("height", wh + "px");
+    var hh = wh - $(".site-header").height();
+    $(".hero.small").css("height", hh * .7 + "px");
+    $(".hero.medium").css("height", hh * .8 + "px");
+    $(".hero.big").css("height", hh * .9 + "px");
+    $(".hero.full").css("height", hh + "px");
+    /** Vertical center */
+    $(".vcenter").each(function() {
+        $(this).css("top", ($(this).parent().height() - $(this).height()) / 2 + "px");
+    });
+
+    /** FIX */
+    /** ================================================== */
+    function fix() {
+        /** Adjust components to viewport dimensions */
+        $(".fh").css("height", wh + "px");
+        /** Hero heights */
+        var hh = wh - $(".site-header").height();
+        $(".hero.small").css("height", hh * .7 + "px");
+        $(".hero.medium").css("height", hh * .8 + "px");
+        $(".hero.big").css("height", hh * .9 + "px");
+        $(".hero.full").css("height", hh + "px");
+        /** Vertical center */
+        $(".vcenter").each(function() {
+            $(this).css("top", ($(this).parent().height() - $(this).height()) / 2 + "px");
+        });
+    }
+    /** LOAD */
+    /** ================================================== */
+    $(window).bind("load", function() {
+        fix();
+    });
+    /** RESIZE */
+    /** ================================================== */
+    $(window).bind("resize", function() {
+        /** Viewport dimensions */
+        ww = $(window).width();
+        wh = $(window).height();
+        fix();
+    });
+})(jQuery);
