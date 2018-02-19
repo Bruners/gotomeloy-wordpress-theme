@@ -198,8 +198,8 @@ Template Name: Portfolio Stott
                 <div id="map-container" class="col-md-8"></div>
             </div><!-- /map-outer -->
         </div> <!-- /row -->
-        <script src="http://maps.google.com/maps/api/js"></script>
-        <script>    
+        <script src="https://maps.google.com/maps/api/js"></script>
+        <script>
             function init_map() {
                 var enable_stott = true;
 
@@ -228,14 +228,14 @@ Template Name: Portfolio Stott
                 if (enable_stott) {
                     // GPS position for map marker
                     var var_stott = new google.maps.LatLng(66.925775,13.437980);
-                    
-                    var stott_content_string = 
+
+                    var stott_content_string =
                         '<div id="infowindow_content">'+
                         '<p><strong>Støtt Brygge</strong><br>'+
                         '8159 Støtt<br>' +
                         'Norge<br>'+
                         '+47 400 21 212</p>'+
-                        '<a href="http://www.stott.no" target="_blank">stott.no</a> | <a href="mailto:eaa@stott.no">eaa@stott.no</a>'+
+                        '<a href="https://www.stott.no" target="_blank">stott.no</a> | <a href="mailto:eaa@stott.no">eaa@stott.no</a>'+
                         '</div>';
                     var stott_infowindow = new google.maps.InfoWindow({
                         content: stott_content_string
@@ -251,15 +251,15 @@ Template Name: Portfolio Stott
                     stott_marker.setMap(var_map);
                     google.maps.event.addListener(stott_marker, 'click', function() {
                         stott_infowindow.open(var_map,stott_marker);
-                    });     
+                    });
                 };
             };
- 
+
             google.maps.event.addDomListener(window, 'load', init_map);
         </script>
         </div>
         <div class="copyright">
-            <?php echo get_theme_mod('gotomeloy_copyright_text', esc_html__('Copyright © GO TO MELØY 2016', 'gotomeloy') ); ?> | <?php echo(esc_html__( 'Utviklet av', 'gotomeloy' )); ?> <a href="http://www.github.com/bruners/" target="_blank">Lasse Brun</a><br />
+            <?php echo get_theme_mod('gotomeloy_copyright_text', esc_html__('Copyright © GO TO MELØY 2016', 'gotomeloy') ); ?> | <?php echo(esc_html__( 'Utviklet av', 'gotomeloy' )); ?> <a href="https://www.github.com/bruners/" target="_blank">Lasse Brun</a><br />
             <?php echo(esc_html__( 'Engelsk oversettelse av', 'gotomeloy' )); ?> <a href="http://mclean.no/" target="_blank">McLean.no Oversetting og undertekster</a>
         </div>
     </div>
@@ -283,21 +283,21 @@ Template Name: Portfolio Stott
                                     $lon = 13.437980;
                                     $fromtime = new DateTime('NOW');
                                     $fromtime->format("Y-m-d");
-                                    
+
                                     $totime = clone $fromtime;
                                     $totime->modify('+2 day');
 
                                     $tdtime = clone $fromtime;
                                     $tdtime->format('d.m');
 
-                                    $xmlurl = "http://api.sehavniva.no/tideapi.php?lat=".$lat."&lon=".$lon."&fromtime=".$fromtime->format('c')."&totime=".$totime->format('c')."&datatype=tab&refcode=cd&place=St%C3%B8tt&file=&lang=nb&interval=10&dst=1&tzone=&tide_request=locationdata";
+                                    $xmlurl = "https://api.sehavniva.no/tideapi.php?lat=".$lat."&lon=".$lon."&fromtime=".$fromtime->format('c')."&totime=".$totime->format('c')."&datatype=tab&refcode=cd&place=St%C3%B8tt&file=&lang=nb&interval=10&dst=1&tzone=&tide_request=locationdata";
                                     $xml = simplexml_load_file($xmlurl);
                                     $dir = get_stylesheet_directory_uri() . "/img/";
                                     foreach ($xml->locationdata->data->waterlevel as $level):
                                         $flag = $level['flag'];
                                         $time = DateTime::createFromFormat('Y-m-d\TH:i:s+P',$level['time'])->format('H:i');
                                         $datetime = DateTime::createFromFormat('Y-m-d\TH:i:s+P',$level['time'])->format('d.m');
-                                        if ($tdtime != $datetime) { 
+                                        if ($tdtime != $datetime) {
                                             echo "<tr><th>".$datetime."</th><th>Tid</th><th>Beregnet vannstand</th></tr>";
                                             $tdtime = $datetime;
                                         };
@@ -335,9 +335,9 @@ Template Name: Portfolio Stott
                     <div class="modal-body">
                         <div><h4><?php echo(esc_html__( 'Liste over kommende aktiviteter:', 'gotomeloy' )); ?></h4></div>
                         <?php if ( function_exists( 'sharing_display' ) ) { echo sharing_display(); } ?>
-                        <?php 
+                        <?php
                             $currentdate = date("Y-m-d",mktime(0,0,0,date("m"),date("d")-1,date("Y")));
-                            
+
                             $args = array (
                                 'meta_query'=> array(
                                     array(
@@ -349,15 +349,15 @@ Template Name: Portfolio Stott
 
                                 'post_type' => 'facebook_events',
                                 'posts_per_page' => -1,
-                                
+
                                 'meta_key' => 'event_starts_sort_field',
                                 'orderby' => 'meta_value',
                                 'order' => 'ASC'
-                            ); 
-                        
+                            );
+
                             $fbe_query = new WP_Query( $args );
-                            
-                            if( $fbe_query->have_posts() ): 
+
+                            if( $fbe_query->have_posts() ):
                             while ( $fbe_query->have_posts() ) : $fbe_query->the_post();
                                 $event_title = get_the_title();
                                 $event_image = get_fbe_image('cover');
@@ -384,7 +384,7 @@ Template Name: Portfolio Stott
                             endif;
                             wp_reset_query();
                         ?>
-                        <p><a href="http://www.stott.no/tjeneste/aktivitetskalender/" target="_blank"><?php esc_html_e('Åpne innholdet i eget vindu', 'gotomeloy'); ?></a></p><br />
+                        <p><a href="https://www.stott.no/tjeneste/aktivitetskalender/" target="_blank"><?php esc_html_e('Åpne innholdet i eget vindu', 'gotomeloy'); ?></a></p><br />
                     </div> <!-- /.modal-body -->
                     <div class="modal-footer">
                         <button class="btn btn-default" type="button" data-dismiss="modal">Lukk</button>
@@ -400,7 +400,7 @@ Template Name: Portfolio Stott
             $post_id = get_the_ID();
         ?>
         <!-- Modal 868 × 488-->
-        
+
         <?php if ($post_id != 868 || $post_id != 1132 || $post_id != 18085 || $post_id != 19946) { ?>
         <!-- 868 gotomeloy no, 1132 gotomeloy en, 18085 stott no , 19946 stott en-->
         <div id="tjeneste-modal-<?php echo $post_id; ?>" class="modal fade" tabindex="-1">
@@ -435,8 +435,13 @@ Template Name: Portfolio Stott
             );
             $query = new WP_Query($args);
             while($query -> have_posts()) : $query -> the_post();
-        ?>
 
+            $hero_opts = get_post_meta(get_the_ID(), 'hero_additional_options', true);
+            $is_hero_module = is_array($hero_opts) && in_array('is_hero', $hero_opts) ? true : false;
+        ?>
+        <?php if ( $is_hero_module ) { ?>
+            <div class="disabled"></div>
+        <?php } else { ?>
         <!-- Modal -->
         <div id="portfolio-modal-<?php echo(get_the_ID()); ?>" role="dialog" aria-labeledby="<?php the_title(); ?>" class="modal fade" tabindex="-1">
             <div class="modal-dialog modal-lg" role="document">
@@ -459,6 +464,7 @@ Template Name: Portfolio Stott
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
+        <?php } ?>
         <?php endwhile; wp_reset_postdata(); ?>
     </div> <!-- /.portfolio-modals -->
 </section>

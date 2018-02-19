@@ -15,27 +15,37 @@
 
 	$project_url = get_post_meta(get_the_ID(), 'project_custom_url', true) != false ? esc_url( get_post_meta(get_the_ID(), 'project_custom_url', true) ) : esc_url( get_permalink() );
 
+	$hero_opts = get_post_meta(get_the_ID(), 'hero_additional_options', true);
+    $is_hero_module = is_array($hero_opts) && in_array('is_hero', $hero_opts) ? true : false;
 ?>
 
 <!-- PORTFOLIO ENTRY -->
-<article id="post-<?php the_ID(); ?>" <?php post_class("$project_class $project_cats_slug"); ?>>
 
-    <a href="#portfolio-modal-<?php the_ID(); ?>" title="<?php the_title(); ?>" data-toggle="modal">
-		<div class="entry-image iBG" data-img="<?php echo $thumbnail_data['src']; ?>">
-			<div class="entry-bottomtext">
-				<?php the_title(); ?>
-			</div>
-		</div>
-	<!--
-		<div class="entry-hover text-center">
-			<div class="vcenter">
-				<div class="entry-title"><?php the_title(); ?></div>
-				<?php if ( $project_cats_name ) { ?>
-					<div class="entry-subtitle"><?php echo esc_html( $project_cats_name ); ?></div>
-				<?php } ?>
-			</div>
-		</div>
-	-->
-	</a>    
+<?php if ( $is_hero_module ) { ?>
+	<article id="post-<?php the_ID(); ?>" <?php post_class("$project_class $project_cats_slug"); ?>>
 
-</article>
+	    <a href="<?php echo $project_url; ?>" title="<?php the_title(); ?>">
+			<div class="entry-image iBG" data-img="<?php echo $thumbnail_data['src']; ?>">
+				<div class="entry-bottomtext">
+					<?php the_title(); ?>
+				</div>
+			</div>
+		</a>
+
+	</article>
+
+<?php } else { ?>
+
+	<article id="post-<?php the_ID(); ?>" <?php post_class("$project_class $project_cats_slug"); ?>>
+
+	    <a href="#portfolio-modal-<?php the_ID(); ?>" title="<?php the_title(); ?>" data-toggle="modal">
+			<div class="entry-image iBG" data-img="<?php echo $thumbnail_data['src']; ?>">
+				<div class="entry-bottomtext">
+					<?php the_title(); ?>
+				</div>
+			</div>
+		</a>
+
+	</article>
+
+<?php } ?>

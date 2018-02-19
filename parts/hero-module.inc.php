@@ -9,7 +9,7 @@
 
     $hero_opts = get_post_meta($post_ID, 'hero_additional_options', true);
     $is_hero_module = is_array($hero_opts) && in_array('is_hero', $hero_opts) ? true : false;
-    
+
     $is_hero_img = get_post_meta($post_ID, 'hero_bg_img', true) != false;
     $hero_img_class = $is_hero_img ? '' : 'hero-no-bg';
     $hero_img = wp_get_attachment_url(get_post_meta($post_ID, 'hero_bg_img', true));
@@ -39,20 +39,20 @@
         $hero_title = esc_html__( 'Author', 'gotomeloy' );
         $hero_subtitle = sprintf( esc_html__( 'Posted in "%s" Author', 'gotomeloy' ), get_search_query() );
     } else if( is_home() ) {
-        if ( $is_hero_module ) { 
+        if ( $is_hero_module ) {
             $hero_subtitle = !empty($hero_subtitle) ? $hero_subtitle : get_the_date('j M, Y');
         } else {
             $hero_subtitle = '';
         }
     } else if( is_single() ) {
 
-        if ( $is_hero_module ) { 
+        if ( $is_hero_module ) {
             $hero_title = !empty($hero_title) ? $hero_title : get_the_title();
         } else {
             $hero_title = get_the_title();
         }
-        
-        if ( $is_hero_module ) { 
+
+        if ( $is_hero_module ) {
             $hero_subtitle = '';
             //$hero_subtitle = !empty($hero_subtitle) ? $hero_subtitle : get_the_date('j M, Y');
         } else {
@@ -61,13 +61,13 @@
         }
     } else if( is_page() ) {
 
-        if ( $is_hero_module ) { 
+        if ( $is_hero_module ) {
             $hero_title = !empty($hero_title) ? $hero_title : get_the_title();
         } else {
             $hero_title = get_the_title();
         }
 
-        if ( $is_hero_module ) { 
+        if ( $is_hero_module ) {
             $hero_subtitle = !empty($hero_subtitle) ? $hero_subtitle : get_the_date('j M, Y');
         } else {
             $hero_subtitle = '';
@@ -97,27 +97,13 @@
             </div>
         </div>
     </section>
-    <div class="container">
-        <div class="single-header">
-            <div class="single-header-title"><p><?php echo $hero_title; ?></p></div>
-            <div class="single-header-content"><p>Har du lyst på en havfisketur eller en ørnesafari?</p></div>
-            <div class="row">
-                <div class="col-xs-12 col-md-6">
-                    <div class="single-header-icon single-header-first"></div>
-                </div>
-                <div class="col-xs-12 col-md-6">
-                    <div class="single-header-icon single-header-second"></div>
-                </div>
-            </div>
-        </div>
-    </div>
 <!-- END: HERO MODULE -->
 <?php } elseif ( is_front_page() && $is_hero_module ) { ?>
 <!-- BEGIN: HERO MODULE -->
     <div id="home-featured" class="video-container jquery-background-video-wrapper">
         <video autoplay loop muted webkit-playsinline playsinline plays-inline data-bgvideo class="my-background-video jquery-background-video" poster="<?php echo $hero_img; ?>">
-            <source src="http://www.stott.no/video/stott_brygge_V4-2_720x406_1500kbps_baseline3.mp4" type='video/mp4; codecs="avc1.58A01E"'>
-            <source src="http://www.stott.no/video/stott_brygge_V4-2_720p30_3000kbps_main_3.1.mp4" type='video/mp4; codecs="avc1.42001E"'>
+            <source src="https://www.stott.no/video/stott_brygge_V4-2_720x406_1500kbps_baseline3.mp4" type='video/mp4; codecs="avc1.58A01E"'>
+            <source src="https://www.stott.no/video/stott_brygge_V4-2_720p30_3000kbps_main_3.1.mp4" type='video/mp4; codecs="avc1.42001E"'>
             Your browser does not support the video tag
        </video>
         <header>
@@ -130,19 +116,32 @@
             </div>
         </header>
     <div class="action-button text-center">
-        <a id="stottfilm2" data-fancybox class="btn btn-info" href="http://www.youtube.com/watch?v=CkxmJ592_TY"><?php esc_html_e('Se video med lyd her', 'gotomeloy'); ?></a>
+        <a id="stottfilm2" data-fancybox class="btn btn-info" href="https://www.youtube.com/watch?v=CkxmJ592_TY"><?php esc_html_e('Se video med lyd her', 'gotomeloy'); ?></a>
     </div>
     </div>
 <!-- END: HERO MODULE -->
 
 <?php } else { ?>
 
-    <?php if ( !is_home() ) { ?>
-
-        <section class="page-header">
-            <h2 class="title"><?php echo $hero_title; ?></h2>
-            <div class="date"><?php echo $hero_subtitle; ?></div>
+    <?php if ( !is_home() && $is_hero_module) { ?>
+        <!-- BEGIN: HERO MODULE -->
+        <section id="hero-module" class="sections hero <?php echo $hero_height. ' ' .$hero_img_class; ?>">
+            <div class="hero-image iBG noparalax" data-img="<?php echo $hero_img; ?>"></div>
+            <div class="hero-content">
+                <div class="hero-header text-center">
+                    <div class="hero-header-title"><?php echo $hero_title; ?></div>
+                    <div class="hero-header-subtitle"><?php echo $hero_subtitle; ?></div>
+                    <div><a href="#site-body" class="scroll-down"><i class="scroll-down-icon fa fa-4x fa-inverse fa-chevron-circle-down" aria-hidden="true"></i></a></div>
+                </div>
+            </div>
         </section>
+        <!-- END: HERO MODULE -->
+    <?php } elseif ( !is_home() ) { ?>
+
+            <section class="page-header">
+                <h2 class="title"><?php echo $hero_title; ?></h2>
+                <div class="date"><?php echo $hero_subtitle; ?></div>
+            </section>
 
     <?php } ?>
 

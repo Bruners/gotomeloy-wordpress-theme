@@ -6049,7 +6049,7 @@ dl dd {
 }
 
 #wrapper {
-    background-color: #172627;
+    background-color: #202223;
     overflow: hidden;
     position: relative;
     left: 0;
@@ -6418,15 +6418,20 @@ video {
     }
 }
 
+.project {
+    background-color: #202223;
+    color: #fff;
+}
+
 .single-header {
     padding-bottom: 30px;
 }
-.single-header-icon {
+
+.single-header-icons {
     width: 100%;
     min-height: 46px;
     line-height: 1;
     color: #fff;
-    background-color: #202223;
 }
 
 .single-header-title {
@@ -6437,7 +6442,15 @@ video {
     padding-top: 30px;
 }
 
-.single-header-content {
+.single-header-title:after {
+    display: block;
+    content: '';
+    height: 4px;
+    background: #68c8dd;
+    width: 40%;
+}
+
+.single-header-ingress {
     font-family: Oswald,sans-serif;
     color: #fff;
     font-size: 1.3em;
@@ -6445,12 +6458,20 @@ video {
     text-shadow: 0 2px 4px rgba(0,0,0,.45);
 }
 
+.single-header-body {
+    font-family: Oswald,sans-serif;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 400;
+    text-shadow: 0 2px 4px rgba(0,0,0,.45);
+    margin-top: 20px;
+}
+
 .icon-bar-portfolio {
     width: 100%;
     min-height: 46px;
     line-height: 1;
-    color: #fff;
-    background-color: #202223;
+    color: #000;
 }
 
 .icon-div-portfolio {
@@ -6468,12 +6489,11 @@ video {
     border-right-width: 1px;
     border-left-width: 0px;
     border-style: groove;
-    border-color: rgba(0, 0, 0, .1);
+    border-color: rgba(255, 255, 255, .1);
 }
 
 .icon-icon {
     float: left;
-    vertical-align: middle;
     font-size: 2.5em;
     margin: 0 2px;
     max-width: 40%;
@@ -6490,21 +6510,21 @@ video {
     float: left;
     font-size: 1em;
     font-family: Oswald,sans-serif;
-    max-width: 100%;
     font-size: .8em;
+    text-align: center;
+    max-width: 100%;
+    line-height: 1.6;
     margin: 0 2px;
 }
 
 .icon-text p {
     margin: 0;
-    text-align: center;
 }
 
 .icon-text .icon-title {
     margin: 2px 0 0 0;
-    font-size: 1em;
     font-weight: 700;
-    text-align: center;
+    line-height: 1.6;
 }
 
 .preloader {
@@ -7262,7 +7282,6 @@ input.blog-search-input {
 
 .paginations {
     position: relative;
-    margin-top: 75px;
 }
 
 .paginations:before {
@@ -11872,19 +11891,19 @@ li.fancybox-thumbs-loading {
 
 /**
  * The MIT License (MIT)
- * 
+ *
  * Copyright (c) 2015 BG Stock - html5backgroundvideos.com
- * 
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  * copies of the Software, and to permit persons to whom the Software is
  * furnished to do so, subject to the following conditions:
- * 
+ *
  * The above copyright notice and this permission notice shall be included in all
  * copies or substantial portions of the Software.
- * 
+ *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE

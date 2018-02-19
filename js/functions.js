@@ -682,14 +682,23 @@ jQuery(document).ready(function($) {
 
     jQuery(function ($) {
         var header = jQuery('.single-header');
-        var iconbar = jQuery('div#pt-havfiske');
-        var iconbar2 = jQuery('div#pt-havfiske2');
+        //var iconbar = jQuery('.portfolio-single .icon-bar-portfolio');
+        var ingress = jQuery('.portfolio-single .ingress');
+        //var body = jQuery('.portfolio-single .body');
+        //var image = jQuery('.portfolio-single .image');
         if ( header.length ) {
-            jQuery('.single-header-first').html(iconbar.html());
-            jQuery('.single-header-second').html(iconbar2.html());
-            iconbar.css('display', 'none');
-            iconbar2.css('display', 'none');
+            //jQuery('.single-header-icons').html(iconbar.html());
+            jQuery('.single-header-ingress').html(ingress.html());
+            //jQuery('.single-header-body').html(body.html());
+            //jQuery('.single-header-image').html(image.html());
+
+            //iconbar.css('display', 'none');
+            ingress.css('display', 'none');
+            //body.css('display', 'none');
+            //image.css('display', 'none');
         }
+        jQuery('.single-header h3.sd-title').css('display', 'none');
+        jQuery('.single-header .sharedaddy').css('padding-top', '30px');
     });
 
     // Resize image containers using background-image
@@ -706,15 +715,15 @@ jQuery(document).ready(function($) {
 
     jQuery(".back2top").on("click", function() {
         jQuery("html, body").animate({
-            scrollTop: 0 
+            scrollTop: 0
         }, 1e3);
     });
 
-    jQuery('#menu-toggle').click(function(){   
+    jQuery('#menu-toggle').click(function(){
         jQuery('body').toggleClass('menu-open');
         return false;
     });
-    
+
     var windowwidth = $(window).width();
 
     if (windowwidth <= 1000) {
@@ -724,36 +733,36 @@ jQuery(document).ready(function($) {
     }
 
     jQuery(function($) {
- 
-        // grab the initial top offset of the navigation 
+
+        // grab the initial top offset of the navigation
         var content_offset_top = jQuery('#site-body').offset().top;
-         
+
         // our function that decides weather the navigation bar should have "fixed" css position or not.
         var sticky_navigation = function(){
-            
+
             var scroll_top = jQuery(window).scrollTop(); // our current vertical position from the top
-             
+
             // if we've scrolled more than the navigation, change its position to fixed to stick to top,
             // otherwise change it back to relative
-            if ( (scroll_top + 70) >= content_offset_top) { 
+            if ( (scroll_top + 70) >= content_offset_top) {
                 jQuery('body').addClass('sticky');
             } else {
-                jQuery('body').removeClass('sticky'); 
-            }   
+                jQuery('body').removeClass('sticky');
+            }
         };
-         
+
         // run our function on load
         sticky_navigation();
-         
+
         // and run it again every time you scroll
         jQuery(window).scroll(function() {
              sticky_navigation();
         });
-        
+
         jQuery(window).resize(function() {
              sticky_navigation();
         });
-     
+
     });
 });
 
