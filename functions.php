@@ -246,6 +246,9 @@ function wsds_defer_scripts( $tag, $handle, $src ) {
 
       wp_enqueue_script('gotomeloy-site-functions', GOTOMELOY_JS_URI . '/functions.min.js', array('jquery'), 1.6, true);
 
+      wp_register_script( 'touchswipe', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.4/jquery.touchSwipe.min.js', 'jquery', '1.6.4', true );
+      wp_enqueue_script('touchswipe');
+
 
       // Enqueue (conditional)
       if ( is_singular() ) {

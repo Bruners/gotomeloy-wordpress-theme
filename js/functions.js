@@ -680,22 +680,22 @@ jQuery(document).ready(function($) {
         });
     });
 
+    // Add swipe functionality on carousel for touch devices.
+    jQuery(".carousel").swipe({
+        swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
+            if (direction == 'left') jQuery(this).carousel('next');
+            if (direction == 'right') jQuery(this).carousel('prev');
+        },
+        allowPageScroll:"vertical"
+    });
+
+    // Move portfolio items
     jQuery(function ($) {
         var header = jQuery('.single-header');
-        //var iconbar = jQuery('.portfolio-single .icon-bar-portfolio');
         var ingress = jQuery('.portfolio-single .ingress');
-        //var body = jQuery('.portfolio-single .body');
-        //var image = jQuery('.portfolio-single .image');
         if ( header.length ) {
-            //jQuery('.single-header-icons').html(iconbar.html());
             jQuery('.single-header-ingress').html(ingress.html());
-            //jQuery('.single-header-body').html(body.html());
-            //jQuery('.single-header-image').html(image.html());
-
-            //iconbar.css('display', 'none');
             ingress.css('display', 'none');
-            //body.css('display', 'none');
-            //image.css('display', 'none');
         }
         jQuery('.single-header h3.sd-title').css('display', 'none');
         jQuery('.single-header .sharedaddy').css('padding-top', '30px');

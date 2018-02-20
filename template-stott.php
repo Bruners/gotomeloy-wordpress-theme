@@ -198,65 +198,7 @@ Template Name: Portfolio Stott
                 <div id="map-container" class="col-md-8"></div>
             </div><!-- /map-outer -->
         </div> <!-- /row -->
-        <script src="https://maps.google.com/maps/api/js"></script>
-        <script>
-            function init_map() {
-                var enable_stott = true;
-
-                // Define marker icons
-                var pin_blue = '../../wp-content/themes/gotomeloy/img/map-pins/pin-blue-10.png';
-
-                // Set gps location for map
-                var var_location = new google.maps.LatLng(67.0120865,13.8881624);
-
-                // Define map options - https://developers.google.com/maps/documentation/javascript/controls
-                var var_mapoptions = {
-                    center: var_location,
-                    zoom: 7,
-                    mapTypeId: google.maps.MapTypeId.ROADMAP,
-                    mapTypeControl: false,
-                    panControl:false,
-                    rotateControl:false,
-                    streetViewControl: false,
-                };
-
-                // Create map
-                var var_map = new google.maps.Map(document.getElementById("map-container"),
-                    var_mapoptions);
-
-                // Define infoboxes and marker for each place
-                if (enable_stott) {
-                    // GPS position for map marker
-                    var var_stott = new google.maps.LatLng(66.925775,13.437980);
-
-                    var stott_content_string =
-                        '<div id="infowindow_content">'+
-                        '<p><strong>Støtt Brygge</strong><br>'+
-                        '8159 Støtt<br>' +
-                        'Norge<br>'+
-                        '+47 400 21 212</p>'+
-                        '<a href="https://www.stott.no" target="_blank">stott.no</a> | <a href="mailto:eaa@stott.no">eaa@stott.no</a>'+
-                        '</div>';
-                    var stott_infowindow = new google.maps.InfoWindow({
-                        content: stott_content_string
-                    });
-                    var stott_marker = new google.maps.Marker({
-                        position: var_stott,
-                        map: var_map,
-                        icon: pin_blue,
-                        title:"Støtt Brygge",
-                        maxWidth: 500
-                    });
-                    // Add marker and infobox for Støtt Brygge
-                    stott_marker.setMap(var_map);
-                    google.maps.event.addListener(stott_marker, 'click', function() {
-                        stott_infowindow.open(var_map,stott_marker);
-                    });
-                };
-            };
-
-            google.maps.event.addDomListener(window, 'load', init_map);
-        </script>
+        <script async defer src="https://maps.google.com/maps/api/js?key=AIzaSyAWe_W4EBKsLh6r582q_xyP-GbY7Am761E"></script>
         </div>
         <div class="copyright">
             <?php echo get_theme_mod('gotomeloy_copyright_text', esc_html__('Copyright © GO TO MELØY 2016', 'gotomeloy') ); ?> | <?php echo(esc_html__( 'Utviklet av', 'gotomeloy' )); ?> <a href="https://www.github.com/bruners/" target="_blank">Lasse Brun</a><br />
@@ -290,20 +232,22 @@ Template Name: Portfolio Stott
                                     $tdtime = clone $fromtime;
                                     $tdtime->format('d.m');
 
-                                    $xmlurl = "https://api.sehavniva.no/tideapi.php?lat=".$lat."&lon=".$lon."&fromtime=".$fromtime->format('c')."&totime=".$totime->format('c')."&datatype=tab&refcode=cd&place=St%C3%B8tt&file=&lang=nb&interval=10&dst=1&tzone=&tide_request=locationdata";
+                                    $xmlurl = "http://api.sehavniva.no/tideapi.php?lat=".$lat."&lon=".$lon."&fromtime=".$fromtime->format('c')."&totime=".$totime->format('c')."&datatype=tab&refcode=cd&place=St%C3%B8tt&file=&lang=nb&interval=10&dst=1&tzone=&tide_request=locationdata";
                                     $xml = simplexml_load_file($xmlurl);
                                     $dir = get_stylesheet_directory_uri() . "/img/";
-                                    foreach ($xml->locationdata->data->waterlevel as $level):
-                                        $flag = $level['flag'];
-                                        $time = DateTime::createFromFormat('Y-m-d\TH:i:s+P',$level['time'])->format('H:i');
-                                        $datetime = DateTime::createFromFormat('Y-m-d\TH:i:s+P',$level['time'])->format('d.m');
-                                        if ($tdtime != $datetime) {
-                                            echo "<tr><th>".$datetime."</th><th>Tid</th><th>Beregnet vannstand</th></tr>";
-                                            $tdtime = $datetime;
-                                        };
-                                        $value = round($level['value']);
-                                        echo "<tr><td align='center'><img src='",$dir, $flag,".png' alt='",$flag,"' height='26' width='26'></td><td>",$time,"</td><td>",$value," cm</td></tr>";
-                                    endforeach;
+                                    if ($xml != "") {
+                                        foreach ($xml->locationdata->data->waterlevel as $level):
+                                            $flag = $level['flag'];
+                                            $time = DateTime::createFromFormat('Y-m-d\TH:i:s+P',$level['time'])->format('H:i');
+                                            $datetime = DateTime::createFromFormat('Y-m-d\TH:i:s+P',$level['time'])->format('d.m');
+                                            if ($tdtime != $datetime) {
+                                                echo "<tr><th>".$datetime."</th><th>Tid</th><th>Beregnet vannstand</th></tr>";
+                                                $tdtime = $datetime;
+                                            };
+                                            $value = round($level['value']);
+                                            echo "<tr><td align='center'><img src='",$dir, $flag,".png' alt='",$flag,"' height='26' width='26'></td><td>",$time,"</td><td>",$value," cm</td></tr>";
+                                        endforeach;
+                                    };
                                 ?>
                             </table>
                         </div>

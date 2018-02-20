@@ -124,7 +124,7 @@
 <?php } else { ?>
 
     <?php if ( !is_home() && $is_hero_module) { ?>
-        <!-- BEGIN: HERO MODULE -->
+        <!-- BEGIN: HERO MODULE 1920x752 -->
         <section id="hero-module" class="sections hero <?php echo $hero_height. ' ' .$hero_img_class; ?>">
             <div class="hero-image iBG noparalax" data-img="<?php echo $hero_img; ?>"></div>
             <div class="hero-content">

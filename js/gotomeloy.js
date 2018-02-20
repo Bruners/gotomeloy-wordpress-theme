@@ -137,7 +137,7 @@ jQuery(document).ready(function($) {
         'use strict';
         function getImage() {
             var src = '';
-            var lastimageurl = "http://www.stott.no/wp-content/themes/gotomeloy/parts/ajax-get-webcam-image.inc.php?t="
+            var lastimageurl = "https://www.stott.no/wp-content/themes/gotomeloy/parts/ajax-get-webcam-image.inc.php?t="
             jQuery.ajax({
                 url: lastimageurl  + new Date().getTime(),
                 async: false,
@@ -392,3 +392,61 @@ jQuery(document).ready(function($) {
         });
     });
 })(jQuery);
+
+
+        
+function init_map() {
+    var enable_stott = true;
+
+    // Define marker icons
+    var pin_blue = '../../wp-content/themes/gotomeloy/img/map-pins/pin-blue-10.png';
+
+    // Set gps location for map
+    var var_location = new google.maps.LatLng(67.0120865,13.8881624);
+
+    // Define map options - https://developers.google.com/maps/documentation/javascript/controls
+    var var_mapoptions = {
+        center: var_location,
+        zoom: 7,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        mapTypeControl: false,
+        panControl:false,
+        rotateControl:false,
+        streetViewControl: false,
+    };
+
+    // Create map
+    var var_map = new google.maps.Map(document.getElementById("map-container"),
+        var_mapoptions);
+
+    // Define infoboxes and marker for each place
+    if (enable_stott) {
+        // GPS position for map marker
+        var var_stott = new google.maps.LatLng(66.925775,13.437980);
+
+        var stott_content_string =
+            '<div id="infowindow_content">'+
+            '<p><strong>Støtt Brygge</strong><br>'+
+            '8159 Støtt<br>' +
+            'Norge<br>'+
+            '+47 400 21 212</p>'+
+            '<a href="https://www.stott.no" target="_blank">stott.no</a> | <a href="mailto:eaa@stott.no">eaa@stott.no</a>'+
+            '</div>';
+        var stott_infowindow = new google.maps.InfoWindow({
+            content: stott_content_string
+        });
+        var stott_marker = new google.maps.Marker({
+            position: var_stott,
+            map: var_map,
+            icon: pin_blue,
+            title:"Støtt Brygge",
+            maxWidth: 500
+        });
+        // Add marker and infobox for Støtt Brygge
+        stott_marker.setMap(var_map);
+        google.maps.event.addListener(stott_marker, 'click', function() {
+            stott_infowindow.open(var_map,stott_marker);
+        });
+    };
+};
+google.maps.event.addDomListener(window, 'load', init_map);

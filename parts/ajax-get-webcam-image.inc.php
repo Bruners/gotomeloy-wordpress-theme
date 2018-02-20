@@ -2,6 +2,8 @@
 $folder = "../../../../webcam"; // the folder with images
 
 function getImages($dir) {
+    $directory = 'webcam';
+    //realpath($dir);
     $allFiles = scandir($dir);
     $files = array_diff($allFiles, array('.', '..'));
     foreach ($files as $f) {
