@@ -6416,8 +6416,11 @@ video {
 
 .google-maps {
     margin: 10px 10px 10px 10px;
+    color: #000;
 }
-
+.maps {
+    background-color: #202223;
+}
 .project {
     background-color: #202223;
     color: #fff;

@@ -9,26 +9,22 @@
 ?>
 
 <!-- BEGIN: SITE BODY -->
-<section id="site-body" class="sections project">
-
-	<div class="container single-header">
-		<div class="row">
-			<div class="col-md-8">
-				<div class="single-header-title"><h5><?php echo $hero_title; ?></h5></div>
-				<div class="single-header-ingress"></div>
+<?php while ( have_posts() ) : the_post(); ?>
+	<section id="site-body" class="container-fluid sections project">
+		<div class="container single-header">
+			<div class="row">
+				<div class="col-xs-12 col-md-8">
+					<div class="single-header-title"><?php echo $hero_title; ?></div>
+					<div class="single-header-ingress"></div>
+				</div>
+				<div class="col-xs-12 col-md-4">
+					<?php if ( function_exists( 'sharing_display' ) ) { echo sharing_display(); } ?>
+				</div>
 			</div>
-			<div class="col-md-4">
-				<?php if ( function_exists( 'sharing_display' ) ) { echo sharing_display(); } ?>	
-			</div>
-		</div>
-		<div class="single-header-body">
-			<?php while ( have_posts() ) : the_post(); ?>
 				<?php the_content(); ?>
 			<?php endwhile; ?>
 		</div>
-	</div>
-
-</section>
+	</section>
 <!-- END: SITE BODY -->
 
 <!-- BEGIN: PAGINATION -->
@@ -47,12 +43,13 @@
 <style>
     #map-container { height: 400px; }
 </style>
-<div class="row project">
-	<div id="map-container" class="col-md-12 google-maps project"></div>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?v=3&amp;key=AIzaSyAWe_W4EBKsLh6r582q_xyP-GbY7Am761E"></script>
-</div>
-<div class="project project-copyright text-center">
-    <?php echo get_theme_mod('gotomeloy_copyright_text', esc_html__('Copyright © GO TO MELØY 2016', 'gotomeloy') ); ?> | <?php echo(esc_html__( 'Utviklet av', 'gotomeloy' )); ?> <a href="https://www.github.com/bruners/" target="_blank">Lasse Brun</a><br />
-</div>
-
+<section class="sections maps">
+	<div class="row">
+		<div id="map-container" class="col-md-12 google-maps"></div>
+    	<script async defer src="https://maps.googleapis.com/maps/api/js?v=3&amp;key=AIzaSyAWe_W4EBKsLh6r582q_xyP-GbY7Am761E"></script>
+	</div>
+	<div class="project project-copyright text-center">
+    	<?php echo get_theme_mod('gotomeloy_copyright_text', esc_html__('Copyright © GO TO MELØY 2016', 'gotomeloy') ); ?> | <?php echo(esc_html__( 'Utviklet av', 'gotomeloy' )); ?> <a href="https://www.github.com/bruners/" target="_blank">Lasse Brun</a><br />
+	</div>
+</section>
 <?php get_footer(); ?>
