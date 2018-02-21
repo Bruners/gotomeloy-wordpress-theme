@@ -348,7 +348,7 @@ hr {
     margin-top: 2em;
     margin-bottom: 2em;
     border: 0;
-    border-top: 1px solid #eeeeee;
+    border-top: 2px solid #68c8dd;
 }
 
 .sr-only {
@@ -6414,9 +6414,22 @@ video {
     }
 }
 
+.google-maps {
+    margin: 10px 10px 10px 10px;
+}
+
 .project {
     background-color: #202223;
     color: #fff;
+}
+.project-copyright {
+    background-color: #202223;
+    color: #fff;
+    font-size: small;
+}
+.project-copyright a {
+    color: #fff;
+    text-transform: none;
 }
 
 .single-header {
@@ -6510,7 +6523,7 @@ video {
     text-align: center;
     max-width: 100%;
     line-height: 1.6;
-    margin: 0 2px;
+    margin: 0 5px;
 }
 
 .icon-text p {
@@ -6518,7 +6531,6 @@ video {
 }
 
 .icon-text .icon-title {
-    margin: 2px 0 0 0;
     font-weight: 700;
     line-height: 1.6;
 }
