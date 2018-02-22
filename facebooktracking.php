@@ -1,7 +1,6 @@
 <script>
-
     // Gotomeløy
-    */
+    /*
     window.fbAsyncInit = function() {
         FB.init({
             appId      : '583743631778760',
@@ -17,8 +16,7 @@
     js.src = "//connect.facebook.net/nb_NO/sdk.js";
     fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
-/*
-
+ */
 // Støtt Brygge
 
     window.fbAsyncInit = function() {
@@ -33,7 +31,7 @@
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) {return;}
     js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/nb_NO/sdk.js";
+    js.src = "https://connect.facebook.net/nb_NO/sdk.js";
     fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 

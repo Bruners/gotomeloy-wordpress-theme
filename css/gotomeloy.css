@@ -6420,6 +6420,7 @@ video {
 }
 .maps {
     background-color: #202223;
+    padding-bottom: 40px;
 }
 .project {
     background-color: #202223;
@@ -6428,7 +6429,7 @@ video {
 .project-copyright {
     background-color: #202223;
     color: #fff;
-    font-size: small;
+    font-size: 0.5em;
 }
 .project-copyright a {
     color: #fff;
@@ -7630,6 +7631,32 @@ footer {
 #site-footer .social-media a:hover i.fa-tripadvisor {
     background-color: #589442;
     color: black;
+}
+
+/* min-width 641px, medium screens */
+
+@media only screen and (min-width: 40.063em) {
+    #site-footer {
+        padding: 0 1.15385rem;
+        position: fixed;
+        height: 32px;
+    }
+    #site-footer .social-media {
+        display: block;
+        float: left;
+        text-align: left;
+    }
+    #site-footer .social-media li {
+        margin: 0 10px 0 10px;
+    }
+    #site-footer .social-media li a i {
+        margin: 0 10px 0 0;
+    }
+    #site-footer .credits {
+        display: block;
+        float: right;
+        margin: 0 0 20px 0;
+    }
 }
 
 .site-footer {

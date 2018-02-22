@@ -7,7 +7,7 @@
 	$have_newer_posts = get_adjacent_post(false,'',false) ? '' : 'no-more-posts';
 	$hero_title = !empty($hero_title) ? $hero_title : get_the_title();
 ?>
-
+<script async defer src="https://maps.googleapis.com/maps/api/js?v=3&amp;key=AIzaSyAWe_W4EBKsLh6r582q_xyP-GbY7Am761E"></script>
 <!-- BEGIN: SITE BODY -->
 <?php while ( have_posts() ) : the_post(); ?>
 	<section id="site-body" class="container-fluid sections project">
@@ -41,15 +41,19 @@
 </section>
 <!-- END: PAGINATION -->
 <style>
-    #map-container { height: 400px; }
+    #map-container-portfolio { height: 400px; }
 </style>
 <section class="sections maps">
 	<div class="row">
-		<div id="map-container" class="col-md-12 google-maps"></div>
-    	<script async defer src="https://maps.googleapis.com/maps/api/js?v=3&amp;key=AIzaSyAWe_W4EBKsLh6r582q_xyP-GbY7Am761E"></script>
+		<div class="col-md-12">
+			<div id="map-container-portfolio" class="google-maps"></div>
+	    </div>
 	</div>
+	
 	<div class="project project-copyright text-center">
     	<?php echo get_theme_mod('gotomeloy_copyright_text', esc_html__('Copyright © GO TO MELØY 2016', 'gotomeloy') ); ?> | <?php echo(esc_html__( 'Utviklet av', 'gotomeloy' )); ?> <a href="https://www.github.com/bruners/" target="_blank">Lasse Brun</a><br />
 	</div>
 </section>
+
+       
 <?php get_footer(); ?>
