@@ -195,10 +195,9 @@ Template Name: Portfolio Stott
                         <p><?php echo ( $kontaktskjema_adresse ); ?></p>
                     </address>
                 </div>
-                <div id="map-container" class="col-md-8 google-maps"></div>
+                <div id="map-container" class="col-md-8"></div>
             </div><!-- /map-outer -->
         </div> <!-- /row -->
-        <script async defer src="https://maps.googleapis.com/maps/api/js?v=3&amp;key=AIzaSyAWe_W4EBKsLh6r582q_xyP-GbY7Am761E"></script>
         </div>
         <div class="copyright">
             <?php echo get_theme_mod('gotomeloy_copyright_text', esc_html__('Copyright © GO TO MELØY 2016', 'gotomeloy') ); ?> | <?php echo(esc_html__( 'Utviklet av', 'gotomeloy' )); ?> <a href="https://www.github.com/bruners/" target="_blank">Lasse Brun</a><br />

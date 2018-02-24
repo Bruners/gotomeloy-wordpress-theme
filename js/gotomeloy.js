@@ -132,7 +132,7 @@
 
 jQuery(document).ready(function($) {
     /*  stott.no specific */
-    /* Update webcam image with the most up to date image  */ 
+    /* Update webcam image with the most up to date image  */
     jQuery(function($) {
         'use strict';
         function getImage() {
@@ -393,6 +393,23 @@ jQuery(document).ready(function($) {
     });
 })(jQuery);
 
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  if (document.querySelectorAll('#map-container').length > 0)
+  {
+    if (document.querySelector('html').lang)
+      lang = document.querySelector('html').lang;
+    else
+      lang = 'en';
+
+    var js_file = document.createElement('script');
+    js_file.type = 'text/javascript';
+    js_file.src = 'https://maps.googleapis.com/maps/api/js?callback=initMap&signed_in=true&key=AIzaSyAWe_W4EBKsLh6r582q_xyP-GbY7Am761E&language=' + lang;
+    document.getElementsByTagName('head')[0].appendChild(js_file);
+  }
+});
+
 /*
  * declare map as a global variable
  */
@@ -401,8 +418,7 @@ var map;
 /*
  * use google maps api built-in mechanism to attach dom events
  */
-google.maps.event.addDomListener(window, "load", function () {
-
+function initMap() {
     /*
      * create map
      */
@@ -453,5 +469,5 @@ google.maps.event.addDomListener(window, "load", function () {
         icon: pin_blue
     }, "<div id='infowindow_content'><p><strong>Støtt Brygge</strong><br />8159 Støtt<br>Norge<br />+47 400 21 212</p><a href='https://www.stott.no' target='_blank'>stott.no</a> | <a href='mailto:eaa@stott.no'>eaa@stott.no</a></div>");
 
-});
+};
 
