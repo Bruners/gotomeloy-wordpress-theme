@@ -232,22 +232,30 @@ Template Name: Portfolio Stott
                                     $tdtime->format('d.m');
 
                                     $xmlurl = "http://api.sehavniva.no/tideapi.php?lat=".$lat."&lon=".$lon."&fromtime=".$fromtime->format('c')."&totime=".$totime->format('c')."&datatype=tab&refcode=cd&place=St%C3%B8tt&file=&lang=nb&interval=10&dst=1&tzone=&tide_request=locationdata";
-                                    $xml = simplexml_load_file($xmlurl);
                                     $dir = get_stylesheet_directory_uri() . "/img/";
-                                    if ($xml != "") {
-                                        foreach ($xml->locationdata->data->waterlevel as $level):
-                                            $flag = $level['flag'];
-                                            $time = DateTime::createFromFormat('Y-m-d\TH:i:s+P',$level['time'])->format('H:i');
-                                            $datetime = DateTime::createFromFormat('Y-m-d\TH:i:s+P',$level['time'])->format('d.m');
-                                            if ($tdtime != $datetime) {
-                                                echo "<tr><th>".$datetime."</th><th>Tid</th><th>Beregnet vannstand</th></tr>";
-                                                $tdtime = $datetime;
-                                            };
-                                            $value = round($level['value']);
-                                            echo "<tr><td align='center'><img src='",$dir, $flag,".png' alt='",$flag,"' height='26' width='26'></td><td>",$time,"</td><td>",$value," cm</td></tr>";
-                                        endforeach;
-                                    };
+
+                                    libxml_use_internal_errors(TRUE);
+                                    try {
+                                        //$xml = simplexml_load_file($xmlurl);
+                                        $xml = new SimpleXMLElement($xmlurl);
+                                        if ($xml != "") {
+                                            foreach ($xml->locationdata->data->waterlevel as $level):
+                                                $flag = $level['flag'];
+                                                $time = DateTime::createFromFormat('Y-m-d\TH:i:s+P',$level['time'])->format('H:i');
+                                                $datetime = DateTime::createFromFormat('Y-m-d\TH:i:s+P',$level['time'])->format('d.m');
+                                                if ($tdtime != $datetime) {
+                                                    echo "<tr><th>".$datetime."</th><th>Tid</th><th>Beregnet vannstand</th></tr>";
+                                                    $tdtime = $datetime;
+                                                };
+                                                $value = round($level['value']);
+                                                echo "<tr><td align='center'><img src='",$dir, $flag,".png' alt='",$flag,"' height='26' width='26'></td><td>",$time,"</td><td>",$value," cm</td></tr>";
+                                            endforeach;
+                                        };
+                                    } catch (Exception $e) {
+                                        echo "<tr><td align='center'>Kunne ikke laste inn Vannstandsdata</td></tr>";
+                                    }
                                 ?>
+                                <tr><td class="copyright" align="right">Vannstandsdata © Kartverket <a href='http://www.sehavniva.no'>sehavniva.no</a></td></tr>
                             </table>
                         </div>
                         <br />
@@ -265,15 +273,18 @@ Template Name: Portfolio Stott
     <div class="tjeneste-modals">
         <!-- Modal 868 -->
         <?php
-            $tjeneste_868_post = get_post( 868 );
-            $tjeneste_868_title = $tjeneste_868_post->post_title;
+            if ( ICL_LANGUAGE_CODE == "en") {
+                $tjeneste_aktivitetskalender = get_post( 19946 );
+            } elseif ( ICL_LANGUAGE_CODE == "nb" ) {
+                $tjeneste_aktivitetskalender = get_post( 18085 );
+            }
         ?>
         <div id="tjeneste-modal-868" class="modal fade" tabindex="-1">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <button class="close fa fa-close" type="button" data-dismiss="modal"></button>
-                        <h5 class="modal-title"><?php echo ( $tjeneste_868_title ); ?></h5>
+                        <button class="close" type="button" aria-label="Close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                        <h5 class="modal-title"><?php echo $tjeneste_aktivitetskalender->post_title; ?></h5>
                     </div>
                     <div class="modal-body">
                         <div><h4><?php echo(esc_html__( 'Liste over kommende aktiviteter:', 'gotomeloy' )); ?></h4></div>
@@ -350,7 +361,7 @@ Template Name: Portfolio Stott
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <button class="close fa fa-close" type="button" data-dismiss="modal"></button>
+                        <button class="close" type="button" aria-label="Close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
                         <h5 class="modal-title"><?php the_title(); ?></h5>
                     </div>
                     <div class="modal-body">
