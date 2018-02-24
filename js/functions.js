@@ -689,6 +689,9 @@ jQuery(document).ready(function($) {
         allowPageScroll:'vertical',
     });
 
+
+    jQuery('.fa.fa-instagram').removeClass('fa').addClass('fab');
+    
     // Move portfolio items
     jQuery(function ($) {
         var header = jQuery('.single-header');

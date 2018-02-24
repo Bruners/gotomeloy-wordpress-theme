@@ -120,7 +120,7 @@ Template Name: Portfolio Stott
         <?php endif; ?>
     </div><!-- END: BOTTOM WIDGETS -->
     <div class="container-fluid">
-        <div class="textwidget text-center"><h4><i class="fa fa-video-camera">Video</i></h4></div>
+        <div class="textwidget text-center"><h4><i class="fas fa-video">Video</i></h4></div>
         <div class="container-promo-video">
             <div id="carousel-promo-video" class="carousel slide" data-ride="carousel">
                 <!-- Indicators -->

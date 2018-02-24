@@ -199,7 +199,7 @@ function wsds_defer_scripts( $tag, $handle, $src ) {
       wp_enqueue_style('gotomeloy', GOTOMELOY_CSS_URI . '/gotomeloy.min.css', array('gotomeloy-style'), 1.6 );
       wp_enqueue_style('gotomeloy-style', get_template_directory_uri() . '/style.css');
       
-
+      wp_enqueue_style('fontawesome', 'https://use.fontawesome.com/releases/v5.0.6/css/all.css', null, '5.0.6', 'all' );
 
       // Add Inline Styles (dynamic)
       ob_start();

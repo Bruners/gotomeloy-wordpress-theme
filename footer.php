@@ -42,11 +42,11 @@
             ?>
             <footer id="site-footer">
                 <ul class="social-media">
-                    <?php if(!empty($facebook_url)) echo '<li><a href="' . $facebook_url .  '" target="blank"><i class="fa fa-facebook-square"></i></a></li>'; ?>
-                    <?php if(!empty($youtube_url)) echo '<li><a href="' . $youtube_url .   '" target="blank"><i class="fa fa-youtube-play"></i></a></li>'; ?>
-                    <?php if(!empty($instagram_url)) echo '<li><a href="' . $instagram_url . '" target="blank"><i class="fa fa-instagram"></i></a></li>'; ?>
-                    <?php if(!empty($twitter_url)) echo '<li><a href="' . $twitter_url .   '" target="blank"><i class="fa fa-twitter-square"></i></a></li>'; ?>
-                    <?php if(!empty($tripadvisor_url)) echo '<li><a href="' . $tripadvisor_url . '" target="blank"><i class="fa fa-tripadvisor"></i></a></li>'; ?>
+                    <?php if(!empty($facebook_url)) echo '<li><a href="' . $facebook_url .  '" target="blank"><i class="fab fa-facebook-square"></i></a></li>'; ?>
+                    <?php if(!empty($youtube_url)) echo '<li><a href="' . $youtube_url .   '" target="blank"><i class="fab fa-youtube"></i></a></li>'; ?>
+                    <?php if(!empty($instagram_url)) echo '<li><a href="' . $instagram_url . '" target="blank"><i class="fab fa-instagram"></i></a></li>'; ?>
+                    <?php if(!empty($twitter_url)) echo '<li><a href="' . $twitter_url .   '" target="blank"><i class="fab fa-twitter-square"></i></a></li>'; ?>
+                    <?php if(!empty($tripadvisor_url)) echo '<li><a href="' . $tripadvisor_url . '" target="blank"><i class="fab fa-tripadvisor"></i></a></li>'; ?>
                 </ul>
                 <span class="credits"><?php echo esc_html( get_bloginfo('name') ); ?> © 2016-2018</span>
                 <ul class="language-selector">
