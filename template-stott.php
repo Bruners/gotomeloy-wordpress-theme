@@ -201,7 +201,6 @@ Template Name: Portfolio Stott
         </div>
         <div class="copyright">
             <?php echo get_theme_mod('gotomeloy_copyright_text', esc_html__('Copyright © GO TO MELØY 2016', 'gotomeloy') ); ?> | <?php echo(esc_html__( 'Utviklet av', 'gotomeloy' )); ?> <a href="https://www.github.com/bruners/" target="_blank">Lasse Brun</a><br />
-            <?php echo(esc_html__( 'Engelsk oversettelse av', 'gotomeloy' )); ?> <a href="http://mclean.no/" target="_blank">McLean.no Oversetting og undertekster</a>
         </div>
     </div>
 
@@ -236,8 +235,8 @@ Template Name: Portfolio Stott
 
                                     libxml_use_internal_errors(TRUE);
                                     try {
-                                        //$xml = simplexml_load_file($xmlurl);
-                                        $xml = new SimpleXMLElement($xmlurl);
+                                        $xml = simplexml_load_file($xmlurl);
+                                        //$xml = new SimpleXMLElement($xmlurl);
                                         if ($xml != "") {
                                             foreach ($xml->locationdata->data->waterlevel as $level):
                                                 $flag = $level['flag'];
@@ -255,7 +254,7 @@ Template Name: Portfolio Stott
                                         echo "<tr><td align='center'>Kunne ikke laste inn Vannstandsdata</td></tr>";
                                     }
                                 ?>
-                                <tr><td class="copyright" align="right">Vannstandsdata © Kartverket <a href='http://www.sehavniva.no'>sehavniva.no</a></td></tr>
+                                <tr class="copyright" align="right">Vannstandsdata © Kartverket <a href='http://www.sehavniva.no'>sehavniva.no</a></tr>
                             </table>
                         </div>
                         <br />
