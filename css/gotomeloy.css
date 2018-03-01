@@ -882,6 +882,9 @@ pre code {
     .innhold {
         max-width: 550px;
     }
+    .form-line{
+        border-right: 1px solid #B29999;
+    }
 }
 
 @media (min-width: 1200px) {
