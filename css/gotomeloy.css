@@ -4422,8 +4422,10 @@ button.close {
 .modal-header .modal-title {
     color: white;
     text-transform: uppercase;
+    /*
     padding: 15px;
     border-bottom: 1px solid #e5e5e5;
+    */
 }
 
 .modal-header .close {
@@ -5854,14 +5856,8 @@ fieldset[disabled] .btn-danger.active {
     width: 100%;
 }
 
-.contact-section {
-    padding-top: 40px;
-    padding-bottom: 40px;
-    position: inherit;
-}
-
 .contact-submit {
-    font-size: 1.1em;
+    font-size: inherit;
 }
 
 .contact-response p {
@@ -5875,6 +5871,7 @@ textarea.form-control {
 
 input[type="text"].form-control,
 input[type="email"].form-control,
+button.form-control,
 span.input-group-addon {
     height: 34px;
     font-size: inherit;

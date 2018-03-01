@@ -193,6 +193,7 @@ jQuery(document).ready(function($) {
     $.fn.bgVideo = function(options) {
         // @bool iOS
         //var iOS = /iPad|iPhone|iPod/.test(navigator.platform) || /iPad|iPhone|iPod/.test(navigator.userAgent);
+        var isLoggedIN = $( "body" ).hasClass( "logged-in" )
         // Settings
         var settings = $.extend({}, $.fn.bgVideo.defaults, options);
         // Do the things
@@ -275,6 +276,14 @@ jQuery(document).ready(function($) {
             }
             // Fade in video by setting the transition duration
             $video.css("transition-duration", el_settings.fadeIn + "ms");
+
+            if (isLoggedIN) {
+            // Unset sources to prevent them from continuing to download
+                $video.attr("src", "");
+                $video.find("source").attr("src", "");
+                $video.remove();
+            }
+
             // Remove on iOS
             //if (iOS) {
             //    // Unset sources to prevent them from continuing to download
@@ -471,3 +480,14 @@ function initMap() {
 
 };
 
+    jQuery(document).on('submit', '#ContactForm', function() {
+
+       jQuery.post("../../../wp-content/themes/gotomeloy/parts/contact-form-handler.php", jQuery(this).serialize())
+        .done(function(data){
+            jQuery("#ContactFormResponse").fadeOut();
+            jQuery("#ContactFormResponse").fadeIn('slow', function(){
+                 jQuery("#ContactFormResponse").html('<div class="alert bg-info">'+data+'</div>');
+             });
+         });
+         return false;
+    });

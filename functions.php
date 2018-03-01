@@ -53,7 +53,7 @@ add_action('init','disable_comment_reply_js');
 add_filter( 'publicize_checkbox_default', '__return_false' );
 
 
-/*  
+/*
 * Getting script tags
 * Thanks http://wordpress.stackexchange.com/questions/54064/how-do-i-get-the-handle-for-all-enqueued-scripts
 */
@@ -71,7 +71,7 @@ add_filter( 'script_loader_tag', 'wsds_defer_scripts', 10, 3 );
 function wsds_defer_scripts( $tag, $handle, $src ) {
 
   // The handles of the enqueued scripts we want to defer
-  $defer_scripts = array( 
+  $defer_scripts = array(
     'admin-bar',
     'contact-form-7',
     'sb_instagram_scripts',
@@ -87,12 +87,12 @@ function wsds_defer_scripts( $tag, $handle, $src ) {
     if ( in_array( $handle, $defer_scripts ) ) {
         return '<script src="' . $src . '" defer="defer" type="text/javascript"></script>' . "\n";
     }
-    
+
     return $tag;
-} 
+}
 
 
-// admin-bar | contact-form-7 | sb_instagram_scripts | devicepx | wpml-legacy-dropdown-0 | jquery | gotomeloy-theme-functions | gotomeloy-site-functions | comment-reply | 
+// admin-bar | contact-form-7 | sb_instagram_scripts | devicepx | wpml-legacy-dropdown-0 | jquery | gotomeloy-theme-functions | gotomeloy-site-functions | comment-reply |
 
 #-----------------------------------------------------------------#
 # Define Theme Constants
@@ -198,7 +198,7 @@ function wsds_defer_scripts( $tag, $handle, $src ) {
       //wp_enqueue_style('gotomeloy', GOTOMELOY_CSS_URI . '/gotomeloy.min.css', array('gotomeloy-style'), 1.0);
       wp_enqueue_style('gotomeloy', GOTOMELOY_CSS_URI . '/gotomeloy.min.css', array('gotomeloy-style'), 1.6 );
       wp_enqueue_style('gotomeloy-style', get_template_directory_uri() . '/style.css');
-      
+
       wp_enqueue_style('fontawesome', 'https://use.fontawesome.com/releases/v5.0.6/css/all.css', null, '5.0.6', 'all' );
 
       // Add Inline Styles (dynamic)
@@ -278,7 +278,7 @@ function language_selector_flags(){
     $languages = icl_get_languages('skip_missing=0&orderby=code');
     if(!empty($languages)){
         foreach($languages as $l){
-          if(!$l['active']) 
+          if(!$l['active'])
               echo '<li><a href="'.$l['url'].'"><img class="lang-'.$l['language_code'].'" src="'.$l['country_flag_url'].'" height="18" alt="'.$l['language_code'].'" width="24" /></a></li>';
         }
     }
@@ -288,7 +288,7 @@ function language_selector_flags_nolist(){
     $languages = icl_get_languages('skip_missing=1&orderby=code');
     if(!empty($languages)){
         foreach($languages as $l){
-            if(!$l['active']) 
+            if(!$l['active'])
               echo '<a href="'.$l['url'].'" class="lang-'.$l['language_code'].'" alt="'.$l['language_code'].'"></a>';
         }
     }
