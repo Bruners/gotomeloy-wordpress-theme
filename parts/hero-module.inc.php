@@ -102,8 +102,8 @@
 <!-- BEGIN: HERO MODULE -->
     <div id="home-featured" class="video-container jquery-background-video-wrapper">
         <video autoplay loop muted webkit-playsinline playsinline plays-inline data-bgvideo class="my-background-video jquery-background-video" poster="<?php echo $hero_img; ?>">
-            <source src="https://www.stott.no/video/stott_brygge_V4-2_720x406_1500kbps_baseline3.mp4" type='video/mp4; codecs="avc1.58A01E"'>
-            <source src="https://www.stott.no/video/stott_brygge_V4-2_720p30_3000kbps_main_3.1.mp4" type='video/mp4; codecs="avc1.42001E"'>
+            <source src="https://static.stott.no/video/stott_brygge_V4-2_720x406_1500kbps_baseline3.mp4" type='video/mp4; codecs="avc1.58A01E"'>
+            <source src="https://static.stott.no/video/stott_brygge_V4-2_720p30_3000kbps_main_3.1.mp4" type='video/mp4; codecs="avc1.42001E"'>
             Your browser does not support the video tag
        </video>
         <header>

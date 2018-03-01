@@ -5681,11 +5681,16 @@ fieldset[disabled] .btn-danger.active {
 
 /** == main == */
 
-textarea {
+.kontakt-oss textarea {
     flex-direction: column;
     height: 125px;
+    width: 100%;
     resize: auto;
     cursor: auto;
+}
+.kontakt-oss input[type="text"],
+.kontakt-oss input[type="email"] { 
+    width: 100%;
 }
 
 .panel-image {
@@ -6033,7 +6038,7 @@ dl dd {
 
 @media only screen and (min-width: 40.063em) {
     #logo {
-        float: left;
+        float: left;    
         line-height: 70px;
     }
     #site-header {
@@ -6045,7 +6050,7 @@ dl dd {
 }
 
 #wrapper {
-    background-color: #202223;
+    /* background-color: #202223; */
     overflow: hidden;
     position: relative;
     left: 0;
@@ -6526,7 +6531,8 @@ video {
 .icon-icon .fa-credit-card,
 .icon-icon .fa-compass,
 .icon-icon .fa-star,
-.icon-icon .fa-clock {
+.icon-icon .fa-clock,
+.icon-icon .fa-bicycle {
     font-size: .8em;
 }
 
@@ -6551,8 +6557,8 @@ video {
 }
 
 .preloader {
-    width: 100%;
-    height: 100%;
+    width: 50%;
+    height: 50%;
     position: fixed;
     top: 0;
     left: 0;
@@ -6563,10 +6569,7 @@ video {
 .loader {
     width: 32px;
     height: 32px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin: -16px 0 0 -16px;
+    margin: 0 auto;
     border: 4px solid #E1E1E1;
     border-top: 4px solid #1E2023;
     border-radius: 50%;

@@ -2,3 +2,4 @@ error_log
 guider_tur.php
 **/*.beautified.js
 **/*.beautified.css
+css/lib/font-whitefox.css
