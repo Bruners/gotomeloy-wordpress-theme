@@ -61,45 +61,16 @@
 ?>
 
 <?php get_header(); ?>
-<style>
-    .section-content {
-        text-align: center; 
-    }
-    .contact-section {
-        padding-top: 40px;
-        padding-bottom: 40px;
-        position: inherit;
-    }
-    .form-response p {
-        padding: 15px;
-    }
-
-    textarea.form-control {
-        height: 135px;
-        font-size: inherit;
-        /* margin-top: px;*/
-    }
-    input[type="text"].form-control, 
-    input[type="email"].form-control,
-    span.input-group-addon {
-        height: 34px;
-        font-size: inherit;
-    }
-
-    .submit{
-        font-size: 1.1em;
-    }
-</style>
 
 <section id="site-body" class="container-fluid sections">
     <div class="container">
         <?php while ( have_posts() ) : the_post(); ?>
-            <div class="section-content">
+            <div class="text-center">
                 <h4 class="section-header"><?php the_title(); ?></h4>
                 <h5><?php the_content(); ?></h5>
             </div>
             <div class="contact-section">
-                <div class="form-response">
+                <div class="contact-response">
                     <?php echo $response; ?>
                 </div>
                 <form action="<?php the_permalink(); ?>" method="post">
@@ -132,7 +103,7 @@
                             <div class="col-xs-6">
                                 <div class="form-inline">
                                     <label class="control-label" for="submit"> </label>
-                                    <button type="submit" class="btn btn-primary submit"><i class="fa fa-paper-plane" aria-hidden="true"></i>  Send Message</button>
+                                    <button type="submit" class="btn btn-primary contact-submit"><i class="fa fa-paper-plane" aria-hidden="true"></i>  Send Message</button>
                                 </div>
                             </div>
                         </div>

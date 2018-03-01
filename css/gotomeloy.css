@@ -5830,6 +5830,12 @@ fieldset[disabled] .btn-danger.active {
 
 /** == main == */
 
+.kontakt-oss {
+    margin: 0 auto;
+    text-align: center;
+    max-width: 960px;
+}
+
 .kontakt-oss textarea {
     flex-direction: column;
     height: 125px;
@@ -5841,6 +5847,30 @@ fieldset[disabled] .btn-danger.active {
 .kontakt-oss input[type="text"],
 .kontakt-oss input[type="email"] {
     width: 100%;
+}
+
+.contact-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    position: inherit;
+}
+
+.contact-submit{
+    font-size: 1.1em;
+}
+
+    padding: 15px;
+}
+
+textarea.form-control {
+    height: 135px;
+    font-size: inherit;
+}
+input[type="text"].form-control, 
+input[type="email"].form-control,
+span.input-group-addon {
+    height: 34px;
+    font-size: inherit;
 }
 
 .panel-image {
@@ -6100,12 +6130,6 @@ article.portfolio {
     background: #eee;
     margin-top: 25px;
     padding: 20px;
-}
-
-.kontakt-oss {
-    margin: 0 auto;
-    text-align: center;
-    max-width: 960px;
 }
 
 .float-left {
