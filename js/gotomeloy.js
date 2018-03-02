@@ -479,15 +479,3 @@ function initMap() {
     }, "<div id='infowindow_content'><p><strong>Støtt Brygge</strong><br />8159 Støtt<br>Norge<br />+47 400 21 212</p><a href='https://www.stott.no' target='_blank'>stott.no</a> | <a href='mailto:eaa@stott.no'>eaa@stott.no</a></div>");
 
 };
-
-    jQuery(document).on('submit', '#ContactForm', function() {
-
-       jQuery.post("../../../wp-content/themes/gotomeloy/parts/contact-form-handler.php", jQuery(this).serialize())
-        .done(function(data){
-            jQuery("#ContactFormResponse").fadeOut();
-            jQuery("#ContactFormResponse").fadeIn('slow', function(){
-                 jQuery("#ContactFormResponse").html('<div class="alert bg-info">'+data+'</div>');
-             });
-         });
-         return false;
-    });

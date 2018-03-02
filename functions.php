@@ -518,3 +518,39 @@ function gotomeloy_menu_modal_22547( $atts, $item, $args )
   }
   return $atts;
 }
+
+function sendContactFormToSiteAdmin () {
+
+  $email_from      = "kontakt@stott.no";
+  $email_to        = "fiskebruket@gmail.com";
+  //user posted variables
+  $name = $_POST['message_name'];
+  $email = $_POST['message_email'];
+  $message = $_POST['message_text'] . "\r\n\r\n" . "--" . "\r\n" . "This e-mail was sent from a contact form on Støtt Brygge (https://www.stott.no)";
+  $human = $_POST['message_human'];
+
+    try {
+    if (empty($name) || empty($email) || empty($message) || empty($human)) {
+      throw new Exception('Bad form parameters. Check the markup to make sure you are naming the inputs correctly.');
+    }
+    if (!is_email($email)) {
+      throw new Exception('Email address not formatted correctly.');
+    }
+ 
+    $headers = "From: ". $name . " <" . $email_from . ">" . "\r\n" . "Reply-To: " . $email . "\r\n";
+    $subject = "Kontaktskjema Støtt Brygge: " . $name;
+    $message = "Melding fra ". $name . ": \n\n " . $message . " \n\n Reply to: " . $email;
+ 
+    if (wp_mail($email_to, $subject, $message, $headers)) {
+      echo json_encode(array('status' => 'success', 'message' => 'Contact message sent.'));
+      exit;
+    } else {
+      throw new Exception('Failed to send email. Check AJAX handler.');
+    }
+  } catch (Exception $e) {
+    echo json_encode(array('status' => 'error', 'message' => $e->getMessage()));
+    exit;
+  }
+}
+add_action("wp_ajax_contact_send", "sendContactFormToSiteAdmin");
+add_action("wp_ajax_nopriv_contact_send", "sendContactFormToSiteAdmin");
