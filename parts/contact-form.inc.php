@@ -46,7 +46,7 @@
                             <label class="control-label" for="submit_div"> </label>
                             <div name="submit_div">
                                 <button type="submit" class="btn btn-primary contact-submit">
-                                    <i class="fa fa-paper-plane" aria-hidden="true"></i>  Send Message
+                                    <i class="fa fa-paper-plane" aria-hidden="true"></i>  Send
                                 </button>
                             </div>
                         </div>
@@ -79,7 +79,7 @@
 
         var is_sending = false,
             failure_message = 'Whoops, looks like there was a problem. Please try again later.';
- 
+
         jQuery('#ContactForm').submit(function (e) {
             e.preventDefault(); // Prevent the default form submit
 
@@ -88,7 +88,7 @@
                 return false;
             }
             $this = jQuery(this); // Cache this
-        
+
             jQuery.ajax({
                 url: '<?php echo admin_url("admin-ajax.php") ?>', // Let WordPress figure this url out.
                 type: 'post',
@@ -112,7 +112,7 @@
                 }
             });
         });
- 
+
         function handleFormError() {
             // Reset the is_sending var so they can try again.
             is_sending = false;
@@ -121,7 +121,7 @@
                 jQuery("#ContactFormResponse").html('<div class="alert bg-info">!'+failure_message+'!</div>');
             });
         }
- 
+
 
         function validateInputs () {
             var $human = jQuery('#message_human').val(),
@@ -147,8 +147,8 @@
                 $name = jQuery('#ContactForm > input[name="message_name"]').val(),
                 $email = jQuery('#ContactForm > input[name="message_email"]').val(),
                 $message = jQuery('#ContactForm > textarea').val();
-                
-            
+
+
             if (!$human == "2") {
                 jQuery("#ContactFormResponse").fadeIn('slow', function(){
                     jQuery("#ContactFormResponse").html('<div class="alert bg-info">'+$human+'</div>');

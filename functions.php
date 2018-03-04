@@ -522,7 +522,7 @@ function gotomeloy_menu_modal_22547( $atts, $item, $args )
 function sendContactFormToSiteAdmin () {
 
   $email_from      = "kontakt@stott.no";
-  $email_to        = "fiskebruket@gmail.com";
+  $email_to        = "eaa@stott.no";
   //user posted variables
   $name = $_POST['message_name'];
   $email = $_POST['message_email'];
