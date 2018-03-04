@@ -59,12 +59,12 @@
 
 <script>
     jQuery(document).ready(function ($) {
-        var not_human_en       = "Human verification incorrect.",
-            missing_content_en = "Please supply all information.".
-            email_invalid_en   = "Email Address Invalid.",
-            message_unsent_en  = "Message was not sent. Try Again.",
-            message_sent_en    = "Thanks! Your message has been sent.",
-            message_empty_en   = "Empty message";
+        // var not_human_en       = <?php echo(esc_html__( 'Human verification incorrect.', 'gotomeloy' )); ?>,
+        //    missing_content_en = <?php echo(esc_html__( 'Please supply all information.', 'gotomeloy' )); ?>,
+        //    email_invalid_en   = <?php echo(esc_html__( 'Email Address Invalid.', 'gotomeloy' )); ?>,
+        //    message_unsent_en  = <?php echo(esc_html__( 'Message was not sent. Try Again.', 'gotomeloy' )); ?>,
+        //    message_sent_en    = <?php echo(esc_html__( 'Thanks! Your message has been sent.', 'gotomeloy' )); ?>,
+        //    message_empty_en   = <?php echo(esc_html__( 'Empty message.', 'gotomeloy' )); ?>;
 
         var not_human       = "Menneskelig verifisering feilet.",
             missing_content = "Vennligst fyll ut alle felt.".
@@ -78,7 +78,8 @@
 
 
         var is_sending = false,
-            failure_message = 'Whoops, looks like there was a problem. Please try again later.';
+            failure_message = 'Opps, Et problem har oppstått. Vennligst prøv igjen senere.';
+            failure_message_en = 'Whoops, looks like there was a problem. Please try again later.';
 
         jQuery('#ContactForm').submit(function (e) {
             e.preventDefault(); // Prevent the default form submit
@@ -102,7 +103,7 @@
                 success: function (data) {
                     if (data.status === 'success') {
                         jQuery("#ContactFormResponse").fadeIn('slow', function(){
-                            jQuery("#ContactFormResponse").html('<div class="alert bg-info">'+message_sent+'</div>');
+                            jQuery("#ContactFormResponse").html('<div class="alert alert-success">'+message_sent+'</div>');
                         });
                         $('#ContactForm')[0].reset();
                     } else {
@@ -118,7 +119,7 @@
             is_sending = false;
 
             jQuery("#ContactFormResponse").fadeIn('slow', function(){
-                jQuery("#ContactFormResponse").html('<div class="alert bg-info">!'+failure_message+'!</div>');
+                jQuery("#ContactFormResponse").html('<div class="alert alert-danger">!'+failure_message+'!</div>');
             });
         }
 
@@ -130,43 +131,12 @@
                 $message = jQuery('#message_text').val();
             if ($human != "2") {
                 jQuery("#ContactFormResponse").fadeIn('slow', function(){
-                    jQuery("#ContactFormResponse").html('<div class="alert bg-info">'+not_human+'</div>');
+                    jQuery("#ContactFormResponse").html('<div class="alert alert-warning">'+not_human+'</div>');
                 });
                 return false;
             } else if (!$name || !$email || !$message) {
                 jQuery("#ContactFormResponse").fadeIn('slow', function(){
-                    jQuery("#ContactFormResponse").html('<div class="alert bg-info">'+missing_content+'</div>');
-                });
-                return false;
-            }
-            return true;
-        }
-
-        function validateInputs2() {
-            var $human = jQuery('#ContactForm > input[name="message_human"]').val(),
-                $name = jQuery('#ContactForm > input[name="message_name"]').val(),
-                $email = jQuery('#ContactForm > input[name="message_email"]').val(),
-                $message = jQuery('#ContactForm > textarea').val();
-
-
-            if (!$human == "2") {
-                jQuery("#ContactFormResponse").fadeIn('slow', function(){
-                    jQuery("#ContactFormResponse").html('<div class="alert bg-info">'+$human+'</div>');
-                });
-                return false;
-            } else if (!$name) {
-                jQuery("#ContactFormResponse").fadeIn('slow', function(){
-                    jQuery("#ContactFormResponse").html('<div class="alert bg-info">'+missing_content+'</div>');
-                });
-                return false;
-            } else if (!$email) {
-                jQuery("#ContactFormResponse").fadeIn('slow', function(){
-                    jQuery("#ContactFormResponse").html('<div class="alert bg-info">'+email_invalid+'</div>');
-                });
-                return false;
-            } else if (!$message) {
-                jQuery("#ContactFormResponse").fadeIn('slow', function(){
-                    jQuery("#ContactFormResponse").html('<div class="alert bg-info">'+message_empty+'</div>');
+                    jQuery("#ContactFormResponse").html('<div class="alert alert-warning">'+missing_content+'</div>');
                 });
                 return false;
             }
