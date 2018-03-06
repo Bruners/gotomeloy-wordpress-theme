@@ -152,6 +152,15 @@ Template Name: Portfolio Stott
                     </div>
                     <div class="item">
                         <div class="embed-responsive embed-responsive-16by9">
+                            <iframe width="560" height="315" src="" data-src="https://www.youtube.com/embed/ZlQM7-BJagM?rel=0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                        </div>
+                        <div class="carousel-caption">
+                            <h5 class="text-center">Skattejakten LIVE</h5>
+                            <p>Benedicte forteller om hvorfor hun gjerne vil bo på Støtt, et fiskevær med bare 25 innbyggere.</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="embed-responsive embed-responsive-16by9">
                             <iframe width="560" height="315" src="" data-src="https://www.youtube.com/embed/CkxmJ592_TY?rel=0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                         </div>
                         <div class="carousel-caption">
