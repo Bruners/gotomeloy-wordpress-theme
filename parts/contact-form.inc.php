@@ -33,7 +33,7 @@
                         <textarea class="form-control" id="message_text" name="message_text" placeholder="Melding.." required><?php echo esc_textarea($_POST['message_text']); ?></textarea>
                     </div>
                     <div class="col-xs-6">
-                        <div class="form-inline">
+                        <div class="form-group form-inline">
                             <label class="control-label" for="message_human">Menneskelig verifisering</label>
                             <div class="input-group" style="width:140px;" >
                                 <input type="text" class="form-control" id="message_human" name="message_human" required>
@@ -42,7 +42,7 @@
                         </div>
                     </div>
                     <div class="col-xs-6">
-                        <div class="form-group">
+                        <div class="form-group float-right">
                             <label class="control-label" for="submit_div"> </label>
                             <div name="submit_div">
                                 <button type="submit" class="btn btn-primary contact-submit">
@@ -59,27 +59,35 @@
 
 <script>
     jQuery(document).ready(function ($) {
-        // var not_human_en       = <?php echo(esc_html__( 'Human verification incorrect.', 'gotomeloy' )); ?>,
-        //    missing_content_en = <?php echo(esc_html__( 'Please supply all information.', 'gotomeloy' )); ?>,
-        //    email_invalid_en   = <?php echo(esc_html__( 'Email Address Invalid.', 'gotomeloy' )); ?>,
-        //    message_unsent_en  = <?php echo(esc_html__( 'Message was not sent. Try Again.', 'gotomeloy' )); ?>,
-        //    message_sent_en    = <?php echo(esc_html__( 'Thanks! Your message has been sent.', 'gotomeloy' )); ?>,
-        //    message_empty_en   = <?php echo(esc_html__( 'Empty message.', 'gotomeloy' )); ?>;
 
-        var not_human       = "Menneskelig verifisering feilet.",
-            missing_content = "Vennligst fyll ut alle felt.".
-            email_invalid   = "Epost-addresse er feil utfyllt",
-            message_unsent  = "Din medling ble ikke sendt, prøv igjen.",
-            message_sent    = "Takk, din beksjed ble sendt",
-            message_empty   = "Toms meldingsboks";
+        <?php
+            if ( ICL_LANGUAGE_CODE == "en") {
+        ?>
+                var not_human       = "Human verification incorrect.",
+                    missing_content = "Please supply all information.",
+                    email_invalid   = "Email Address Invalid.",
+                    message_unsent  = "Message was not sent. Try Again.",
+                    message_sent    = "Thanks! Your message has been sent.",
+                    message_empty   = "Empty message.",
+                    failure_message = 'Whoops, looks like there was a problem. Please try again later.';
+        <?php
+            } elseif ( ICL_LANGUAGE_CODE == "nb" ) {
+        ?>
+                var not_human       = "Menneskelig verifisering feilet.",
+                    missing_content = "Vennligst fyll ut alle felt.",
+                    email_invalid   = "Epost-addresse er feil utfyllt",
+                    message_unsent  = "Din medling ble ikke sendt, prøv igjen.",
+                    message_sent    = "Takk, din melding ble sendt. Vi kontakter deg så snart som mulig.",
+                    message_empty   = "Tom meldingsboks.",
+                    failure_message = 'Opps, Et problem har oppstått. Vennligst prøv igjen senere.';
+        <?php
+            }
+        ?>
 
         // Hide response div.
         jQuery("#ContactFormResponse").fadeOut();
 
-
-        var is_sending = false,
-            failure_message = 'Opps, Et problem har oppstått. Vennligst prøv igjen senere.';
-            failure_message_en = 'Whoops, looks like there was a problem. Please try again later.';
+        var is_sending = false;
 
         jQuery('#ContactForm').submit(function (e) {
             e.preventDefault(); // Prevent the default form submit
@@ -104,8 +112,10 @@
                     if (data.status === 'success') {
                         jQuery("#ContactFormResponse").fadeIn('slow', function(){
                             jQuery("#ContactFormResponse").html('<div class="alert alert-success">'+message_sent+'</div>');
+                            jQuery("#ContactFormResponse").delay(3000).fadeOut();
                         });
-                        $('#ContactForm')[0].reset();
+                        jQuery('#ContactForm')[0].reset();
+                        jQuery("#message_human").closest('div').removeClass('has-error');
                     } else {
                         // If we don't get the expected response, it's an error.
                         handleFormError();
@@ -131,7 +141,8 @@
                 $message = jQuery('#message_text').val();
             if ($human != "2") {
                 jQuery("#ContactFormResponse").fadeIn('slow', function(){
-                    jQuery("#ContactFormResponse").html('<div class="alert alert-warning">'+not_human+'</div>');
+                    jQuery("#ContactFormResponse").html('<div class="alert alert-danger">'+not_human+'</div>');
+                    jQuery("#message_human").closest('div').addClass('has-error');
                 });
                 return false;
             } else if (!$name || !$email || !$message) {

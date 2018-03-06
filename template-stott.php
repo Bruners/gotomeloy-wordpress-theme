@@ -183,7 +183,8 @@ Template Name: Portfolio Stott
             $kontaktskjema_logo = types_render_field("kontaktskjema-logo", array('raw' => true));
             $kontaktskjema_adresse = types_render_field("kontaktskjema-adress", array('raw' => false));
         ?>
-        <?php echo ( $kontaktskjema_bunn ); ?>
+        <?php //echo ( $kontaktskjema_bunn ); ?>
+        <?php get_template_part( 'parts/contact-form-large.inc' ); ?>
         <style>
             #map-container { height: 300px; }
         </style>

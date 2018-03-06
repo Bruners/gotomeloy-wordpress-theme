@@ -5946,6 +5946,10 @@ fieldset[disabled] .btn-danger.active {
     width: 100%;
 }
 
+.contact-section {
+    text-align: left;
+}
+
 .contact-submit {
     font-size: inherit;
 }
