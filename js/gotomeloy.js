@@ -152,7 +152,7 @@ jQuery(document).ready(function($) {
                 var src = getImage();
                 jQuery("#webcam-img").attr("src", src + "?timestamp=" + new Date().getTime());
                 jQuery("#webcam-url").attr("href", src + "?timestamp=" + new Date().getTime());
-                setTimeout(updateImage, 10000);
+                setTimeout(updateImage, 120000);
             }
 
         updateImage();

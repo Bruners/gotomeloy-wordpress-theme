@@ -521,25 +521,20 @@ function gotomeloy_menu_modal_22547( $atts, $item, $args )
 
 function sendContactFormToSiteAdmin () {
 
-  $email_from      = "kontakt@stott.no";
-  $email_to        = "eaa@stott.no";
-  //user posted variables
-  $name = $_POST['message_name'];
-  $email = $_POST['message_email'];
-  $message = $_POST['message_text'] . "\r\n\r\n" . "--" . "\r\n" . "This e-mail was sent from a contact form on Støtt Brygge (https://www.stott.no)";
-  $human = $_POST['message_human'];
-
-    try {
-    if (empty($name) || empty($email) || empty($message) || empty($human)) {
+  
+  try {
+    if (empty($_POST['message_name']) || empty($_POST['message_email']) || empty($_POST['message_text']) || empty($_POST['message_human'])) {
       throw new Exception('Bad form parameters. Check the markup to make sure you are naming the inputs correctly.');
     }
-    if (!is_email($email)) {
+  
+    if (!is_email($_POST['message_email'])) {
       throw new Exception('Email address not formatted correctly.');
     }
- 
-    $headers = "From: ". $name . " <" . $email_from . ">" . "\r\n" . "Reply-To: " . $email . "\r\n";
-    $subject = "Kontaktskjema Støtt Brygge: " . $name;
-    $message = "Melding fra ". $name . ": \n\n " . $message . " \n\n Reply to: " . $email;
+
+    $email_to = get_option('admin_email');
+    $subject = "Kontaktskjema Støtt Brygge: " . $_POST['message_name'];
+    $message = "Melding fra ". $_POST['message_name'] . ": \n\n " . $_POST['message_text'] . "\r\n\r\n" . "--" . "\r\n" . "This e-mail was sent from a contact form on Støtt Brygge (https://www.stott.no)";
+    $headers = "From: ". $_POST['message_name'] . " <kontakt@stott.no>" . "\r\n" . "Reply-To: " . $_POST['message_email'] . "\r\n";
  
     if (wp_mail($email_to, $subject, $message, $headers)) {
       echo json_encode(array('status' => 'success', 'message' => 'Contact message sent.'));
