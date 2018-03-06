@@ -215,7 +215,9 @@ Template Name: Portfolio Stott
                         <h5 class="modal-title">Støtt Brygge Webkamera</h5>
                     </div>
                     <div class="modal-body aligncenter">
-                        <a data-fancybox href="" id="webcam-url"><img id="webcam-img" alt="Webkamera" src="" /></a>
+                        <a href="" id="webcam-url" rel="attachment" data-fancybox>
+                            <img class="alignnone size-full" src="" id="webcam-img" alt="Webkamera" width="568" height="355" />
+                        </a>
                         <br />
                         <div class="table-responsive">
                             <table class="table table-hover">

@@ -1,5 +1,5 @@
 <?php
-$folder = "../../../../webcam"; // the folder with images
+$folder = "../../../../static/webcam"; // the folder with images
 
 function getImages($dir) {
     $directory = 'webcam';
@@ -32,5 +32,5 @@ function getImages($dir) {
 
 $img = getImages($folder);
 
-echo $folder . '/' . $img;
+echo "https://static.stott.no/webcam/" . $img;
 ?>
