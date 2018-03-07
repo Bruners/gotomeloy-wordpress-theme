@@ -116,7 +116,7 @@
             </div>
         </header>
     <div class="action-button text-center">
-        <a id="stottfilm2" data-fancybox class="btn btn-info" href="https://www.youtube.com/watch?v=CkxmJ592_TY"><span class="fa fa-play"></span><?php esc_html_e('Se video med lyd her', 'gotomeloy'); ?></a>
+        <a id="stottfilm2" data-fancybox class="btn btn-info" href="https://www.youtube.com/watch?v=CkxmJ592_TY"><span class="fa fa-play"></span> <?php esc_html_e('Se video med lyd her', 'gotomeloy'); ?></a>
     </div>
     </div>
 <!-- END: HERO MODULE -->
