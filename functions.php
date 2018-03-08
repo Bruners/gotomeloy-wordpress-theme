@@ -9,6 +9,7 @@
 #
 #-----------------------------------------------------------------#
 
+
 #-----------------------------------------------------------------#
 # Stop Wordpress from inserting <p>'s in the editor!
 #-----------------------------------------------------------------#
@@ -16,21 +17,15 @@
 remove_filter( 'the_content', 'wpautop' );
 
 #-----------------------------------------------------------------#
-# Stop jetpack from inserting itself
+# Stop Wordpress emoji scripts
 #-----------------------------------------------------------------#
 
-function jptweak_remove_share() {
-    remove_filter( 'the_content', 'sharing_display',19 );
-    remove_filter( 'the_excerpt', 'sharing_display',19 );
-    if ( class_exists( 'Jetpack_Likes' ) ) {
-        remove_filter( 'the_content', array( Jetpack_Likes::init(), 'post_likes' ), 30, 1 );
-    }
-}
-
-add_action( 'loop_start', 'jptweak_remove_share' );
+remove_action('wp_head', 'print_emoji_detection_script', 7);
+remove_action('wp_print_styles', 'print_emoji_styles');
 
 
-function disable_devicepx() {
+function disable_devicepx()
+{
   wp_dequeue_script( 'devicepx' );
 }
 
@@ -40,7 +35,8 @@ add_action( 'wp_enqueue_scripts', 'disable_devicepx' );
 # Remove comment-reply.min.js from footer
 #-----------------------------------------------------------------#
 
-function disable_comment_reply_js(){
+function disable_comment_reply_js()
+{
   wp_deregister_script( 'comment-reply' );
          }
 add_action('init','disable_comment_reply_js');
@@ -68,7 +64,8 @@ function wsds_detect_enqueued_scripts() {
 */
 
 add_filter( 'script_loader_tag', 'wsds_defer_scripts', 10, 3 );
-function wsds_defer_scripts( $tag, $handle, $src ) {
+function wsds_defer_scripts( $tag, $handle, $src )
+{
 
   // The handles of the enqueued scripts we want to defer
   $defer_scripts = array(
@@ -111,7 +108,8 @@ function wsds_defer_scripts( $tag, $handle, $src ) {
 # Theme Setup
 #-----------------------------------------------------------------#
 
-  function gotomeloy_theme_setup() {
+  function gotomeloy_theme_setup()
+  {
 
     global $content_width;
 
@@ -156,7 +154,8 @@ function wsds_defer_scripts( $tag, $handle, $src ) {
 # Register WP3.0+ Menu(s)
 #-----------------------------------------------------------------#
 
-  function gotomeloy_register_menu() {
+  function gotomeloy_register_menu()
+  {
     register_nav_menu('gotomeloy-primary-navigation', esc_html__('Primary Navigation', 'gotomeloy'));
   }
 
@@ -165,7 +164,8 @@ function wsds_defer_scripts( $tag, $handle, $src ) {
 # Register Sidebar(s)
 #-----------------------------------------------------------------#
 
-  function gotomeloy_register_sidebar() {
+  function gotomeloy_register_sidebar()
+  {
 
   // Register sidebar the theme
     if ( function_exists('register_sidebar') ) {
@@ -192,7 +192,8 @@ function wsds_defer_scripts( $tag, $handle, $src ) {
 # Register and Enqueue Frontend CSS
 #-----------------------------------------------------------------#
 
-  function gotomeloy_frontend_styles() {
+  function gotomeloy_frontend_styles()
+  {
     if ( !is_admin() ) {
       // wp_enqueue_style( $handle, $src, $deps, $ver, $media );
       //wp_enqueue_style('gotomeloy', GOTOMELOY_CSS_URI . '/gotomeloy.min.css', array('gotomeloy-style'), 1.0);
@@ -201,18 +202,13 @@ function wsds_defer_scripts( $tag, $handle, $src ) {
 
       wp_enqueue_style('fontawesome', 'https://use.fontawesome.com/releases/v5.0.6/css/all.css', null, '5.0.6', 'all' );
 
-      // Add Inline Styles (dynamic)
-      ob_start();
-      require( GOTOMELOY_CSS .'/dynamic.php' );
-      $dynamic_css = ob_get_clean();
-
-          wp_add_inline_style('gotomeloy-style', $dynamic_css);
       wp_add_inline_style('gotomeloy-style', get_theme_mod('gotomeloy_custom_css'));
 
     }
   }
 
-  function gotomeloy_child_frontend_styles() {
+  function gotomeloy_child_frontend_styles()
+  {
     if ( !is_admin() && is_child_theme() ) {
 
       // Enqueue
@@ -222,7 +218,8 @@ function wsds_defer_scripts( $tag, $handle, $src ) {
   }
 
 
-  function gotomeloy_backend_styles() {
+  function gotomeloy_backend_styles()
+  {
       wp_enqueue_style('gotomeloy-plugins', GOTOMELOY_ADMIN_URI . '/plugins/css/style.css');
   }
 
@@ -231,7 +228,8 @@ function wsds_defer_scripts( $tag, $handle, $src ) {
 # Register and Enqueue Frontend JS
 #-----------------------------------------------------------------#
 
-  function gotomeloy_frontend_js() {
+  function gotomeloy_frontend_js()
+  {
     if ( !is_admin() ) {
 
       // Enqueue
@@ -274,7 +272,8 @@ function wsds_defer_scripts( $tag, $handle, $src ) {
 # WMPL language selector
 #-----------------------------------------------------------------#
 
-function language_selector_flags(){
+function language_selector_flags()
+{
     $languages = icl_get_languages('skip_missing=0&orderby=code');
     if(!empty($languages)){
         foreach($languages as $l){
@@ -284,7 +283,8 @@ function language_selector_flags(){
     }
 }
 
-function language_selector_flags_nolist(){
+function language_selector_flags_nolist()
+{
     $languages = icl_get_languages('skip_missing=1&orderby=code');
     if(!empty($languages)){
         foreach($languages as $l){
@@ -296,6 +296,101 @@ function language_selector_flags_nolist(){
 
 //* Add new featured portfolio image size
 add_image_size( 'portfolio-featured', 586, 478, TRUE );
+
+
+// Sharing icons
+
+function social_share_menu_item()
+{
+  add_submenu_page("options-general.php", "Social Share", "Social Share", "manage_options", "social-share", "social_share_page"); 
+}
+
+add_action("admin_menu", "social_share_menu_item");
+
+function social_share_page()
+{
+   ?>
+      <div class="wrap">
+         <h1>Social Sharing Options</h1>
+ 
+         <form method="post" action="options.php">
+            <?php
+               settings_fields("social_share_config_section");
+ 
+               do_settings_sections("social-share");
+                
+               submit_button(); 
+            ?>
+         </form>
+      </div>
+   <?php
+}
+
+function social_share_settings()
+{
+    add_settings_section("social_share_config_section", "", null, "social-share");
+ 
+    add_settings_field("social-share-facebook", "Do you want to display Facebook share button?", "social_share_facebook_checkbox", "social-share", "social_share_config_section");
+    add_settings_field("social-share-twitter", "Do you want to display Twitter share button?", "social_share_twitter_checkbox", "social-share", "social_share_config_section");
+    add_settings_field("social-share-googleplus", "Do you want to display LinkedIn share button?", "social_share_googleplus_checkbox", "social-share", "social_share_config_section");
+    
+    register_setting("social_share_config_section", "social-share-facebook");
+    register_setting("social_share_config_section", "social-share-twitter");
+    register_setting("social_share_config_section", "social-share-googleplus");
+}
+ 
+function social_share_facebook_checkbox()
+{  
+   ?>
+        <input type="checkbox" name="social-share-facebook" value="1" <?php checked(1, get_option('social-share-facebook'), true); ?> /> Check for Yes
+   <?php
+}
+
+function social_share_twitter_checkbox()
+{  
+   ?>
+        <input type="checkbox" name="social-share-twitter" value="1" <?php checked(1, get_option('social-share-twitter'), true); ?> /> Check for Yes
+   <?php
+}
+
+function social_share_googleplus_checkbox()
+{  
+   ?>
+        <input type="checkbox" name="social-share-googleplus" value="1" <?php checked(1, get_option('social-share-googleplus'), true); ?> /> Check for Yes
+   <?php
+}
+ 
+add_action("admin_init", "social_share_settings");
+
+function add_social_share_icons()
+{
+    $html = "<div class='clearfix'><div class='sb-social-icon'><h5 class='sb-title'>" . esc_html__( 'Del dette:', 'gotomeloy' ); . "</h5><div class='sb-content'><ul>";
+
+    global $post;
+
+    $url = get_permalink($post->ID);
+    $url = esc_url($url);
+
+    if(get_option("social-share-facebook") == 1)
+    {
+        $html = $html . "<li><a href='http://www.facebook.com/sharer.php?u=" . $url . "' rel='nofollow' class='fab fa-facebook' target='_blank' title='" . esc_html__( 'Klikk for å dele på Facebook', 'gotomeloy' ); . "'><span class='sr-only'>" . esc_html__( 'Klikk for å dele på Facebook', 'gotomeloy' ); . "</span></a></li>";
+    }
+
+    if(get_option("social-share-googleplus") == 1)
+    {
+        $html = $html . "<li><a href='https://plus.google.com/share?url=" . $url . "' rel='nofollow' class='fab fa-google' target='_blank' title='" . esc_html__( 'Klikk for å dele på Google+', 'gotomeloy' ); . "'><span class='sr-only'>" . esc_html__( 'Klikk for å dele på Google+', 'gotomeloy' ); . "</span></a></li>";
+    }
+
+    if(get_option("social-share-twitter") == 1)
+    {
+        $html = $html . "<li><a href='https://twitter.com/share?url=" . $url . "' rel='nofollow' class='fab fa-twitter' target='_blank' title='" . esc_html__( 'Klikk for å dele på Facebook', 'Twitter' ); . "'><span class='sr-only'>" . esc_html__( 'Klikk for å dele på Twitter', 'gotomeloy' ); . "</span></a></li>";
+    }
+
+
+    $html = $html . "<li class='share-end'></li></ul></div></div></div>";
+
+    return $html;
+}
 
 
 #-----------------------------------------------------------------#
@@ -519,9 +614,8 @@ function gotomeloy_menu_modal_22547( $atts, $item, $args )
   return $atts;
 }
 
-function sendContactFormToSiteAdmin () {
-
-  
+function sendContactFormToSiteAdmin ()
+{ 
   try {
     if (empty($_POST['message_name']) || empty($_POST['message_email']) || empty($_POST['message_text']) || empty($_POST['message_human'])) {
       throw new Exception('Bad form parameters. Check the markup to make sure you are naming the inputs correctly.');

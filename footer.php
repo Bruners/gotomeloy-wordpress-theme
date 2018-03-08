@@ -19,7 +19,7 @@
                                 <div class="modal-body">
                                     <?php get_template_part( 'parts/contact-form.inc' ); ?>
                                     <br />
-                                    <?php if ( function_exists( 'sharing_display' ) ) { echo sharing_display(); } ?>
+                                    <?php if ( function_exists( 'add_social_share_icons' ) ) { echo add_social_share_icons(); } ?>
                                 </div>
                                 <div class="modal-footer">
                                     <button class="btn btn-default" type="button" aria-label="Close" data-dismiss="modal">Lukk</button>
@@ -39,7 +39,7 @@
                                 <div class="modal-body">
                                     <?php echo(types_render_field( "meny-modal-body", array( 'raw' => false) )); ?>
                                     <br />
-                                    <?php if ( function_exists( 'sharing_display' ) ) { echo sharing_display(); } ?>
+                                    <?php if ( function_exists( 'add_social_share_icons' ) ) { echo add_social_share_icons(); } ?>
                                 </div>
                                 <div class="modal-footer">
                                     <button class="btn btn-default" type="button" aria-label="Close" data-dismiss="modal">Lukk</button>

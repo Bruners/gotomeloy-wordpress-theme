@@ -47,7 +47,7 @@
 					<div class="single-header-ingress"></div>
 				</div>
 				<div class="col-xs-12 col-md-4">
-					<?php if ( function_exists( 'sharing_display' ) ) { echo sharing_display(); } ?>
+					<?php if ( function_exists( 'add_social_share_icons' ) ) { echo add_social_share_icons(); } ?>
 				</div>
 			</div>
 				<?php the_content(); ?>

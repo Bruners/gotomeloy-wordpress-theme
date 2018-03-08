@@ -242,13 +242,22 @@ Template Name: Portfolio Stott
                                     $tdtime = clone $fromtime;
                                     $tdtime->format('d.m');
 
-                                    $xmlurl = "http://api.sehavniva.no/tideapi.php?lat=".$lat."&lon=".$lon."&fromtime=".$fromtime->format('c')."&totime=".$totime->format('c')."&datatype=tab&refcode=cd&place=St%C3%B8tt&file=&lang=nb&interval=10&dst=1&tzone=&tide_request=locationdata";
+                                    $feed = "http://api.sehavniva.no/tideapi.php?lat=".$lat."&lon=".$lon."&fromtime=".$fromtime->format('c')."&totime=".$totime->format('c')."&datatype=tab&refcode=cd&place=St%C3%B8tt&file=&lang=nb&interval=10&dst=1&tzone=&tide_request=locationdata";
+
+                                    $ch = curl_init();
+                                    curl_setopt($ch, CURLOPT_URL, $feed);
+                                    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+                                    // get the result of http query
+                                    $output = curl_exec($ch);
+                                    curl_close($ch);
+
                                     $dir = get_stylesheet_directory_uri() . "/img/";
 
                                     libxml_use_internal_errors(TRUE);
                                     try {
-                                        $xml = simplexml_load_file($xmlurl);
-                                        //$xml = new SimpleXMLElement($xmlurl);
+                                        //$xml = simplexml_load_file($output);
+                                        $xml = simplexml_load_string($output);
+
                                         if ($xml != "") {
                                             foreach ($xml->locationdata->data->waterlevel as $level):
                                                 $flag = $level['flag'];
@@ -270,7 +279,7 @@ Template Name: Portfolio Stott
                             </table>
                         </div>
                         <br />
-                        <?php if ( function_exists( 'sharing_display' ) ) { echo sharing_display(); } ?>
+                        <?php if ( function_exists( 'add_social_share_icons' ) ) { echo add_social_share_icons(); } ?>
                     </div>
                     <div class="modal-footer">
                         <ul class="nostyle clearfix">
@@ -299,7 +308,7 @@ Template Name: Portfolio Stott
                     </div>
                     <div class="modal-body">
                         <div><h4><?php echo(esc_html__( 'Liste over kommende aktiviteter:', 'gotomeloy' )); ?></h4></div>
-                        <?php if ( function_exists( 'sharing_display' ) ) { echo sharing_display(); } ?>
+                        <?php if ( function_exists( 'add_social_share_icons' ) ) { echo add_social_share_icons(); } ?>
                         <?php
                             $currentdate = date("Y-m-d",mktime(0,0,0,date("m"),date("d")-1,date("Y")));
 
@@ -380,7 +389,7 @@ Template Name: Portfolio Stott
                         <br />
                         <p><a href="<?php echo(get_permalink($post_id)); ?>" target="_blank"><?php esc_html_e('Åpne innholdet i eget vindu', 'gotomeloy'); ?></a></p><br />
                         <!-- SHARE -->
-                        <?php if ( function_exists( 'sharing_display' ) ) { echo sharing_display(); } ?>
+                        <?php if ( function_exists( 'add_social_share_icons' ) ) { echo add_social_share_icons(); } ?>
                     </div>
                     <div class="modal-footer">
                         <button class="btn btn-default" type="button" data-dismiss="modal">Lukk</button>
@@ -419,7 +428,7 @@ Template Name: Portfolio Stott
                         <?php the_content(); ?>
                         <br />
                         <p><a href="<?php echo(get_permalink(get_the_ID())); ?>" target="_blank"><?php esc_html_e('Åpne innholdet i eget vindu', 'gotomeloy'); ?></a></p><br />
-                        <?php if ( function_exists( 'sharing_display' ) ) { echo sharing_display(); } ?>
+                        <?php if ( function_exists( 'add_social_share_icons' ) ) { echo add_social_share_icons(); } ?>
                     </div>
                     <div class="modal-footer">
                         <ul class="nostyle clearfix">

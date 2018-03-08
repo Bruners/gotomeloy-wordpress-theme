@@ -100,7 +100,7 @@
 			<!-- /paginate -->
 
 			<!-- SHARE -->
-			<?php if ( function_exists( 'sharing_display' ) ) { echo sharing_display(); } ?>
+			<?php if ( function_exists( 'add_social_share_icons' ) ) { echo add_social_share_icons(); } ?>
 		</div>
 	</div>
 </section>
