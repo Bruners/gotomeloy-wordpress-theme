@@ -1,16 +1,6 @@
 <?php
 
 #-----------------------------------------------------------------#
-#
-# Here define all the custom functions for the child theme.
-# Please be extremely cautious editing this file,
-# When things go wrong, they intend to go wrong in a big way.
-# You have been warned!
-#
-#-----------------------------------------------------------------#
-
-
-#-----------------------------------------------------------------#
 # Stop Wordpress from inserting <p>'s in the editor!
 #-----------------------------------------------------------------#
 
@@ -330,9 +320,12 @@ function social_share_settings()
 {
     add_settings_section("social_share_config_section", "", null, "social-share");
  
-    add_settings_field("social-share-facebook", "Do you want to display Facebook share button?", "social_share_facebook_checkbox", "social-share", "social_share_config_section");
-    add_settings_field("social-share-twitter", "Do you want to display Twitter share button?", "social_share_twitter_checkbox", "social-share", "social_share_config_section");
-    add_settings_field("social-share-googleplus", "Do you want to display LinkedIn share button?", "social_share_googleplus_checkbox", "social-share", "social_share_config_section");
+    // Do you want to display Facebook share button?
+    // Do you want to display Twitter share button?
+    // Do you want to display LinkedIn share button?
+    add_settings_field("social-share-facebook", __('Vis deleknapp for Facebook?', 'gotomeloy'), "social_share_facebook_checkbox", "social-share", "social_share_config_section");
+    add_settings_field("social-share-twitter", __('Vis deleknapp for Twitter?', 'gotomeloy'), "social_share_twitter_checkbox", "social-share", "social_share_config_section");
+    add_settings_field("social-share-googleplus", __('Vis deleknapp for Google+?', 'gotomeloy'), "social_share_googleplus_checkbox", "social-share", "social_share_config_section");
     
     register_setting("social_share_config_section", "social-share-facebook");
     register_setting("social_share_config_section", "social-share-twitter");
@@ -342,21 +335,21 @@ function social_share_settings()
 function social_share_facebook_checkbox()
 {  
    ?>
-        <input type="checkbox" name="social-share-facebook" value="1" <?php checked(1, get_option('social-share-facebook'), true); ?> /> Check for Yes
+        <input type="checkbox" name="social-share-facebook" value="1" <?php checked(1, get_option('social-share-facebook'), true); ?> />
    <?php
 }
 
 function social_share_twitter_checkbox()
 {  
    ?>
-        <input type="checkbox" name="social-share-twitter" value="1" <?php checked(1, get_option('social-share-twitter'), true); ?> /> Check for Yes
+        <input type="checkbox" name="social-share-twitter" value="1" <?php checked(1, get_option('social-share-twitter'), true); ?> />
    <?php
 }
 
 function social_share_googleplus_checkbox()
 {  
    ?>
-        <input type="checkbox" name="social-share-googleplus" value="1" <?php checked(1, get_option('social-share-googleplus'), true); ?> /> Check for Yes
+        <input type="checkbox" name="social-share-googleplus" value="1" <?php checked(1, get_option('social-share-googleplus'), true); ?> />
    <?php
 }
  
@@ -364,26 +357,29 @@ add_action("admin_init", "social_share_settings");
 
 function add_social_share_icons()
 {
-    $html = "<div class='clearfix'><div class='sb-social-icon'><h5 class='sb-title'>" . esc_html__( 'Del dette:', 'gotomeloy' ); . "</h5><div class='sb-content'><ul>";
+    $html = "<div class='clearfix'><div class='sb-social-icon'><h5 class='sb-title'>Del dette:</h5><div class='sb-content'><ul>";
 
     global $post;
 
     $url = get_permalink($post->ID);
     $url = esc_url($url);
+    $text_fb = __(  'Klikk for å dele på Facebook', 'gotomeloy' );
+    $text_gl = __(  'Klikk for å dele på Google+', 'gotomeloy' );
+    $text_tw = __(  'Klikk for å dele på Twitter', 'gotomeloy' );
 
     if(get_option("social-share-facebook") == 1)
     {
-        $html = $html . "<li><a href='http://www.facebook.com/sharer.php?u=" . $url . "' rel='nofollow' class='fab fa-facebook' target='_blank' title='" . esc_html__( 'Klikk for å dele på Facebook', 'gotomeloy' ); . "'><span class='sr-only'>" . esc_html__( 'Klikk for å dele på Facebook', 'gotomeloy' ); . "</span></a></li>";
+        $html = $html . "<li><a href='http://www.facebook.com/sharer.php?u=" . $url . "' rel='nofollow' class='fab fa-facebook' target='_blank' title='" . $text_fb . "'><span class='sr-only'>" . $text_fb . "</span></a></li>";
     }
 
     if(get_option("social-share-googleplus") == 1)
     {
-        $html = $html . "<li><a href='https://plus.google.com/share?url=" . $url . "' rel='nofollow' class='fab fa-google' target='_blank' title='" . esc_html__( 'Klikk for å dele på Google+', 'gotomeloy' ); . "'><span class='sr-only'>" . esc_html__( 'Klikk for å dele på Google+', 'gotomeloy' ); . "</span></a></li>";
+        $html = $html . "<li><a href='https://plus.google.com/share?url=" . $url . "' rel='nofollow' class='fab fa-google' target='_blank' title='" . $text_gl . "'><span class='sr-only'>" . $text_gl . "</span></a></li>";
     }
 
     if(get_option("social-share-twitter") == 1)
     {
-        $html = $html . "<li><a href='https://twitter.com/share?url=" . $url . "' rel='nofollow' class='fab fa-twitter' target='_blank' title='" . esc_html__( 'Klikk for å dele på Facebook', 'Twitter' ); . "'><span class='sr-only'>" . esc_html__( 'Klikk for å dele på Twitter', 'gotomeloy' ); . "</span></a></li>";
+        $html = $html . "<li><a href='https://twitter.com/share?url=" . $url . "' rel='nofollow' class='fab fa-twitter' target='_blank' title='" . $text_tw . "'><span class='sr-only'>" . $text_tw . "</span></a></li>";
     }
 
 

@@ -695,13 +695,13 @@ jQuery(document).ready(function($) {
     // Move portfolio items
     jQuery(function ($) {
         var header = jQuery('.single-header');
-        var ingress = jQuery('.portfolio-single .ingress');
+        var ingress = jQuery('.single-header .ingress');
         if ( header.length ) {
             jQuery('.single-header-ingress').html(ingress.html());
             ingress.css('display', 'none');
         }
-        jQuery('.single-header h3.sd-title').css('display', 'none');
-        jQuery('.single-header .sharedaddy').css('padding-top', '30px');
+        jQuery('.single-header h5.sb-title').css('display', 'none');
+        jQuery('.single-header .clearfix').css('padding-top', '30px');
     });
 
     // Resize image containers using background-image
