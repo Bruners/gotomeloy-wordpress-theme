@@ -128,6 +128,7 @@ Template Name: Portfolio Stott
                     <li data-target="#carousel-promo-video" data-slide-to="0" class="active"></li>
                     <li data-target="#carousel-promo-video" data-slide-to="1"></li>
                     <li data-target="#carousel-promo-video" data-slide-to="2"></li>
+                    <li data-target="#carousel-promo-video" data-slide-to="3"></li>
                 </ol>
 
                 <!-- Wrapper for slides -->
@@ -300,7 +301,7 @@ Template Name: Portfolio Stott
             }
         ?>
         <div id="tjeneste-modal-868" class="modal fade" tabindex="-1">
-            <div class="modal-dialog modal-lg">
+            <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button class="close" type="button" aria-label="Close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
@@ -385,7 +386,7 @@ Template Name: Portfolio Stott
                         <h5 class="modal-title"><?php the_title(); ?></h5>
                     </div>
                     <div class="modal-body">
-                        <?php echo(types_render_field( "tjeneste-lang", array( 'raw' => false) )); ?>
+                        <?php echo(types_render_field( "tjeneste-lang", array( 'raw' => true) )); ?>
                         <br />
                         <p><a href="<?php echo(get_permalink($post_id)); ?>" target="_blank"><?php esc_html_e('Åpne innholdet i eget vindu', 'gotomeloy'); ?></a></p><br />
                         <!-- SHARE -->

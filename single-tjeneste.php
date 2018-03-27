@@ -9,7 +9,7 @@
 ?>
 
 <!-- BEGIN: SITE BODY -->
-<section id="site-body" class="sections project padding-size-l">
+<section id="site-body" class="sections padding-size-l">
 
 	<div class="container">
 		<div class="innhold-single">
@@ -45,10 +45,12 @@
 	                        $event_title = get_the_title();
 	                        $event_image = get_fbe_image('cover');
 	                        $event_url =  get_fbe_field('fb_event_uri');
+	                        $event_venue_name = get_fbe_field('venue_name');
 	                        $event_site = ucfirst(str_replace(array('https://facebook.com','/'), array('',''), get_fbe_field('facebook') ));
 	                        $event_location = get_fbe_field('location');
 	                        $event_starts_month = get_fbe_date('event_starts','M');
 	                        $event_starts_day = get_fbe_date('event_starts','j');
+	                        $ticket_uri = get_fbe_field('ticket_uri');
 	                ?>
 	                	<div class="panel panel-default">
 	                    <div class="fbecol fbecolhover" role="tab" id="<?php echo('event-' . $post_id . '-head'); ?>">
@@ -60,15 +62,19 @@
 	                                    <div class="fbe_list_day"><?php echo $event_starts_day; ?></div>
 	                                </div>
 	                                <div class="fbe_col_title"><h2><?php echo $event_title; ?></h2></div>
-	                                <div class="fbe_col_location"><?php echo $event_site; ?></div>
+	                                <div class="fbe_col_location"><?php echo ($event_site . " - " . $event_venue_name); ?></div>
 	                            </div>
 	                        </div>
 	                    </a></div>
 	                        <div id="<?php echo('event-' . $event_id .'-body'); ?>" class="panel-body panel-collapse collapse" role="tabpanel" aria-labelledby="<?php echo('event-' . $event_id .'-head'); ?>">
             					<div class="panel-body well">
-            						<a class="btn btn-primary" href="<?php echo $event_url; ?>" role="button"><?php esc_html_e('Meld deg på nå!', 'gotomeloy'); ?></a><br/>
-            						<?php the_content(); ?><br />
-            						<a class="btn btn-primary" href="<?php echo $event_url; ?>" role="button"><?php esc_html_e('Meld deg på nå!', 'gotomeloy'); ?></a>
+            						<?php the_content(); ?><br /><br />
+            						<?php if(!$ticket_uri=="") {
+            							echo ('<strong>Ticket URL:</strong> <a href="'. $ticket_uri . '" target="_blank">' . $ticket_uri . '</a><br /><br />');
+            						} ?>
+            						<a class="btn btn-primary" href="<?php echo $event_url; ?>" role="button" aria-label="Left Align"><span class="fab fa-facebook fa-lg" aria-hidden="true"></span> <?php esc_html_e('Meld deg på nå!', 'gotomeloy'); ?></a>
+
+ 
 				            	</div>
         					</div>
 	                    </div>
@@ -78,7 +84,7 @@
 	                <!-- END panel-group -->
 					</div>
 				<?php } else { ?>
-					<?php echo(types_render_field( "tjeneste-lang", array( 'raw' => false) )); ?>
+					<?php echo(types_render_field( "tjeneste-lang", array( 'raw' => true) )); ?>
 				<?php } ?>
 			<?php endwhile; ?>
 		</div>
@@ -94,7 +100,7 @@
 			<!-- PAGINATE -->
 			<ul class="project-pagination nostyle clearfix">
 				<li class="prev <?php echo $have_olders_posts; ?>"><a href="<?php echo esc_url( get_permalink(get_adjacent_post(false,'',true)) ); ?> "><i class="fa fa-angle-left"></i></a></li>
-				<li class="back"><a href="<?php echo esc_url( get_permalink(get_post_meta(get_the_ID(), 'portfolio_page', true)) ); ?>"><i class="fa fa-th-large"></i></a></li>
+				<li class="back"><a href="<?php echo get_home_url(); ?>"><i class="fa fa-th-large"></i></a></li>
 				<li class="next <?php echo $have_newer_posts; ?>"><a href="<?php echo esc_url( get_permalink(get_adjacent_post(false,'',false)) ); ?> "><i class="fa fa-angle-right"></i></a></li>
 			</ul>
 			<!-- /paginate -->

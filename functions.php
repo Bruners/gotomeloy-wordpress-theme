@@ -319,10 +319,7 @@ function social_share_page()
 function social_share_settings()
 {
     add_settings_section("social_share_config_section", "", null, "social-share");
- 
-    // Do you want to display Facebook share button?
-    // Do you want to display Twitter share button?
-    // Do you want to display LinkedIn share button?
+
     add_settings_field("social-share-facebook", __('Vis deleknapp for Facebook?', 'gotomeloy'), "social_share_facebook_checkbox", "social-share", "social_share_config_section");
     add_settings_field("social-share-twitter", __('Vis deleknapp for Twitter?', 'gotomeloy'), "social_share_twitter_checkbox", "social-share", "social_share_config_section");
     add_settings_field("social-share-googleplus", __('Vis deleknapp for Google+?', 'gotomeloy'), "social_share_googleplus_checkbox", "social-share", "social_share_config_section");

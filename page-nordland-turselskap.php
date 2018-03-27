@@ -15,6 +15,7 @@
             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                 <?php the_content(); ?>
                 <div class="loader"></div>
+                <p>Norland Turselskap</p>
                 <div id="bokun-w11173_89214788_8d02_4e30_a68e_f6bf431d1b4a"></div>
                 <script>
                     jQuery(window).bind("load", function() {
@@ -49,6 +50,36 @@
                     })(document, 'script');
 
                 </script>
+
+                <div class="loader"></div>
+                <p>Støtt Brygge</p>
+                <div id="bokun-w12025_2e3c0e7c_e58b_4dc3_a67c_c7164d88a0f1">Loading...</div>
+                <script type="text/javascript">
+
+                    var w12025_2e3c0e7c_e58b_4dc3_a67c_c7164d88a0f1;
+
+                    (function(d, t) {
+
+                        var host = 'widgets.bokun.io';
+
+                        var frameUrl = 'https://' + host + '/widgets/12025?bookingChannelUUID=8a8dd8a5-b04b-4e7a-9a0d-5417eca458e3&amp;activityId=24988&amp;lang=<?php echo $iframe_lang; ?>&amp;ccy=NOK&amp;hash=w12025_2e3c0e7c_e58b_4dc3_a67c_c7164d88a0f1';
+
+                        var s = d.createElement(t), options = {'host': host, 'frameUrl': frameUrl, 'widgetHash':'w12025_2e3c0e7c_e58b_4dc3_a67c_c7164d88a0f1', 'autoResize':true,'height':'','width':'100%', 'minHeight': 0,'async':true, 'ssl':true, 'affiliateTrackingCode': '', 'transientSession': true, 'cookieLifetime': 43200 };
+
+                        s.src = 'https://' + host + '/assets/javascripts/widgets/embedder.js';
+
+                        s.onload = s.onreadystatechange = function() {
+                            var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
+                            try { 
+                                w12025_2e3c0e7c_e58b_4dc3_a67c_c7164d88a0f1 = new BokunWidgetEmbedder(); w12025_2e3c0e7c_e58b_4dc3_a67c_c7164d88a0f1.initialize(options); w12025_2e3c0e7c_e58b_4dc3_a67c_c7164d88a0f1.display();
+                            } catch (e) {}
+                        };
+
+                        var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+                    
+                    })(document, 'script');
+
+                    </script>
             </article>
       <?php endwhile; // end of the loop. ?>
     </div>
