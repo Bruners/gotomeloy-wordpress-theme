@@ -519,11 +519,6 @@ p {
     }
 }
 
-small,
-.small {
-    font-size: 133%;
-}
-
 mark,
 .mark {
     background-color: #fcf8e3;
@@ -6818,6 +6813,7 @@ video {
 .icon-icon .fa-compass,
 .icon-icon .fa-star,
 .icon-icon .fa-clock,
+.icon-icon .fa-suitcase,
 .icon-icon .fa-bicycle {
     font-size: .8em;
 }

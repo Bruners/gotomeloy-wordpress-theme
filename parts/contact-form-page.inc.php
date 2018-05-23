@@ -1,20 +1,16 @@
 <style type="text/css">
-    #ContactFormResponse{
+    #ContactFormResponsePage{
         display:none;
     }
 </style>
 
-<article id="post-<?php the_ID(); ?>">
-    <div class="text-center">
-        <h4 class="section-header"><?php the_title(); ?></h4>
-        <h5><?php the_content(); ?></h5>
-    </div>
+<article class="sections padding-size-s contact-section">
     <div class="contact-section">
-        <div id="ContactFormResponse">
+        <div id="ContactFormResponsePage">
             <!-- here message will be displayed -->
         </div>
 
-        <form id="ContactForm">
+        <form id="ContactFormPage">
             <div class="row">
                 <div class="col-xs-12">
                     <div class="form-group">
@@ -85,11 +81,11 @@
         ?>
 
         // Hide response div.
-        jQuery("#ContactFormResponse").fadeOut();
+        jQuery("#ContactFormResponsePage").fadeOut();
 
         var is_sending = false;
 
-        jQuery('#ContactForm').submit(function (e) {
+        jQuery('#ontactFormPage').submit(function (e) {
             e.preventDefault(); // Prevent the default form submit
 
             if (is_sending || !validateInputs()) {
@@ -110,11 +106,11 @@
                 error: handleFormError,
                 success: function (data) {
                     if (data.status === 'success') {
-                        jQuery("#ContactFormResponse").fadeIn('slow', function(){
-                            jQuery("#ContactFormResponse").html('<div class="alert alert-success">'+message_sent+'</div>');
-                            jQuery("#ContactFormResponse").delay(3000).fadeOut();
+                        jQuery("#ContactFormResponsePage").fadeIn('slow', function(){
+                            jQuery("#ContactFormResponsePage").html('<div class="alert alert-success">'+message_sent+'</div>');
+                            jQuery("#ContactFormResponsePage").delay(3000).fadeOut();
                         });
-                        jQuery('#ContactForm')[0].reset();
+                        jQuery('#ontactFormPage')[0].reset();
                         jQuery("#message_human").closest('div').removeClass('has-error');
                     } else {
                         // If we don't get the expected response, it's an error.
@@ -128,8 +124,8 @@
             // Reset the is_sending var so they can try again.
             is_sending = false;
 
-            jQuery("#ContactFormResponse").fadeIn('slow', function(){
-                jQuery("#ContactFormResponse").html('<div class="alert alert-danger">!'+failure_message+'!</div>');
+            jQuery("#ContactFormResponsePage").fadeIn('slow', function(){
+                jQuery("#ContactFormResponsePage").html('<div class="alert alert-danger">!'+failure_message+'!</div>');
             });
         }
 
@@ -140,14 +136,14 @@
                 $email = jQuery('#message_email').val(),
                 $message = jQuery('#message_text').val();
             if ($human != "2") {
-                jQuery("#ContactFormResponse").fadeIn('slow', function(){
-                    jQuery("#ContactFormResponse").html('<div class="alert alert-danger">'+not_human+'</div>');
+                jQuery("#ContactFormResponsePage").fadeIn('slow', function(){
+                    jQuery("#ContactFormResponsePage").html('<div class="alert alert-danger">'+not_human+'</div>');
                     jQuery("#message_human").closest('div').addClass('has-error');
                 });
                 return false;
             } else if (!$name || !$email || !$message) {
-                jQuery("#ContactFormResponse").fadeIn('slow', function(){
-                    jQuery("#ContactFormResponse").html('<div class="alert alert-warning">'+missing_content+'</div>');
+                jQuery("#ContactFormResponsePage").fadeIn('slow', function(){
+                    jQuery("#ContactFormResponsePage").html('<div class="alert alert-warning">'+missing_content+'</div>');
                 });
                 return false;
             }

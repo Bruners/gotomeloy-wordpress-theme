@@ -1,0 +1,257 @@
+
+/* Modify these variables below to change the widget's theme */
+
+/* Main color, used for availale days in the calendar, and the "Book" button. */
+@primaryColor: #6b97a3;
+
+/* Secondary color, used for sold out dates */
+@secondaryColor: #efaeb1;
+
+/* Label color, such as the days (mon, tue, wed...). */
+@labels: #fff;
+
+/* Widget's background color */
+@backgroundColor: #202223;
+
+/* Border button color */
+@buttonBorderColor: lighten(#88bbc8, 10%);
+
+/*****************************************/
+
+
+/* Change the padding and background colour of Bókun's widget (iFrame) below */
+body {
+	/* Optional, Creates more space around the widget. Remove the line if you don't need it */
+	padding: 50px; 
+
+
+	/* Edit the color at the top of the file */
+	background: @backgroundColor;  
+}
+
+body,
+label {
+	color: @labels !important;
+}
+
+
+/* Change the color of the text for current month in the widget, and the arrows to the left / right  */
+h4 a {
+	/* color: @primaryColor !important; */
+	transition: all .3s ease-in-out;
+    color: #fff;
+}
+
+
+h4 a:visited {
+	color: #fff;
+    text-decoration: none;
+    box-shadow: 0 3px 0px #5e7075;
+}
+
+h4 a:hover {
+	color: #fff;
+    text-decoration: none;
+    box-shadow: 0 3px 0px #269abc;
+}
+
+h4 a:focus {
+	color: #fff;
+    text-decoration: none;
+    box-shadow: 0 3px 0px #67b8d0;
+}
+
+h4 a:active {
+	color: #fff;
+    text-decoration: none;
+    box-shadow: 0 3px 0px #bc269a;
+}
+
+/* Change the color of the "Book" button's background and text */
+.btn-success {
+    color: #ffffff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+
+.btn-success:focus,
+.btn-success.focus {
+    color: #ffffff;
+    background-color: #449d44;
+    border-color: #255625;
+}
+
+.btn-success:hover {
+    color: #ffffff;
+    background-color: #449d44;
+    border-color: #398439;
+}
+
+.btn-success:active,
+.btn-success.active,
+.open>.dropdown-toggle.btn-success {
+    color: #ffffff;
+    background-color: #449d44;
+    border-color: #398439;
+}
+
+.btn-success:active:hover,
+.btn-success.active:hover,
+.open>.dropdown-toggle.btn-success:hover,
+.btn-success:active:focus,
+.btn-success.active:focus,
+.open>.dropdown-toggle.btn-success:focus,
+.btn-success:active.focus,
+.btn-success.active.focus,
+.open>.dropdown-toggle.btn-success.focus {
+    color: #ffffff;
+    background-color: #398439;
+    border-color: #255625;
+}
+
+.btn-success:active,
+.btn-success.active,
+.open>.dropdown-toggle.btn-success {
+    background-image: none;
+}
+
+.btn-success.disabled:hover,
+.btn-success[disabled]:hover,
+fieldset[disabled] .btn-success:hover,
+.btn-success.disabled:focus,
+.btn-success[disabled]:focus,
+fieldset[disabled] .btn-success:focus,
+.btn-success.disabled.focus,
+.btn-success[disabled].focus,
+fieldset[disabled] .btn-success.focus {
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+
+.btn-default {
+    color: #ffffff;
+    background-color: #5bc0de;
+    border-color: #46b8da;
+}
+
+.btn-default:focus,
+.btn-default.focus {
+    color: #ffffff;
+    background-color: #31b0d5;
+    border-color: #1b6d85;
+}
+
+.btn-default:hover {
+    color: #ffffff;
+    background-color: #31b0d5;
+    border-color: #269abc;
+}
+
+.btn-default:active,
+.btn-default.active {
+    color: #ffffff;
+    background-color: #31b0d5;
+    border-color: #269abc;
+}
+
+.btn-default:active:hover,
+.btn-default.active:hover,
+.btn-default:active:focus,
+.btn-default.active:focus,
+.btn-default:active.focus,
+.btn-default.active.focus {
+    color: #ffffff;
+    background-color: #269abc;
+    border-color: #1b6d85;
+}
+
+.btn-default:active,
+.btn-default.active {
+    background-image: none;
+}
+
+.btn-default.disabled:hover,
+.btn-default[disabled]:hover,
+fieldset[disabled] .btn-default:hover,
+.btn-default.disabled:focus,
+.btn-default[disabled]:focus,
+fieldset[disabled] .btn-default:focus,
+.btn-default.disabled.focus,
+.btn-default[disabled].focus,
+fieldset[disabled] .btn-default.focus {
+    background-color: #5bc0de;
+    border-color: #46b8da;
+}
+
+.activity-time-selector .roundbox {
+    padding: 15px;
+    border: 0;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.table>tbody>tr>td,
+.table>tbody>tr>th,
+.table>tfoot>tr>td,
+.table>tfoot>tr>th,
+.table>thead>tr>td,
+.table>thead>tr>th {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 3px solid #68c8dd;
+}
+
+
+/* Change the cells in the calendar */
+.availability-calendar { 
+	td.daycell.available .date {
+		color: #fff;                         	/* Changes the font color of each day in the calendar */
+
+		background: @primaryColor;              /* Changes the background color of each date cell */
+
+		border: 2px solid @primaryColor;        /* Set to the same color as the above line  */
+	}
+
+	.legend .available {
+		background-color: @primaryColor;        /* For the calendar's legend, this color must be the same as the background for available dates (above) */
+	}
+
+	td.daycell.available.selected .date {
+		border: 2px solid #86bdcc;                	/* Changes the border of the selected day, #000 is black */
+		background-color: #84e1f9;
+	}
+
+	td.daycell.not-in-month {
+    	color: #AAA;
+    	background-color: #363838;
+    	border: 0;
+	}
+
+	td.daycell .date {
+	    border: 0;
+
+	}
+	td.daycell {
+    	background-color: #363838;
+    	border: 0; /*1px solid #626465; */
+	}
+	td.daycell.not-in-month .date {
+		border: 0;
+	}
+
+	/* Change sold out dates below */
+	td.daycell.sold-out .date {
+		color: #fff;                         		/* Changes the font color of each sold out day in the calendar */
+
+		background: @secondaryColor;                /* Changes the background color of each sold out date cell */
+
+		border: 2px solid @secondaryColor;          /* Set to the same color as the above line  */
+	}
+
+	.legend .sold-out {
+		background-color: @secondaryColor;          /* For the calendar's legend, this color must be the same as the background for sold-out dates (above) */
+	}
+}

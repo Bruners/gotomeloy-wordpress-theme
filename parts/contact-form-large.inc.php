@@ -14,22 +14,22 @@
             <div class="col-xs-12 col-md-6">
                 <div class="form-group">
                     <input type="hidden" name="action" value="contact_send" />
-                    <label class="control-label" for="message_name">Navn:</label>
+                    <label class="control-label" for="message_name"><?php echo(esc_html__( 'Navn:', 'gotomeloy' )); ?></label>
                     <input type="text" class="form-control" id="message_name_large" name="message_name" placeholder=" Navn" value="<?php echo esc_attr($_POST['message_name']); ?>" required>
                 </div>
                 <div class="form-group">
-                    <label class="control-label" for="message_email">Epost:</label>
+                    <label class="control-label" for="message_email"><?php echo(esc_html__( 'Epost:', 'gotomeloy' )); ?></label>
                     <input type="email" class="form-control" id="message_email_large" name="message_email" placeholder=" Epost" value="<?php echo esc_attr($_POST['message_email']); ?>" required>
                 </div>
             </div>
             <div class="col-xs-12 col-md-6">
                 <div class="form-group">
-                    <label class="control-label" for="message_text">Din melding:</label>
+                    <label class="control-label" for="message_text"><?php echo(esc_html__( 'Din melding:', 'gotomeloy' )); ?></label>
                     <textarea class="form-control" id="message_text_large" name="message_text" placeholder="Melding.." required><?php echo esc_textarea($_POST['message_text']); ?></textarea>
                 </div>
                 <div class="col-xs-6">
                     <div class="form-group form-inline">
-                        <label class="control-label" for="message_human">Menneskelig verifisering</label>
+                        <label class="control-label" for="message_human"><?php echo(esc_html__( 'Menneskelig verifisering:', 'gotomeloy' )); ?></label>
                         <div class="input-group" style="width:140px;" >
                             <input type="text" class="form-control" id="message_human_large" name="message_human" required>
                             <span class="input-group-addon">+ 3 = 5</span>

@@ -310,6 +310,7 @@ Template Name: Portfolio Stott
                     <div class="modal-body">
                         <div><h4><?php echo(esc_html__( 'Liste over kommende aktiviteter:', 'gotomeloy' )); ?></h4></div>
                         <?php if ( function_exists( 'add_social_share_icons' ) ) { echo add_social_share_icons(); } ?>
+                        <div class="fb-page" data-href="https://www.facebook.com/StottBrygge/" data-tabs="events,timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/StottBrygge/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/StottBrygge/">Støtt Brygge</a></blockquote></div>
                         <?php
                             $currentdate = date("Y-m-d",mktime(0,0,0,date("m"),date("d")-1,date("Y")));
 

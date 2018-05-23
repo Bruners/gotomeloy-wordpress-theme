@@ -716,6 +716,21 @@ jQuery(document).ready(function($) {
         }, 'slow', 'swing' );
     });
 
+    jQuery(".scroll-contact").click(function() {
+        event.preventDefault();
+        jQuery('html, body').animate({
+            scrollTop: jQuery("#contact-us").offset().top
+        }, 'slow', 'swing' );
+    });
+
+    jQuery(".scroll-booking").click(function() {
+        event.preventDefault();
+        jQuery('html, body').animate({
+            scrollTop: jQuery("#book-now").offset().top
+        }, 'slow', 'swing' );
+    });
+
+
     jQuery(".back2top").on("click", function() {
         jQuery("html, body").animate({
             scrollTop: 0

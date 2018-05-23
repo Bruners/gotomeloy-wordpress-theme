@@ -5,6 +5,7 @@
 #-----------------------------------------------------------------#
 
 remove_filter( 'the_content', 'wpautop' );
+remove_filter( 'the_excerpt', 'wpautop' );
 
 #-----------------------------------------------------------------#
 # Stop Wordpress emoji scripts
@@ -190,7 +191,7 @@ function wsds_defer_scripts( $tag, $handle, $src )
       wp_enqueue_style('gotomeloy', GOTOMELOY_CSS_URI . '/gotomeloy.min.css', array('gotomeloy-style'), 1.7 );
       wp_enqueue_style('gotomeloy-style', get_template_directory_uri() . '/style.css');
 
-      wp_enqueue_style('fontawesome', 'https://use.fontawesome.com/releases/v5.0.6/css/all.css', null, '5.0.6', 'all' );
+      wp_enqueue_style('fontawesome', 'https://use.fontawesome.com/releases/v5.0.10/css/all.css', null, '5.0.10', 'all' );
 
       wp_add_inline_style('gotomeloy-style', get_theme_mod('gotomeloy_custom_css'));
 
