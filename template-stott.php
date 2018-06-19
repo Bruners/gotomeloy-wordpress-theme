@@ -47,16 +47,13 @@ Template Name: Portfolio Stott
 <section id="site-body" class="sections padding-size-m">
     <div class="container container-content">
         <div class="innhold">
-        <?php while( have_posts() ) : the_post(); ?>
-            <!-- PAGE CONTENT -->
-            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-                <div class="entry-content clearfix">
-                    <?php the_content( esc_html__( 'Read More', 'gotomeloy' ) ); ?>
-                </div>
-
-            </article>
-
+            <?php while( have_posts() ) : the_post(); ?>
+                <!-- PAGE CONTENT -->
+                <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                    <div class="entry-content clearfix">
+                        <?php the_content( esc_html__( 'Read More', 'gotomeloy' ) ); ?>
+                    </div>
+                </article>
             <?php endwhile; ?>
         </div>
     </div>

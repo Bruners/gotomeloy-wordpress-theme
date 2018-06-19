@@ -44,21 +44,20 @@ Template Name: Portfolio Ørnes
 ?>
 
 <!-- BEGIN: SITE BODY -->
-<section id="site-body" class="sections portfolio padding-size-m">
-    <div class="container">
+<section id="site-body" class="sections padding-size-m">
+    <div class="container container-content">
         <div class="innhold">
-        <?php while( have_posts() ) : the_post(); ?>
-            <!-- PAGE CONTENT -->
-            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-                <div class="entry-content clearfix">
-                    <?php the_content( esc_html__( 'Read More', 'gotomeloy' ) ); ?>
-                </div>
-
-            </article>
-
+            <?php while( have_posts() ) : the_post(); ?>
+                <!-- PAGE CONTENT -->
+                <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                    <div class="entry-content clearfix">
+                        <?php the_content( esc_html__( 'Read More', 'gotomeloy' ) ); ?>
+                    </div>
+                </article>
             <?php endwhile; ?>
         </div>
+    </div>
+    <div class="container container-portofolio">
         <div id="opplevelser" class="portfolio">
             <?php if ( $is_filtration ) { ?>
 
@@ -86,7 +85,88 @@ Template Name: Portfolio Ørnes
             <!-- END: PORTFOLIO GRID -->
         </div>
     </div> <!-- END: CONTAINER DIV -->
-    <div class="container-bunn">
+    <!-- BEGIN: BOTTOM WIDGETS -->
+    <div class="container-fluid container-bunn">
+        <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("widgetized-page-bottom") ) : ?>
+        <?php endif; ?>
+    </div>
+    <!-- END: BOTTOM WIDGETS -->
+        <div class="container-fluid">
+        <div class="textwidget text-center"><h4><i class="fas fa-video">Video</i></h4></div>
+        <div class="container-promo-video">
+            <div id="carousel-promo-video" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-promo-video" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-promo-video" data-slide-to="1"></li>
+                    <li data-target="#carousel-promo-video" data-slide-to="2"></li>
+                    <li data-target="#carousel-promo-video" data-slide-to="3"></li>
+                    <li data-target="#carousel-promo-video" data-slide-to="4"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe width="560" height="315" src="" data-src="https://www.youtube.com/embed/xM7d2HHvAR0?rel=0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                        </div>
+                        <div class="carousel-caption">
+                            <h5 class="text-center">Go to Meløy</h5>
+                            <p>Visit Meløy and experience the coast in Helgaland, the gateway to Lofoten. Together with Meløy Adventure, Glomfjord Hotell, Ørnes Hotell, Støtt Brygge and Rocks'n Rivers we can give you amazing experiences in unique locations in Norway.</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe width="560" height="315" src="" data-src="https://player.vimeo.com/video/199325238" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                        </div>
+                        <div class="carousel-caption">
+                            <h5 class="text-center">Go to Meløy</h5>
+                            <p><a href="https://vimeo.com/199325238">Go to Mel&oslash;y </a>by <a href="https://vimeo.com/user39330606">Mel&oslash;y Adventure</a></p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe width="560" height="315" src="" data-src="https://www.youtube.com/embed/FltXYcQeMDU?rel=0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                        </div>
+                        <div class="carousel-caption">
+                            <h5 class="text-center">Go To Meloy</h5>
+                            <p>Visit Meløy and experience the coast in Helgaland, the gateway to Lofoten. Together with Meløy Adventure, Glomfjord Hotell, Ørnes Hotell, Støtt Brygge and Rocks'n Rivers we can give you amazing experiences in unique locations in Norway.</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe width="560" height="315" src="" data-src="https://www.youtube.com/embed/7AYErtJrcd8?rel=0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                        </div>
+                        <div class="carousel-caption">
+                            <h5 class="text-center">Fykantrappa Glomfjord</h5>
+                            <p>Opp og ned Fykantrappa i Glomfjord, 1126 trinn med god trimm og ingenting for folk med høydeskrekk</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe width="560" height="315" src="" data-src="https://player.vimeo.com/video/196182028" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                        </div>
+                        <div class="carousel-caption">
+                            <h5 class="text-center">NorthernNorway</h5>
+                            <p>adventurous | pure | majestic - falling in love with #NorthernNorway ♡#travel the #world with a #drone</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-promo-video" role="button" data-slide="prev">
+                    <span class="fa fa-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carousel-promo-video" role="button" data-slide="next">
+                    <span class="fa fa-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+            <div class="new-caption-area"></div>
+        </div>
+    </div>
+    <div class="container-fluid container-bunn">
         <div class="kontakt-oss">
         <div class="fb-like" data-href="https://www.facebook.com/Ørnes-Hotell-879538312107349/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
         <?php
@@ -94,7 +174,8 @@ Template Name: Portfolio Ørnes
             $kontaktskjema_logo = types_render_field("kontaktskjema-logo", array('raw' => true));
             $kontaktskjema_adresse = types_render_field("kontaktskjema-adress", array('raw' => false));
         ?>
-        <?php echo ( $kontaktskjema_bunn ); ?>
+        <?php //echo ( $kontaktskjema_bunn ); ?>
+        <?php get_template_part( 'parts/contact-form-large.inc' ); ?>
         <style>
             #map-container { height: 300px; }
         </style>
@@ -109,282 +190,13 @@ Template Name: Portfolio Ørnes
                 <div id="map-container" class="col-md-8"></div>
             </div><!-- /map-outer -->
         </div> <!-- /row -->
-        <script src="http://maps.google.com/maps/api/js?key=AIzaSyD_jY8WgpA6B1eEkKuBnOxq5WE_zY1dYqA"></script>
-        <script>    
-            function init_map() {
-                var enable_stott = false;
-                var enable_bodo = false;
-                var enable_glomfjord = false;
-                var enable_ornes = true;
-                var enable_meloyadventure = false;
-
-                // Define marker icons
-                var pin_blue = 'wp-content/themes/gotomeloy-wordpress-theme/img/map-pins/pin-blue-10.png';
-                var pin_green = 'wp-content/themes/gotomeloy-wordpress-theme/img/map-pins/pin-green-11.png';
-                var pin_red = 'wp-content/themes/gotomeloy-wordpress-theme/img/map-pins/pin-red-16.png';
-                var pin_yellow = 'wp-content/themes/gotomeloy-wordpress-theme/img/map-pins/pin-yellow-5.png';
-                var pin_magenta = 'wp-content/themes/gotomeloy-wordpress-theme/img/map-pins/pin-magenta-6.png';
-
-                // Set gps location for map
-                var var_location = new google.maps.LatLng(67.0120865,13.8881624);
-
-                // Define map options - https://developers.google.com/maps/documentation/javascript/controls
-                var var_mapoptions = {
-                    center: var_location,
-                    zoom: 7,
-                    mapTypeId: google.maps.MapTypeId.ROADMAP,
-                    mapTypeControl: false,
-                    panControl:false,
-                    rotateControl:false,
-                    streetViewControl: false,
-                };
-
-                // Create map
-                var var_map = new google.maps.Map(document.getElementById("map-container"),
-                    var_mapoptions);
-
-                // Define infoboxes and marker for each place
-                if (enable_stott) {
-                    // GPS position for map marker
-                    var var_stott = new google.maps.LatLng(66.925775,13.437980);
-                    
-                    var stott_content_string = 
-                        '<div id="infowindow_content">'+
-                        '<p><strong>Støtt Brygge</strong><br>'+
-                        '8159 Støtt<br>' +
-                        'Norge<br>'+
-                        '+47 400 21 212</p>'+
-                        '<a href="http://www.stott.no" target="_blank">stott.no</a> | <a href="mailto:eaa@stott.no">eaa@stott.no</a>'+
-                        '</div>';
-                    var stott_infowindow = new google.maps.InfoWindow({
-                        content: stott_content_string
-                    });
-                    var stott_marker = new google.maps.Marker({
-                        position: var_stott,
-                        map: var_map,
-                        icon: pin_blue,
-                        title:"Støtt Brygge",
-                        maxWidth: 500
-                    });
-                    // Add marker and infobox for Støtt Brygge
-                    stott_marker.setMap(var_map);
-                    google.maps.event.addListener(stott_marker, 'click', function() {
-                        stott_infowindow.open(var_map,stott_marker);
-                    });     
-                };
-
-                if (enable_ornes) {
-                    // GPS position for map marker
-                    var var_ornes = new google.maps.LatLng(66.868162,13.705902);
-
-                    var ornes_content_string =
-                        '<div id="infowindow_content">'+
-                        '<p><strong>Ørnes Hotell AS</strong><br />'+
-                        'Havneveien 12<br />'+
-                        '8150 Ørnes<br />'+
-                        'Norge<br />'+
-                        '+47 75 75 45 99</p>'+
-                        '<a href="http://www.orneshotell.no" target="_blank">orneshotell.no</a> | <a href="mailto:bjorn@orneshotell.no">bjorn@orneshotell.no</a>'+
-                        '</div>';
-                    var ornes_infowindow = new google.maps.InfoWindow({
-                        content: ornes_content_string
-                    });
-                    var ornes_marker = new google.maps.Marker({
-                        position: var_ornes,
-                        map: var_map,
-                        icon: pin_yellow,
-                        title: "Ørnes Hotell",
-                        maxWidth: 500
-                    });
-
-                    // Add marker and infobox for Ørnes Hotell
-                    ornes_marker.setMap(var_map);
-                    google.maps.event.addListener(ornes_marker, 'click', function() {
-                        ornes_infowindow.open(var_map,ornes_marker);
-                    });     
-                };
-
-                if (enable_glomfjord) {
-                    // GPS position for map marker
-                    var var_glomfjord = new google.maps.LatLng(66.817044,13.945002);
-
-                    var glomfjord_content_string =
-                        '<div id="infowindow_content">'+
-                        '<p><strong>Glomfjord Hotell AS</strong><br />'+
-                        'Lars Evensens vei 3<br />'+
-                        '8160 Glomfjord<br />'+
-                        'Norge<br />'+
-                        '+47 75 75 25 00</p>'+
-                        '<a href="http://www.glomfjordhotell.no" target="_blank">glomfjordhotell.no</a> | <a href="mailto:info@glomfjordhotell.no">info@glomfjordhotell.no</a>'+
-                        '</div>';
-                    var glomfjord_infowindow = new google.maps.InfoWindow({
-                        content: glomfjord_content_string
-                    });
-                    var glomfjord_marker = new google.maps.Marker({
-                        position: var_glomfjord,
-                        map: var_map,
-                        icon: pin_green,
-                        title: "Glomfjord Hotell",
-                        maxWidth: 500
-                    });
-                    
-                    // Add marker and infobox for Glomfjord Hotell
-                    glomfjord_marker.setMap(var_map);
-                    google.maps.event.addListener(glomfjord_marker, 'click', function() {
-                        glomfjord_infowindow.open(var_map,glomfjord_marker);
-                    }); 
-                };
-
-                if (enable_bodo) {
-                    // GPS position for map marker
-                    var var_bodo = new google.maps.LatLng(67.282916,14.379724);
-
-                    var bodo_content_string =
-                        '<div id="infowindow_content">'+
-                        '<p><strong>Bodø Hotell AS</strong><br />'+
-                        'Professor Schyttes gate 5<br />'+
-                        '8006 Bodø<br />'+
-                        'Norge</p>'+
-                        '<a href="http://www.bodohotell.no" target="_blank">bodohotell.no</a> | <a href="mailto:booking@bodohotell.no">booking@bodohotell.no</a>'+
-                        '</div>';
-                    var bodo_infowindow = new google.maps.InfoWindow({
-                        content: bodo_content_string
-                    });
-                    var bodo_marker = new google.maps.Marker({
-                        position: var_bodo,
-                        map: var_map,
-                        icon: pin_red,
-                        title: "Bodø Hotell",
-                        maxWidth: 500
-                    });
-
-                    // Add marker and infobox for Bodø Hotell
-                    bodo_marker.setMap(var_map);
-                    google.maps.event.addListener(bodo_marker, 'click', function() {
-                        bodo_infowindow.open(var_map,bodo_marker);
-                    });
-                };
-
-                if (enable_meloyadventure) {
-                    // GPS position for map marker
-                    var var_meloyadventure = new google.maps.LatLng(66.808303,13.975856);
-
-                    var meloyadventure_content_string =
-                        '<div id="infowindow_content">'+
-                        '<p><strong>Meløy Adventure</strong><br />'+
-                        'Glomveien 62<br />'+
-                        '8160 Glomfjord<br />'+
-                        'Norge<br />'+
-                        '+47 915 40 866</p>'+
-                        '<a href="http://www.meloyadventure.no" target="_blank">meloyadventure.no</a> | <a href="mailto:post@meloyadventure.no">post@meloyadventure.no</a>'+
-                        '</div>';
-                    var meloyadventure_infowindow = new google.maps.InfoWindow({
-                        content: meloyadventure_content_string
-                    });
-                    var meloyadventure_marker = new google.maps.Marker({
-                        position: var_meloyadventure,
-                        map: var_map,
-                        icon: pin_magenta,
-                        title: "Glomfjord Overnatting",
-                        maxWidth: 500
-                    });
-
-                    // Add marker and infobox for Meløy Adventure
-                    meloyadventure_marker.setMap(var_map);
-                    google.maps.event.addListener(meloyadventure_marker, 'click', function() {
-                        meloyadventure_infowindow.open(var_map,meloyadventure_marker);
-                    });
-                };
-            };
- 
-            google.maps.event.addDomListener(window, 'load', init_map);
-        </script>
         </div>
         <div class="copyright">
-            <?php echo get_theme_mod('gotomeloy_copyright_text', esc_html__('Copyright © GO TO MELØY 2016', 'gotomeloy') ); ?> | <?php echo(esc_html__( 'Utviklet av', 'gotomeloy' )); ?> <a href="http://www.github.com/bruners/" target="_blank">Lasse Brun</a><br />
-            <?php echo(esc_html__( 'Engelsk oversettelse av', 'gotomeloy' )); ?> <a href="http://mclean.no/" target="_blank">McLean.no Oversetting og undertekster</a>
+            <?php echo get_theme_mod('gotomeloy_copyright_text', esc_html__('Copyright © GO TO MELØY 2016', 'gotomeloy') ); ?> | <?php echo(esc_html__( 'Utviklet av', 'gotomeloy' )); ?> <a href="https://www.github.com/bruners/" target="_blank">Lasse Brun</a><br />
         </div>
     </div>
 
     <div class="portfolio-modals">
-    <!-- Modal 1513 -->
-        <?php
-            $portfolio_1513_post = get_post( 1513 );
-            $portfolio_1513_title = $portfolio_1513_post->post_title;
-        ?>
-        <div id="portfolio-modal-1513" class="modal fade" tabindex="-1">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button class="close fa fa-close" type="button" data-dismiss="modal"></button>
-                        <h5 class="modal-title"><?php echo ( $portfolio_1513_title ); ?></h5>
-                    </div>
-                    <div class="modal-body">
-                        <div><h4><?php echo(esc_html__( 'Liste over kommende aktiviteter:', 'gotomeloy' )); ?></h4></div>
-                        <?php 
-                            $currentdate = date("Y-m-d",mktime(0,0,0,date("m"),date("d")-1,date("Y")));
-                            
-                            $args = array (
-                                'meta_query'=> array(
-                                    array(
-                                        'key' => 'event_starts_sort_field',
-                                        'compare' => '>',
-                                        'value' => $currentdate,
-                                        'type' => 'DATE',
-                                    )),
-
-                                'post_type' => 'facebook_events',
-                                'posts_per_page' => -1,
-                                
-                                'meta_key' => 'event_starts_sort_field',
-                                'orderby' => 'meta_value',
-                                'order' => 'ASC'
-                            );
-                        
-                            $fbe_query = new WP_Query( $args );
-                            
-                            if( $fbe_query->have_posts() ): 
-                            while ( $fbe_query->have_posts() ) : $fbe_query->the_post();
-                                $event_title = get_the_title();
-                                $event_image = get_fbe_image('cover');
-                                $event_url =  get_fbe_field('fb_event_uri');
-                                $event_facebook = get_fbe_field('facebook');
-                                $event_string = array('https://facebook.com','/');
-                                $event_string2 = array('','');
-                                $event_site = str_replace($event_string, $event_string2, $event_facebook);
-                                $event_site = ucfirst($event_site);
-                                $event_location = get_fbe_field('location');
-                                $event_starts_month = get_fbe_date('event_starts','M');
-                                $event_starts_day = get_fbe_date('event_starts','j');
-                        ?>
-                            <div class="fbecol fbecolhover"><a href="<?php echo $event_url; ?>">
-                                <div class="fbe_list_image" style="background-image:url(<?php echo $event_image; ?>)" />
-                                    <div class="fbe_list_bar">
-                                        <div class="fbe_list_date">
-                                            <div class="fbe_list_month"><?php echo $event_starts_month; ?></div>
-                                            <div class="fbe_list_day"><?php echo $event_starts_day; ?></div>
-                                        </div>
-                                        <div class="fbe_col_title"><h2><?php echo $event_title; ?></h2></div>
-                                        <div class="fbe_col_location"><?php echo $event_site; ?></div>
-                                    </div>
-                                </div>
-                            </a></div>
-                        <?php
-                            endwhile;
-                            endif;    
-                            wp_reset_query();  
-                        ?>
-                        <p><a href="http://www.stott.no/tjeneste/aktivitetskalender/" target="_blank"><?php esc_html_e('Åpne innholdet i eget vindu', 'gotomeloy'); ?></a></p><br />
-                        <?php if ( function_exists( 'sharing_display' ) ) { echo sharing_display(); } ?>
-                    </div> <!-- /.modal-body -->
-                    <div class="modal-footer">
-                        <button class="btn btn-default" type="button" data-dismiss="modal">Lukk</button>
-                    </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
-
-
         <?php
             $args = array(
                 'post_type' => 'portfolio',
@@ -392,30 +204,35 @@ Template Name: Portfolio Ørnes
             );
             $query = new WP_Query($args);
             while($query -> have_posts()) : $query -> the_post();
+
+            $hero_opts = get_post_meta(get_the_ID(), 'hero_additional_options', true);
+            $is_hero_module = is_array($hero_opts) && in_array('is_hero', $hero_opts) ? true : false;
         ?>
-        <?php if ($post_id != 1513) { ?>
-        <!-- Modal -->
-        <div id="portfolio-modal-<?php echo(get_the_ID()); ?>" role="dialog" aria-labeledby="<?php the_title(); ?>" class="modal fade" tabindex="-1">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button class="close" type="button" aria-label="Close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
-                        <h5 class="modal-title"><?php the_title(); ?></h5>
-                    </div>
-                    <div class="modal-body aligncenter">
-                        <?php the_content(); ?>
-                        <br />
-                        <p><a href="<?php echo(get_permalink(get_the_ID())); ?>" target="_blank"><?php esc_html_e('Åpne innholdet i eget vindu', 'gotomeloy'); ?></a></p><br />
-                        <?php if ( function_exists( 'sharing_display' ) ) { echo sharing_display(); } ?>
-                    </div>
-                    <div class="modal-footer">
-                        <ul class="nostyle clearfix">
-                            <li class="btn btn-default" type="button" data-dismiss="modal"><i class="fa fa-times"></i></li>
-                        </ul>
-                    </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
+        <?php if ( $is_hero_module ) { ?>
+            <div class="disabled"></div>
+        <?php } else { ?>
+            <!-- Modal -->
+            <div id="portfolio-modal-<?php echo(get_the_ID()); ?>" role="dialog" aria-labeledby="<?php the_title(); ?>" class="modal fade" tabindex="-1">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button class="close" type="button" aria-label="Close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                            <h5 class="modal-title"><?php the_title(); ?></h5>
+                        </div>
+                        <div class="modal-body aligncenter">
+                            <?php the_content(); ?>
+                            <br />
+                            <p><a href="<?php echo(get_permalink(get_the_ID())); ?>" target="_blank"><?php esc_html_e('Åpne innholdet i eget vindu', 'gotomeloy'); ?></a></p><br />
+                            <?php if ( function_exists( 'add_social_share_icons' ) ) { echo add_social_share_icons(); } ?>
+                        </div>
+                        <div class="modal-footer">
+                            <ul class="nostyle clearfix">
+                                <li class="btn btn-default" type="button" data-dismiss="modal"><i class="fa fa-times"></i></li>
+                            </ul>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
         <?php } ?>
         <?php endwhile; wp_reset_postdata(); ?>
     </div> <!-- /.portfolio-modals -->

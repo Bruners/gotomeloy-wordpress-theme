@@ -32,7 +32,7 @@
                         <div class="form-group form-inline">
                             <label class="control-label" for="message_human"><?php echo(esc_html__( 'Menneskelig verifisering:', 'gotomeloy' )); ?></label>
                             <div class="input-group" style="width:140px;" >
-                                <input type="text" class="form-control" id="message_human" name="message_human" required>
+                                <input type="text" class="form-control" id="message_human_page" name="message_human" required>
                                 <span class="input-group-addon">+ 3 = 5</span>
                             </div>
                         </div>
@@ -85,7 +85,7 @@
 
         var is_sending = false;
 
-        jQuery('#ontactFormPage').submit(function (e) {
+        jQuery('#ContactFormPage').submit(function (e) {
             e.preventDefault(); // Prevent the default form submit
 
             if (is_sending || !validateInputs()) {
@@ -110,8 +110,8 @@
                             jQuery("#ContactFormResponsePage").html('<div class="alert alert-success">'+message_sent+'</div>');
                             jQuery("#ContactFormResponsePage").delay(3000).fadeOut();
                         });
-                        jQuery('#ontactFormPage')[0].reset();
-                        jQuery("#message_human").closest('div').removeClass('has-error');
+                        jQuery('#ContactFormPage')[0].reset();
+                        jQuery("#message_human_page").closest('div').removeClass('has-error');
                     } else {
                         // If we don't get the expected response, it's an error.
                         handleFormError();
@@ -131,14 +131,14 @@
 
 
         function validateInputs () {
-            var $human = jQuery('#message_human').val(),
+            var $human = jQuery('#message_human_page').val(),
                 $name = jQuery('#message_name').val(),
                 $email = jQuery('#message_email').val(),
                 $message = jQuery('#message_text').val();
             if ($human != "2") {
                 jQuery("#ContactFormResponsePage").fadeIn('slow', function(){
                     jQuery("#ContactFormResponsePage").html('<div class="alert alert-danger">'+not_human+'</div>');
-                    jQuery("#message_human").closest('div').addClass('has-error');
+                    jQuery("#message_human_page").closest('div').addClass('has-error');
                 });
                 return false;
             } else if (!$name || !$email || !$message) {

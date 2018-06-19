@@ -7,7 +7,7 @@
 
                 $post_id = get_the_ID();
             ?>
-                <?php if ($post_id == 18138 || $post == 122520) { ?>
+                <?php if ($post_id == 18138 || $post_id == 122520 || $post_id == 1530) { ?>
                     <!-- Modal -->
                     <div id="meny-modal-<?php echo(get_the_ID()); ?>" role="dialog" aria-labeledby="<?php the_title(); ?>" class="modal fade" tabindex="-1">
                         <div class="modal-dialog" role="document">

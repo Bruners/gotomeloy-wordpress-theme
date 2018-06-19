@@ -235,9 +235,8 @@ function wsds_defer_scripts( $tag, $handle, $src )
 
       wp_enqueue_script('gotomeloy-site-functions', GOTOMELOY_JS_URI . '/functions.min.js', array('jquery'), 1.7, true);
 
-      wp_register_script( 'touchswipe', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.4/jquery.touchSwipe.min.js', 'jquery', '1.6.4', true );
+      wp_register_script( 'touchswipe', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js', 'jquery', '1.6.18', true );
       wp_enqueue_script('touchswipe');
-
 
       // Enqueue (conditional)
       if ( is_singular() ) {
@@ -265,6 +264,7 @@ function wsds_defer_scripts( $tag, $handle, $src )
 
 function language_selector_flags()
 {
+  if (function_exists('icl_get_languages')) {
     $languages = icl_get_languages('skip_missing=0&orderby=code');
     if(!empty($languages)){
         foreach($languages as $l){
@@ -272,16 +272,19 @@ function language_selector_flags()
               echo '<li><a href="'.$l['url'].'"><img class="lang-'.$l['language_code'].'" src="'.$l['country_flag_url'].'" height="18" alt="'.$l['language_code'].'" width="24" /></a></li>';
         }
     }
+  }
 }
 
 function language_selector_flags_nolist()
 {
-    $languages = icl_get_languages('skip_missing=1&orderby=code');
-    if(!empty($languages)){
-        foreach($languages as $l){
-            if(!$l['active'])
-              echo '<a href="'.$l['url'].'" class="lang-'.$l['language_code'].'" alt="'.$l['language_code'].'"></a>';
-        }
+    if (function_exists('icl_get_languages')) {
+      $languages = icl_get_languages('skip_missing=1&orderby=code');
+      if(!empty($languages)){
+          foreach($languages as $l){
+              if(!$l['active'])
+                echo '<a href="'.$l['url'].'" class="lang-'.$l['language_code'].'" alt="'.$l['language_code'].'"></a>';
+          }
+      }
     }
 }
 
@@ -620,9 +623,13 @@ function sendContactFormToSiteAdmin ()
     }
 
     $email_to = get_option('admin_email');
+    $site_name = get_option( 'blogname' );
+    $site_url = site_url();
+    $site_domain = parse_url($site_url);
+
     $subject = "Kontaktskjema Støtt Brygge: " . $_POST['message_name'];
-    $message = "Melding fra ". $_POST['message_name'] . ": \n\n " . $_POST['message_text'] . "\r\n\r\n" . "--" . "\r\n" . "This e-mail was sent from a contact form on Støtt Brygge (https://www.stott.no)";
-    $headers = "From: ". $_POST['message_name'] . " <kontakt@stott.no>" . "\r\n" . "Reply-To: " . $_POST['message_email'] . "\r\n";
+    $message = "Melding fra: ". $_POST['message_name'] . "\n\n" . $_POST['message_text'] . "\r\n\r\n" . "--" . "\r\n" . "This e-mail was sent from a contact form on " . $site_name  . " (" . $site_url . ")";
+    $headers = "From: ". $_POST['message_name'] . " <kontakt@" . $site_domain . ">" . "\r\n" . "Reply-To: " . $_POST['message_email'] . "\r\n";
  
     if (wp_mail($email_to, $subject, $message, $headers)) {
       echo json_encode(array('status' => 'success', 'message' => 'Contact message sent.'));
