@@ -191,7 +191,8 @@ function wsds_defer_scripts( $tag, $handle, $src )
       wp_enqueue_style('gotomeloy', GOTOMELOY_CSS_URI . '/gotomeloy.min.css', array('gotomeloy-style'), 1.7 );
       wp_enqueue_style('gotomeloy-style', get_template_directory_uri() . '/style.css');
 
-      wp_enqueue_style('fontawesome', 'https://use.fontawesome.com/releases/v5.0.10/css/all.css', null, '5.0.10', 'all' );
+      wp_enqueue_style('fontawesome', 'https://use.fontawesome.com/releases/v5.0.13/css/all.css', null, '5.0.13', 'all' );
+      wp_enqueue_style('fancybox', 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css', null, '3.3.5', 'all' );
 
       wp_add_inline_style('gotomeloy-style', get_theme_mod('gotomeloy_custom_css'));
 
@@ -230,7 +231,7 @@ function wsds_defer_scripts( $tag, $handle, $src )
       {
         wp_enqueue_script('gotomeloy-theme-functions', GOTOMELOY_JS_URI . '/gotomeloy.min.js', array('jquery'), 1.7, true);
       }
-      wp_register_script( 'fancybox', 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js', 'jquery', '3.2.5', true );
+      wp_register_script( 'fancybox', 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js', 'jquery', '3.3.5', true );
       wp_enqueue_script('fancybox');
 
       wp_enqueue_script('gotomeloy-site-functions', GOTOMELOY_JS_URI . '/functions.min.js', array('jquery'), 1.7, true);
@@ -625,7 +626,7 @@ function sendContactFormToSiteAdmin ()
     $email_to = get_option('admin_email');
     $site_name = get_option( 'blogname' );
     $site_url = site_url();
-    $site_domain = parse_url($site_url);
+    $site_domain = var_dump(parse_url($site_url, PHP_URL_HOST));
 
     $subject = "Kontaktskjema Støtt Brygge: " . $_POST['message_name'];
     $message = "Melding fra: ". $_POST['message_name'] . "\n\n" . $_POST['message_text'] . "\r\n\r\n" . "--" . "\r\n" . "This e-mail was sent from a contact form on " . $site_name  . " (" . $site_url . ")";
