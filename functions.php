@@ -626,7 +626,7 @@ function sendContactFormToSiteAdmin ()
     $email_to = get_option('admin_email');
     $site_name = get_option( 'blogname' );
     $site_url = site_url();
-    $site_domain = var_dump(parse_url($site_url, PHP_URL_HOST));
+    $site_domain = str_ireplace('www.', '', parse_url($site_url, PHP_URL_HOST));
 
     $subject = "Kontaktskjema Støtt Brygge: " . $_POST['message_name'];
     $message = "Melding fra: ". $_POST['message_name'] . "\n\n" . $_POST['message_text'] . "\r\n\r\n" . "--" . "\r\n" . "This e-mail was sent from a contact form on " . $site_name  . " (" . $site_url . ")";
