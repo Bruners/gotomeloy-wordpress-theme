@@ -229,6 +229,8 @@ Template Name: Portfolio Stott
                         <div class="table-responsive">
                             <table class="table table-hover">
                                 <?php
+                                    require_once GOTOMELOY_INC . '/curl-cache.inc.php';
+
                                     $lat = 66.925775;
                                     $lon = 13.437980;
                                     $fromtime = new DateTime('NOW');
@@ -240,21 +242,13 @@ Template Name: Portfolio Stott
                                     $tdtime = clone $fromtime;
                                     $tdtime->format('d.m');
 
-                                    $feed = "http://api.sehavniva.no/tideapi.php?lat=".$lat."&lon=".$lon."&fromtime=".$fromtime->format('c')."&totime=".$totime->format('c')."&datatype=tab&refcode=cd&place=St%C3%B8tt&file=&lang=nb&interval=10&dst=1&tzone=&tide_request=locationdata";
-
-                                    $ch = curl_init();
-                                    curl_setopt($ch, CURLOPT_URL, $feed);
-                                    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-                                    // get the result of http query
-                                    $output = curl_exec($ch);
-                                    curl_close($ch);
+                                    $feed = "http://api.sehavniva.no/tideapi.php?lat=".$lat."&lon=".$lon."&fromtime=".$fromtime->format("Y-m-d\T00:00:00P")."&totime=".$totime->format("Y-m-d\T00:00:00P")."&datatype=tab&refcode=cd&place=St%C3%B8tt&file=&lang=nb&interval=10&dst=1&tzone=&tide_request=locationdata";
 
                                     $dir = get_stylesheet_directory_uri() . "/img/";
 
                                     libxml_use_internal_errors(TRUE);
                                     try {
-                                        //$xml = simplexml_load_file($output);
-                                        $xml = simplexml_load_string($output);
+                                        $xml = simplexml_load_string(cache_url($feed));
 
                                         if ($xml != "") {
                                             foreach ($xml->locationdata->data->waterlevel as $level):
