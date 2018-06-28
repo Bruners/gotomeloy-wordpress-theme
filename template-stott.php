@@ -129,10 +129,10 @@ Template Name: Portfolio Stott
                 </ol>
 
                 <!-- Wrapper for slides -->
-                <div class="carousel-inner" role="listbox">
+                <div id="video-slider" class="carousel-inner" role="listbox">
                     <div class="item active">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe width="560" height="315" src="" data-src="https://www.youtube.com/embed/xM7d2HHvAR0?rel=0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                        <div class="video-carousel yt-video embed-responsive embed-responsive-16by9" data-yt_id="xM7d2HHvAR0">
+                            <img src="http://img.youtube.com/vi/xM7d2HHvAR0/maxresdefault.jpg" width="560" height="315" />
                         </div>
                         <div class="carousel-caption">
                             <h5 class="text-center">Go to Meløy</h5>
@@ -140,8 +140,8 @@ Template Name: Portfolio Stott
                         </div>
                     </div>
                     <div class="item">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe width="560" height="315" src="" data-src="https://player.vimeo.com/video/199325238" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                        <div class="video-carousel vm-video embed-responsive embed-responsive-16by9" data-vm_id="199325238">
+                            <img src="https://i.vimeocdn.com/video/695381075_1280x720.jpg" width="560" height="315" />
                         </div>
                         <div class="carousel-caption">
                             <h5 class="text-center">Go to Meløy</h5>
@@ -149,8 +149,8 @@ Template Name: Portfolio Stott
                         </div>
                     </div>
                     <div class="item">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe width="560" height="315" src="" data-src="https://www.youtube.com/embed/ZlQM7-BJagM?rel=0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                        <div class="video-carousel yt-video embed-responsive embed-responsive-16by9" data-yt_id="ZlQM7-BJagM">
+                            <img src="http://img.youtube.com/vi/ZlQM7-BJagM/maxresdefault.jpg" width="560" height="315" />
                         </div>
                         <div class="carousel-caption">
                             <h5 class="text-center">Skattejakten LIVE</h5>
@@ -158,8 +158,8 @@ Template Name: Portfolio Stott
                         </div>
                     </div>
                     <div class="item">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe width="560" height="315" src="" data-src="https://www.youtube.com/embed/CkxmJ592_TY?rel=0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                        <div class="video-carousel yt-video embed-responsive embed-responsive-16by9" data-yt_id="CkxmJ592_TY">
+                            <img src="http://img.youtube.com/vi/CkxmJ592_TY/maxresdefault.jpg" width="560" height="315" />
                         </div>
                         <div class="carousel-caption">
                             <h5 class="text-center">Støtt Brygge Promo 2018</h5>

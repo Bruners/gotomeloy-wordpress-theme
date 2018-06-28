@@ -689,6 +689,36 @@ jQuery(document).ready(function($) {
         allowPageScroll:'vertical',
     });
 
+    // Display replace <img> with video on click and back to <img> after carousel sliding
+    jQuery(function () {
+        var yt_videos = jQuery(".yt-video");
+        var vm_videos = jQuery(".vm-video");
+
+        jQuery('#carousel-promo-video').on('slide.bs.carousel', function () {
+            yt_videos.children('iframe').remove();
+            yt_videos.removeClass('player');
+            vm_videos.children('iframe').remove();
+            vm_videos.removeClass('player');
+        });
+
+        yt_videos.on("click", function () {
+            var that = jQuery(this);
+
+            setTimeout(function () {
+                var YTid = that.data('yt_id');
+                that.addClass("player").append('<iframe width="560" height="315" src="http://www.youtube.com/embed/' + YTid + '?autoplay=1?rel=0" frameborder="0" allowfullscreen></iframe>');
+            }, 400);
+        });
+
+        vm_videos.on("click", function () {
+            var that = jQuery(this);
+
+            setTimeout(function () {
+                var VMid = that.data('vm_id');
+                that.addClass("player").append('<iframe width="560" height="315" src="https://player.vimeo.com/video/' + VMid + '" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
+            }, 400);
+        });
+    });
 
     jQuery('.fa.fa-instagram').removeClass('fa').addClass('fab');
     
