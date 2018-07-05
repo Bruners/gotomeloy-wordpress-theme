@@ -11,7 +11,7 @@ Template Name: Portfolio Ørnes
     // Add. Options Variables
     $portfolio_opts = get_post_meta(get_the_ID(), 'portfolio_additional_options', true);
     $is_filtration = is_array($portfolio_opts) && in_array('is_filtration', $portfolio_opts) ? true : false;
-    $is_masonry = is_array($portfolio_opts) && in_array('is_masonry', $portfolio_opts) ? true : false;
+    $is_masonry = is_array($portfolio_opts) && in_array('is_masonry', $portfolio_opts) ? "true" : "false";
 
     // Taxonomy Variables
     $taxonomy = 'portfolio_category';
@@ -75,7 +75,7 @@ Template Name: Portfolio Ørnes
             <section class="grid clearfix" data-col="<?php echo get_post_meta(get_the_ID(), 'portfolio_columns', true); ?>" data-margin="25" data-height="0.8" data-double-height="1.6" data-masonry="<?php echo $is_masonry; ?>">
 
             <?php if ( $portfolio_query->have_posts() ) : while ( $portfolio_query->have_posts() ) : $portfolio_query->the_post(); ?>
-            <?php get_template_part( 'parts/portfolio-ornes-index-entry.inc' ); ?>
+            <?php get_template_part( 'parts/portfolio-index-entry.inc' ); ?>
             <?php endwhile; wp_reset_postdata(); else: ?>
 
                 <p class="entry"><?php printf( esc_html__( 'Ready to publish your first entry? <a href="%1$s">Get started here</a>.', 'gotomeloy' ), esc_url( admin_url() ) ); ?></p>
@@ -105,10 +105,10 @@ Template Name: Portfolio Ørnes
                 </ol>
 
                 <!-- Wrapper for slides -->
-                <div class="carousel-inner" role="listbox">
+                <div id="video-slider" class="carousel-inner" role="listbox">
                     <div class="item active">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe width="560" height="315" src="" data-src="https://www.youtube.com/embed/xM7d2HHvAR0?rel=0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                        <div class="video-carousel yt-video embed-responsive embed-responsive-16by9" data-yt_id="xM7d2HHvAR0">
+                            <img src="https://img.youtube.com/vi/xM7d2HHvAR0/maxresdefault.jpg" width="560" height="315" />
                         </div>
                         <div class="carousel-caption">
                             <h5 class="text-center">Go to Meløy</h5>
@@ -116,8 +116,8 @@ Template Name: Portfolio Ørnes
                         </div>
                     </div>
                     <div class="item">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe width="560" height="315" src="" data-src="https://player.vimeo.com/video/199325238" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                        <div class="video-carousel vm-video embed-responsive embed-responsive-16by9" data-vm_id="199325238">
+                            <img src="https://i.vimeocdn.com/video/695381075_1280x720.jpg" width="560" height="315" />
                         </div>
                         <div class="carousel-caption">
                             <h5 class="text-center">Go to Meløy</h5>
@@ -125,17 +125,17 @@ Template Name: Portfolio Ørnes
                         </div>
                     </div>
                     <div class="item">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe width="560" height="315" src="" data-src="https://www.youtube.com/embed/FltXYcQeMDU?rel=0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                        <div class="video-carousel yt-video embed-responsive embed-responsive-16by9" data-yt_id="FltXYcQeMDU">
+                            <img src="https://img.youtube.com/vi/FltXYcQeMDU/maxresdefault.jpg" width="560" height="315" />
                         </div>
                         <div class="carousel-caption">
-                            <h5 class="text-center">Go To Meloy</h5>
+                            <h5 class="text-center">Go To Meløy</h5>
                             <p>Visit Meløy and experience the coast in Helgaland, the gateway to Lofoten. Together with Meløy Adventure, Glomfjord Hotell, Ørnes Hotell, Støtt Brygge and Rocks'n Rivers we can give you amazing experiences in unique locations in Norway.</p>
                         </div>
                     </div>
                     <div class="item">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe width="560" height="315" src="" data-src="https://www.youtube.com/embed/7AYErtJrcd8?rel=0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                        <div class="video-carousel yt-video embed-responsive embed-responsive-16by9" data-yt_id="7AYErtJrcd8">
+                            <img src="https://img.youtube.com/vi/7AYErtJrcd8/maxresdefault.jpg" width="560" height="315" />
                         </div>
                         <div class="carousel-caption">
                             <h5 class="text-center">Fykantrappa Glomfjord</h5>
@@ -143,8 +143,8 @@ Template Name: Portfolio Ørnes
                         </div>
                     </div>
                     <div class="item">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe width="560" height="315" src="" data-src="https://player.vimeo.com/video/196182028" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                        <div class="video-carousel vm-video embed-responsive embed-responsive-16by9" data-vm_id="196182028">
+                            <img src="https://i.vimeocdn.com/video/610146393_1280x720.jpg" width="560" height="315" />
                         </div>
                         <div class="carousel-caption">
                             <h5 class="text-center">NorthernNorway</h5>
