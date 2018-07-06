@@ -255,3 +255,17 @@ fieldset[disabled] .btn-default.focus {
 		background-color: @secondaryColor;          /* For the calendar's legend, this color must be the same as the background for sold-out dates (above) */
 	}
 }
+
+.card-entry-form-container {
+	.form-container {
+		border: 0;
+	}
+	.form-container .form-actions {
+    background-color: #363838;
+    border: 0;
+    }
+}
+
+.booking-invoice .product-invoice tr.product-header td { 
+	background-color: rgba(0,0,0,0);
+}

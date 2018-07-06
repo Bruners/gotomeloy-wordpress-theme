@@ -75,3 +75,198 @@ GO TO MELØY består av flere reiselivs-operatører som tilhører Meløy og omhe
 		<img class="alignnone size-full wp-image-1286" src="http://www.gotomeloy.no/wordpress/wp-content/uploads/2016/02/sixt_logo_110x57.png" alt="sixt_logo_110x57" width="110" height="57" />
 	</div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="ingress">The name alone gives you goosebumps (The Black Ice). With its 370 square kilometers, Svartisen is Norway's second largest glacier.
+    When the lowest point is only 20 meters above sea level, it is also very easily accessible.</div><br />
+    You can smell the cold, hear the Water from countless streams, see the ice crystals blinking in green, blue, turquoise and white with the forest around the glacier in irr green summer colors.<br />
+    <br />
+    The highest point is 1564 meters and the Engenbreen has a thickness of unimaginable 450 meters.<br />
+    Here is everything for everyone to get a taste of polar Norway.<br />
+    <br />
+    <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fgotomeloy%2Fvideos%2F893317850839657%2F&show_text=0&width=560" width="560" height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe><br />
+    We will take you with ribs from Støtt Brygge to Svartisen so you can visit the ice. <br />
+<div class="row">
+  <div class="col-xs-12 col-md-6">
+    <div class="single-header-body"><h4>Trip to the glacier Svartisen</h4>
+      Join a tour with RIB boat from Støtt Brygge to the glacier Svartisen.<br />
+      From Svartisen habour we rent bicycles and go to the glacier.<br />
+      We walk on the glacier and look at the glacier cracks, rock formations and not to mention the spectacular view.<br />
+      <br />
+      On the way back we visit the cafe Brestua where it is possible to buy refreshments.<br />
+      <br />
+      We have all the necessary eguipment you need on the glacier.<br />
+      In addition you need to bring a backpack, warm clothes, sunglasses and gloves.<br />
+      <br />
+      From Støtt Brygge you get a lunchpack and a bottle of water – this is included in the price.<br />
+      <br />
+      <br />
+    </div>
+  </div>
+  <div class="col-xs-12 col-md-6">
+    <div class="single-header-image"><br />[metaslider id="48871"]</div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12 col-lg-8">
+    <div class="single-header-icons">
+      <div class="icon-div-portfolio">
+        <div class="icon-icon "><i class="fa fa-star"></i></div>
+        <div class="icon-text">
+          <div class="icon-title">Experience:</div>
+          <p>None</p>
+        </div>
+      </div>
+      <div class="icon-div-portfolio">
+        <div class="icon-icon "><i class="fa fa-clock"></i></div>
+        <div class="icon-text">
+          <div class="icon-title">Duration:</div>
+          <p>5-6 hours</p>
+        </div>
+      </div>
+      <div class="icon-div-portfolio">
+        <div class="icon-icon"><i class="fa fa-users"></i></div>
+        <div class="icon-text">
+          <div class="icon-title">Participants:</div>
+          <p>Min 4</p>
+        </div>
+      </div>
+      <div class="icon-div-portfolio">
+        <div class="icon-icon"><i class="fa fa-calendar"></i></div>
+        <div class="icon-text">
+          <div class="icon-title">Date:</div>
+          <p>Mai-Sept.</p>
+        </div>
+      </div>
+      <div class="icon-div-portfolio">
+        <div class="icon-icon"><i class="fa fa-map-pin"></i></div>
+        <div class="icon-text">
+          <div class="icon-title">Meeting point:</div>
+          <p>Støtt Brygge</p>
+        </div>
+      </div>
+      <div class="icon-div-portfolio">
+        <div class="icon-icon"><i class="fa fa-compass"></i></div>
+        <div class="icon-text">
+          <div class="icon-title">Location:</div>
+          <p>Svartisen</p>
+        </div>
+      </div>
+      <div class="icon-div-portfolio">
+        <div class="icon-icon"><i class="fa fa-credit-card"></i></div>
+        <div class="icon-text">
+          <div class="icon-title">Price:</div>
+          <p>NOK 8500,-</p>
+        </div>
+      </div>
+    </div> <!-- end icons -->
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-xs-12 col-md-6">
+    <div class="single-header-body"><h4>Welcome to Svartisen Moose and our tame moose Arnljot and Wilma!</h4>
+	  Our guides will take you for a guided tour where you will have the chance to be face to face with the biggest land living mammal in Europe – the Moose.<br />
+	  <br />
+	  You will have the opportunity to touch them, hug them and the bravest can even kiss them!<br />
+	  According to the Scandinavian legend, those who kiss a moose becomes irresistible and extremely happy.<br />
+	  <br />
+	  During the Season 2018 we are open 10 – 16 every day until 31.08. Season opening on the 27.05.<br />
+	  Tickets are sold in the big tent at the entrance to the Moose<br />
+	  <br />
+	  Groups out of ordinary times – and on request all year around<br />
+	  <br />
+      <a href="http://www.svartisenmoose.no/" target="_blank"><i class="fas fa-2x fa-paperclip"></i></a>&nbsp;&nbsp;
+      <a href="tel:+47 465 13 892"><i class="fas fa-2x fa-phone"></i></a>&nbsp;&nbsp;
+      <a href="https://www.facebook.com/svartisenmoose/" target="_blank"><i class="fab fa-2x fa-facebook-f"></i></a>&nbsp;&nbsp;
+      <a href="mailto:info@svartisenmoose.no"><i class="far fa-2x fa-envelope"></i></a>&nbsp;&nbsp;
+      <a href="https://www.instagram.com/kissamoosesvartisen/" target="_blank"><i class="fab fa-2x fa-instagram"></i></a><br />
+      <br />
+    </div>
+  </div>
+  <div class="col-xs-12 col-md-6">
+    <div class="single-header-image"><br /><img src="https://www.stott.no/wp-content/uploads/2018/04/portfolio_svartisen_svartisenmoose_IMG_3957_568x757_60op.jpg" alt="" width="568" height="757" class="alignnone size-full wp-image-48869" /><br /></div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12 col-lg-8">
+    <div class="single-header-icons">
+      <div class="icon-div-portfolio">
+        <div class="icon-icon "><i class="fa fa-star"></i></div>
+        <div class="icon-text">
+          <div class="icon-title">Experience:</div>
+          <p>None</p>
+        </div>
+      </div>
+      <div class="icon-div-portfolio">
+        <div class="icon-icon "><i class="fa fa-clock"></i></div>
+        <div class="icon-text">
+          <div class="icon-title">Duration:</div>
+          <p>-</p>
+        </div>
+      </div>
+      <div class="icon-div-portfolio">
+        <div class="icon-icon"><i class="fa fa-users"></i></div>
+        <div class="icon-text">
+          <div class="icon-title">Participants:</div>
+          <p>Min 1</p>
+        </div>
+      </div>
+      <div class="icon-div-portfolio">
+        <div class="icon-icon"><i class="fa fa-calendar"></i></div>
+        <div class="icon-text">
+          <div class="icon-title">Date:</div>
+          <p>May-Sept.</p>
+        </div>
+      </div>
+      <div class="icon-div-portfolio">
+        <div class="icon-icon"><i class="fa fa-map-pin"></i></div>
+        <div class="icon-text">
+          <div class="icon-title">Meeting point:</div>
+          <p>Støtt Brygge</p>
+        </div>
+      </div>
+      <div class="icon-div-portfolio">
+        <div class="icon-icon"><i class="fa fa-compass"></i></div>
+        <div class="icon-text">
+          <div class="icon-title">Location:</div>
+          <p>Svartisen</p>
+        </div>
+      </div>
+      <div class="icon-div-portfolio">
+        <div class="icon-icon"><i class="fas fa-binoculars"></i></div>
+        <div class="icon-text">
+          <div class="icon-title">Price:</div>
+          <p>NOK 100,- (50)</p>
+        </div>
+      </div>
+      <div class="icon-div-portfolio">
+        <div class="icon-icon"><i class="fas fa-diagnoses"></i></div>
+        <div class="icon-text">
+          <div class="icon-title">Guided tour:</div>
+          <p>NOK 150,- (50)</p>
+        </div>
+      </div>
+    </div> <!-- end icons -->
+  </div>
+</div>
