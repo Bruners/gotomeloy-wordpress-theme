@@ -13,7 +13,6 @@
     /** Viewport dimensions */
     var ww = $(window).width();
     var wh = $(window).height();
-
     /** TEMPLATE FUNCTIONS */
     /** ================================================== */
     var templateFunctions = {
@@ -108,15 +107,20 @@
                 e.preventDefault();
                 $(".filters li a").removeClass("active");
                 $(this).addClass("active");
+                var filter = $(this).attr("data-filter");
+                container.isotope({
+                    itemSelector: ".entry",
+                    filter: filter
+                });
             });
         }
     };
-
     /** LOAD */
     /** ================================================== */
     $(window).bind("load", function() {
         /** Load template functions */
         templateFunctions.grid();
+        templateFunctions.masonry();
         templateFunctions.filtering();
     });
     /** RESIZE */
@@ -127,6 +131,7 @@
         wh = $(window).height();
         /** Load template functions */
         templateFunctions.grid();
+        templateFunctions.masonry();
     });
 })(jQuery);
 
@@ -134,27 +139,25 @@ jQuery(document).ready(function($) {
     /*  stott.no specific */
     /* Update webcam image with the most up to date image  */
     jQuery(function($) {
-        'use strict';
+        "use strict";
         function getImage() {
-            var src = '';
-            var lastimageurl = "https://www.stott.no/wp-content/themes/gotomeloy/parts/ajax-get-webcam-image.inc.php?t="
+            var src = "";
+            var lastimageurl = "https://www.stott.no/wp-content/themes/gotomeloy/parts/ajax-get-webcam-image.inc.php?t=";
             jQuery.ajax({
-                url: lastimageurl  + new Date().getTime(),
+                url: lastimageurl + new Date().getTime(),
                 async: false,
-                success: function(data){
-                  src = data;
+                success: function(data) {
+                    src = data;
                 }
             });
             return src;
         }
-
         function updateImage() {
-                var src = getImage();
-                jQuery("#webcam-img").attr("src", src);
-                jQuery("#webcam-url").attr("href", src);
-                setTimeout(updateImage, 121000);
-            }
-
+            var src = getImage();
+            jQuery("#webcam-img").attr("src", src);
+            jQuery("#webcam-url").attr("href", src);
+            setTimeout(updateImage, 121e3);
+        }
         updateImage();
     });
 });
@@ -193,7 +196,7 @@ jQuery(document).ready(function($) {
     $.fn.bgVideo = function(options) {
         // @bool iOS
         //var iOS = /iPad|iPhone|iPod/.test(navigator.platform) || /iPad|iPhone|iPod/.test(navigator.userAgent);
-        var isLoggedIN = $( "body" ).hasClass( "logged-in" )
+        var isLoggedIN = $("body").hasClass("logged-in");
         // Settings
         var settings = $.extend({}, $.fn.bgVideo.defaults, options);
         // Do the things
@@ -276,14 +279,12 @@ jQuery(document).ready(function($) {
             }
             // Fade in video by setting the transition duration
             $video.css("transition-duration", el_settings.fadeIn + "ms");
-
             if (isLoggedIN) {
-            // Unset sources to prevent them from continuing to download
+                // Unset sources to prevent them from continuing to download
                 $video.attr("src", "");
                 $video.find("source").attr("src", "");
                 $video.remove();
             }
-
             // Remove on iOS
             //if (iOS) {
             //    // Unset sources to prevent them from continuing to download
@@ -311,7 +312,7 @@ jQuery(document).ready(function($) {
             }
             // Play / pause button
             if (el_settings.showPausePlay) {
-            //if (el_settings.showPausePlay && !iOS) {
+                //if (el_settings.showPausePlay && !iOS) {
                 // Append pauseplay element created earlier
                 $container.append($pauseplay);
                 // Position element
@@ -389,34 +390,29 @@ jQuery(document).ready(function($) {
     // Auto run based on data attributes
     $(document).ready(function() {
         $("[data-bgvideo]").bgVideo();
-
         // Resize header video container
-        $('.my-background-video').bgVideo({
+        $(".my-background-video").bgVideo({
             pauseAfter: 120,
-            showPausePlay: true, // Show pause/play button
-            pausePlayXPos: 'center', // left|right|center
-            pausePlayYPos: 'top', // top|bottom|center
+            showPausePlay: true,
+            // Show pause/play button
+            pausePlayXPos: "center",
+            // left|right|center
+            pausePlayYPos: "top",
+            // top|bottom|center
             //pausePlayXOffset: '15px', // pixels or percent from side - ignored if positioned center
-            pausePlayYOffset: '60%' // pixels or percent from top/bottom - ignored if positioned center
+            pausePlayYOffset: "60%"
         });
     });
 })(jQuery);
 
-
-
-document.addEventListener('DOMContentLoaded', function () {
-  if (document.querySelectorAll('#map-container').length > 0)
-  {
-    if (document.querySelector('html').lang)
-      lang = document.querySelector('html').lang;
-    else
-      lang = 'en';
-
-    var js_file = document.createElement('script');
-    js_file.type = 'text/javascript';
-    js_file.src = 'https://maps.googleapis.com/maps/api/js?callback=initMap&key=AIzaSyAWe_W4EBKsLh6r582q_xyP-GbY7Am761E&language=' + lang;
-    document.getElementsByTagName('head')[0].appendChild(js_file);
-  }
+document.addEventListener("DOMContentLoaded", function() {
+    if (document.querySelectorAll("#map-container").length > 0) {
+        if (document.querySelector("html").lang) lang = document.querySelector("html").lang; else lang = "en";
+        var js_file = document.createElement("script");
+        js_file.type = "text/javascript";
+        js_file.src = "https://maps.googleapis.com/maps/api/js?callback=initMap&key=AIzaSyAWe_W4EBKsLh6r582q_xyP-GbY7Am761E&language=" + lang;
+        document.getElementsByTagName("head")[0].appendChild(js_file);
+    }
 });
 
 /*
@@ -432,50 +428,45 @@ function initMap() {
      * create map
      */
     var map = new google.maps.Map(document.getElementById("map-container"), {
-        center: new google.maps.LatLng(67.0120865,13.8881624),
+        center: new google.maps.LatLng(67.0120865, 13.8881624),
         zoom: 8,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         mapTypeControl: false,
-        panControl:false,
-        rotateControl:false,
-        streetViewControl: false,
+        panControl: false,
+        rotateControl: false,
+        streetViewControl: false
     });
-
     /*
      * create infowindow (which will be used by markers)
      */
     var infoWindow = new google.maps.InfoWindow();
-
     /*
      * marker creater function (acts as a closure for html parameter)
      */
     function createMarker(options, html) {
         var marker = new google.maps.Marker(options);
         if (html) {
-            google.maps.event.addListener(marker, "click", function () {
+            google.maps.event.addListener(marker, "click", function() {
                 infoWindow.setContent(html);
                 infoWindow.open(options.map, this);
             });
         }
         return marker;
     }
-
     /*
      * add markers to map
      */
-
     var pin_blue = {
-        url: '../../../wp-content/themes/gotomeloy/img/map-pins/pin-blue-10.png',
-    }
-
+        url: "../../../wp-content/themes/gotomeloy/img/map-pins/pin-blue-10.png"
+    };
     /*
     new: 66.703641, 13.730335
     old: 66.704096,13.731034
      */
     var marker0 = createMarker({
-        position: new google.maps.LatLng(66.925775,13.437980),
+        position: new google.maps.LatLng(66.925775, 13.43798),
         map: map,
         icon: pin_blue
     }, "<div id='infowindow_content'><p><strong>Støtt Brygge</strong><br />8159 Støtt<br>Norge<br />+47 400 21 212</p><a href='https://www.stott.no' target='_blank'>stott.no</a> | <a href='mailto:eaa@stott.no'>eaa@stott.no</a></div>");
+}
 
-};

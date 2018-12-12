@@ -230,14 +230,18 @@ function wsds_defer_scripts( $tag, $handle, $src )
       if( is_front_page() )
       {
         wp_enqueue_script('gotomeloy-theme-functions', GOTOMELOY_JS_URI . '/gotomeloy.min.js', array('jquery'), 1.7, true);
+        
+        wp_register_script('isotope', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js', 'jquery', '3.0.6', true );
+        wp_enqueue_script('isotope');
       }
-      wp_register_script( 'fancybox', 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js', 'jquery', '3.3.5', true );
+
+      wp_register_script('touchswipe', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js', 'jquery', '1.6.18', true );
+      wp_enqueue_script('touchswipe');
+
+      wp_register_script('fancybox', 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js', 'jquery', '3.3.5', true );
       wp_enqueue_script('fancybox');
 
       wp_enqueue_script('gotomeloy-site-functions', GOTOMELOY_JS_URI . '/functions.min.js', array('jquery'), 1.7, true);
-
-      wp_register_script( 'touchswipe', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js', 'jquery', '1.6.18', true );
-      wp_enqueue_script('touchswipe');
 
       // Enqueue (conditional)
       if ( is_singular() ) {
@@ -390,6 +394,137 @@ function add_social_share_icons()
     return $html;
 }
 
+
+function cats_related_post() {
+
+  $post_id = get_the_ID();
+  $customTaxonomyTerms = wp_get_object_terms( $post_id, 'portfolio_category', array('fields' => 'ids') );
+  $current_post_type = get_post_type($post_id);
+
+  $query_args = array( 
+    'post_type'      => $current_post_type,
+    'post__not_in'   => array($post_id),
+    'posts_per_page' => '6',
+    'orderby'        => 'rand',
+    'no_found_rows'  => true, // We don't ned pagination so this speeds up the query
+    'tax_query' => array(
+      array(
+        'taxonomy'  => 'portfolio_category',
+        'field'     => 'term_id',
+        'terms'     => $customTaxonomyTerms,
+      )
+    ),
+  );
+
+  $related_cats_post = new WP_Query( $query_args );
+
+  if ($related_cats_post->have_posts())
+  {
+    
+    while($related_cats_post->have_posts()): $related_cats_post->the_post(); 
+      $thumbnail_data = lamark_get_attachment_meta( get_post_thumbnail_id() );
+    ?>
+    <div class="col-xs-12 col-md-2">
+      <div class="card">
+        <a href="<?php echo get_permalink( $_post->ID ); ?>" title="<?php esc_attr( $_post->post_title ); ?>">
+          <div class="card-body">
+            <img class="card-img img-responsive" src="<?php echo $thumbnail_data['src']; ?>" />
+            <div class="card-img-overlay text">
+              <div class="card-title"><?php the_title(); ?></div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <?php endwhile;
+
+    // Restore original Post Data
+    wp_reset_postdata();
+  }
+
+}
+// Creates shortcode realtedposts to insert post of selected category id's defaulting to values 4 posts and null
+// [realtedposts posts=3 cats='33,55']
+
+add_shortcode( 'relatedposts', 'related_posts' );
+function related_posts( $args ) {
+  $args = shortcode_atts( array(
+    'posts' => 4,
+    'cats' => 'null'
+  ), $args );
+
+  $post_id = get_the_ID();
+
+  if ( $args['posts'] == 4) {
+    $posts = 4;
+  } else {
+    $posts = $args['posts'];
+  }
+
+  $cols = 12/$posts;
+
+  if ( $args['cats'] == 'null') {
+    $cats = array('');
+  } else {
+    $cats = explode( ',', $args['cats'] );
+  }
+
+  ob_start();
+  ?>
+
+  <div class="row">
+  <?php
+    $post_id = get_the_ID();
+
+    $current_post_type = get_post_type($post_id);
+    $query_args = array( 
+      'post_type'      => $current_post_type,
+      'post__not_in'   => array($post_id),
+      'posts_per_page' => '4',
+      'orderby'        => 'rand',
+      'no_found_rows'  => true, // We don't ned pagination so this speeds up the query
+      'tax_query' => array(
+        array(
+          'taxonomy'  => 'portfolio_category',
+          'field'     => 'term_id',
+          'terms'     => $cats,
+        )
+      ),
+    );
+
+    $related_cats_post = new WP_Query( $query_args );
+
+    if ($related_cats_post->have_posts())
+    {
+      
+      while($related_cats_post->have_posts()): $related_cats_post->the_post(); 
+        $thumbnail_data = lamark_get_attachment_meta( get_post_thumbnail_id() );
+        ?>
+      <div class="col-xs-12 col-md-<?php echo $cols; ?>">
+        <div class="card">
+          <a href="<?php echo get_permalink( $_post->ID ); ?>" title="<?php esc_attr( $_post->post_title ); ?>">
+            <div class="card-body">
+              <img class="card-img img-responsive" src="<?php echo $thumbnail_data['src']; ?>" />
+              <div class="card-img-overlay text">
+                <div class="card-title"><?php the_title(); ?></div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <?php endwhile;
+
+      // Restore original Post Data
+      wp_reset_postdata();
+    }
+  ?>
+  </div>
+  <?php
+  $output = ob_get_clean();
+  return $output;
+}
 
 #-----------------------------------------------------------------#
 # Legg til atributter for å åpne modals fra menyene

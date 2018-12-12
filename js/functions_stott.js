@@ -138,7 +138,7 @@ jQuery(document).ready(function($) {
     'use strict';
     function getImage() {
         var src = '';
-        var lastimageurl = "http://www.stott.no/wp-content/themes/gotomeloy/parts/ajax-get-webcam-image.inc.php?t="
+        var lastimageurl = "https://www.stott.no/wp-content/themes/gotomeloy/parts/ajax-get-webcam-image.inc.php?t="
         jQuery.ajax({
             url: lastimageurl  + new Date().getTime(),
             async: false,
