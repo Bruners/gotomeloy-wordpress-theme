@@ -132,7 +132,7 @@ Template Name: Portfolio Stott
                 <div id="video-slider" class="carousel-inner" role="listbox">
                     <div class="item active">
                         <div class="video-carousel yt-video embed-responsive embed-responsive-16by9" data-yt_id="xM7d2HHvAR0">
-                            <img src="https:/img.youtube.com/vi/xM7d2HHvAR0/maxresdefault.jpg" width="560" height="315" />
+                            <img src="https://img.youtube.com/vi/xM7d2HHvAR0/maxresdefault.jpg" width="560" height="315" />
                         </div>
                         <div class="carousel-caption">
                             <h5 class="text-center">Go to Meløy</h5>
@@ -150,7 +150,7 @@ Template Name: Portfolio Stott
                     </div>
                     <div class="item">
                         <div class="video-carousel yt-video embed-responsive embed-responsive-16by9" data-yt_id="ZlQM7-BJagM">
-                            <img src="https:/img.youtube.com/vi/ZlQM7-BJagM/maxresdefault.jpg" width="560" height="315" />
+                            <img src="https://img.youtube.com/vi/ZlQM7-BJagM/maxresdefault.jpg" width="560" height="315" />
                         </div>
                         <div class="carousel-caption">
                             <h5 class="text-center">Skattejakten LIVE</h5>
@@ -159,7 +159,7 @@ Template Name: Portfolio Stott
                     </div>
                     <div class="item">
                         <div class="video-carousel yt-video embed-responsive embed-responsive-16by9" data-yt_id="CkxmJ592_TY">
-                            <img src="https:/img.youtube.com/vi/CkxmJ592_TY/maxresdefault.jpg" width="560" height="315" />
+                            <img src="https://img.youtube.com/vi/CkxmJ592_TY/maxresdefault.jpg" width="560" height="315" />
                         </div>
                         <div class="carousel-caption">
                             <h5 class="text-center">Støtt Brygge Promo 2018</h5>
@@ -302,55 +302,6 @@ Template Name: Portfolio Stott
                         <div><h4><?php echo(esc_html__( 'Liste over kommende aktiviteter:', 'gotomeloy' )); ?></h4></div>
                         <?php if ( function_exists( 'add_social_share_icons' ) ) { echo add_social_share_icons(); } ?>
                         <div class="fb-page" data-href="https://www.facebook.com/StottBrygge/" data-tabs="events,timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/StottBrygge/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/StottBrygge/">Støtt Brygge</a></blockquote></div>
-                        <?php
-                            $currentdate = date("Y-m-d",mktime(0,0,0,date("m"),date("d")-1,date("Y")));
-
-                            $args = array (
-                                'meta_query'=> array(
-                                    array(
-                                        'key' => 'event_starts_sort_field',
-                                        'compare' => '>',
-                                        'value' => $currentdate,
-                                        'type' => 'DATE',
-                                    )),
-
-                                'post_type' => 'facebook_events',
-                                'posts_per_page' => -1,
-
-                                'meta_key' => 'event_starts_sort_field',
-                                'orderby' => 'meta_value',
-                                'order' => 'ASC'
-                            );
-
-                            $fbe_query = new WP_Query( $args );
-
-                            if( $fbe_query->have_posts() ):
-                            while ( $fbe_query->have_posts() ) : $fbe_query->the_post();
-                                $event_title = get_the_title();
-                                $event_image = get_fbe_image('cover');
-                                $event_url =  get_fbe_field('fb_event_uri');
-                                $event_site = ucfirst(str_replace(array('https://facebook.com','/'), array('',''), get_fbe_field('facebook') ));
-                                $event_location = get_fbe_field('location');
-                                $event_starts_month = get_fbe_date('event_starts','M');
-                                $event_starts_day = get_fbe_date('event_starts','j');
-                        ?>
-                            <div class="fbecol fbecolhover"><a href="<?php echo $event_url; ?>">
-                                <div class="fbe_list_image" style="background-image:url(<?php echo $event_image; ?>)" />
-                                    <div class="fbe_list_bar">
-                                        <div class="fbe_list_date">
-                                            <div class="fbe_list_month"><?php echo $event_starts_month; ?></div>
-                                            <div class="fbe_list_day"><?php echo $event_starts_day; ?></div>
-                                        </div>
-                                        <div class="fbe_col_title"><h2><?php echo $event_title; ?></h2></div>
-                                        <div class="fbe_col_location"><?php echo $event_site; ?></div>
-                                    </div>
-                                </div>
-                            </a></div>
-                        <?php
-                            endwhile;
-                            endif;
-                            wp_reset_query();
-                        ?>
                         <p><a href="https://www.stott.no/tjeneste/aktivitetskalender/" target="_blank"><?php esc_html_e('Åpne innholdet i eget vindu', 'gotomeloy'); ?></a></p><br />
                     </div> <!-- /.modal-body -->
                     <div class="modal-footer">
