@@ -36,7 +36,14 @@
 		$marker3_desc = types_render_field("map-marker-3-desc", array('raw' => false));
 	}
 ?>
-
+<section class="sections project breadcrumbs">
+    <div class="container">
+        <div class="breadcrumbs">
+            <?php if ( function_exists('yoast_breadcrumb') ) 
+            {yoast_breadcrumb('<p id="breadcrumbs">','</p>');} ?>
+        </div>
+    </div>
+</section>
 <!-- BEGIN: SITE BODY -->
 <?php while ( have_posts() ) : the_post(); ?>
 	<section id="site-body" class="container-fluid sections project">
@@ -69,6 +76,19 @@
 	</div>
 </section>
 <!-- END: PAGINATION -->
+
+<!-- BEGIN: RELATED POSTS -->
+<section class="sections project related">
+	<div class="container">
+		<div class="single-header-title"><?php echo(esc_html__( 'Relaterte aktiviteter', 'gotomeloy' )); ?></div>
+		<br />
+		<div class="row">
+			<?php cats_related_post(); ?>
+		</div>
+	</div>
+</section>
+<!-- END: RELATED POSTS -->
+
 <style>
     #map-container-portfolio { height: 400px; }
 </style>
