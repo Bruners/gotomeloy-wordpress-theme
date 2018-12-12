@@ -56,4 +56,3 @@
 
             <?php get_template_part( 'parts/hero-module.inc' ); ?>
             </div>
-
