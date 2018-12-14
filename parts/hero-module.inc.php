@@ -53,8 +53,7 @@
         }
 
         if ( $is_hero_module ) {
-            $hero_subtitle = '';
-            //$hero_subtitle = !empty($hero_subtitle) ? $hero_subtitle : get_the_date('j M, Y');
+            $hero_subtitle = !empty($hero_subtitle) ? $hero_subtitle : '';
         } else {
             $hero_subtitle = '';
             //$hero_subtitle = get_the_date('j M, Y');

@@ -57,6 +57,10 @@
 					<?php if ( function_exists( 'add_social_share_icons' ) ) { echo add_social_share_icons(); } ?>
 				</div>
 			</div>
+			<br />
+			<a class="btn btn-success link_nounderline scroll-booking" href="#book-now">Bestill nå</a>
+			<a class="btn btn-info link_nounderline scroll-contact" href="#contact-us">Kontakt oss</a><br />
+			<br />
 				<?php the_content(); ?>
 			<?php endwhile; ?>
 		</div>
@@ -410,10 +414,21 @@
   		};
 	</script>
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3&amp;key=AIzaSyAWe_W4EBKsLh6r582q_xyP-GbY7Am761E&callback=initMap" async defer></script>
-	<div class="project project-copyright text-center">
-    	<?php echo get_theme_mod('gotomeloy_copyright_text', esc_html__('Copyright © GO TO MELØY 2016', 'gotomeloy') ); ?> | <?php echo(esc_html__( 'Utviklet av', 'gotomeloy' )); ?> <a href="https://www.github.com/bruners/" target="_blank">Lasse Brun</a><br />
-	</div>
 </section>
 
+<section class="section project contact">
+	<div class="container-fluid">
+        <div id="contact-us" class="kontakt-oss">
+        	<?php get_template_part( 'parts/contact-form-page.inc' ); ?>
+        </div>
+    </div>
+</section>
+<section class="section project copyright">
+	<div class="container-fluid">
+		<div class="project project-copyright text-center">
+    	<?php echo get_theme_mod('gotomeloy_copyright_text', esc_html__('Copyright © GO TO MELØY 2016', 'gotomeloy') ); ?> | <?php echo(esc_html__( 'Utviklet av', 'gotomeloy' )); ?> <a href="https://www.github.com/bruners/" target="_blank">Lasse Brun</a><br />
+	</div>
+	</div>
+</section>
 
 <?php get_footer(); ?>
