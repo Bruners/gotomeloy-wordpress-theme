@@ -399,7 +399,7 @@ function cats_related_post() {
 
   $post_id = get_the_ID();
   $customTaxonomyTerms = wp_get_object_terms( $post_id, 'portfolio_category', array('fields' => 'ids') );
-  $current_post_type = get_post_type($post_id);
+  $current_post_type = 'portfolio'; //get_post_type($post_id);
 
   $query_args = array( 
     'post_type'      => $current_post_type,
@@ -420,7 +420,9 @@ function cats_related_post() {
 
   if ($related_cats_post->have_posts())
   {
-    
+    echo '<div class="container-related-posts">';
+    echo '<div class="row">';
+
     while($related_cats_post->have_posts()): $related_cats_post->the_post(); 
       $thumbnail_data = lamark_get_attachment_meta( get_post_thumbnail_id() );
     ?>
@@ -438,12 +440,64 @@ function cats_related_post() {
     </div>
 
     <?php endwhile;
-
+    echo '</div></div>';
     // Restore original Post Data
     wp_reset_postdata();
   }
 
 }
+
+
+function get_portfolio_posts( $args ) {
+
+  if(!empty($args)){
+    $current_post_type = $args;
+  } else {
+    $current_post_type = 'portfolio';
+  }
+
+  $post_id = get_the_ID();
+
+  $query_args = array( 
+    'post_type'      => $current_post_type,
+    'post__not_in'   => array($post_id),
+    'posts_per_page' => '6',
+    'orderby'        => 'rand',
+    'no_found_rows'  => true, // We don't ned pagination so this speeds up the query
+  );
+
+  $portfolio_posts = new WP_Query( $query_args );
+
+  if ($portfolio_posts->have_posts())
+  {
+    echo '<div class="container-related-posts">';
+    echo '<div class="row">';
+
+    while($portfolio_posts->have_posts()): $portfolio_posts->the_post(); 
+      $thumbnail_data = lamark_get_attachment_meta( get_post_thumbnail_id() );
+    ?>
+    <div class="col-xs-12 col-md-2">
+      <div class="card">
+        <a href="<?php echo get_permalink( $_post->ID ); ?>" title="<?php esc_attr( $_post->post_title ); ?>">
+          <div class="card-body">
+            <img class="card-img img-responsive" src="<?php echo $thumbnail_data['src']; ?>" />
+            <div class="card-img-overlay text">
+              <div class="card-title"><?php the_title(); ?></div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <?php endwhile;
+    echo '</div></div>';
+    // Restore original Post Data
+    wp_reset_postdata();
+  }
+
+}
+
+
 // Creates shortcode realtedposts to insert post of selected category id's defaulting to values 4 posts and null
 // [realtedposts posts=3 cats='33,55']
 
@@ -477,7 +531,7 @@ function related_posts( $args ) {
   <?php
     $post_id = get_the_ID();
 
-    $current_post_type = get_post_type($post_id);
+    $current_post_type = 'portfolio'; //get_post_type($post_id);
     $query_args = array( 
       'post_type'      => $current_post_type,
       'post__not_in'   => array($post_id),

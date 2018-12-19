@@ -67,26 +67,12 @@
 	</section>
 <!-- END: SITE BODY -->
 
-<!-- BEGIN: PAGINATION -->
-<section class="sections project paginations">
-	<div class="container">
-			<!-- PAGINATE -->
-			<ul class="project-pagination nostyle clearfix">
-				<li class="prev <?php echo $have_olders_posts; ?>"><a href="<?php echo esc_url( get_permalink(get_adjacent_post(false,'',true)) ); ?> "><i class="fa fa-angle-left"></i></a></li>
-				<li class="back"><a href="<?php echo esc_url( get_permalink(get_post_meta(get_the_ID(), 'portfolio_page', true)) ); ?>"><i class="fa fa-th-large"></i></a></li>
-				<li class="next <?php echo $have_newer_posts; ?>"><a href="<?php echo esc_url( get_permalink(get_adjacent_post(false,'',false)) ); ?> "><i class="fa fa-angle-right"></i></a></li>
-			</ul>
-			<!-- /paginate -->
-	</div>
-</section>
-<!-- END: PAGINATION -->
-
 <!-- BEGIN: RELATED POSTS -->
 <section class="sections project related padding-size-m">
 	<div class="container">
 		<div class="single-header-title"><?php echo(esc_html__( 'Relaterte aktiviteter', 'gotomeloy' )); ?></div>
 		<br />
-		<?php cats_related_post(); ?>
+		<?php get_portfolio_posts(); ?>
 	</div>
 </section>
 <!-- END: RELATED POSTS -->

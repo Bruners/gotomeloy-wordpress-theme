@@ -57,29 +57,23 @@ Template Name: Portfolio Stott
             <?php endwhile; ?>
         </div>
     </div>
-    <div class="container container-tjenester">
-        <div class="wrapper-tjenester">
-            <div class="masonry masonry-tjenester">
-                <?php
-                    $args = array('post_type' => 'tjeneste');
-                    $query = new WP_Query($args);
-                    while($query -> have_posts()) : $query -> the_post();
+    <div class="container container-offers">
+        <div class="offers__center-wrapper">
+            <div class="offers__container">
+            <?php 
+                // WP_QUERY Arguments
+                $offers_args = array(
+                    'post_type' => 'offers',
+                    'posts_per_page' => -1
+                );
 
-                    $post_id = get_the_ID();
-                ?>
-                    <div id="tjeneste-<?php echo $post_id; ?>" class="brick">
-                        <?php if ($post_id == 868 || $post_id == 1132 || $post_id == 18085 || $post_id == 19946) { ?>
-                            <a href="#tjeneste-modal-868" data-toggle="modal" class="tjeneste-link2 link_nounderline">
-                        <?php } else { ?>
-                            <a href="#tjeneste-modal-<?php echo $post_id; ?>" data-toggle="modal" class="tjeneste-link link_nounderline">
-                        <?php } ?>
-                            <div class="tjeneste-post">
-                                <div class="tjeneste-tittel"><?php the_title(); ?></div>
-                                <div class="tjeneste-kort"><p><?php echo(types_render_field( "tjeneste-kort", array( 'raw' => true) )); ?></p></div>
-                            </div>
-                        </a>
-                    </div>
-                <?php endwhile; wp_reset_postdata(); ?>
+                $offers_query = new WP_Query($offers_args);
+            
+                if ( $offers_query->have_posts() ) : while ( $offers_query->have_posts() ) : $offers_query->the_post();
+                
+                    get_template_part( 'parts/offers-index-entry.inc' );
+                endwhile; wp_reset_postdata(); endif;
+            ?>
             </div>
         </div>
     </div>
@@ -282,27 +276,27 @@ Template Name: Portfolio Stott
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
     </div> <!-- /.action-button-modal -->
-    <div class="tjeneste-modals">
-        <!-- Modal 868 -->
+    <div class="modals">
         <?php
             if ( ICL_LANGUAGE_CODE == "en") {
-                $tjeneste_aktivitetskalender = get_post( 19946 );
+                $offers_aktivitetskalender = get_post( 19946 );
             } elseif ( ICL_LANGUAGE_CODE == "nb" ) {
-                $tjeneste_aktivitetskalender = get_post( 18085 );
+                $offers_aktivitetskalender = get_post( 49329 );
             }
         ?>
-        <div id="tjeneste-modal-868" class="modal fade" tabindex="-1">
+        <div id="offers-modal-<?php echo $offers_aktivitetskalender->ID; ?>" class="modal fade" tabindex="-1">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button class="close" type="button" aria-label="Close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
-                        <h5 class="modal-title"><?php echo $tjeneste_aktivitetskalender->post_title; ?></h5>
+                        <h5 class="modal-title"><?php echo $offers_aktivitetskalender->post_title; ?></h5>
                     </div>
                     <div class="modal-body">
                         <div><h4><?php echo(esc_html__( 'Liste over kommende aktiviteter:', 'gotomeloy' )); ?></h4></div>
+                        
+                            <div class="fb-page" data-href="https://www.facebook.com/StottBrygge/" data-width="640" data-tabs="events,timeline" data-small-header="FALSE" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/StottBrygge/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/StottBrygge/">Støtt Brygge</a></blockquote></div>
+                        
                         <?php if ( function_exists( 'add_social_share_icons' ) ) { echo add_social_share_icons(); } ?>
-                        <div class="fb-page" data-href="https://www.facebook.com/StottBrygge/" data-tabs="events,timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/StottBrygge/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/StottBrygge/">Støtt Brygge</a></blockquote></div>
-                        <p><a href="https://www.stott.no/tjeneste/aktivitetskalender/" target="_blank"><?php esc_html_e('Åpne innholdet i eget vindu', 'gotomeloy'); ?></a></p><br />
                     </div> <!-- /.modal-body -->
                     <div class="modal-footer">
                         <button class="btn btn-default" type="button" data-dismiss="modal">Lukk</button>
@@ -310,81 +304,7 @@ Template Name: Portfolio Stott
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
-        <?php
-            $args = array('post_type' => 'tjeneste');
-            $query = new WP_Query($args);
-            while($query -> have_posts()) : $query -> the_post();
-
-            $post_id = get_the_ID();
-        ?>
-        <!-- Modal 868 × 488-->
-
-        <?php if ($post_id != 868 || $post_id != 1132 || $post_id != 18085 || $post_id != 19946) { ?>
-        <!-- 868 gotomeloy no, 1132 gotomeloy en, 18085 stott no , 19946 stott en-->
-        <div id="tjeneste-modal-<?php echo $post_id; ?>" class="modal fade" tabindex="-1">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button class="close" type="button" aria-label="Close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
-                        <h5 class="modal-title"><?php the_title(); ?></h5>
-                    </div>
-                    <div class="modal-body">
-                        <?php echo(types_render_field( "tjeneste-lang", array( 'raw' => true) )); ?>
-                        <br />
-                        <p><a href="<?php echo(get_permalink($post_id)); ?>" target="_blank"><?php esc_html_e('Åpne innholdet i eget vindu', 'gotomeloy'); ?></a></p><br />
-                        <!-- SHARE -->
-                        <?php if ( function_exists( 'add_social_share_icons' ) ) { echo add_social_share_icons(); } ?>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-default" type="button" data-dismiss="modal">Lukk</button>
-                    </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
-        <?php } ?>
-        <?php endwhile; wp_reset_postdata(); ?>
     </div><!-- /.tjeneste-modals -->
-
-    <div class="portfolio-modals">
-        <?php
-            $args = array(
-                'post_type' => 'portfolio',
-                'posts_per_page'      => -1
-            );
-            $query = new WP_Query($args);
-            while($query -> have_posts()) : $query -> the_post();
-
-            $hero_opts = get_post_meta(get_the_ID(), 'hero_additional_options', true);
-            $is_hero_module = is_array($hero_opts) && in_array('is_hero', $hero_opts) ? true : false;
-        ?>
-        <?php if ( $is_hero_module ) { ?>
-            <div class="disabled"></div>
-        <?php } else { ?>
-        <!-- Modal -->
-        <div id="portfolio-modal-<?php echo(get_the_ID()); ?>" role="dialog" aria-labeledby="<?php the_title(); ?>" class="modal fade" tabindex="-1">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button class="close" type="button" aria-label="Close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
-                        <h5 class="modal-title"><?php the_title(); ?></h5>
-                    </div>
-                    <div class="modal-body aligncenter">
-                        <?php the_content(); ?>
-                        <br />
-                        <p><a href="<?php echo(get_permalink(get_the_ID())); ?>" target="_blank"><?php esc_html_e('Åpne innholdet i eget vindu', 'gotomeloy'); ?></a></p><br />
-                        <?php if ( function_exists( 'add_social_share_icons' ) ) { echo add_social_share_icons(); } ?>
-                    </div>
-                    <div class="modal-footer">
-                        <ul class="nostyle clearfix">
-                            <li class="btn btn-default" type="button" data-dismiss="modal"><i class="fa fa-times"></i></li>
-                        </ul>
-                    </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
-        <?php } ?>
-        <?php endwhile; wp_reset_postdata(); ?>
-    </div> <!-- /.portfolio-modals -->
 </section>
 <!-- END: SITE BODY -->
 
