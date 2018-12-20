@@ -756,7 +756,7 @@ jQuery(document).ready(function($) {
     jQuery(".scroll-booking").click(function() {
         event.preventDefault();
         jQuery('html, body').animate({
-            scrollTop: jQuery("#book-now").offset().top
+            scrollTop: jQuery("#book-now").offset().top -100
         }, 'slow', 'swing' );
     });
 

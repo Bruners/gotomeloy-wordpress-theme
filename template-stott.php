@@ -277,25 +277,16 @@ Template Name: Portfolio Stott
         </div><!-- /.modal -->
     </div> <!-- /.action-button-modal -->
     <div class="modals">
-        <?php
-            if ( ICL_LANGUAGE_CODE == "en") {
-                $offers_aktivitetskalender = get_post( 19946 );
-            } elseif ( ICL_LANGUAGE_CODE == "nb" ) {
-                $offers_aktivitetskalender = get_post( 49329 );
-            }
-        ?>
-        <div id="offers-modal-<?php echo $offers_aktivitetskalender->ID; ?>" class="modal fade" tabindex="-1">
-            <div class="modal-dialog">
+        <div id="action-button-aktivitetskalender" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="aktivitetskalender">
+            <div class="modal-dialog modal-md" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button class="close" type="button" aria-label="Close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
-                        <h5 class="modal-title"><?php echo $offers_aktivitetskalender->post_title; ?></h5>
+                        <h5 class="modal-title"><?php echo(esc_html__( 'Aktivitetskalender', 'gotomeloy' )); ?></h5>
                     </div>
                     <div class="modal-body">
                         <div><h4><?php echo(esc_html__( 'Liste over kommende aktiviteter:', 'gotomeloy' )); ?></h4></div>
-                        
-                            <div class="fb-page" data-href="https://www.facebook.com/StottBrygge/" data-width="640" data-tabs="events,timeline" data-small-header="FALSE" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/StottBrygge/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/StottBrygge/">Støtt Brygge</a></blockquote></div>
-                        
+                        <div class="fb-page" data-href="https://www.facebook.com/StottBrygge/" data-tabs="events,timeline" data-width="360" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/StottBrygge/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/StottBrygge/">Støtt Brygge</a></blockquote></div>
                         <?php if ( function_exists( 'add_social_share_icons' ) ) { echo add_social_share_icons(); } ?>
                     </div> <!-- /.modal-body -->
                     <div class="modal-footer">
