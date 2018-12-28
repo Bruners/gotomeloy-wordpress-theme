@@ -6827,15 +6827,20 @@ video {
     text-transform: none;
 }
 
-.post__card-body {
+.post__card {
     position: relative;
     text-align: center;
 }
+
+.post__card:hover .post__card-img {
+    opacity: 0.85;
+}
+
 .post__card-title {
     position: absolute;
     bottom: 0;
     width: 100%;
-    font-size: .8em;
+    font-size: 1em;
     font-weight: 500;
     text-decoration: none;
     text-transform: uppercase;
@@ -6846,10 +6851,6 @@ video {
     background: -webkit-linear-gradient(top, transparent 0%, transparent 5%, rgba(0, 0, 0, 0.1) 23%, rgba(0, 0, 0, 0.75) 100%);
     background: linear-gradient(to bottom, transparent 0%, transparent 5%, rgba(0, 0, 0, 0.1) 23%, rgba(0, 0, 0, 0.75) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#bf000000', GradientType=0);
-}
-
-.post__card:hover .post__card-img {
-    opacity: 0.85;
 }
 
 .quote-card {
