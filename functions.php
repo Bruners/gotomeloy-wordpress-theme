@@ -230,7 +230,7 @@ function wsds_defer_scripts( $tag, $handle, $src )
       if( is_front_page() )
       {
         wp_enqueue_script('gotomeloy-theme-functions', GOTOMELOY_JS_URI . '/gotomeloy.min.js', array('jquery'), 1.7, true);
-        
+
         wp_register_script('isotope', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js', 'jquery', '3.0.6', true );
         wp_enqueue_script('isotope');
       }
@@ -301,7 +301,7 @@ add_image_size( 'portfolio-featured', 586, 478, TRUE );
 
 function social_share_menu_item()
 {
-  add_submenu_page("options-general.php", "Social Share", "Social Share", "manage_options", "social-share", "social_share_page"); 
+  add_submenu_page("options-general.php", "Social Share", "Social Share", "manage_options", "social-share", "social_share_page");
 }
 
 add_action("admin_menu", "social_share_menu_item");
@@ -311,14 +311,14 @@ function social_share_page()
    ?>
       <div class="wrap">
          <h1>Social Sharing Options</h1>
- 
+
          <form method="post" action="options.php">
             <?php
                settings_fields("social_share_config_section");
- 
+
                do_settings_sections("social-share");
-                
-               submit_button(); 
+
+               submit_button();
             ?>
          </form>
       </div>
@@ -332,33 +332,33 @@ function social_share_settings()
     add_settings_field("social-share-facebook", __('Vis deleknapp for Facebook?', 'gotomeloy'), "social_share_facebook_checkbox", "social-share", "social_share_config_section");
     add_settings_field("social-share-twitter", __('Vis deleknapp for Twitter?', 'gotomeloy'), "social_share_twitter_checkbox", "social-share", "social_share_config_section");
     add_settings_field("social-share-googleplus", __('Vis deleknapp for Google+?', 'gotomeloy'), "social_share_googleplus_checkbox", "social-share", "social_share_config_section");
-    
+
     register_setting("social_share_config_section", "social-share-facebook");
     register_setting("social_share_config_section", "social-share-twitter");
     register_setting("social_share_config_section", "social-share-googleplus");
 }
- 
+
 function social_share_facebook_checkbox()
-{  
+{
    ?>
         <input type="checkbox" name="social-share-facebook" value="1" <?php checked(1, get_option('social-share-facebook'), true); ?> />
    <?php
 }
 
 function social_share_twitter_checkbox()
-{  
+{
    ?>
         <input type="checkbox" name="social-share-twitter" value="1" <?php checked(1, get_option('social-share-twitter'), true); ?> />
    <?php
 }
 
 function social_share_googleplus_checkbox()
-{  
+{
    ?>
         <input type="checkbox" name="social-share-googleplus" value="1" <?php checked(1, get_option('social-share-googleplus'), true); ?> />
    <?php
 }
- 
+
 add_action("admin_init", "social_share_settings");
 
 function add_social_share_icons()
@@ -401,7 +401,7 @@ function cats_related_post() {
   $customTaxonomyTerms = wp_get_object_terms( $post_id, 'portfolio_category', array('fields' => 'ids') );
   $current_post_type = 'portfolio'; //get_post_type($post_id);
 
-  $query_args = array( 
+  $query_args = array(
     'post_type'      => $current_post_type,
     'post__not_in'   => array($post_id),
     'posts_per_page' => '6',
@@ -423,16 +423,16 @@ function cats_related_post() {
     echo '<div class="container-related-posts">';
     echo '<div class="row">';
 
-    while($related_cats_post->have_posts()): $related_cats_post->the_post(); 
+    while($related_cats_post->have_posts()): $related_cats_post->the_post();
       $thumbnail_data = lamark_get_attachment_meta( get_post_thumbnail_id() );
     ?>
     <div class="col-xs-12 col-md-2">
-      <div class="card">
+      <div class="post__card">
         <a href="<?php echo get_permalink( $_post->ID ); ?>" title="<?php esc_attr( $_post->post_title ); ?>">
-          <div class="card-body">
-            <img class="card-img img-responsive" src="<?php echo $thumbnail_data['src']; ?>" />
-            <div class="card-img-overlay text">
-              <div class="card-title"><?php the_title(); ?></div>
+          <div class="post__card-body">
+            <img class="post__card-img img-responsive" src="<?php echo $thumbnail_data['src']; ?>" />
+            <div class="post__card-img-overlay text">
+              <div class="post__card-title"><?php the_title(); ?></div>
             </div>
           </div>
         </a>
@@ -458,7 +458,7 @@ function get_portfolio_posts( $args ) {
 
   $post_id = get_the_ID();
 
-  $query_args = array( 
+  $query_args = array(
     'post_type'      => $current_post_type,
     'post__not_in'   => array($post_id),
     'posts_per_page' => '6',
@@ -473,16 +473,16 @@ function get_portfolio_posts( $args ) {
     echo '<div class="container-related-posts">';
     echo '<div class="row">';
 
-    while($portfolio_posts->have_posts()): $portfolio_posts->the_post(); 
+    while($portfolio_posts->have_posts()): $portfolio_posts->the_post();
       $thumbnail_data = lamark_get_attachment_meta( get_post_thumbnail_id() );
     ?>
     <div class="col-xs-12 col-md-2">
-      <div class="card">
+      <div class="post__card">
         <a href="<?php echo get_permalink( $_post->ID ); ?>" title="<?php esc_attr( $_post->post_title ); ?>">
-          <div class="card-body">
-            <img class="card-img img-responsive" src="<?php echo $thumbnail_data['src']; ?>" />
-            <div class="card-img-overlay text">
-              <div class="card-title"><?php the_title(); ?></div>
+          <div class="post__card-body">
+            <img class="post__card-img img-responsive" src="<?php echo $thumbnail_data['src']; ?>" />
+            <div class="post__card-img-overlay text">
+              <div class="post__card-title"><?php the_title(); ?></div>
             </div>
           </div>
         </a>
@@ -532,7 +532,7 @@ function related_posts( $args ) {
     $post_id = get_the_ID();
 
     $current_post_type = 'portfolio'; //get_post_type($post_id);
-    $query_args = array( 
+    $query_args = array(
       'post_type'      => $current_post_type,
       'post__not_in'   => array($post_id),
       'posts_per_page' => '4',
@@ -551,17 +551,17 @@ function related_posts( $args ) {
 
     if ($related_cats_post->have_posts())
     {
-      
-      while($related_cats_post->have_posts()): $related_cats_post->the_post(); 
+
+      while($related_cats_post->have_posts()): $related_cats_post->the_post();
         $thumbnail_data = lamark_get_attachment_meta( get_post_thumbnail_id() );
         ?>
       <div class="col-xs-12 col-md-<?php echo $cols; ?>">
-        <div class="card">
+        <div class="post__card">
           <a href="<?php echo get_permalink( $_post->ID ); ?>" title="<?php esc_attr( $_post->post_title ); ?>">
             <div class="card-body">
-              <img class="card-img img-responsive" src="<?php echo $thumbnail_data['src']; ?>" />
-              <div class="card-img-overlay text">
-                <div class="card-title"><?php the_title(); ?></div>
+              <img class="post__card-img img-responsive" src="<?php echo $thumbnail_data['src']; ?>" />
+              <div class="post__card-img-overlay text">
+                <div class="post__card-title"><?php the_title(); ?></div>
               </div>
             </div>
           </a>
@@ -790,12 +790,12 @@ function gotomeloy_menu_modal_22547( $atts, $item, $args )
 }
 
 function sendContactFormToSiteAdmin ()
-{ 
+{
   try {
     if (empty($_POST['message_name']) || empty($_POST['message_email']) || empty($_POST['message_text']) || empty($_POST['message_human'])) {
       throw new Exception('Bad form parameters. Check the markup to make sure you are naming the inputs correctly.');
     }
-  
+
     if (!is_email($_POST['message_email'])) {
       throw new Exception('Email address not formatted correctly.');
     }
@@ -808,7 +808,7 @@ function sendContactFormToSiteAdmin ()
     $subject = "Kontaktskjema Støtt Brygge: " . $_POST['message_name'];
     $message = "Melding fra: ". $_POST['message_name'] . "\n\n" . $_POST['message_text'] . "\r\n\r\n" . "--" . "\r\n" . "This e-mail was sent from a contact form on " . $site_name  . " (" . $site_url . ")";
     $headers = "From: ". $_POST['message_name'] . " <kontakt@" . $site_domain . ">" . "\r\n" . "Reply-To: " . $_POST['message_email'] . "\r\n";
- 
+
     if (wp_mail($email_to, $subject, $message, $headers)) {
       echo json_encode(array('status' => 'success', 'message' => 'Contact message sent.'));
       exit;

@@ -6827,11 +6827,11 @@ video {
     text-transform: none;
 }
 
-.card-body {
+.post__card-body {
     position: relative;
     text-align: center;
 }
-.card-title {
+.post__card-title {
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -6848,7 +6848,7 @@ video {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#bf000000', GradientType=0);
 }
 
-.card:hover .card-img {
+.post__card:hover .post__card-img {
     opacity: 0.85;
 }
 
