@@ -177,7 +177,7 @@ Template Name: Portfolio Stott
     </div>
 
     <div class="container-fluid container-bunn">
-        <div class="kontakt-oss">
+        <div id="contact-us" class="kontakt-oss">
         <div class="fb-like" data-href="https://www.facebook.com/StottBrygge/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
         <?php
             $kontaktskjema_bunn = types_render_field("kontaktskjema-bunn", array('raw' => false));

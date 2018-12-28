@@ -2,6 +2,8 @@
 
 <?php
 
+	$post_ingress = get_post_meta(get_the_ID(), 'post_ingress', true);
+
 	// Pagination Variables
 	$have_olders_posts = get_adjacent_post(false,'',true) ? '' : 'no-more-posts';
 	$have_newer_posts = get_adjacent_post(false,'',false) ? '' : 'no-more-posts';
@@ -49,12 +51,9 @@
 	<section id="site-body" class="container-fluid sections project">
 		<div class="container single-header">
 			<div class="row">
-				<div class="col-xs-12 col-md-8">
+				<div class="col-xs-12">
 					<div class="single-header-title"><?php echo $hero_title; ?></div>
-					<div class="single-header-ingress"></div>
-				</div>
-				<div class="col-xs-12 col-md-4">
-					<?php if ( function_exists( 'add_social_share_icons' ) ) { echo add_social_share_icons(); } ?>
+					<div class="single-post-ingress"><?php echo $post_ingress; ?></div>
 				</div>
 			</div>
 			<br />
@@ -66,21 +65,17 @@
 		</div>
 	</section>
 <!-- END: SITE BODY -->
-
-<!-- BEGIN: PAGINATION -->
-<section class="sections project paginations">
+<!-- BEGIN: SOCIAL ICONS -->
+<section class="sections project social">
 	<div class="container">
-			<!-- PAGINATE -->
-			<ul class="project-pagination nostyle clearfix">
-				<li class="prev <?php echo $have_olders_posts; ?>"><a href="<?php echo esc_url( get_permalink(get_adjacent_post(false,'',true)) ); ?> "><i class="fa fa-angle-left"></i></a></li>
-				<li class="back"><a href="<?php echo esc_url( get_permalink(get_post_meta(get_the_ID(), 'portfolio_page', true)) ); ?>"><i class="fa fa-th-large"></i></a></li>
-				<li class="next <?php echo $have_newer_posts; ?>"><a href="<?php echo esc_url( get_permalink(get_adjacent_post(false,'',false)) ); ?> "><i class="fa fa-angle-right"></i></a></li>
-			</ul>
-			<!-- /paginate -->
+		<div class="row">
+			<div class="col-xs-12">
+				<?php if ( function_exists( 'add_social_share_icons' ) ) { echo add_social_share_icons(); } ?>
+			</div>
+		</div>
 	</div>
 </section>
-<!-- END: PAGINATION -->
-
+<!-- END: SOCIAL ICONS -->
 <!-- BEGIN: RELATED POSTS -->
 <section class="sections project related padding-size-m">
 	<div class="container">

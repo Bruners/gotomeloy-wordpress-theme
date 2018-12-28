@@ -377,13 +377,13 @@ hr {
 
 h1,
 h2,
-h3,
+H3,
 h4,
 h5,
 h6,
 .h1,
 .h2,
-.h3,
+.H3,
 .h4,
 .h5,
 .h6 {
@@ -395,25 +395,25 @@ h6,
 
 h1 small,
 h2 small,
-h3 small,
+H3 small,
 h4 small,
 h5 small,
 h6 small,
 .h1 small,
 .h2 small,
-.h3 small,
+.H3 small,
 .h4 small,
 .h5 small,
 .h6 small,
 h1 .small,
 h2 .small,
-h3 .small,
+H3 .small,
 h4 .small,
 h5 .small,
 h6 .small,
 .h1 .small,
 .h2 .small,
-.h3 .small,
+.H3 .small,
 .h4 .small,
 .h5 .small,
 .h6 .small {
@@ -426,7 +426,7 @@ h1,
 .h1,
 h2,
 .h2,
-h3,
+H3,
 .h3 {
     margin-top: 2em;
     margin-bottom: 1em;
@@ -6763,6 +6763,7 @@ video {
     text-transform: uppercase;
     text-shadow: 1px 1px 1px rgba(0,0,0,.6);
     color: #fff;
+    font-size: 1.2em;
     margin: 0;
     background: -moz-linear-gradient(top,transparent 0,transparent 5%,rgba(0,0,0,.1) 23%,rgba(0,0,0,.75) 100%);
     background: -webkit-linear-gradient(top,transparent 0,transparent 5%,rgba(0,0,0,.1) 23%,rgba(0,0,0,.75) 100%);
@@ -7018,11 +7019,7 @@ video {
 }
 
 .single-header-title {
-    font-family: Oswald, sans-serif;
-    color: #fff;
     font-size: 2em;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, .45);
-    padding-top: 30px;
 }
 
 .single-heading {
@@ -7046,6 +7043,10 @@ video {
     .single-heading:after {
         width: 70%;
     }
+}
+
+.single-post-ingress {
+    font-size: 1.3em;
 }
 
 .single-header-ingress {
@@ -7930,7 +7931,7 @@ input.blog-search-input {
     height: 88px;
 }
 
-.share-buttons h3.sb-title {
+.share-buttons H3.sb-title {
     margin: 0 0 1em 0;
     display: inline-block;
     line-height: 1.2;
@@ -8458,7 +8459,7 @@ ul.language-selector li a.lang-en {
     margin: 0px 30px;
 }
 
-.sharedaddy h3.sd-title {
+.sharedaddy H3.sd-title {
     display: none;
 }
 
