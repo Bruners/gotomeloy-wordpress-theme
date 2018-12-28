@@ -60,7 +60,7 @@ Template Name: Portfolio Stott
     <div class="container container-offers">
         <div class="offers__center-wrapper">
             <div class="offers__container">
-            <?php 
+            <?php
                 // WP_QUERY Arguments
                 $offers_args = array(
                     'post_type' => 'offers',
@@ -68,9 +68,9 @@ Template Name: Portfolio Stott
                 );
 
                 $offers_query = new WP_Query($offers_args);
-            
+
                 if ( $offers_query->have_posts() ) : while ( $offers_query->have_posts() ) : $offers_query->the_post();
-                
+
                     get_template_part( 'parts/offers-index-entry.inc' );
                 endwhile; wp_reset_postdata(); endif;
             ?>
@@ -180,9 +180,11 @@ Template Name: Portfolio Stott
         <div id="contact-us" class="kontakt-oss">
         <div class="fb-like" data-href="https://www.facebook.com/StottBrygge/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
         <?php
-            $kontaktskjema_bunn = types_render_field("kontaktskjema-bunn", array('raw' => false));
-            $kontaktskjema_logo = types_render_field("kontaktskjema-logo", array('raw' => true));
-            $kontaktskjema_adresse = types_render_field("kontaktskjema-adress", array('raw' => false));
+            if ( function_exists( 'types_render_field' ) ) {
+                $kontaktskjema_bunn = types_render_field("kontaktskjema-bunn", array('raw' => false));
+                $kontaktskjema_logo = types_render_field("kontaktskjema-logo", array('raw' => true));
+                $kontaktskjema_adresse = types_render_field("kontaktskjema-adress", array('raw' => false));
+            }
         ?>
         <?php //echo ( $kontaktskjema_bunn ); ?>
         <?php get_template_part( 'parts/contact-form-large.inc' ); ?>

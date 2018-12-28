@@ -37,7 +37,7 @@
                                     <h5 class="modal-title"><?php the_title(); ?></h5>
                                 </div>
                                 <div class="modal-body">
-                                    <?php echo(types_render_field( "meny-modal-body", array( 'raw' => false) )); ?>
+                                    <?php if ( function_exists( 'types_render_field' ) ) { echo(types_render_field( "meny-modal-body", array( 'raw' => false) )); } ?>
                                     <br />
                                     <?php if ( function_exists( 'add_social_share_icons' ) ) { echo add_social_share_icons(); } ?>
                                 </div>
@@ -53,17 +53,19 @@
             </div> <!-- /.meny-modals -->
             <!-- BEGIN: SITE FOOTER -->
             <?php
-                $facebook_url = types_render_field("gotomeloy-facebook", array('raw' => true));
-                $youtube_url = types_render_field("gotomeloy-youtube", array('raw' => true));
-                $instagram_url = types_render_field("gotomeloy-instagram", array('raw' => true));
-                $twitter_url = types_render_field("gotomeloy-twitter", array('raw' => true));
-                $tripadvisor_url = types_render_field("gotomeloy-tripadvisor", array('raw' => true));
+            if ( function_exists( 'types_render_field' ) ) {
+                    $facebook_url = types_render_field("gotomeloy-facebook", array('raw' => true));
+                    $youtube_url = types_render_field("gotomeloy-youtube", array('raw' => true));
+                    $instagram_url = types_render_field("gotomeloy-instagram", array('raw' => true));
+                    $twitter_url = types_render_field("gotomeloy-twitter", array('raw' => true));
+                    $tripadvisor_url = types_render_field("gotomeloy-tripadvisor", array('raw' => true));
 
-                $social_args = array(
-                    'post_type' => 'page',
-                    'post_per_page' => -1
-                );
-                $social_query = new WP_Query($social_args);
+                    $social_args = array(
+                        'post_type' => 'page',
+                        'post_per_page' => -1
+                    );
+                    $social_query = new WP_Query($social_args);
+                }
             ?>
             <footer id="site-footer">
                 <ul class="social-media">

@@ -170,9 +170,11 @@ Template Name: Portfolio Ørnes
         <div class="kontakt-oss">
         <div class="fb-like" data-href="https://www.facebook.com/Ørnes-Hotell-879538312107349/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
         <?php
-            $kontaktskjema_bunn = types_render_field("kontaktskjema-bunn", array('raw' => false));
-            $kontaktskjema_logo = types_render_field("kontaktskjema-logo", array('raw' => true));
-            $kontaktskjema_adresse = types_render_field("kontaktskjema-adress", array('raw' => false));
+            if ( function_exists( 'types_render_field' ) ) {
+                $kontaktskjema_bunn = types_render_field("kontaktskjema-bunn", array('raw' => false));
+                $kontaktskjema_logo = types_render_field("kontaktskjema-logo", array('raw' => true));
+                $kontaktskjema_adresse = types_render_field("kontaktskjema-adress", array('raw' => false));
+            }
         ?>
         <?php //echo ( $kontaktskjema_bunn ); ?>
         <?php get_template_part( 'parts/contact-form-large.inc' ); ?>

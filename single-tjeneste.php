@@ -17,9 +17,9 @@
 				<?php if ($post_id == 868 || $post_id == 1132 || $post_id == 18085 || $post_id == 19946) { ?>
 					<h4><?php echo(esc_html__( 'Liste over kommende aktiviteter:', 'gotomeloy' )); ?></h4>
 					<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-					<?php 
+					<?php
 	                    $currentdate = date("Y-m-d",mktime(0,0,0,date("m"),date("d")-1,date("Y")));
-	                    
+
 	                    $args = array (
 	                        'meta_query'=> array(
 	                            array(
@@ -31,15 +31,15 @@
 
 	                        'post_type' => 'facebook_events',
 	                        'posts_per_page' => -1,
-	                        
+
 	                        'meta_key' => 'event_starts_sort_field',
 	                        'orderby' => 'meta_value',
 	                        'order' => 'ASC'
 	                    );
-	                
+
 	                    $fbe_query = new WP_Query( $args );
-	                    
-	                    if( $fbe_query->have_posts() ): 
+
+	                    if( $fbe_query->have_posts() ):
 	                    while ( $fbe_query->have_posts() ) : $fbe_query->the_post();
 	                		$event_id = get_the_ID();
 	                        $event_title = get_the_title();
@@ -74,7 +74,7 @@
             						} ?>
             						<a class="btn btn-primary" href="<?php echo $event_url; ?>" role="button" aria-label="Left Align"><span class="fab fa-facebook fa-lg" aria-hidden="true"></span> <?php esc_html_e('Meld deg på nå!', 'gotomeloy'); ?></a>
 
- 
+
 				            	</div>
         					</div>
 	                    </div>
@@ -84,7 +84,7 @@
 	                <!-- END panel-group -->
 					</div>
 				<?php } else { ?>
-					<?php echo(types_render_field( "tjeneste-lang", array( 'raw' => true) )); ?>
+					<?php if ( function_exists( 'types_render_field' ) ) { echo(types_render_field( "tjeneste-lang", array( 'raw' => true) )); } ?>
 				<?php } ?>
 			<?php endwhile; ?>
 		</div>

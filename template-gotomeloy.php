@@ -76,7 +76,7 @@ Template Name: Portfolio Meloy
                     <?php } ?>
                         <div class="tjeneste-post">
                             <div class="tjeneste-tittel"><?php the_title(); ?></div>
-                            <div class="tjeneste-kort"><p><?php echo(types_render_field( "tjeneste-kort", array( 'raw' => true) )); ?></p></div>
+                            <div class="tjeneste-kort"><p><?php if ( function_exists( 'types_render_field' ) ) { echo(types_render_field( "tjeneste-kort", array( 'raw' => true) )); } ?></p></div>
                         </div>
                     </a>
                 </article>
@@ -119,9 +119,11 @@ Template Name: Portfolio Meloy
         <div class="kontakt-oss">
         <div class="fb-like" data-href="https://www.facebook.com/gotomeloy/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
         <?php
-            $kontaktskjema_bunn = types_render_field("kontaktskjema-bunn", array('raw' => false));
-            $kontaktskjema_logo = types_render_field("kontaktskjema-logo", array('raw' => true));
-            $kontaktskjema_adresse = types_render_field("kontaktskjema-adress", array('raw' => false));
+            if ( function_exists( 'types_render_field' ) ) {
+                $kontaktskjema_bunn = types_render_field("kontaktskjema-bunn", array('raw' => false));
+                $kontaktskjema_logo = types_render_field("kontaktskjema-logo", array('raw' => true));
+                $kontaktskjema_adresse = types_render_field("kontaktskjema-adress", array('raw' => false));
+            }
         ?>
         <?php echo ( $kontaktskjema_bunn ); ?>
         <style>
@@ -139,7 +141,7 @@ Template Name: Portfolio Meloy
       		</div><!-- /map-outer -->
   		</div> <!-- /row -->
         <script src="http://maps.google.com/maps/api/js"></script>
-    	<script>	
+    	<script>
     	  	function init_map() {
     	  		var enable_stott = true;
     	  		var enable_bodo = true;
@@ -176,8 +178,8 @@ Template Name: Portfolio Meloy
 	        	if (enable_stott) {
 	        		// GPS position for map marker
 	        		var var_stott = new google.maps.LatLng(66.925775,13.437980);
-		        	
-					var stott_content_string = 
+
+					var stott_content_string =
 						'<div id="infowindow_content">'+
 	            		'<p><strong>Støtt Brygge</strong><br>'+
 	            		'8159 Støtt<br>' +
@@ -199,7 +201,7 @@ Template Name: Portfolio Meloy
 					stott_marker.setMap(var_map);
 					google.maps.event.addListener(stott_marker, 'click', function() {
 						stott_infowindow.open(var_map,stott_marker);
-	 				});		
+	 				});
 				};
 
 				if (enable_ornes) {
@@ -230,7 +232,7 @@ Template Name: Portfolio Meloy
 					ornes_marker.setMap(var_map);
 					google.maps.event.addListener(ornes_marker, 'click', function() {
 						ornes_infowindow.open(var_map,ornes_marker);
-	 				});		
+	 				});
 				};
 
 				if (enable_glomfjord) {
@@ -256,12 +258,12 @@ Template Name: Portfolio Meloy
 						title: "Glomfjord Hotell",
 						maxWidth: 500
 					});
-					
+
 					// Add marker and infobox for Glomfjord Hotell
 					glomfjord_marker.setMap(var_map);
 					google.maps.event.addListener(glomfjord_marker, 'click', function() {
 						glomfjord_infowindow.open(var_map,glomfjord_marker);
-	 				}); 
+	 				});
 				};
 
 				if (enable_bodo) {
@@ -325,7 +327,7 @@ Template Name: Portfolio Meloy
  					});
 				};
       		};
- 
+
       		google.maps.event.addDomListener(window, 'load', init_map);
     	</script>
         </div>
@@ -350,9 +352,9 @@ Template Name: Portfolio Meloy
                     <div class="modal-body">
                         <div><h4><?php echo(esc_html__( 'Liste over kommende aktiviteter:', 'gotomeloy' )); ?></h4></div>
                         <?php if ( function_exists( 'sharing_display' ) ) { echo sharing_display(); } ?>
-                        <?php 
+                        <?php
                             $currentdate = date("Y-m-d",mktime(0,0,0,date("m"),date("d")-1,date("Y")));
-                            
+
                             $args = array (
                                 'meta_query'=> array(
                                     array(
@@ -364,15 +366,15 @@ Template Name: Portfolio Meloy
 
                                 'post_type' => 'facebook_events',
                                 'posts_per_page' => -1,
-                                
+
                                 'meta_key' => 'event_starts_sort_field',
                                 'orderby' => 'meta_value',
                                 'order' => 'ASC'
                             );
-                        
+
                             $fbe_query = new WP_Query( $args );
-                            
-                            if( $fbe_query->have_posts() ): 
+
+                            if( $fbe_query->have_posts() ):
                             while ( $fbe_query->have_posts() ) : $fbe_query->the_post();
                                 $event_title = get_the_title();
                                 $event_image = get_fbe_image('cover');
@@ -400,8 +402,8 @@ Template Name: Portfolio Meloy
                             </a></div>
                         <?php
                             endwhile;
-                            endif;    
-                            wp_reset_query();  
+                            endif;
+                            wp_reset_query();
                         ?>
                         <p><a href="http://www.gotomeloy.no/tjeneste/aktivitetskalender/" target="_blank"><?php esc_html_e('Åpne innholdet i eget vindu', 'gotomeloy'); ?></a></p><br />
                     </div> <!-- /.modal-body -->
@@ -419,7 +421,7 @@ Template Name: Portfolio Meloy
             $post_id = get_the_ID();
         ?>
         <!-- Modal -->
-        
+
         <?php if ($post_id != 868 || $post_id != 1132 || $post_id != 18085 || $post_id != 19946) { ?>
         <!-- 868 gotomeloy no, 1132 gotomeloy en, 18085 stott no , 19946 stott en-->
         <div id="tjeneste-modal-<?php echo $post_id; ?>" class="modal fade" tabindex="-1">
@@ -430,7 +432,7 @@ Template Name: Portfolio Meloy
                         <h5 class="modal-title"><?php the_title(); ?></h5>
                     </div>
                     <div class="modal-body">
-                    	<?php echo(types_render_field( "tjeneste-lang", array( 'raw' => false) )); ?>
+                    	<?php if ( function_exists( 'types_render_field' ) ) { echo(types_render_field( "tjeneste-lang", array( 'raw' => false) )); } ?>
                     	<br />
                         <p><a href="<?php echo(get_permalink($post_id)); ?>" target="_blank"><?php esc_html_e('Åpne innholdet i eget vindu', 'gotomeloy'); ?></a></p><br />
 				        <!-- SHARE -->

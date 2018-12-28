@@ -9,39 +9,41 @@
 	$have_newer_posts = get_adjacent_post(false,'',false) ? '' : 'no-more-posts';
 	$hero_title = !empty($hero_title) ? $hero_title : get_the_title();
 
-	$map_marker_1 = types_render_field("map-marker-1", array('raw' => false));
-	$map_marker_2 = types_render_field("map-marker-2", array('raw' => false));
-	$map_marker_3 = types_render_field("map-marker-3", array('raw' => false));
-	$map_custom = types_render_field("custom-map", array('raw' => false));
+	if ( function_exists( 'types_render_field' ) ) {
+		$map_marker_1 = types_render_field("map-marker-1", array('raw' => false));
+		$map_marker_2 = types_render_field("map-marker-2", array('raw' => false));
+		$map_marker_3 = types_render_field("map-marker-3", array('raw' => false));
+		$map_custom = types_render_field("custom-map", array('raw' => false));
 
-	if ($map_custom == 1) {
-		$map_latlng = types_render_field("custom-map-latlng", array('raw' => false));
-		$map_zoom = types_render_field("custom-map-zoom", array('raw' => false));
-	} else {
-		$map_latlng = "67.0120865,13.8881624";
-		$map_zoom = "8";
-	}
+		if ($map_custom == 1) {
+			$map_latlng = types_render_field("custom-map-latlng", array('raw' => false));
+			$map_zoom = types_render_field("custom-map-zoom", array('raw' => false));
+		} else {
+			$map_latlng = "67.0120865,13.8881624";
+			$map_zoom = "8";
+		}
 
-	if ($map_marker_1 == 1) {
-		$marker1_title = types_render_field("map-marker-1-title", array('raw' => false));
-		$marker1_latlng = types_render_field("map-marker-1-latlng", array('raw' => false));
-		$marker1_desc = types_render_field("map-marker-1-desc", array('raw' => false));
-	}
-	if ($map_marker_2 == 1) {
-		$marker2_title = types_render_field("map-marker-2-title", array('raw' => false));
-		$marker2_latlng = types_render_field("map-marker-2-latlng", array('raw' => false));
-		$marker2_desc = types_render_field("map-marker-2-desc", array('raw' => false));
-	}
-	if ($map_marker_3 == 1) {
-		$marker3_title = types_render_field("map-marker-3-title", array('raw' => false));
-		$marker3_latlng = types_render_field("map-marker-3-latlng", array('raw' => false));
-		$marker3_desc = types_render_field("map-marker-3-desc", array('raw' => false));
+		if ($map_marker_1 == 1) {
+			$marker1_title = types_render_field("map-marker-1-title", array('raw' => false));
+			$marker1_latlng = types_render_field("map-marker-1-latlng", array('raw' => false));
+			$marker1_desc = types_render_field("map-marker-1-desc", array('raw' => false));
+		}
+		if ($map_marker_2 == 1) {
+			$marker2_title = types_render_field("map-marker-2-title", array('raw' => false));
+			$marker2_latlng = types_render_field("map-marker-2-latlng", array('raw' => false));
+			$marker2_desc = types_render_field("map-marker-2-desc", array('raw' => false));
+		}
+		if ($map_marker_3 == 1) {
+			$marker3_title = types_render_field("map-marker-3-title", array('raw' => false));
+			$marker3_latlng = types_render_field("map-marker-3-latlng", array('raw' => false));
+			$marker3_desc = types_render_field("map-marker-3-desc", array('raw' => false));
+		}
 	}
 ?>
 <section class="sections project breadcrumbs">
     <div class="container">
         <div class="breadcrumbs">
-            <?php if ( function_exists('yoast_breadcrumb') ) 
+            <?php if ( function_exists('yoast_breadcrumb') )
             {yoast_breadcrumb('<p id="breadcrumbs">','</p>');} ?>
         </div>
     </div>

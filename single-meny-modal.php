@@ -14,7 +14,7 @@
 	<div class="container">
 		<div class="innhold-single">
 			<?php while ( have_posts() ) : the_post(); ?>
-				<?php echo(types_render_field( "meny-modal-body", array( 'raw' => false) )); ?>
+				<?php if ( function_exists( 'types_render_field' ) ) { echo(types_render_field( "meny-modal-body", array( 'raw' => false) )); } ?>
 			<?php endwhile; ?>
 		</div>
 	</div>
