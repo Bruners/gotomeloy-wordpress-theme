@@ -377,13 +377,13 @@ hr {
 
 h1,
 h2,
-H3,
+h3,
 h4,
 h5,
 h6,
 .h1,
 .h2,
-.H3,
+.h3,
 .h4,
 .h5,
 .h6 {
@@ -395,25 +395,25 @@ h6,
 
 h1 small,
 h2 small,
-H3 small,
+h3 small,
 h4 small,
 h5 small,
 h6 small,
 .h1 small,
 .h2 small,
-.H3 small,
+.h3 small,
 .h4 small,
 .h5 small,
 .h6 small,
 h1 .small,
 h2 .small,
-H3 .small,
+h3 .small,
 h4 .small,
 h5 .small,
 h6 .small,
 .h1 .small,
 .h2 .small,
-.H3 .small,
+.h3 .small,
 .h4 .small,
 .h5 .small,
 .h6 .small {
@@ -426,7 +426,7 @@ h1,
 .h1,
 h2,
 .h2,
-H3,
+h3,
 .h3 {
     margin-top: 2em;
     margin-bottom: 1em;
@@ -6747,7 +6747,7 @@ video {
     height: auto;
     min-height: 100%;
     transition: .4s;
-    z-index: 1;    
+    z-index: 1;
     border-radius: .25rem!important;
     -webkit-transition: .4s;
     -moz-transition: .4s;
@@ -6788,7 +6788,7 @@ video {
 
 @media (min-width: 768px) and (max-width: 1024px) {
     /* Device = Tablets, Ipads (portrait)
-       Screen = B/w 768px to 1024px */  
+       Screen = B/w 768px to 1024px */
     .offers__container {
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 10px;
@@ -6799,7 +6799,7 @@ video {
 
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
     /* Device = Tablets, Ipads (landscape)
-       Screen = B/w 768px to 1024px */  
+       Screen = B/w 768px to 1024px */
     .offers__container {
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 10px;
@@ -7931,7 +7931,7 @@ input.blog-search-input {
     height: 88px;
 }
 
-.share-buttons H3.sb-title {
+.share-buttons h3.sb-title {
     margin: 0 0 1em 0;
     display: inline-block;
     line-height: 1.2;
@@ -8459,7 +8459,7 @@ ul.language-selector li a.lang-en {
     margin: 0px 30px;
 }
 
-.sharedaddy H3.sd-title {
+.sharedaddy h3.sd-title {
     display: none;
 }
 
@@ -8517,7 +8517,7 @@ ul.language-selector li a.lang-en {
     opacity: 0.7;
 }
 @media (min-width: 40em) {
-    .person { 
+    .person {
         width: 80%;
         height: 80%;
     }
