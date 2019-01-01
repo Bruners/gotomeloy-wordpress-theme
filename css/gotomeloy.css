@@ -6610,9 +6610,6 @@ video {
     font-size: 1em;
 }
 
-#home-featured .scroll-down-icon {
-    color: #fff;
-}
 
 @keyframes shake {
     10%,
@@ -7273,6 +7270,155 @@ div.hero-header.text-center:hover .scroll-down-icon {
     margin-top: 5px;
     color: white;
     text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.45);
+}
+
+/* Hero carousel */
+
+.hero__carousel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+    color: #fff;
+    text-align: center;
+    text-shadow: 1px 1px 0 rgba(0,0,0,.75);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    width: 90%;
+}
+
+.hero__carousel h1,
+.hero__carousel h2,
+.hero__carousel h3,
+.hero__carousel h4,
+.hero__carousel h5,
+.hero__carousel h6 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    color: white;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.45);
+    margin: 0;
+}
+.hero__carousel h5 {
+    font-size: 1.1em;
+}
+
+.hero__carousel a {
+    color: white;
+    text-decoration: none;
+}
+
+.fade-carousel__scrolldown {
+    position: absolute;
+    bottom: 10vh;
+    left: 50%;
+    z-index: 15;
+    width: 60%;
+    margin-left: -30%;
+    padding-left: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.carousel:hover .scroll-down-icon {
+    animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+@media only screen and (max-width: 600px) and (orientation: landscape) {
+    .fade-carousel__scrolldown {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .hero__carousel {
+        width: 60%;
+    }
+}
+
+.fade-carousel {
+    position: relative;
+    height: 100vh;
+}
+
+.fade-carousel hgroup {
+    padding-bottom: 10px;
+}
+
+.fade-carousel .carousel-inner .item {
+    height: 100vh;
+}
+
+.fade-carousel .carousel-indicators {
+    bottom: 0;
+}
+
+.fade-carousel .carousel-indicators > li {
+    margin: 0;
+    position: relative;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    width: 30px;
+    height: 3px;
+    margin-right: 3px;
+    margin-left: 3px;
+    text-indent: -999px;
+    background-color: rgba(255,255,255,.5);
+}
+.fade-carousel .carousel-indicators > li.active {
+    opacity: 1;
+    border: 1px solid #68c8dd;
+    background-color: #68c8dd;
+}
+
+.fade-carousel .carousel-inner .item .hero__carousel {
+    opacity: 0;
+    -webkit-transition: 2s all ease-in-out .1s;
+    -moz-transition: 2s all ease-in-out .1s;
+    -ms-transition: 2s all ease-in-out .1s;
+    -o-transition: 2s all ease-in-out .1s;
+    transition: 2s all ease-in-out .1s;
+}
+.fade-carousel .carousel-inner .item.active .hero__carousel {
+    opacity: 1;
+    -webkit-transition: 2s all ease-in-out .1s;
+    -moz-transition: 2s all ease-in-out .1s;
+    -ms-transition: 2s all ease-in-out .1s;
+    -o-transition: 2s all ease-in-out .1s;
+    transition: 2s all ease-in-out .1s;
+}
+
+.fade-carousel .slides .slide-1,
+.fade-carousel .slides .slide-2,
+.fade-carousel .slides .slide-3,
+.fade-carousel .slides .slide-4 {
+    height: 100vh;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.fade-carousel .slides .slide-1 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://www.stott.no/wp-content/uploads/2019/01/hero_slide4_stottgjestehavn_1280x894_60op.jpg);
+}
+
+.fade-carousel .slides .slide-2 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://www.stott.no/wp-content/uploads/2018/12/hero_slide1_IMG_9329_1280x894_60op.jpg);
+}
+
+.fade-carousel .slides .slide-3 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://www.stott.no/wp-content/uploads/2018/12/hero_slide2_konferansemuseum4_1280x894_60op.jpg);
+}
+
+.fade-carousel .slides .slide-4 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://www.stott.no/wp-content/uploads/2018/12/hero_slide3_lwb3553_1280x894_60op.jpg);
 }
 
 .sections {
@@ -8072,6 +8218,7 @@ footer {
 
 #site-footer .credits {
     float: none;
+    font-family: Oswald,sans-serif;
     text-transform: uppercase;
     display: none;
 }

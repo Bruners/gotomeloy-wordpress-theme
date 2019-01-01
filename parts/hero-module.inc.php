@@ -97,8 +97,72 @@
         </div>
     </section>
 <!-- END: HERO MODULE -->
-<?php } elseif ( is_front_page() && $is_hero_module ) { ?>
+<?php } elseif ( is_front_page() && $is_hero_module && is_user_logged_in()) { ?>
+
 <!-- BEGIN: HERO MODULE -->
+    <section id="home-featured" class="sections hero <?php echo $hero_height. ' ' .$hero_img_class; ?>">
+        <div class="carousel fade-carousel slide" data-ride="carousel" data-pause="hover" data-interval="4000" id="hero-header-images">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#hero-header-images" data-slide-to="0" class="active"></li>
+                <li data-target="#hero-header-images" data-slide-to="1"></li>
+                <li data-target="#hero-header-images" data-slide-to="2"></li>
+                <li data-target="#hero-header-images" data-slide-to="3"></li>
+            </ol>
+
+            <div class="fade-carousel__scrolldown">
+                <a href="#site-body" class="scroll-down"><i class="scroll-down-icon fa fa-2x fa-inverse fa-chevron-circle-down" aria-hidden="true"></i></a>
+            </div>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item slides active">
+                    <div class="slide-1"></div>
+                    <div class="hero__carousel">
+                        <hgroup>
+                            <h1><?php echo $hero_title; ?></h1>
+                            <h5><?php echo $hero_subtitle; ?></h5>
+                        </hgroup>
+                        <a class="btn btn-success" role="button" href="https://www.stott.no/offers/spise/"><i class="fas fa-utensils"></i></i> <?php esc_html_e('Les mer', 'gotomeloy'); ?></a>&nbsp;<a class="btn btn-info" role="button" id="stottfilm2" data-fancybox href="https://www.youtube.com/watch?v=CkxmJ592_TY"><i class="fa fa-play"></i> <?php esc_html_e('Se vår video', 'gotomeloy'); ?></a>
+                    </div>
+                </div>
+                <div class="item slides">
+                    <div class="slide-2"></div>
+                    <div class="hero__carousel">
+                        <hgroup>
+                            <h1>Sykkeltur på Støtt</h1>
+                            <h5>Sykling på Helgeland er en drøm hos mange. Med fjell, øyer, midtnattsol og uberørt natur en helt unik opplevelse som gir minner for livet.</h5>
+                        </hgroup>
+                        <a class="btn btn-success" role="button" href="https://www.stott.no/portfolio/sykkel/"><i class="far fa-calendar-check"></i> <?php esc_html_e('Book nå', 'gotomeloy'); ?></a>&nbsp;<a class="btn btn-info" role="button" id="stottfilm2" data-fancybox href="https://www.youtube.com/watch?v=CkxmJ592_TY"><i class="fa fa-play"></i> <?php esc_html_e('Se vår video', 'gotomeloy'); ?></a>
+                    </div>
+                </div>
+
+                <div class="item slides">
+                    <div class="slide-3"></div>
+                    <div class="hero__carousel">
+                        <hgroup>
+                            <h1>Møtearena Støtt</h1>
+                            <h5>Trenger bedriften din de gode møtene med omgivelser som innbyr til inspirasjon og kreativitet, og hvor alle kan være samlet på ett sted. Å finne roen sammen med dine kollegier for å tenke nytt og strategisk eller bare en kort briefing før opplevelsene venter.</h5>
+                        </hgroup>
+                        <a class="btn btn-success" role="button" href="https://www.stott.no/portfolio/konferansemuseumet/"><i class="far fa-calendar-check"></i> <?php esc_html_e('Book nå', 'gotomeloy'); ?></a>&nbsp;<a class="btn btn-info" role="button" id="stottfilm2" data-fancybox href="https://www.youtube.com/watch?v=CkxmJ592_TY"><i class="fa fa-play"></i> <?php esc_html_e('Se vår video', 'gotomeloy'); ?></a>
+                    </div>
+                </div>
+                <div class="item slides">
+                    <div class="slide-4"></div>
+                    <div class="hero__carousel">
+                        <hgroup>
+                            <h1>Kajakkpadling på Støtt</h1>
+                            <h5>Å padle seg gjennom Støttvær naturreservat med ørna svevende i luften og kobben som titter nysjærring frem, er et eventyr for deg som er naturelsker og liker nordlandskysten.</h5>
+                        </hgroup>
+                        <a class="btn btn-success" role="button" href="https://www.stott.no/portfolio/kajakk/"> <?php esc_html_e('Book nå', 'gotomeloy'); ?></a>&nbsp;<a class="btn btn-info" role="button" id="stottfilm2" data-fancybox href="https://www.youtube.com/watch?v=CkxmJ592_TY"><i class="fa fa-play"></i> <?php esc_html_e('Se vår video', 'gotomeloy'); ?></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END: HERO MODULE -->
+<?php } elseif ( is_front_page() && $is_hero_module ) { ?>
+    <!-- BEGIN: HERO MODULE -->
     <div id="home-featured" class="video-container jquery-background-video-wrapper">
         <video autoplay loop muted webkit-playsinline playsinline plays-inline data-bgvideo class="my-background-video jquery-background-video" poster="<?php echo $hero_img; ?>">
             <!-- <source src="https://static.stott.no/video/stott_brygge_V4-2_720x406_1500kbps_baseline3.mp4" type='video/mp4; codecs="avc1.58A01E"'> -->
@@ -115,11 +179,11 @@
                 </div>
             </div>
         </header>
-    <div class="action-button text-center">
-        <a id="stottfilm2" data-fancybox class="btn btn-info" href="https://www.youtube.com/watch?v=CkxmJ592_TY"><span class="fa fa-play"></span> <?php esc_html_e('Se video med lyd her', 'gotomeloy'); ?></a>
+        <div class="action-button text-center">
+            <a id="stottfilm2" data-fancybox class="btn btn-info" href="https://www.youtube.com/watch?v=CkxmJ592_TY"><span class="fa fa-play"></span> <?php esc_html_e('Se video med lyd her', 'gotomeloy'); ?></a>
+        </div>
     </div>
-    </div>
-<!-- END: HERO MODULE -->
+    <!-- END: HERO MODULE -->
 
 <?php } else { ?>
 

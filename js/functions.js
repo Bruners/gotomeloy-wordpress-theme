@@ -661,11 +661,6 @@ jQuery(document).ready(function($) {
         }
     });
 
-    // Carousel Auto-Cycle
-    jQuery('.carousel').carousel({
-      interval: 0
-    })
-
     // Move carousel caption into new-caption-area
     jQuery(function ($) {
         jQuery('.carousel').carousel();
@@ -721,7 +716,7 @@ jQuery(document).ready(function($) {
     });
 
     jQuery('.fa.fa-instagram').removeClass('fa').addClass('fab');
-    
+
     // Move portfolio items
     jQuery(function ($) {
         var header = jQuery('.single-header');
