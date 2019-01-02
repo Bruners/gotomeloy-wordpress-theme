@@ -351,6 +351,25 @@
         	map.mapTypes.set('styled_map', styledMapType);
         	map.setMapTypeId('styled_map');
 
+        	var flightPlanCoordinates = [
+				{lat: 66.868980, lng: 13.703049},
+				{lat: 66.884101, lng: 13.648441},
+				{lat: 66.888287, lng: 13.645523},
+				{lat: 66.896776, lng: 13.610675},
+				{lat: 66.896833, lng: 13.520013},
+				{lat: 66.936253, lng: 13.456671},
+				{lat: 66.926413, lng: 13.434584},
+			];
+	        var flightPath = new google.maps.Polyline({
+	          path: flightPlanCoordinates,
+	          geodesic: true,
+	          strokeColor: '#FF0000',
+	          strokeOpacity: 1.0,
+	          strokeWeight: 2
+	        });
+
+	        //flightPath.setMap(map);
+
 		    var infoWindow = new google.maps.InfoWindow();
 
 		    function createMarker(options, html) {

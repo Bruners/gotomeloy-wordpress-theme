@@ -211,10 +211,7 @@ fieldset[disabled] .btn-default.focus {
 .table>tfoot>tr>th,
 .table>thead>tr>td,
 .table>thead>tr>th {
-    padding: 8px;
-    line-height: 1.42857143;
-    vertical-align: top;
-    border-top: 3px solid #68c8dd;
+    border: 0;
 }
 
 .widget.accommodation-room-list {
@@ -304,10 +301,8 @@ fieldset[disabled] .btn-default.focus {
     h1, h2, h3, h4, h5, h6 {
         color: #fff;
     }
-
-
-
 }
+
 
 /* Change the cells in the calendar */
 .availability-calendar {

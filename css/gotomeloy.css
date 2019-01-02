@@ -7067,7 +7067,7 @@ video {
 .single-header-body {
     font-family: Oswald, sans-serif;
     color: #fff;
-    font-size: 1em;
+    font-size: 1.1em;
     font-weight: 400;
     text-shadow: 0 2px 4px rgba(0, 0, 0, .45);
     margin-top: 20px;
@@ -7100,32 +7100,19 @@ video {
 
 .icon-icon {
     float: left;
-    font-size: 2.5em;
-    margin: 0 2px;
+    font-size: 2.2em;
+    /* margin: 0 5px; */
     max-width: 40%;
-}
-
-.icon-icon .fa-calendar,
-.icon-icon .fa-users,
-.icon-icon .fa-map-pin,
-.icon-icon .fa-credit-card,
-.icon-icon .fa-compass,
-.icon-icon .fa-star,
-.icon-icon .fa-clock,
-.icon-icon .fa-suitcase,
-.icon-icon .fa-bicycle {
-    font-size: .8em;
 }
 
 .icon-text {
     float: left;
-    font-size: 1em;
     font-family: Oswald, sans-serif;
     font-size: .8em;
     text-align: center;
     max-width: 100%;
     line-height: 1.6;
-    margin: 0 5px;
+    margin: 0 10px;
 }
 
 .icon-text p {
