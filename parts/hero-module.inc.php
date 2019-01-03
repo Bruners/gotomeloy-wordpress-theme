@@ -97,11 +97,11 @@
         </div>
     </section>
 <!-- END: HERO MODULE -->
-<?php } elseif ( is_front_page() && $is_hero_module && is_user_logged_in()) { ?>
+<?php } elseif ( is_front_page() && $is_hero_module ) { ?>
 
 <!-- BEGIN: HERO MODULE -->
     <section id="home-featured" class="sections hero <?php echo $hero_height. ' ' .$hero_img_class; ?>">
-        <div class="carousel fade-carousel slide" data-ride="carousel" data-pause="hover" data-interval="4000" id="hero-header-images">
+        <div class="carousel fade-carousel slide" data-ride="carousel" data-pause="hover" data-interval="6000" id="hero-header-images">
             <!-- Indicators -->
             <ol class="carousel-indicators">
                 <li data-target="#hero-header-images" data-slide-to="0" class="active"></li>
@@ -123,7 +123,8 @@
                             <h1><?php echo $hero_title; ?></h1>
                             <h5><?php echo $hero_subtitle; ?></h5>
                         </hgroup>
-                        <a class="btn btn-success" role="button" href="https://www.stott.no/offers/spise/"><i class="fas fa-utensils"></i></i> <?php esc_html_e('Les mer', 'gotomeloy'); ?></a>&nbsp;<a class="btn btn-info" role="button" id="stottfilm2" data-fancybox href="https://www.youtube.com/watch?v=CkxmJ592_TY"><i class="fa fa-play"></i> <?php esc_html_e('Se vår video', 'gotomeloy'); ?></a>
+                        <a class="btn btn-primary" role="button" href="https://www.stott.no/offers/overnatte/"><i class="fas fa-bed"></i> <?php esc_html_e('Overnatte', 'gotomeloy'); ?></a>&nbsp;
+                        <a class="btn btn-success" role="button" href="https://www.stott.no/offers/spise/"><i class="fas fa-utensils"></i></i> <?php esc_html_e('Spise', 'gotomeloy'); ?></a>
                     </div>
                 </div>
                 <div class="item slides">
@@ -154,14 +155,14 @@
                             <h1>Kajakkpadling på Støtt</h1>
                             <h5>Å padle seg gjennom Støttvær naturreservat med ørna svevende i luften og kobben som titter nysjærring frem, er et eventyr for deg som er naturelsker og liker nordlandskysten.</h5>
                         </hgroup>
-                        <a class="btn btn-success" role="button" href="https://www.stott.no/portfolio/kajakk/"> <?php esc_html_e('Book nå', 'gotomeloy'); ?></a>&nbsp;<a class="btn btn-info" role="button" id="stottfilm2" data-fancybox href="https://www.youtube.com/watch?v=CkxmJ592_TY"><i class="fa fa-play"></i> <?php esc_html_e('Se vår video', 'gotomeloy'); ?></a>
+                        <a class="btn btn-success" role="button" href="https://www.stott.no/portfolio/utforsk-stottvaer-pa-egen-hand-i-kajakken/"> <?php esc_html_e('Book nå', 'gotomeloy'); ?></a>&nbsp;<a class="btn btn-info" role="button" id="stottfilm2" data-fancybox href="https://www.youtube.com/watch?v=CkxmJ592_TY"><i class="fa fa-play"></i> <?php esc_html_e('Se vår video', 'gotomeloy'); ?></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- END: HERO MODULE -->
-<?php } elseif ( is_front_page() && $is_hero_module ) { ?>
+<?php } elseif ( is_front_page() && $is_hero_module && is_user_logged_in() ) { ?>
     <!-- BEGIN: HERO MODULE -->
     <div id="home-featured" class="video-container jquery-background-video-wrapper">
         <video autoplay loop muted webkit-playsinline playsinline plays-inline data-bgvideo class="my-background-video jquery-background-video" poster="<?php echo $hero_img; ?>">

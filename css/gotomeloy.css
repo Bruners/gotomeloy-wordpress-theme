@@ -6993,7 +6993,6 @@ video {
 
 .single-header a {
     color: #fff;
-    text-decoration: none;
 }
 
 .single-header a:hover {
@@ -7263,7 +7262,7 @@ div.hero-header.text-center:hover .scroll-down-icon {
 
 .hero__carousel {
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     z-index: 10;
     color: #fff;
@@ -7300,7 +7299,7 @@ div.hero-header.text-center:hover .scroll-down-icon {
 
 .fade-carousel__scrolldown {
     position: absolute;
-    bottom: 10vh;
+    bottom: 15vh;
     left: 50%;
     z-index: 15;
     width: 60%;
@@ -7308,6 +7307,7 @@ div.hero-header.text-center:hover .scroll-down-icon {
     padding-left: 0;
     list-style: none;
     text-align: center;
+    display: none;
 }
 
 .carousel:hover .scroll-down-icon {
@@ -7317,17 +7317,53 @@ div.hero-header.text-center:hover .scroll-down-icon {
     perspective: 1000px;
 }
 
-@media only screen and (max-width: 600px) and (orientation: landscape) {
+
+@media (min-width: 1281px) {
+    /* Device = Desktops
+    Screen = 1281px to higher resolution desktops */
+    .hero__carousel {
+        width: 60%;
+        top: 50%;
+    }
     .fade-carousel__scrolldown {
-        display: none;
+        display: block;
     }
 }
 
-@media only screen and (min-width: 768px) {
+@media (min-width: 1025px) and (max-width: 1280px) {
+    /* Device = Laptops, Desktops
+       Screen = B/w 1025px to 1280px */
+    .hero__carousel {
+        width: 60%;
+        top: 50%;
+    }
+    .fade-carousel__scrolldown {
+        display: block;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* Device = Tablets, Ipads (portrait)
+       Screen = B/w 768px to 1024px */
+    .hero__carousel {
+        width: 60%;
+    }
+    .fade-carousel__scrolldown {
+        display: block;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    /* Device = Tablets, Ipads (landscape)
+       Screen = B/w 768px to 1024px */
+    .fade-carousel__scrolldown {
+        display: block;
+    }
     .hero__carousel {
         width: 60%;
     }
 }
+
 
 .fade-carousel {
     position: relative;
@@ -7338,12 +7374,14 @@ div.hero-header.text-center:hover .scroll-down-icon {
     padding-bottom: 10px;
 }
 
+/*
 .fade-carousel .carousel-inner .item {
     height: 100vh;
 }
+*/
 
 .fade-carousel .carousel-indicators {
-    bottom: 0;
+    bottom: 5vh;
 }
 
 .fade-carousel .carousel-indicators > li {
