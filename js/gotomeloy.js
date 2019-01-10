@@ -113,8 +113,26 @@
                     filter: filter
                 });
             });
+        },
+        /** Update webcamimage on stott.no */
+        getImage: function() {
+            $.ajax({
+                url: "https://www.stott.no/wp-content/themes/gotomeloy/parts/ajax-get-webcam-image.inc.php",
+                dataType: 'json',
+                success: function(data) {
+                    $("#webcam-img").attr("src", data.imgURL);
+                    $("#webcam-url").attr("href", data.imgURL);
+                }
+            });
         }
     };
+
+    /** Update webcam image every 2 minutes */
+    /** ================================================== */
+    window.setInterval(function(){
+        templateFunctions.getImage();
+    }, 121e3);
+
     /** LOAD */
     /** ================================================== */
     $(window).bind("load", function() {
@@ -122,6 +140,7 @@
         templateFunctions.grid();
         templateFunctions.masonry();
         templateFunctions.filtering();
+        templateFunctions.getImage();
     });
     /** RESIZE */
     /** ================================================== */
@@ -134,33 +153,6 @@
         templateFunctions.masonry();
     });
 })(jQuery);
-
-jQuery(document).ready(function($) {
-    /*  stott.no specific */
-    /* Update webcam image with the most up to date image  */
-    jQuery(function($) {
-        "use strict";
-        function getImage() {
-            var src = "";
-            var lastimageurl = "https://www.stott.no/wp-content/themes/gotomeloy/parts/ajax-get-webcam-image.inc.php?t=";
-            jQuery.ajax({
-                url: lastimageurl + new Date().getTime(),
-                async: false,
-                success: function(data) {
-                    src = data;
-                }
-            });
-            return src;
-        }
-        function updateImage() {
-            var src = getImage();
-            jQuery("#webcam-img").attr("src", src);
-            jQuery("#webcam-url").attr("href", src);
-            setTimeout(updateImage, 121e3);
-        }
-        updateImage();
-    });
-});
 
 // The MIT License (MIT)
 // Copyright (c) 2015 BG Stock - html5backgroundvideos.com

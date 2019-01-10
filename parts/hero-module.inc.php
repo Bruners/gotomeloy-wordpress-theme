@@ -117,7 +117,7 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
                 <div class="item slides active">
-                    <div class="slide-1"></div>
+                    <div class="slide-1 cBG" data-img="linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://www.stott.no/wp-content/uploads/2019/01/hero_slide4_stottgjestehavn_1280x894_60op.jpg)"></div>
                     <div class="hero__carousel">
                         <hgroup>
                             <h1><?php echo $hero_title; ?></h1>
@@ -128,7 +128,7 @@
                     </div>
                 </div>
                 <div class="item slides">
-                    <div class="slide-2"></div>
+                    <div class="slide-2 cBG" data-img="linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://www.stott.no/wp-content/uploads/2018/12/hero_slide1_IMG_9329_1280x894_60op.jpg)"></div>
                     <div class="hero__carousel">
                         <hgroup>
                             <h1>Sykkeltur på Støtt</h1>
@@ -139,7 +139,7 @@
                 </div>
 
                 <div class="item slides">
-                    <div class="slide-3"></div>
+                    <div class="slide-3 cBG" data-img="linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://www.stott.no/wp-content/uploads/2018/12/hero_slide2_konferansemuseum4_1280x894_60op.jpg)"></div>
                     <div class="hero__carousel">
                         <hgroup>
                             <h1>Møtearena Støtt</h1>
@@ -149,7 +149,7 @@
                     </div>
                 </div>
                 <div class="item slides">
-                    <div class="slide-4"></div>
+                    <div class="slide-4 cBG" data-img="linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://www.stott.no/wp-content/uploads/2018/12/hero_slide3_lwb3553_1280x894_60op.jpg)"></div>
                     <div class="hero__carousel">
                         <hgroup>
                             <h1>Kajakkpadling på Støtt</h1>

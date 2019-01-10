@@ -30,7 +30,9 @@ function getImages($dir) {
     return ($files[0]) ? $files[0] : false; // return freshest image
 }
 
-$img = getImages($folder);
+$filename = getImages($folder);
+$imgurl = array('imgURL' => 'https://static.stott.no/webcam/' . $filename);
+$imgurl = json_encode($imgurl);
+echo $imgurl;
 
-echo "https://static.stott.no/webcam/" . $img;
 ?>

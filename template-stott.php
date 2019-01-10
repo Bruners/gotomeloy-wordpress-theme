@@ -113,7 +113,7 @@ Template Name: Portfolio Stott
     <div class="container-fluid">
         <div class="textwidget text-center"><h4><i class="fas fa-video">Video</i></h4></div>
         <div class="container-promo-video">
-            <div id="carousel-promo-video" class="carousel slide" data-ride="carousel">
+            <div id="carousel-promo-video" class="carousel slide" data-interval="false" data-ride="carousel">
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
                     <li data-target="#carousel-promo-video" data-slide-to="0" class="active"></li>
@@ -125,8 +125,17 @@ Template Name: Portfolio Stott
                 <!-- Wrapper for slides -->
                 <div id="video-slider" class="carousel-inner" role="listbox">
                     <div class="item active">
+                        <div class="video-carousel yt-video embed-responsive embed-responsive-16by9" data-yt_id="ZlQM7-BJagM">
+                            <img src="https://www.stott.no/wp-content/uploads/2019/01/placeholder_2x2_trans.jpg" class="iBG" data-img="https://img.youtube.com/vi/ZlQM7-BJagM/maxresdefault.jpg" width="560" height="315" />
+                        </div>
+                        <div class="carousel-caption">
+                            <h5 class="text-center">Skattejakten LIVE</h5>
+                            <p>Benedicte forteller om hvorfor hun gjerne vil bo på Støtt, et fiskevær med bare 25 innbyggere.</p>
+                        </div>
+                    </div>
+                    <div class="item">
                         <div class="video-carousel yt-video embed-responsive embed-responsive-16by9" data-yt_id="xM7d2HHvAR0">
-                            <img src="https://img.youtube.com/vi/xM7d2HHvAR0/maxresdefault.jpg" width="560" height="315" />
+                            <img src="https://www.stott.no/wp-content/uploads/2019/01/placeholder_2x2_trans.jpg" class="iBG" data-img="https://img.youtube.com/vi/xM7d2HHvAR0/maxresdefault.jpg" width="560" height="315" />
                         </div>
                         <div class="carousel-caption">
                             <h5 class="text-center">Go to Meløy</h5>
@@ -135,7 +144,7 @@ Template Name: Portfolio Stott
                     </div>
                     <div class="item">
                         <div class="video-carousel vm-video embed-responsive embed-responsive-16by9" data-vm_id="199325238">
-                            <img src="https://i.vimeocdn.com/video/695381075_1280x720.jpg" width="560" height="315" />
+                            <img src="https://www.stott.no/wp-content/uploads/2019/01/placeholder_2x2_trans.jpg" class="iBG" data-img="https://i.vimeocdn.com/video/695381075_1280x720.jpg" width="560" height="315" />
                         </div>
                         <div class="carousel-caption">
                             <h5 class="text-center">Go to Meløy</h5>
@@ -143,17 +152,8 @@ Template Name: Portfolio Stott
                         </div>
                     </div>
                     <div class="item">
-                        <div class="video-carousel yt-video embed-responsive embed-responsive-16by9" data-yt_id="ZlQM7-BJagM">
-                            <img src="https://img.youtube.com/vi/ZlQM7-BJagM/maxresdefault.jpg" width="560" height="315" />
-                        </div>
-                        <div class="carousel-caption">
-                            <h5 class="text-center">Skattejakten LIVE</h5>
-                            <p>Benedicte forteller om hvorfor hun gjerne vil bo på Støtt, et fiskevær med bare 25 innbyggere.</p>
-                        </div>
-                    </div>
-                    <div class="item">
                         <div class="video-carousel yt-video embed-responsive embed-responsive-16by9" data-yt_id="CkxmJ592_TY">
-                            <img src="https://img.youtube.com/vi/CkxmJ592_TY/maxresdefault.jpg" width="560" height="315" />
+                            <img src="https://www.stott.no/wp-content/uploads/2019/01/placeholder_2x2_trans.jpg" class="iBG" data-img="https://img.youtube.com/vi/CkxmJ592_TY/maxresdefault.jpg" width="560" height="315" />
                         </div>
                         <div class="carousel-caption">
                             <h5 class="text-center">Støtt Brygge Promo 2018</h5>
@@ -218,7 +218,7 @@ Template Name: Portfolio Stott
                         <h5 class="modal-title">Støtt Brygge Webkamera</h5>
                     </div>
                     <div class="modal-body aligncenter">
-                        <a href="" id="webcam-url" rel="attachment" data-fancybox>
+                        <a href="" id="webcam-url" rel="attachment" data-fancybox="images" data-width="1280" data-height="800">
                             <img class="alignnone size-full" src="" id="webcam-img" alt="Webkamera" width="568" height="355" />
                         </a>
                         <br />
