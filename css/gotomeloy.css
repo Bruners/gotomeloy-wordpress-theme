@@ -8884,6 +8884,10 @@ ul.language-selector li a.lang-en {
   z-index: 20;
   cursor: pointer;
 }
+/* Remove black border from youtube thumbnails using sddefault.jpg*/
+.yt-video img {
+    margin: -10% 0;
+}
 
 .video-carousel:before {
   content: "\f144";

@@ -126,7 +126,7 @@ Template Name: Portfolio Stott
                 <div id="video-slider" class="carousel-inner" role="listbox">
                     <div class="item active">
                         <div class="video-carousel yt-video embed-responsive embed-responsive-16by9" data-yt_id="ZlQM7-BJagM">
-                            <img src="https://www.stott.no/wp-content/uploads/2019/01/placeholder_2x2_trans.jpg" class="iBG" data-img="https://img.youtube.com/vi/ZlQM7-BJagM/maxresdefault.jpg" width="560" height="315" />
+                            <img src="https://www.stott.no/wp-content/uploads/2019/01/placeholder_2x2_trans.jpg" class="iBG" data-img="http://i.ytimg.com/vi/ZlQM7-BJagM/sddefault.jpg" width="560" height="315" />
                         </div>
                         <div class="carousel-caption">
                             <h5 class="text-center">Skattejakten LIVE</h5>
@@ -135,7 +135,7 @@ Template Name: Portfolio Stott
                     </div>
                     <div class="item">
                         <div class="video-carousel yt-video embed-responsive embed-responsive-16by9" data-yt_id="xM7d2HHvAR0">
-                            <img src="https://www.stott.no/wp-content/uploads/2019/01/placeholder_2x2_trans.jpg" class="iBG" data-img="https://img.youtube.com/vi/xM7d2HHvAR0/maxresdefault.jpg" width="560" height="315" />
+                            <img src="https://www.stott.no/wp-content/uploads/2019/01/placeholder_2x2_trans.jpg" class="iBG" data-img="http://i.ytimg.com/vi/xM7d2HHvAR0/sddefault.jpg" width="560" height="315" />
                         </div>
                         <div class="carousel-caption">
                             <h5 class="text-center">Go to Meløy</h5>
@@ -153,7 +153,7 @@ Template Name: Portfolio Stott
                     </div>
                     <div class="item">
                         <div class="video-carousel yt-video embed-responsive embed-responsive-16by9" data-yt_id="CkxmJ592_TY">
-                            <img src="https://www.stott.no/wp-content/uploads/2019/01/placeholder_2x2_trans.jpg" class="iBG" data-img="https://img.youtube.com/vi/CkxmJ592_TY/maxresdefault.jpg" width="560" height="315" />
+                            <img src="https://www.stott.no/wp-content/uploads/2019/01/placeholder_2x2_trans.jpg" class="iBG" data-img="http://i.ytimg.com/vi/CkxmJ592_TY/sddefault.jpg" width="560" height="315" />
                         </div>
                         <div class="carousel-caption">
                             <h5 class="text-center">Støtt Brygge Promo 2018</h5>
