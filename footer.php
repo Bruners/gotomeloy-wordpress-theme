@@ -1,5 +1,5 @@
             <!-- BEGIN: MENY MODALS -->
-            <div class="meny-modals">
+            
             <?php
                 $args = array('post_type' => 'meny-modal');
                 $query = new WP_Query($args);
@@ -50,7 +50,7 @@
 
                 <?php } ?>
             <?php endwhile; wp_reset_postdata(); ?>
-            </div> <!-- /.meny-modals -->
+            
             <!-- BEGIN: SITE FOOTER -->
             <?php
             if ( function_exists( 'types_render_field' ) ) {

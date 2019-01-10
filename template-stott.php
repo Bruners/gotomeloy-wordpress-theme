@@ -45,8 +45,8 @@ Template Name: Portfolio Stott
 
 <!-- BEGIN: SITE BODY -->
 <section id="site-body" class="sections padding-size-m">
-    <div class="container container-content">
-        <div class="innhold">
+    <div class="container clearfix">
+        <section class="sections padding-size-s">
             <?php while( have_posts() ) : the_post(); ?>
                 <!-- PAGE CONTENT -->
                 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -55,30 +55,29 @@ Template Name: Portfolio Stott
                     </div>
                 </article>
             <?php endwhile; ?>
-        </div>
-    </div>
-    <div class="container container-offers">
-        <div class="offers__center-wrapper">
+        </section>
+        
+        <section class="sections padding-size-s offers__center-wrapper">
             <div class="offers__container">
-            <?php
-                // WP_QUERY Arguments
-                $offers_args = array(
-                    'post_type' => 'offers',
-                    'posts_per_page' => -1
-                );
+                <?php
+                    // WP_QUERY Arguments
+                    $offers_args = array(
+                        'post_type' => 'offers',
+                        'posts_per_page' => -1
+                    );
 
-                $offers_query = new WP_Query($offers_args);
+                    $offers_query = new WP_Query($offers_args);
 
-                if ( $offers_query->have_posts() ) : while ( $offers_query->have_posts() ) : $offers_query->the_post();
+                    if ( $offers_query->have_posts() ) : while ( $offers_query->have_posts() ) : $offers_query->the_post();
 
-                    get_template_part( 'parts/offers-index-entry.inc' );
-                endwhile; wp_reset_postdata(); endif;
-            ?>
+                        get_template_part( 'parts/offers-index-entry.inc' );
+                    endwhile; wp_reset_postdata(); endif;
+                ?>
             </div>
-        </div>
-    </div>
-    <div class="container container-portofolio">
-        <div id="opplevelser" class="portfolio">
+        </section>
+
+        <section id="opplevelser" class="sections padding-size-s portfolio">
+        
             <?php if ( $is_filtration ) { ?>
 
             <!-- BEGIN: FILTERATION -->
@@ -92,7 +91,7 @@ Template Name: Portfolio Stott
             <?php } ?>
 
             <!-- BEGIN: PORTFOLIO GRID -->
-            <section class="grid clearfix" data-col="<?php echo get_post_meta(get_the_ID(), 'portfolio_columns', true); ?>" data-margin="25" data-height="0.8" data-double-height="1.6" data-masonry="<?php echo $is_masonry; ?>">
+            <article class="grid clearfix" data-col="<?php echo get_post_meta(get_the_ID(), 'portfolio_columns', true); ?>" data-margin="25" data-height="0.8" data-double-height="1.6" data-masonry="<?php echo $is_masonry; ?>">
 
             <?php if ( $portfolio_query->have_posts() ) : while ( $portfolio_query->have_posts() ) : $portfolio_query->the_post(); ?>
             <?php get_template_part( 'parts/portfolio-index-entry.inc' ); ?>
@@ -101,18 +100,21 @@ Template Name: Portfolio Stott
                 <p class="entry"><?php printf( esc_html__( 'Ready to publish your first entry? <a href="%1$s">Get started here</a>.', 'gotomeloy' ), esc_url( admin_url() ) ); ?></p>
             <?php endif; ?>
 
-            </section>
+            </article>
             <!-- END: PORTFOLIO GRID -->
-        </div>
-    </div> <!-- END: CONTAINER DIV -->
-    <!-- BEGIN: BOTTOM WIDGETS -->
-    <div class="container-fluid container-bunn">
-        <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("widgetized-page-bottom") ) : ?>
-        <?php endif; ?>
-    </div><!-- END: BOTTOM WIDGETS -->
-    <div class="container-fluid">
-        <div class="textwidget text-center"><h4><i class="fas fa-video">Video</i></h4></div>
-        <div class="container-promo-video">
+        </section>
+    </div>
+    
+    <div class="container-fluid clearfix">
+        <section class="sections padding-size-s container-bunn">
+            <!-- BEGIN: BOTTOM WIDGETS -->
+            <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("widgetized-page-bottom") ) : ?>
+            <?php endif; ?>
+            <!-- END: BOTTOM WIDGETS -->
+        </section>
+
+        <section class="container-promo-video">
+            <div class="textwidget text-center"><h4><i class="fas fa-video">Video</i></h4></div>
             <div id="carousel-promo-video" class="carousel slide" data-interval="false" data-ride="carousel">
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
@@ -173,132 +175,130 @@ Template Name: Portfolio Stott
                 </a>
             </div>
             <div class="new-caption-area"></div>
-        </div>
+        </section>
+        <section class="sections padding-size-s container-bunn">
+            <div id="contact-us" class="kontakt-oss">
+            <div class="fb-like" data-href="https://www.facebook.com/StottBrygge/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+            <?php
+                if ( function_exists( 'types_render_field' ) ) {
+                    $kontaktskjema_bunn = types_render_field("kontaktskjema-bunn", array('raw' => false));
+                    $kontaktskjema_logo = types_render_field("kontaktskjema-logo", array('raw' => true));
+                    $kontaktskjema_adresse = types_render_field("kontaktskjema-adress", array('raw' => false));
+                }
+            ?>
+            <?php //echo ( $kontaktskjema_bunn ); ?>
+            <?php get_template_part( 'parts/contact-form-large.inc' ); ?>
+            <style>
+                #map-container { height: 300px; }
+            </style>
+            <div class="row">
+                <div id="map-outer" class="col-md-12">
+                    <div id="address" class="col-md-4 text-center">
+                        <address>
+                            <p><img src="<?php echo ( $kontaktskjema_logo ); ?>"><br /></p>
+                            <p><?php echo ( $kontaktskjema_adresse ); ?></p>
+                        </address>
+                    </div>
+                    <div id="map-container" class="col-md-8"></div>
+                </div><!-- /map-outer -->
+            </div> <!-- /row -->
+            </div>
+            <div class="copyright">
+                <?php echo get_theme_mod('gotomeloy_copyright_text', esc_html__('Copyright © GO TO MELØY 2016', 'gotomeloy') ); ?> | <?php echo(esc_html__( 'Utviklet av', 'gotomeloy' )); ?> <a href="https://www.github.com/bruners/" target="_blank">Lasse Brun</a><br />
+            </div>
+        </section>
     </div>
-
-    <div class="container-fluid container-bunn">
-        <div id="contact-us" class="kontakt-oss">
-        <div class="fb-like" data-href="https://www.facebook.com/StottBrygge/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
-        <?php
-            if ( function_exists( 'types_render_field' ) ) {
-                $kontaktskjema_bunn = types_render_field("kontaktskjema-bunn", array('raw' => false));
-                $kontaktskjema_logo = types_render_field("kontaktskjema-logo", array('raw' => true));
-                $kontaktskjema_adresse = types_render_field("kontaktskjema-adress", array('raw' => false));
-            }
-        ?>
-        <?php //echo ( $kontaktskjema_bunn ); ?>
-        <?php get_template_part( 'parts/contact-form-large.inc' ); ?>
-        <style>
-            #map-container { height: 300px; }
-        </style>
-        <div class="row">
-            <div id="map-outer" class="col-md-12">
-                <div id="address" class="col-md-4 text-center">
-                    <address>
-                        <p><img src="<?php echo ( $kontaktskjema_logo ); ?>"><br /></p>
-                        <p><?php echo ( $kontaktskjema_adresse ); ?></p>
-                    </address>
-                </div>
-                <div id="map-container" class="col-md-8"></div>
-            </div><!-- /map-outer -->
-        </div> <!-- /row -->
-        </div>
-        <div class="copyright">
-            <?php echo get_theme_mod('gotomeloy_copyright_text', esc_html__('Copyright © GO TO MELØY 2016', 'gotomeloy') ); ?> | <?php echo(esc_html__( 'Utviklet av', 'gotomeloy' )); ?> <a href="https://www.github.com/bruners/" target="_blank">Lasse Brun</a><br />
-        </div>
-    </div>
-
-    <div class="action-button-modal">
-        <!-- Modal -->
-        <div id="action-button-webcam-modal" role="dialog" aria-labeledby="Støtt Brygge Webcam" class="modal fade" tabindex="-1">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button class="close" type="button" aria-label="Close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
-                        <h5 class="modal-title">Støtt Brygge Webkamera</h5>
-                    </div>
-                    <div class="modal-body aligncenter">
-                        <a href="" id="webcam-url" rel="attachment" data-fancybox="images" data-width="1280" data-height="800">
-                            <img class="alignnone size-full" src="" id="webcam-img" alt="Webkamera" width="568" height="355" />
-                        </a>
-                        <br />
-                        <div class="table-responsive">
-                            <table class="table table-hover">
-                                <?php
-                                    require_once GOTOMELOY_INC . '/curl-cache.inc.php';
-
-                                    $lat = 66.925775;
-                                    $lon = 13.437980;
-                                    $fromtime = new DateTime('NOW');
-                                    $fromtime->format("Y-m-d");
-
-                                    $totime = clone $fromtime;
-                                    $totime->modify('+2 day');
-
-                                    $tdtime = clone $fromtime;
-                                    $tdtime->format('d.m');
-
-                                    $feed = "http://api.sehavniva.no/tideapi.php?lat=".$lat."&lon=".$lon."&fromtime=".$fromtime->format("Y-m-d\T00:00:00P")."&totime=".$totime->format("Y-m-d\T00:00:00P")."&datatype=tab&refcode=cd&place=St%C3%B8tt&file=&lang=nb&interval=10&dst=1&tzone=&tide_request=locationdata";
-
-                                    $dir = get_stylesheet_directory_uri() . "/img/";
-
-                                    libxml_use_internal_errors(TRUE);
-                                    try {
-                                        $xml = simplexml_load_string(cache_url($feed));
-
-                                        if ($xml != "") {
-                                            foreach ($xml->locationdata->data->waterlevel as $level):
-                                                $flag = $level['flag'];
-                                                $time = DateTime::createFromFormat('Y-m-d\TH:i:s+P',$level['time'])->format('H:i');
-                                                $datetime = DateTime::createFromFormat('Y-m-d\TH:i:s+P',$level['time'])->format('d.m');
-                                                if ($tdtime != $datetime) {
-                                                    echo "<tr><th>".$datetime."</th><th>Tid</th><th>Beregnet vannstand</th></tr>";
-                                                    $tdtime = $datetime;
-                                                };
-                                                $value = round($level['value']);
-                                                echo "<tr><td align='center'><img src='",$dir, $flag,".png' alt='",$flag,"' height='26' width='26'></td><td>",$time,"</td><td>",$value," cm</td></tr>";
-                                            endforeach;
-                                        };
-                                    } catch (Exception $e) {
-                                        echo "<tr><td align='center'>Kunne ikke laste inn Vannstandsdata</td></tr>";
-                                    }
-                                ?>
-                                <tr class="copyright" align="right">Vannstandsdata © Kartverket <a href='http://www.sehavniva.no'>sehavniva.no</a></tr>
-                            </table>
-                        </div>
-                        <br />
-                        <?php if ( function_exists( 'add_social_share_icons' ) ) { echo add_social_share_icons(); } ?>
-                    </div>
-                    <div class="modal-footer">
-                        <ul class="nostyle clearfix">
-                            <li class="btn btn-default" type="button" data-dismiss="modal"><i class="fa fa-times"></i></li>
-                        </ul>
-                    </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
-    </div> <!-- /.action-button-modal -->
-    <div class="modals">
-        <div id="action-button-aktivitetskalender" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="aktivitetskalender">
-            <div class="modal-dialog modal-md" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button class="close" type="button" aria-label="Close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
-                        <h5 class="modal-title"><?php echo(esc_html__( 'Aktivitetskalender', 'gotomeloy' )); ?></h5>
-                    </div>
-                    <div class="modal-body">
-                        <div><h4><?php echo(esc_html__( 'Liste over kommende aktiviteter:', 'gotomeloy' )); ?></h4></div>
-                        <div class="fb-page" data-href="https://www.facebook.com/StottBrygge/" data-tabs="events,timeline" data-width="360" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/StottBrygge/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/StottBrygge/">Støtt Brygge</a></blockquote></div>
-                        <?php if ( function_exists( 'add_social_share_icons' ) ) { echo add_social_share_icons(); } ?>
-                    </div> <!-- /.modal-body -->
-                    <div class="modal-footer">
-                        <button class="btn btn-default" type="button" data-dismiss="modal">Lukk</button>
-                    </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
-    </div><!-- /.tjeneste-modals -->
 </section>
+
+    <!-- Modal -->
+    <div id="action-button-webcam-modal" role="dialog" aria-labeledby="Støtt Brygge Webcam" class="modal fade" tabindex="-1">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" type="button" aria-label="Close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                    <h5 class="modal-title">Støtt Brygge Webkamera</h5>
+                </div>
+                <div class="modal-body aligncenter">
+                    <a href="" id="webcam-url" rel="attachment" data-fancybox="images" data-width="1280" data-height="800">
+                        <img class="alignnone size-full" src="" id="webcam-img" alt="Webkamera" width="568" height="355" />
+                    </a>
+                    <br />
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <?php
+                                require_once GOTOMELOY_INC . '/curl-cache.inc.php';
+
+                                $lat = 66.925775;
+                                $lon = 13.437980;
+                                $fromtime = new DateTime('NOW');
+                                $fromtime->format("Y-m-d");
+
+                                $totime = clone $fromtime;
+                                $totime->modify('+2 day');
+
+                                $tdtime = clone $fromtime;
+                                $tdtime->format('d.m');
+
+                                $feed = "http://api.sehavniva.no/tideapi.php?lat=".$lat."&lon=".$lon."&fromtime=".$fromtime->format("Y-m-d\T00:00:00P")."&totime=".$totime->format("Y-m-d\T00:00:00P")."&datatype=tab&refcode=cd&place=St%C3%B8tt&file=&lang=nb&interval=10&dst=1&tzone=&tide_request=locationdata";
+
+                                $dir = get_stylesheet_directory_uri() . "/img/";
+
+                                libxml_use_internal_errors(TRUE);
+                                try {
+                                    $xml = simplexml_load_string(cache_url($feed));
+
+                                    if ($xml != "") {
+                                        foreach ($xml->locationdata->data->waterlevel as $level):
+                                            $flag = $level['flag'];
+                                            $time = DateTime::createFromFormat('Y-m-d\TH:i:s+P',$level['time'])->format('H:i');
+                                            $datetime = DateTime::createFromFormat('Y-m-d\TH:i:s+P',$level['time'])->format('d.m');
+                                            if ($tdtime != $datetime) {
+                                                echo "<tr><th>".$datetime."</th><th>Tid</th><th>Beregnet vannstand</th></tr>";
+                                                $tdtime = $datetime;
+                                            };
+                                            $value = round($level['value']);
+                                            echo "<tr><td align='center'><img src='",$dir, $flag,".png' alt='",$flag,"' height='26' width='26'></td><td>",$time,"</td><td>",$value," cm</td></tr>";
+                                        endforeach;
+                                    };
+                                } catch (Exception $e) {
+                                    echo "<tr><td align='center'>Kunne ikke laste inn Vannstandsdata</td></tr>";
+                                }
+                            ?>
+                            <tr class="copyright" align="right">Vannstandsdata © Kartverket <a href='http://www.sehavniva.no'>sehavniva.no</a></tr>
+                        </table>
+                    </div>
+                    <br />
+                    <?php if ( function_exists( 'add_social_share_icons' ) ) { echo add_social_share_icons(); } ?>
+                </div>
+                <div class="modal-footer">
+                    <ul class="nostyle clearfix">
+                        <li class="btn btn-default" type="button" data-dismiss="modal"><i class="fa fa-times"></i></li>
+                    </ul>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div id="action-button-aktivitetskalender" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="aktivitetskalender">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" type="button" aria-label="Close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                    <h5 class="modal-title"><?php echo(esc_html__( 'Aktivitetskalender', 'gotomeloy' )); ?></h5>
+                </div>
+                <div class="modal-body">
+                    <div><h4><?php echo(esc_html__( 'Liste over kommende aktiviteter:', 'gotomeloy' )); ?></h4></div>
+                    <div class="fb-page" data-href="https://www.facebook.com/StottBrygge/" data-tabs="events,timeline" data-width="360" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/StottBrygge/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/StottBrygge/">Støtt Brygge</a></blockquote></div>
+                    <?php if ( function_exists( 'add_social_share_icons' ) ) { echo add_social_share_icons(); } ?>
+                </div> <!-- /.modal-body -->
+                <div class="modal-footer">
+                    <button class="btn btn-default" type="button" data-dismiss="modal">Lukk</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
 <!-- END: SITE BODY -->
 
 <?php get_footer(); ?>
