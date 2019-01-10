@@ -23,6 +23,25 @@ function disable_devicepx()
 add_action( 'wp_enqueue_scripts', 'disable_devicepx' );
 
 #-----------------------------------------------------------------#
+# Remove JQuery migrate
+#-----------------------------------------------------------------#
+
+function remove_jquery_migrate($scripts)
+{
+    if (!is_admin() && isset($scripts->registered['jquery'])) {
+        $script = $scripts->registered['jquery'];
+        
+        if ($script->deps) { // Check whether the script has any dependencies
+            $script->deps = array_diff($script->deps, array(
+                'jquery-migrate'
+            ));
+        }
+    }
+}
+
+add_action('wp_default_scripts', 'remove_jquery_migrate');
+
+#-----------------------------------------------------------------#
 # Remove comment-reply.min.js from footer
 #-----------------------------------------------------------------#
 
@@ -45,7 +64,8 @@ add_filter( 'publicize_checkbox_default', '__return_false' );
 * Thanks http://wordpress.stackexchange.com/questions/54064/how-do-i-get-the-handle-for-all-enqueued-scripts
 */
 
-/* add_action( 'wp_print_scripts', 'wsds_detect_enqueued_scripts' );
+/*
+add_action( 'wp_print_scripts', 'wsds_detect_enqueued_scripts' );
 function wsds_detect_enqueued_scripts() {
   global $wp_scripts;
   foreach( $wp_scripts->queue as $handle ) :
@@ -60,26 +80,23 @@ function wsds_defer_scripts( $tag, $handle, $src )
 
   // The handles of the enqueued scripts we want to defer
   $defer_scripts = array(
-    'admin-bar',
-    'contact-form-7',
+    'jquery',
     'sb_instagram_scripts',
-    'devicepx',
-    'wpml-legacy-dropdown-0',
     'gotomeloy-theme-functions',
-    'gotomeloy-site-functions',
-    'comment-reply',
-    'jquery-migrate',
+    'isotope',
+    'touchswipe',
     'fancybox',
+    'gotomeloy-site-functions'
   );
 
     if ( in_array( $handle, $defer_scripts ) ) {
-        return '<script src="' . $src . '" defer="defer" type="text/javascript"></script>' . "\n";
+        return '<script src="' . $src . '" defer="defer"></script>' . "\n";
     }
 
     return $tag;
 }
 
-
+// sb_instagram_scripts | jquery | gotomeloy-theme-functions | isotope | touchswipe | fancybox | gotomeloy-site-functions |
 // admin-bar | contact-form-7 | sb_instagram_scripts | devicepx | wpml-legacy-dropdown-0 | jquery | gotomeloy-theme-functions | gotomeloy-site-functions | comment-reply |
 
 #-----------------------------------------------------------------#
@@ -187,12 +204,11 @@ function wsds_defer_scripts( $tag, $handle, $src )
   {
     if ( !is_admin() ) {
       // wp_enqueue_style( $handle, $src, $deps, $ver, $media );
-      //wp_enqueue_style('gotomeloy', GOTOMELOY_CSS_URI . '/gotomeloy.min.css', array('gotomeloy-style'), 1.0);
-      wp_enqueue_style('gotomeloy', GOTOMELOY_CSS_URI . '/gotomeloy.min.css', array('gotomeloy-style'), 1.7 );
+      wp_enqueue_style('gotomeloy', GOTOMELOY_CSS_URI . '/gotomeloy.min.css', array('gotomeloy-style'), 1.9 );
       wp_enqueue_style('gotomeloy-style', get_template_directory_uri() . '/style.css');
 
       wp_enqueue_style('fontawesome', 'https://use.fontawesome.com/releases/v5.0.13/css/all.css', null, '5.0.13', 'all' );
-      wp_enqueue_style('fancybox', 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css', null, '3.3.5', 'all' );
+      wp_enqueue_style('fancybox', 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.6/jquery.fancybox.min.css', null, '3.5.6', 'all' );
 
       wp_add_inline_style('gotomeloy-style', get_theme_mod('gotomeloy_custom_css'));
 
@@ -208,13 +224,6 @@ function wsds_defer_scripts( $tag, $handle, $src )
 
     }
   }
-
-
-  function gotomeloy_backend_styles()
-  {
-      wp_enqueue_style('gotomeloy-plugins', GOTOMELOY_ADMIN_URI . '/plugins/css/style.css');
-  }
-
 
 #-----------------------------------------------------------------#
 # Register and Enqueue Frontend JS
@@ -235,13 +244,13 @@ function wsds_defer_scripts( $tag, $handle, $src )
         wp_enqueue_script('isotope');
       }
 
-      wp_register_script('touchswipe', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js', 'jquery', '1.6.18', true );
+      wp_register_script('touchswipe', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js', 'jquery', '1.6.19', true );
       wp_enqueue_script('touchswipe');
 
-      wp_register_script('fancybox', 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js', 'jquery', '3.3.5', true );
+      wp_register_script('fancybox', 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.6/jquery.fancybox.min.js', 'jquery', '3.5.6', true );
       wp_enqueue_script('fancybox');
 
-      wp_enqueue_script('gotomeloy-site-functions', GOTOMELOY_JS_URI . '/functions.min.js', array('jquery'), 1.7, true);
+      wp_enqueue_script('gotomeloy-site-functions', GOTOMELOY_JS_URI . '/functions.min.js', array('jquery'), 2.0, true);
 
       // Enqueue (conditional)
       if ( is_singular() ) {
