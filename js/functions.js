@@ -341,16 +341,20 @@ if (typeof jQuery === "undefined") {
             $(".vm-video").removeClass("player");
         });
         // Replace carousel <img> with video on click
-        $(".yt-video").on("click", function() {
+        var yt_videos = $(".yt-video");
+        var vm_videos = $(".vm-video");
+        yt_videos.on("click", function() {
+            var that = $(this);
             setTimeout(function() {
-                var YTid = $(this).data("yt_id");
-                $(this).addClass("player").append('<iframe width="560" height="315" src="https://www.youtube.com/embed/' + YTid + '?autoplay=1?rel=0" frameborder="0" allowfullscreen></iframe>');
+                var YTid = that.data("yt_id");
+                that.addClass("player").append('<iframe width="560" height="315" src="https://www.youtube.com/embed/' + YTid + '?autoplay=1?rel=0" frameborder="0" allowfullscreen></iframe>');
             }, 400);
         });
-        $(".vm-video").on("click", function() {
+        vm_videos.on("click", function() {
+            var that = $(this);
             setTimeout(function() {
-                var VMid = $(this).data("vm_id");
-                $(this).addClass("player").append('<iframe width="560" height="315" src="https://player.vimeo.com/video/' + VMid + '" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
+                var VMid = that.data("vm_id");
+                that.addClass("player").append('<iframe width="560" height="315" src="https://player.vimeo.com/video/' + VMid + '" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
             }, 400);
         });
         // Add swipe functionality on carousel for touch devices.
