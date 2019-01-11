@@ -208,17 +208,14 @@ if (typeof jQuery === "undefined") {
     });
 }(jQuery);
 
-
 /* ========================================================================
  * Gotomeloy functions all pages
  * ======================================================================== */
 +function($) {
- 	"use strict";
-
+    "use strict";
     /** Viewport dimensions */
     var ww = $(window).width();
     var wh = $(window).height();
-
     /** Adjust components to viewport dimensions */
     $(".fh").css("height", wh + "px");
     var hh = wh - $(".site-header").height();
@@ -230,18 +227,16 @@ if (typeof jQuery === "undefined") {
     $(".vcenter").each(function() {
         $(this).css("top", ($(this).parent().height() - $(this).height()) / 2 + "px");
     });
-    $('#menu-toggle').click(function() {
-        $('body').toggleClass('menu-open');
+    $("#menu-toggle").click(function() {
+        $("body").toggleClass("menu-open");
         return false;
     });
-
-    if (ww <= 1000) {
-        $('#primary-menu li a').click(function(){
-            $('#menu-toggle').trigger('click');
+    if (ww <= 1e3) {
+        $("#primary-menu li a").click(function() {
+            $("#menu-toggle").trigger("click");
         });
     }
-
-	/** FIX */
+    /** FIX */
     function fix() {
         /** Adjust components to viewport dimensions */
         $(".fh").css("height", wh + "px");
@@ -256,32 +251,27 @@ if (typeof jQuery === "undefined") {
             $(this).css("top", ($(this).parent().height() - $(this).height()) / 2 + "px");
         });
     }
-
-	// grab the initial top offset of the navigation
-    var content_offset_top = $('#site-body').offset().top;
-
+    // grab the initial top offset of the navigation
+    var content_offset_top = $("#site-body").offset().top;
     // our function that decides weather the navigation bar should have "fixed" css position or not.
     function sticky_navigation() {
-
-        var scroll_top = $(window).scrollTop(); // our current vertical position from the top
-
+        var scroll_top = $(window).scrollTop();
+        // our current vertical position from the top
         // if we've scrolled more than the navigation, change its position to fixed to stick to top,
         // otherwise change it back to relative
-        if ( (scroll_top + 70) >= content_offset_top) {
-            $('body').addClass('sticky');
+        if (scroll_top + 70 >= content_offset_top) {
+            $("body").addClass("sticky");
         } else {
-            $('body').removeClass('sticky');
+            $("body").removeClass("sticky");
         }
-    };  
-
- 	/** LOAD */
+    }
+    /** LOAD */
     $(window).load(function() {
- 		fix();
- 		sticky_navigation();
-
- 		/** DEPRECATED **/
- 		// Move portfolio items
- 		/**
+        fix();
+        sticky_navigation();
+        /** DEPRECATED **/
+        // Move portfolio items
+        /**
 	    jQuery(function ($) {
 	        var header = jQuery('.single-header');
 	        var ingress = jQuery('.single-header .ingress');
@@ -293,104 +283,88 @@ if (typeof jQuery === "undefined") {
 	        jQuery('.single-header .clearfix').css('padding-top', '30px');
 	    });
 	    **/
-
-	        // Resize image containers using background-image
-	    $(".iBG").each(function() {
-	        $(this).css("background-image", "url(" + $(this).attr("data-img") + ")");
-	    });
-
-	    // Resize image containers using background-image
-	    $(".cBG").each(function() {
-	        $(this).css("background-image", $(this).attr("data-img"));
-	    });
-
-	    $(".scroll-down").click(function() {
-	        event.preventDefault();
-	        $('html, body').animate({
-	            scrollTop: $("#site-body").offset().top
-	        }, 'slow', 'swing' );
-	    });
-
-	    $(".scroll-contact").click(function() {
-	        event.preventDefault();
-	        $('html, body').animate({
-	            scrollTop: $("#contact-us").offset().top
-	        }, 'slow', 'swing' );
-	    });
-
-	    $(".scroll-booking").click(function() {
-	        event.preventDefault();
-	        $('html, body').animate({
-	            scrollTop: $('[id^="bokun-"]').offset().top -100
-	        }, 'slow', 'swing' );
-	    });
-
-	    $(".back2top").click(function() {
-	        $("html, body").animate({
-	            scrollTop: 0
-	        }, 1e3);
-	    });
-
- 		/* Apply fancybox to multiple items */
+        // Resize image containers using background-image
+        $(".iBG").each(function() {
+            $(this).css("background-image", "url(" + $(this).attr("data-img") + ")");
+        });
+        // Resize image containers using background-image
+        $(".cBG").each(function() {
+            $(this).css("background-image", $(this).attr("data-img"));
+        });
+        $(".scroll-down").click(function() {
+            event.preventDefault();
+            $("html, body").animate({
+                scrollTop: $("#site-body").offset().top
+            }, "slow", "swing");
+        });
+        $(".scroll-contact").click(function() {
+            event.preventDefault();
+            $("html, body").animate({
+                scrollTop: $("#contact-us").offset().top
+            }, "slow", "swing");
+        });
+        $(".scroll-booking").click(function() {
+            event.preventDefault();
+            $("html, body").animate({
+                scrollTop: $('[id^="bokun-"]').offset().top - 100
+            }, "slow", "swing");
+        });
+        $(".back2top").click(function() {
+            $("html, body").animate({
+                scrollTop: 0
+            }, 1e3);
+        });
+        /* Apply fancybox to multiple items */
         $("a[href$='.jpg'],a[href$='.png'],a[href$='.gif'],a.iframe,a#webcam-url").fancybox({
-            openEffect  : 'none',
-            closeEffect : 'none',
+            openEffect: "none",
+            closeEffect: "none",
             autoSize: true,
-            width: '95%',
-            height: '95%',
-            iframe : {
+            width: "95%",
+            height: "95%",
+            iframe: {
                 preload: false
             }
         });
-
-		// Move carousel caption into new-caption-area
-		//jQuery('.carousel').carousel();
-		var caption = $('div.item:nth-child(1) .carousel-caption');
-		$('.new-caption-area').html(caption.html());
-		caption.css('display', 'none');
-
-		$("#carousel-promo-video").on('slide.bs.carousel', function (evt) {
-			var caption = $('div.item:nth-child(' + ($(evt.relatedTarget).index() + 1) + ') .carousel-caption');
-			$('.new-caption-area').html(caption.html());
-			caption.css('display', 'none');
-			
-			// Remove carousel video after carousel sliding
-			$(".yt-video").children('iframe').remove();
-            $(".yt-video").removeClass('player');
-            $(".vm-video").children('iframe').remove();
-            $(".vm-video").removeClass('player');
-		});
-
-
-		// Replace carousel <img> with video on click
-        $(".yt-video").on("click", function () {
-            setTimeout(function () {
-                var YTid = $(this).data('yt_id');
+        // Move carousel caption into new-caption-area
+        //jQuery('.carousel').carousel();
+        var caption = $("div.item:nth-child(1) .carousel-caption");
+        $(".new-caption-area").html(caption.html());
+        caption.css("display", "none");
+        $("#carousel-promo-video").on("slide.bs.carousel", function(evt) {
+            var caption = $("div.item:nth-child(" + ($(evt.relatedTarget).index() + 1) + ") .carousel-caption");
+            $(".new-caption-area").html(caption.html());
+            caption.css("display", "none");
+            // Remove carousel video after carousel sliding
+            $(".yt-video").children("iframe").remove();
+            $(".yt-video").removeClass("player");
+            $(".vm-video").children("iframe").remove();
+            $(".vm-video").removeClass("player");
+        });
+        // Replace carousel <img> with video on click
+        $(".yt-video").on("click", function() {
+            setTimeout(function() {
+                var YTid = $(this).data("yt_id");
                 $(this).addClass("player").append('<iframe width="560" height="315" src="https://www.youtube.com/embed/' + YTid + '?autoplay=1?rel=0" frameborder="0" allowfullscreen></iframe>');
             }, 400);
         });
-
-        $(".vm-video").on("click", function () {
-            setTimeout(function () {
-                var VMid = $(this).data('vm_id');
+        $(".vm-video").on("click", function() {
+            setTimeout(function() {
+                var VMid = $(this).data("vm_id");
                 $(this).addClass("player").append('<iframe width="560" height="315" src="https://player.vimeo.com/video/' + VMid + '" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
             }, 400);
         });
-
         // Add swipe functionality on carousel for touch devices.
-	    $(".carousel").swipe({
-	        swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
-	            if (direction == 'left') $(this).carousel('next');
-	            if (direction == 'right') $(this).carousel('prev');
-	        },
-	        allowPageScroll:'vertical',
-	    });
-
-	    // Fix Instagram Feed Version 1.10.2 (Smash Balloon) not working with latest fontawesome 
-	    jQuery('.fa.fa-instagram').removeClass('fa').addClass('fab');
-
+        $(".carousel").swipe({
+            swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
+                if (direction == "left") $(this).carousel("next");
+                if (direction == "right") $(this).carousel("prev");
+            },
+            allowPageScroll: "vertical"
+        });
+        // Fix Instagram Feed Version 1.10.2 (Smash Balloon) not working with latest fontawesome 
+        jQuery(".fa.fa-instagram").removeClass("fa").addClass("fab");
     });
-	/** RESIZE */
+    /** RESIZE */
     $(window).resize(function() {
         /** Viewport dimensions */
         ww = $(window).width();
@@ -398,16 +372,11 @@ if (typeof jQuery === "undefined") {
         fix();
         sticky_navigation();
     });
-
-     // and run it again every time you scroll
+    // and run it again every time you scroll
     $(window).scroll(function() {
-	    sticky_navigation();
+        sticky_navigation();
     });
-
 }(jQuery);
-
-
-
 
 /* ========================================================================
  * Bootstrap: modal.js v3.3.7
