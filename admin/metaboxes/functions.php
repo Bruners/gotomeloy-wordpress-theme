@@ -55,6 +55,15 @@ if(function_exists("register_field_group"))
 				array (
 					'param' => 'post_type',
 					'operator' => '==',
+					'value' => 'meny-modal',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+			array (
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
 					'value' => 'offers',
 					'order_no' => 0,
 					'group_no' => 0,
@@ -263,6 +272,15 @@ if(function_exists("register_field_group"))
 					'param' => 'post_type',
 					'operator' => '==',
 					'value' => 'portfolio',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+			array (
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'meny-modal',
 					'order_no' => 0,
 					'group_no' => 0,
 				),

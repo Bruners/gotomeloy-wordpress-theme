@@ -372,8 +372,9 @@ add_action("admin_init", "social_share_settings");
 
 function add_social_share_icons()
 {
-    $html = "<div class='clearfix'><div class='sb-social-icon'><h5 class='sb-title'>Del dette:</h5><div class='sb-content'><ul>";
-
+    $text_share = __('Del dette:', 'gotomeloy');
+    $html = "<div class='clearfix'><div class='sb-social-icon'><h5 class='sb-title'>" . $text_share . "</h5><div class='sb-content'><ul>";
+      
     global $post;
 
     $url = get_permalink($post->ID);
@@ -596,7 +597,7 @@ add_filter( 'nav_menu_link_attributes', 'gotomeloy_menu_atts', 10, 3 );
 function gotomeloy_menu_atts( $atts, $item, $args )
 {
   // Provide the id of the targeted menu item
-  $menu_target = array(23,24,959,1141,1142,1143,1144,18145,18146,1533,1534,1535,22544,22545,22547);
+  $menu_target = array(23,24,959,1141,1142,1143,1144,18145,18146,1533,1534,1535,22544,22545);
 
   // inspect $item
 
@@ -780,20 +781,6 @@ function gotomeloy_menu_modal_22545( $atts, $item, $args )
 
   if ($item->ID == $menu_target) {
     $atts['data-target'] = '#meny-modal-22510';
-  }
-  return $atts;
-}
-add_filter( 'nav_menu_link_attributes', 'gotomeloy_menu_modal_22547', 10, 3 );
-function gotomeloy_menu_modal_22547( $atts, $item, $args )
-{
-  // Provide the id of the targeted menu item
-  // Støtt Brygge Contact us
-  $menu_target = 22547;
-
-  // inspect $item
-
-  if ($item->ID == $menu_target) {
-    $atts['data-target'] = '#meny-modal-22520';
   }
   return $atts;
 }
