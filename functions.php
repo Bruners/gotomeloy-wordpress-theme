@@ -545,7 +545,7 @@ function related_posts( $args ) {
     $query_args = array(
       'post_type'      => $current_post_type,
       'post__not_in'   => array($post_id),
-      'posts_per_page' => '4',
+      'posts_per_page' => '-1',
       'orderby'        => 'rand',
       'no_found_rows'  => true, // We don't ned pagination so this speeds up the query
       'tax_query' => array(

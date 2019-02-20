@@ -17,7 +17,79 @@
     $hero_title = get_post_meta($post_ID, 'hero_title', true); // default value
     $hero_subtitle = get_post_meta($post_ID, 'hero_subtitle', true); // default value
 
-    if( is_search() ) {
+    $carousel_opts = get_post_meta($post_ID, 'enable_carousel', true);
+    $is_hero_carousel = is_array($carousel_opts) && in_array('is_carousel', $carousel_opts) ? true : false;
+    
+    $carousel_slides = get_post_meta($post_ID, 'enable_slides', true);
+    $slide_1_enabled = is_array($carousel_slides) && in_array('slide_1',  $carousel_slides) ? true : false;
+    $slide_2_enabled = is_array($carousel_slides) && in_array('slide_2',  $carousel_slides) ? true : false;
+    $slide_3_enabled = is_array($carousel_slides) && in_array('slide_3',  $carousel_slides) ? true : false;
+    $slide_4_enabled = is_array($carousel_slides) && in_array('slide_4',  $carousel_slides) ? true : false;
+
+    if ( $is_hero_carousel) {
+        if ( $slide_1_enabled ) {
+            $slide_1_img = get_field('slide_1_image');
+            $slide_1_title = get_field('slide_1_title');
+            $slide_1_subtitle = get_field('slide_1_subtitle');
+            $slide_1_button_1_class = get_field('slide_1_button_1_class');
+            $slide_1_button_1_id = get_field('slide_1_button_1_id');
+            $slide_1_button_1_ikon = get_field('slide_1_button_1_ikon');
+            $slide_1_button_1_tekst = get_field('slide_1_button_1_tekst');
+            $slide_1_button_1_url = get_field('slide_1_button_1_url');
+            $slide_1_button_2_class = get_field('slide_1_button_2_class');
+            $slide_1_button_2_id = get_field('slide_1_button_2_id');
+            $slide_1_button_2_ikon = get_field('slide_1_button_2_ikon');
+            $slide_1_button_2_tekst = get_field('slide_1_button_2_tekst');
+            $slide_1_button_2_url = get_field('slide_1_button_2_url');
+        }
+        if ( $slide_2_enabled ) {
+            $slide_2_img = get_field('slide_2_image');
+            $slide_2_title = get_field('slide_2_title');
+            $slide_2_subtitle = get_field('slide_2_subtitle');
+            $slide_2_button_1_class = get_field('slide_2_button_1_class');
+            $slide_2_button_1_id = get_field('slide_2_button_1_id');
+            $slide_2_button_1_ikon = get_field('slide_2_button_1_ikon');
+            $slide_2_button_1_tekst = get_field('slide_2_button_1_tekst');
+            $slide_2_button_1_url = get_field('slide_2_button_1_url');
+            $slide_2_button_2_class = get_field('slide_2_button_2_class');
+            $slide_2_button_2_id = get_field('slide_2_button_2_id');
+            $slide_2_button_2_ikon = get_field('slide_2_button_2_ikon');
+            $slide_2_button_2_tekst = get_field('slide_2_button_2_tekst');
+            $slide_2_button_2_url = get_field('slide_2_button_2_url');
+        }
+        if ( $slide_3_enabled ) {
+            $slide_3_img = get_field('slide_3_image');
+            $slide_3_title = get_field('slide_3_title');
+            $slide_3_subtitle = get_field('slide_3_subtitle');
+            $slide_3_button_1_class = get_field('slide_3_button_1_class');
+            $slide_3_button_1_id = get_field('slide_3_button_1_id');
+            $slide_3_button_1_ikon = get_field('slide_3_button_1_ikon');
+            $slide_3_button_1_tekst = get_field('slide_3_button_1_tekst');
+            $slide_3_button_1_url = get_field('slide_3_button_1_url');
+            $slide_3_button_2_class = get_field('slide_3_button_2_class');
+            $slide_3_button_2_id = get_field('slide_3_button_2_id');
+            $slide_3_button_2_ikon = get_field('slide_3_button_2_ikon');
+            $slide_3_button_2_tekst = get_field('slide_3_button_2_tekst');
+            $slide_3_button_2_url = get_field('slide_3_button_2_url');
+        }
+        if ( $slide_4_enabled ) {
+            $slide_4_img = get_field('slide_4_image');
+            $slide_4_title = get_field('slide_4_title');
+            $slide_4_subtitle = get_field('slide_4_subtitle');
+            $slide_4_button_1_class = get_field('slide_4_button_1_class');
+            $slide_4_button_1_id = get_field('slide_4_button_1_id');
+            $slide_4_button_1_ikon = get_field('slide_4_button_1_ikon');
+            $slide_4_button_1_tekst = get_field('slide_4_button_1_tekst');
+            $slide_4_button_1_url = get_field('slide_4_button_1_url');
+            $slide_4_button_2_class = get_field('slide_4_button_2_class');
+            $slide_4_button_2_id = get_field('slide_4_button_2_id');
+            $slide_4_button_2_ikon = get_field('slide_4_button_2_ikon');
+            $slide_4_button_2_tekst = get_field('slide_4_button_2_tekst');
+            $slide_4_button_2_url = get_field('slide_4_button_2_url');
+        }
+    }
+
+    if ( is_search() ) {
         $hero_title = esc_html__( 'Search Results', 'gotomeloy' );
         $hero_subtitle = sprintf( esc_html__( 'For the term "%s"', 'gotomeloy' ), get_search_query() );
     } else if( is_category() ) {
@@ -85,8 +157,8 @@
         }
 </script>
 <?php if ( !is_front_page() && $is_hero_module ) { ?>
-<!-- BEGIN: HERO MODULE -->
-    <section id="hero-module" class="sections hero <?php echo $hero_height. ' ' .$hero_img_class; ?>">
+    <!-- BEGIN: HERO MODULE -->
+    <section id="home-featured" class="sections hero <?php echo $hero_height. ' ' .$hero_img_class; ?>">
         <div class="hero-image iBG noparalax" data-img="<?php echo $hero_img; ?>"></div>
         <div class="hero-content">
             <div class="hero-header text-center">
@@ -96,18 +168,18 @@
             </div>
         </div>
     </section>
-<!-- END: HERO MODULE -->
-<?php } elseif ( is_front_page() && $is_hero_module ) { ?>
+    <!-- END: HERO MODULE -->
 
-<!-- BEGIN: HERO MODULE -->
+<?php } elseif ( is_front_page() && $is_hero_module && $is_hero_carousel ) { ?>
+    <!-- BEGIN: HERO MODULE -->
     <section id="home-featured" class="sections hero <?php echo $hero_height. ' ' .$hero_img_class; ?>">
         <div class="carousel fade-carousel slide" data-ride="carousel" data-pause="hover" data-interval="6000" id="hero-header-images">
             <!-- Indicators -->
             <ol class="carousel-indicators">
-                <li data-target="#hero-header-images" data-slide-to="0" class="active"></li>
-                <li data-target="#hero-header-images" data-slide-to="1"></li>
-                <li data-target="#hero-header-images" data-slide-to="2"></li>
-                <li data-target="#hero-header-images" data-slide-to="3"></li>
+                <?php if ( $slide_1_enabled ) { ?><li data-target="#hero-header-images" data-slide-to="0" class="active"></li> <?php } ?>
+                <?php if ( $slide_2_enabled ) { ?><li data-target="#hero-header-images" data-slide-to="1"></li> <?php } ?>
+                <?php if ( $slide_3_enabled ) { ?><li data-target="#hero-header-images" data-slide-to="2"></li> <?php } ?>
+                <?php if ( $slide_4_enabled ) { ?><li data-target="#hero-header-images" data-slide-to="3"></li> <?php } ?>
             </ol>
 
             <div class="fade-carousel__scrolldown">
@@ -116,48 +188,98 @@
 
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
+                <?php if ( $slide_1_enabled ) { ?>
                 <div class="item slides active">
-                    <div class="slide-1 cBG" data-img="linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://www.stott.no/wp-content/uploads/2019/01/hero_slide4_stottgjestehavn_1280x894_60op.jpg)"></div>
+                    <?php if( !empty($slide_1_img) ): ?>
+                    <div class="slide-1 cBG" data-img="linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(<?php echo $slide_1_img['url']; ?>)"></div>
+                    <?php endif; ?>
                     <div class="hero__carousel">
                         <hgroup>
-                            <h1><?php echo $hero_title; ?></h1>
-                            <h5><?php echo $hero_subtitle; ?></h5>
+                            <h1><?php echo $slide_1_title; ?></h1>
+                            <h5><?php echo $slide_1_subtitle; ?></h5>
                         </hgroup>
-                        <a class="btn btn-primary" role="button" href="https://www.stott.no/offers/overnatte/"><i class="fas fa-bed"></i> <?php esc_html_e('Overnatte', 'gotomeloy'); ?></a>&nbsp;
-                        <a class="btn btn-success" role="button" href="https://www.stott.no/offers/spise/"><i class="fas fa-utensils"></i></i> <?php esc_html_e('Spise', 'gotomeloy'); ?></a>
+                        <a class="btn <?php echo $slide_1_button_1_class; ?>" id="<?php echo $slide_1_button_1_id; ?>" role="button" href="<?php echo $slide_1_button_1_url; ?>" <?php if (get_field('slide_1_button_1_fancybox')) { echo ' data-fancybox'; } ?>>
+                            <i class="<?php echo $slide_1_button_1_ikon; ?>"></i> <?php echo $slide_1_button_1_tekst; ?>
+                        </a>&nbsp;
+                        <a class="btn <?php echo $slide_1_button_2_class; ?>" id="<?php echo $slide_1_button_2_id; ?>" role="button" href="<?php echo $slide_1_button_2_url; ?>" <?php if (get_field('slide_1_button_2_fancybox')) { echo ' data-fancybox'; } ?>>
+                            <i class="<?php echo $slide_1_button_2_ikon; ?>"></i> <?php echo $slide_1_button_2_tekst; ?>
+                        </a>
                     </div>
                 </div>
+                <?php } ?>
+                <?php if ( $slide_2_enabled ) { ?>
                 <div class="item slides">
-                    <div class="slide-2 cBG" data-img="linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://www.stott.no/wp-content/uploads/2018/12/hero_slide1_IMG_9329_1280x894_60op.jpg)"></div>
+                    <?php if( !empty($slide_1_img) ): ?>
+                    <div class="slide-2 cBG" data-img="linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(<?php echo $slide_2_img['url']; ?>)"></div>
+                    <?php endif; ?>
                     <div class="hero__carousel">
                         <hgroup>
-                            <h1>Sykkeltur på Støtt</h1>
-                            <h5>Sykling på Helgeland er en drøm hos mange. Med fjell, øyer, midtnattsol og uberørt natur en helt unik opplevelse som gir minner for livet.</h5>
+                            <h1><?php echo $slide_2_title; ?></h1>
+                            <h5><?php echo $slide_2_subtitle; ?></h5>
                         </hgroup>
-                        <a class="btn btn-success" role="button" href="https://www.stott.no/portfolio/sykkel/"><i class="far fa-calendar-check"></i> <?php esc_html_e('Book nå', 'gotomeloy'); ?></a>&nbsp;<a class="btn btn-info" role="button" id="stottfilm2" data-fancybox href="https://www.youtube.com/watch?v=CkxmJ592_TY"><i class="fa fa-play"></i> <?php esc_html_e('Se vår video', 'gotomeloy'); ?></a>
+                        <a class="btn <?php echo $slide_2_button_1_class; ?>" id="<?php echo $slide_2_button_1_id; ?>" role="button" href="<?php echo $slide_2_button_1_url; ?>" <?php if (get_field('slide_2_button_1_fancybox')) { echo ' data-fancybox'; } ?>>
+                            <i class="<?php echo $slide_2_button_1_ikon; ?>"></i> <?php echo $slide_2_button_1_tekst; ?>
+                        </a>&nbsp;
+                        <a class="btn <?php echo $slide_2_button_2_class; ?>" id="<?php echo $slide_2_button_2_id; ?>" role="button" href="<?php echo $slide_2_button_2_url; ?>" <?php if (get_field('slide_2_button_2_fancybox')) { echo ' data-fancybox'; } ?>>
+                            <i class="<?php echo $slide_2_button_2_ikon; ?>"></i> <?php echo $slide_2_button_2_tekst; ?>
+                        </a>
                     </div>
                 </div>
+                <?php } ?>
+                <?php if ( $slide_3_enabled ) { ?>
+                <div class="item slides">
+                    <?php if( !empty($slide_1_img) ): ?>
+                    <div class="slide-3 cBG" data-img="linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(<?php echo $slide_3_img['url']; ?>)"></div>
+                    <?php endif; ?>
+                    <div class="hero__carousel">
+                        <hgroup>
+                            <h1><?php echo $slide_3_title; ?></h1>
+                            <h5><?php echo $slide_3_subtitle; ?></h5>
+                        </hgroup>
+                        <a class="btn <?php echo $slide_3_button_1_class; ?>" id="<?php echo $slide_3_button_1_id; ?>" role="button" href="<?php echo $slide_3_button_1_url; ?>" <?php if (get_field('slide_3_button_1_fancybox')) { echo ' data-fancybox'; } ?>>
+                            <i class="<?php echo $slide_3_button_1_ikon; ?>"></i> <?php echo $slide_3_button_1_tekst; ?>
+                        </a>&nbsp;
+                        <a class="btn <?php echo $slide_3_button_2_class; ?>" id="<?php echo $slide_3_button_2_id; ?>" role="button" href="<?php echo $slide_3_button_2_url; ?>" <?php if (get_field('slide_3_button_2_fancybox')) { echo ' data-fancybox'; } ?>>
+                            <i class="<?php echo $slide_3_button_2_ikon; ?>"></i> <?php echo $slide_3_button_2_tekst; ?>
+                        </a>
+                    </div>
+                </div>
+                <?php } ?>
+                <?php if ( $slide_4_enabled ) { ?>
+                <div class="item slides">
+                    <?php if( !empty($slide_1_img) ): ?>
+                    <div class="slide-4 cBG" data-img="linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(<?php echo $slide_4_img['url']; ?>)"></div>
+                    <?php endif; ?>
+                    <div class="hero__carousel">
+                        <hgroup>
+                            <h1><?php echo $slide_4_title; ?></h1>
+                            <h5><?php echo $slide_4_subtitle; ?></h5>
+                        </hgroup>
+                        <a class="btn <?php echo $slide_4_button_1_class; ?>" id="<?php echo $slide_4_button_1_id; ?>" role="button" href="<?php echo $slide_4_button_1_url; ?>" <?php if (get_field('slide_4_button_1_fancybox')) { echo ' data-fancybox'; } ?>>
+                            <i class="<?php echo $slide_4_button_1_ikon; ?>"></i> <?php echo $slide_4_button_1_tekst; ?>
+                        </a>&nbsp;
+                        <a class="btn <?php echo $slide_4_button_2_class; ?>" id="<?php echo $slide_4_button_2_id; ?>" role="button" href="<?php echo $slide_4_button_2_url; ?>" <?php if (get_field('slide_4_button_2_fancybox')) { echo ' data-fancybox'; } ?>>
+                            <i class="<?php echo $slide_4_button_2_ikon; ?>"></i> <?php echo $slide_4_button_2_tekst; ?>
+                        </a>
+                    </div>
+                </div>
+                <?php } ?>
+                
+            </div>
+        </div>
+    </section>
+    <!-- END: HERO MODULE -->
 
-                <div class="item slides">
-                    <div class="slide-3 cBG" data-img="linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://www.stott.no/wp-content/uploads/2018/12/hero_slide2_konferansemuseum4_1280x894_60op.jpg)"></div>
-                    <div class="hero__carousel">
-                        <hgroup>
-                            <h1>Møtearena Støtt</h1>
-                            <h5>Trenger bedriften din de gode møtene med omgivelser som innbyr til inspirasjon og kreativitet, og hvor alle kan være samlet på ett sted. Å finne roen sammen med dine kollegier for å tenke nytt og strategisk eller bare en kort briefing før opplevelsene venter.</h5>
-                        </hgroup>
-                        <a class="btn btn-success" role="button" href="https://www.stott.no/portfolio/konferansemuseumet/"><i class="far fa-calendar-check"></i> <?php esc_html_e('Book nå', 'gotomeloy'); ?></a>&nbsp;<a class="btn btn-info" role="button" id="stottfilm2" data-fancybox href="https://www.youtube.com/watch?v=CkxmJ592_TY"><i class="fa fa-play"></i> <?php esc_html_e('Se vår video', 'gotomeloy'); ?></a>
-                    </div>
-                </div>
-                <div class="item slides">
-                    <div class="slide-4 cBG" data-img="linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://www.stott.no/wp-content/uploads/2018/12/hero_slide3_lwb3553_1280x894_60op.jpg)"></div>
-                    <div class="hero__carousel">
-                        <hgroup>
-                            <h1>Kajakkpadling på Støtt</h1>
-                            <h5>Å padle seg gjennom Støttvær naturreservat med ørna svevende i luften og kobben som titter nysjærring frem, er et eventyr for deg som er naturelsker og liker nordlandskysten.</h5>
-                        </hgroup>
-                        <a class="btn btn-success" role="button" href="https://www.stott.no/portfolio/utforsk-stottvaer-pa-egen-hand-i-kajakken/"> <?php esc_html_e('Book nå', 'gotomeloy'); ?></a>&nbsp;<a class="btn btn-info" role="button" id="stottfilm2" data-fancybox href="https://www.youtube.com/watch?v=CkxmJ592_TY"><i class="fa fa-play"></i> <?php esc_html_e('Se vår video', 'gotomeloy'); ?></a>
-                    </div>
-                </div>
+<?php } elseif ( is_front_page() && $is_hero_module ) { ?>
+
+    <!-- BEGIN: HERO MODULE -->
+    <section id="home-featured" class="sections hero <?php echo $hero_height. ' ' .$hero_img_class; ?>">
+        <div class="hero-image iBG noparalax" data-img="<?php echo $hero_img; ?>"></div>
+        <div class="hero-content">
+            <div class="hero-header text-center">
+                <div class="hero-header-title"><?php echo $hero_title; ?></div>
+                <div class="hero-header-subtitle"><?php echo $hero_subtitle; ?></div>
+                <div><a href="#site-body" class="scroll-down"><i class="scroll-down-icon fa fa-4x fa-inverse fa-chevron-circle-down" aria-hidden="true"></i></a></div>
             </div>
         </div>
     </section>
@@ -190,7 +312,7 @@
 
     <?php if ( !is_home() && $is_hero_module) { ?>
         <!-- BEGIN: HERO MODULE 1920x752 -->
-        <section id="hero-module" class="sections hero <?php echo $hero_height. ' ' .$hero_img_class; ?>">
+        <section id="home-featured" class="sections hero <?php echo $hero_height. ' ' .$hero_img_class; ?>">
             <div class="hero-image iBG noparalax" data-img="<?php echo $hero_img; ?>"></div>
             <div class="hero-content">
                 <div class="hero-header text-center">

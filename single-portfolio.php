@@ -62,6 +62,8 @@
 			<a class="btn btn-success link_nounderline scroll-booking" href="#book-now"><?php echo(esc_html__( 'Bestill nå', 'gotomeloy' )); ?></a>
 			<a class="btn btn-info link_nounderline scroll-contact" href="#contact-us"><?php echo(esc_html__( 'Kontakt oss', 'gotomeloy' )); ?></a><br />
 			<br />
+			<?php get_template_part( 'parts/post-meta-icons.inc' ); ?>
+
 				<?php the_content(); ?>
 			<?php endwhile; ?>
 		</div>
