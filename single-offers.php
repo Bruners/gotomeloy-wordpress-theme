@@ -83,7 +83,7 @@
 	<div class="container">
 		<div class="single-header-title"><?php echo(esc_html__( 'Relaterte aktiviteter', 'gotomeloy' )); ?></div>
 		<br />
-		<?php get_portfolio_posts(''); ?>
+		<?php get_portfolio_posts(); ?>
 	</div>
 </section>
 <!-- END: RELATED POSTS -->

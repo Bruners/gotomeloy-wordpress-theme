@@ -128,7 +128,7 @@ Template Name: Portfolio Stott
                 <div id="video-slider" class="carousel-inner" role="listbox">
                     <div class="item active">
                         <div class="video-carousel yt-video embed-responsive embed-responsive-16by9" data-yt_id="ZlQM7-BJagM">
-                            <img src="https://www.stott.no/wp-content/uploads/2019/01/placeholder_2x2_trans.jpg" class="iBG" data-img="http://i.ytimg.com/vi/ZlQM7-BJagM/sddefault.jpg" width="560" height="315" />
+                            <img src="https://www.stott.no/wp-content/uploads/2019/01/placeholder_2x2_trans.jpg" class="iBG" data-img="http://i.ytimg.com/vi/ZlQM7-BJagM/maxresdefault.jpg" width="560" height="315" />
                         </div>
                         <div class="carousel-caption">
                             <h5 class="text-center">Skattejakten LIVE</h5>
@@ -137,7 +137,7 @@ Template Name: Portfolio Stott
                     </div>
                     <div class="item">
                         <div class="video-carousel yt-video embed-responsive embed-responsive-16by9" data-yt_id="xM7d2HHvAR0">
-                            <img src="https://www.stott.no/wp-content/uploads/2019/01/placeholder_2x2_trans.jpg" class="iBG" data-img="http://i.ytimg.com/vi/xM7d2HHvAR0/sddefault.jpg" width="560" height="315" />
+                            <img src="https://www.stott.no/wp-content/uploads/2019/01/placeholder_2x2_trans.jpg" class="iBG" data-img="http://i.ytimg.com/vi/xM7d2HHvAR0/maxresdefault.jpg" width="560" height="315" />
                         </div>
                         <div class="carousel-caption">
                             <h5 class="text-center">Go to Meløy</h5>
@@ -155,7 +155,7 @@ Template Name: Portfolio Stott
                     </div>
                     <div class="item">
                         <div class="video-carousel yt-video embed-responsive embed-responsive-16by9" data-yt_id="CkxmJ592_TY">
-                            <img src="https://www.stott.no/wp-content/uploads/2019/01/placeholder_2x2_trans.jpg" class="iBG" data-img="http://i.ytimg.com/vi/CkxmJ592_TY/sddefault.jpg" width="560" height="315" />
+                            <img src="https://www.stott.no/wp-content/uploads/2019/01/placeholder_2x2_trans.jpg" class="iBG" data-img="http://i.ytimg.com/vi/CkxmJ592_TY/maxresdefault.jpg" width="560" height="315" />
                         </div>
                         <div class="carousel-caption">
                             <h5 class="text-center">Støtt Brygge Promo 2018</h5>
@@ -179,14 +179,6 @@ Template Name: Portfolio Stott
         <section class="sections padding-size-s container-bunn">
             <div id="contact-us" class="kontakt-oss">
             <div class="fb-like" data-href="https://www.facebook.com/StottBrygge/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
-            <?php
-                if ( function_exists( 'types_render_field' ) ) {
-                    $kontaktskjema_bunn = types_render_field("kontaktskjema-bunn", array('raw' => false));
-                    $kontaktskjema_logo = types_render_field("kontaktskjema-logo", array('raw' => true));
-                    $kontaktskjema_adresse = types_render_field("kontaktskjema-adress", array('raw' => false));
-                }
-            ?>
-            <?php //echo ( $kontaktskjema_bunn ); ?>
             <?php get_template_part( 'parts/contact-form-large.inc' ); ?>
             <style>
                 #map-container { height: 300px; }
@@ -195,8 +187,20 @@ Template Name: Portfolio Stott
                 <div id="map-outer" class="col-md-12">
                     <div id="address" class="col-md-4 text-center">
                         <address>
-                            <p><img src="<?php echo ( $kontaktskjema_logo ); ?>"><br /></p>
-                            <p><?php echo ( $kontaktskjema_adresse ); ?></p>
+                            <?php
+                                $options = get_option( 'gotomeloy_theme_options' );
+                                $contact_form_logo = $options['contact-form-logo'];
+                                $contact_form_adresse = $options['contact-form-adresse'];
+                                                         
+                                if(!empty($contact_form_logo)) {
+                                    echo ('<p><img src="' . $contact_form_logo . '" /><br /></p>');
+                                }
+
+                                if(!empty($contact_form_adresse))
+                                {
+                                    echo ('<p>' . html_entity_decode($contact_form_adresse) . '</p>');
+                                }
+                            ?>
                         </address>
                     </div>
                     <div id="map-container" class="col-md-8"></div>

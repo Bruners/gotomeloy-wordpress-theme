@@ -225,6 +225,13 @@ function wsds_defer_scripts( $tag, $handle, $src )
     }
   }
 
+  function gotomeloy_backend_styles()
+  {
+      // Enqueue
+        wp_enqueue_style( 'gotomeloy-backend-style', GOTOMELOY_ADMIN_URI . '/style.css');
+        wp_enqueue_style('fontawesome', 'https://use.fontawesome.com/releases/v5.0.13/css/all.css', null, '5.0.13', 'all' );
+  }
+
 #-----------------------------------------------------------------#
 # Register and Enqueue Frontend JS
 #-----------------------------------------------------------------#
@@ -268,6 +275,7 @@ function wsds_defer_scripts( $tag, $handle, $src )
   require_once GOTOMELOY_ADMIN . '/customizer/functions.php';
   require_once GOTOMELOY_ADMIN . '/plugins/functions.php';
   require_once GOTOMELOY_ADMIN . '/metaboxes/functions.php';
+  require_once GOTOMELOY_ADMIN . '/theme-settings.php';
 
   // require HELPER theme functions
   require_once GOTOMELOY_INC . '/lib/lamark.inc.php';
@@ -304,105 +312,6 @@ function language_selector_flags_nolist()
 
 //* Add new featured portfolio image size
 add_image_size( 'portfolio-featured', 586, 478, TRUE );
-
-
-// Sharing icons
-
-function social_share_menu_item()
-{
-  add_submenu_page("options-general.php", "Social Share", "Social Share", "manage_options", "social-share", "social_share_page");
-}
-
-add_action("admin_menu", "social_share_menu_item");
-
-function social_share_page()
-{
-   ?>
-      <div class="wrap">
-         <h1>Social Sharing Options</h1>
-
-         <form method="post" action="options.php">
-            <?php
-               settings_fields("social_share_config_section");
-
-               do_settings_sections("social-share");
-
-               submit_button();
-            ?>
-         </form>
-      </div>
-   <?php
-}
-
-function social_share_settings()
-{
-    add_settings_section("social_share_config_section", "", null, "social-share");
-
-    add_settings_field("social-share-facebook", __('Vis deleknapp for Facebook?', 'gotomeloy'), "social_share_facebook_checkbox", "social-share", "social_share_config_section");
-    add_settings_field("social-share-twitter", __('Vis deleknapp for Twitter?', 'gotomeloy'), "social_share_twitter_checkbox", "social-share", "social_share_config_section");
-    add_settings_field("social-share-googleplus", __('Vis deleknapp for Google+?', 'gotomeloy'), "social_share_googleplus_checkbox", "social-share", "social_share_config_section");
-
-    register_setting("social_share_config_section", "social-share-facebook");
-    register_setting("social_share_config_section", "social-share-twitter");
-    register_setting("social_share_config_section", "social-share-googleplus");
-}
-
-function social_share_facebook_checkbox()
-{
-   ?>
-        <input type="checkbox" name="social-share-facebook" value="1" <?php checked(1, get_option('social-share-facebook'), true); ?> />
-   <?php
-}
-
-function social_share_twitter_checkbox()
-{
-   ?>
-        <input type="checkbox" name="social-share-twitter" value="1" <?php checked(1, get_option('social-share-twitter'), true); ?> />
-   <?php
-}
-
-function social_share_googleplus_checkbox()
-{
-   ?>
-        <input type="checkbox" name="social-share-googleplus" value="1" <?php checked(1, get_option('social-share-googleplus'), true); ?> />
-   <?php
-}
-
-add_action("admin_init", "social_share_settings");
-
-function add_social_share_icons()
-{
-    $text_share = __('Del dette:', 'gotomeloy');
-    $html = "<div class='clearfix'><div class='sb-social-icon'><h5 class='sb-title'>" . $text_share . "</h5><div class='sb-content'><ul>";
-      
-    global $post;
-
-    $url = get_permalink($post->ID);
-    $url = esc_url($url);
-    $text_fb = __(  'Klikk for å dele på Facebook', 'gotomeloy' );
-    $text_gl = __(  'Klikk for å dele på Google+', 'gotomeloy' );
-    $text_tw = __(  'Klikk for å dele på Twitter', 'gotomeloy' );
-
-    if(get_option("social-share-facebook") == 1)
-    {
-        $html = $html . "<li><a href='http://www.facebook.com/sharer.php?u=" . $url . "' rel='nofollow' class='fab fa-facebook' target='_blank' title='" . $text_fb . "'><span class='sr-only'>" . $text_fb . "</span></a></li>";
-    }
-
-    if(get_option("social-share-googleplus") == 1)
-    {
-        $html = $html . "<li><a href='https://plus.google.com/share?url=" . $url . "' rel='nofollow' class='fab fa-google' target='_blank' title='" . $text_gl . "'><span class='sr-only'>" . $text_gl . "</span></a></li>";
-    }
-
-    if(get_option("social-share-twitter") == 1)
-    {
-        $html = $html . "<li><a href='https://twitter.com/share?url=" . $url . "' rel='nofollow' class='fab fa-twitter' target='_blank' title='" . $text_tw . "'><span class='sr-only'>" . $text_tw . "</span></a></li>";
-    }
-
-
-    $html = $html . "<li class='share-end'></li></ul></div></div></div>";
-
-    return $html;
-}
 
 
 function cats_related_post() {

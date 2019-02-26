@@ -1,6 +1,6 @@
 <?php 
 
-
+// Display meta icons set in posts
 if( get_field('ikon_enable') ):
 	
 ?>

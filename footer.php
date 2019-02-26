@@ -7,27 +7,8 @@
 
                 $post_id = get_the_ID();
             ?>
-                <?php if ($post_id == 18138 || $post_id == 122520 || $post_id == 1530) { ?>
-                    <!-- Modal -->
-                    <div id="meny-modal-<?php echo(get_the_ID()); ?>" role="dialog" aria-labeledby="<?php the_title(); ?>" class="modal fade" tabindex="-1">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button class="close" type="button" aria-label="Close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
-                                    <h5 class="modal-title"><?php the_title(); ?></h5>
-                                </div>
-                                <div class="modal-body">
-                                    <?php get_template_part( 'parts/contact-form.inc' ); ?>
-                                    <br />
-                                    <?php if ( function_exists( 'add_social_share_icons' ) ) { echo add_social_share_icons(); } ?>
-                                </div>
-                                <div class="modal-footer">
-                                    <button class="btn btn-default" type="button" aria-label="Close" data-dismiss="modal">Lukk</button>
-                                </div>
-                            </div><!-- /.modal-content -->
-                        </div><!-- /.modal-dialog -->
-                    </div><!-- /.modal -->
-                <?php } else { ?>
+
+                <?php if ($post_id == 18140 || $post_id == 22519) { ?>
                     <!-- Modal -->
                     <div id="meny-modal-<?php echo(get_the_ID()); ?>" role="dialog" aria-labeledby="<?php the_title(); ?>" class="modal fade" tabindex="-1">
                         <div class="modal-dialog" role="document">
@@ -53,29 +34,26 @@
             
             <!-- BEGIN: SITE FOOTER -->
             <?php
-            if ( function_exists( 'types_render_field' ) ) {
-                    $facebook_url = types_render_field("gotomeloy-facebook", array('raw' => true));
-                    $youtube_url = types_render_field("gotomeloy-youtube", array('raw' => true));
-                    $instagram_url = types_render_field("gotomeloy-instagram", array('raw' => true));
-                    $twitter_url = types_render_field("gotomeloy-twitter", array('raw' => true));
-                    $tripadvisor_url = types_render_field("gotomeloy-tripadvisor", array('raw' => true));
 
-                    $social_args = array(
-                        'post_type' => 'page',
-                        'post_per_page' => -1
-                    );
-                    $social_query = new WP_Query($social_args);
-                }
+            if ( function_exists ( 'add_social_share_icons' ) ) {
+                $options = get_option( 'gotomeloy_theme_options' );
+
+                $social_share_facebook_profile = $options['social-share-facebook-profile'];
+                $social_share_youtube_profile = $options['social-share-youtube-profile'];
+                $social_share_instagram_profile = $options['social-share-instagram-profile'];
+                $social_share_twitter_profile = $options['social-share-twitter-profile'];
+                $social_share_tripadvisor_profile = $options['social-share-tripadvisor-profile'];
+            }
             ?>
             <footer id="site-footer">
                 <ul class="social-media">
-                    <?php if(!empty($facebook_url)) echo '<li><a href="' . $facebook_url .  '" target="blank"><i class="fab fa-facebook-square"></i></a></li>'; ?>
-                    <?php if(!empty($youtube_url)) echo '<li><a href="' . $youtube_url .   '" target="blank"><i class="fab fa-youtube"></i></a></li>'; ?>
-                    <?php if(!empty($instagram_url)) echo '<li><a href="' . $instagram_url . '" target="blank"><i class="fab fa-instagram"></i></a></li>'; ?>
-                    <?php if(!empty($twitter_url)) echo '<li><a href="' . $twitter_url .   '" target="blank"><i class="fab fa-twitter"></i></a></li>'; ?>
-                    <?php if(!empty($tripadvisor_url)) echo '<li><a href="' . $tripadvisor_url . '" target="blank"><i class="fab fa-tripadvisor"></i></a></li>'; ?>
+                    <?php if(!empty($social_share_facebook_profile)) echo '<li><a href="' . $social_share_facebook_profile .  '" target="blank"><i class="fab fa-facebook-square"></i></a></li>'; ?>
+                    <?php if(!empty($social_share_youtube_profile)) echo '<li><a href="' . $social_share_youtube_profile .   '" target="blank"><i class="fab fa-youtube"></i></a></li>'; ?>
+                    <?php if(!empty($social_share_instagram_profile)) echo '<li><a href="' . $social_share_instagram_profile . '" target="blank"><i class="fab fa-instagram"></i></a></li>'; ?>
+                    <?php if(!empty($social_share_twitter_profile)) echo '<li><a href="' . $social_share_twitter_profile .   '" target="blank"><i class="fab fa-twitter"></i></a></li>'; ?>
+                    <?php if(!empty($social_share_tripadvisor_profile)) echo '<li><a href="' . $social_share_tripadvisor_profile . '" target="blank"><i class="fab fa-tripadvisor"></i></a></li>'; ?>
                 </ul>
-                <span class="credits"><?php echo esc_html( get_bloginfo('name') ); ?> © 2016-2018</span>
+                <span class="credits"><?php echo esc_html( get_bloginfo('name') ); ?> © 2016-2019</span>
                 <ul class="language-selector">
                     <!-- Inserts a <li> list with flags -->
                     <?php language_selector_flags(); ?>

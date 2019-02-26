@@ -4,482 +4,176 @@
 //define( 'ACF_LITE', false );
 
 // Meta Panel Configuration
-if(function_exists("register_field_group"))
-{
-	register_field_group(array (
-		'id' => 'acf_post-ingress',
-		'title' => 'Ingress',
-		'fields' => array (
-			array (
-				'key' => 'field_5c20a83ab64bb',
-				'label' => 'Post Ingress',
-				'name' => 'post_ingress',
-				'type' => 'text',
-				'default_value' => '',
-				'placeholder' => '',
-				'prepend' => '',
-				'append' => '',
-				'formatting' => 'html',
-				'maxlength' => '',
-			),
-		),
-		'location' => array (
-			array (
-				array (
-					'param' => 'post_type',
-					'operator' => '==',
-					'value' => 'post',
-					'order_no' => 0,
-					'group_no' => 0,
-				),
-			),
-			array (
-				array (
-					'param' => 'post_type',
-					'operator' => '==',
-					'value' => 'page',
-					'order_no' => 0,
-					'group_no' => 1,
-				),
-			),
-			array (
-				array (
-					'param' => 'post_type',
-					'operator' => '==',
-					'value' => 'portfolio',
-					'order_no' => 0,
-					'group_no' => 0,
-				),
-			),
-			array (
-				array (
-					'param' => 'post_type',
-					'operator' => '==',
-					'value' => 'meny-modal',
-					'order_no' => 0,
-					'group_no' => 0,
-				),
-			),
-			array (
-				array (
-					'param' => 'post_type',
-					'operator' => '==',
-					'value' => 'offers',
-					'order_no' => 0,
-					'group_no' => 0,
-				),
-			),
-		),
-		'options' => array (
-			'position' => 'normal',
-			'layout' => 'default',
-			'hide_on_screen' => array (
-			),
-		),
-		'menu_order' => 0,
-	));
-	register_field_group(array (
-		'id' => 'acf_contact-form',
-		'title' => 'Contact Form',
-		'fields' => array (
-			array (
-				'key' => 'field_5627b993f5e5e',
-				'label' => 'Form Shortcode',
-				'name' => 'contact_form_shortcode',
-				'type' => 'text',
-				'default_value' => '',
-				'placeholder' => '[contact-form-7 id="XXX" title="XXX"]',
-				'prepend' => '',
-				'append' => '',
-				'formatting' => 'html',
-				'maxlength' => '',
-			),
-		),
-		'location' => array (
-			array (
-				array (
-					'param' => 'page_template',
-					'operator' => '==',
-					'value' => 'template-contact.php',
-					'order_no' => 0,
-					'group_no' => 0,
-				),
-			),
-		),
-		'options' => array (
-			'position' => 'side',
-			'layout' => 'default',
-			'hide_on_screen' => array (
-			),
-		),
-		'menu_order' => 0,
-	));
-	register_field_group(array (
-		'id' => 'acf_contact-info',
-		'title' => 'Contact Info',
-		'fields' => array (
-			array (
-				'key' => 'field_5627b6a7899ad',
-				'label' => 'Short Message',
-				'name' => 'contact_info_msg',
-				'type' => 'text',
-				'default_value' => '',
-				'placeholder' => '',
-				'prepend' => '',
-				'append' => '',
-				'formatting' => 'html',
-				'maxlength' => '',
-			),
-			array (
-				'key' => 'field_56277c7d6920b',
-				'label' => 'Email Address',
-				'name' => 'contact_email',
-				'type' => 'email',
-				'default_value' => '',
-				'placeholder' => 'admin@example.com',
-				'prepend' => '',
-				'append' => '',
-			),
-			array (
-				'key' => 'field_56277cf66920c',
-				'label' => 'Phone Number',
-				'name' => 'contact_phone_number',
-				'type' => 'text',
-				'default_value' => '',
-				'placeholder' => '+00 123 456 7890',
-				'prepend' => '',
-				'append' => '',
-				'formatting' => 'html',
-				'maxlength' => '',
-			),
-			array (
-				'key' => 'field_56277d466920d',
-				'label' => 'Address',
-				'name' => 'contact_address',
-				'type' => 'textarea',
-				'default_value' => '',
-				'placeholder' => '',
-				'maxlength' => '',
-				'rows' => '',
-				'formatting' => 'br',
-			),
-		),
-		'location' => array (
-			array (
-				array (
-					'param' => 'page_template',
-					'operator' => '==',
-					'value' => 'template-contact.php',
-					'order_no' => 0,
-					'group_no' => 0,
-				),
-			),
-		),
-		'options' => array (
-			'position' => 'normal',
-			'layout' => 'default',
-			'hide_on_screen' => array (
-			),
-		),
-		'menu_order' => 0,
-	));
-	register_field_group(array (
-		'id' => 'acf_hero-header',
-		'title' => 'Hero Header',
-		'fields' => array (
-			array (
-				'key' => 'field_5626b57c5b2e6',
-				'label' => 'Title',
-				'name' => 'hero_title',
-				'type' => 'text',
-				'default_value' => '',
-				'placeholder' => '',
-				'prepend' => '',
-				'append' => '',
-				'formatting' => 'html',
-				'maxlength' => '',
-			),
-			array (
-				'key' => 'field_5626b5955b2e7',
-				'label' => 'Subtitle',
-				'name' => 'hero_subtitle',
-				'type' => 'text',
-				'default_value' => '',
-				'placeholder' => '',
-				'prepend' => '',
-				'append' => '',
-				'formatting' => 'html',
-				'maxlength' => '',
-			),
-			array (
-				'key' => 'field_5626b5a05b2e8',
-				'label' => 'Hero Image',
-				'name' => 'hero_bg_img',
-				'type' => 'image',
-				'save_format' => 'url',
-				'preview_size' => 'medium',
-				'library' => 'all',
-			),
-			array (
-				'key' => 'field_5626b5c95b2e9',
-				'label' => 'Hero Height',
-				'name' => 'hero_height',
-				'type' => 'select',
-				'required' => 1,
-				'choices' => array (
-					'small' => 'Small',
-					'medium' => 'Medium',
-					'big' => 'Big',
-					'full' => 'Full',
-				),
-				'default_value' => 'small',
-				'allow_null' => 0,
-				'multiple' => 0,
-			),
-			array (
-				'key' => 'field_5626b6095b2ea',
-				'label' => 'Additional Options',
-				'name' => 'hero_additional_options',
-				'type' => 'checkbox',
-				'choices' => array (
-					'is_hero' => 'Enable Hero Header',
-				),
-				'default_value' => '',
-				'layout' => 'vertical',
-			),
-		),
-		'location' => array (
-			array (
-				array (
-					'param' => 'post_type',
-					'operator' => '==',
-					'value' => 'post',
-					'order_no' => 0,
-					'group_no' => 0,
-				),
-			),
-			array (
-				array (
-					'param' => 'post_type',
-					'operator' => '==',
-					'value' => 'page',
-					'order_no' => 0,
-					'group_no' => 1,
-				),
-			),
-			array (
-				array (
-					'param' => 'post_type',
-					'operator' => '==',
-					'value' => 'portfolio',
-					'order_no' => 0,
-					'group_no' => 0,
-				),
-			),
-			array (
-				array (
-					'param' => 'post_type',
-					'operator' => '==',
-					'value' => 'meny-modal',
-					'order_no' => 0,
-					'group_no' => 0,
-				),
-			),
-			array (
-				array (
-					'param' => 'post_type',
-					'operator' => '==',
-					'value' => 'offers',
-					'order_no' => 0,
-					'group_no' => 0,
-				),
-			),
-		),
-		'options' => array (
-			'position' => 'normal',
-			'layout' => 'default',
-			'hide_on_screen' => array (
-			),
-		),
-		'menu_order' => 0,
-	));
-	register_field_group(array (
-		'id' => 'acf_portfolio-details',
-		'title' => 'Portfolio Details',
-		'fields' => array (
-			array (
-				'key' => 'field_5627c76e06991',
-				'label' => 'Portfolio Category',
-				'name' => 'portfolio_category',
-				'type' => 'taxonomy',
-				'taxonomy' => 'portfolio_category',
-				'field_type' => 'select',
-				'allow_null' => 1,
-				'load_save_terms' => 0,
-				'return_format' => 'id',
-				'multiple' => 0,
-			),
-			array (
-				'key' => 'field_5627c7e2ca2cd',
-				'label' => 'Portfolio Columns',
-				'name' => 'portfolio_columns',
-				'type' => 'select',
-				'required' => 1,
-				'choices' => array (
-					1 => 'One Column',
-					2 => 'Two Columns',
-					3 => 'Three Columns',
-					4 => 'Four Columns',
-					5 => 'Five Columns',
-					6 => 'Six Columns',
-				),
-				'default_value' => 3,
-				'allow_null' => 0,
-				'multiple' => 0,
-			),
-			array (
-				'key' => 'field_5627c850cfe23',
-				'label' => 'Additional Options',
-				'name' => 'portfolio_additional_options',
-				'type' => 'checkbox',
-				'choices' => array (
-					'is_filtration' => 'Enable Filteration',
-					'is_masonry' => 'Enable Masonry',
-				),
-				'default_value' => 'is_filtration
-	is_masonry',
-				'layout' => 'vertical',
-			),
-		),
-		'location' => array (
-			array (
-				array (
-					'param' => 'page_template',
-					'operator' => '==',
-					'value' => 'archive-portfolio.php',
-					'order_no' => 0,
-					'group_no' => 0,
-				),
-			),
-			array (
-				array (
-					'param' => 'page_template',
-					'operator' => '==',
-					'value' => 'template-ornes.php',
-					'order_no' => 0,
-					'group_no' => 1,
-				),
-			),
-			array (
-				array (
-					'param' => 'page_template',
-					'operator' => '==',
-					'value' => 'template-glomfjord.php',
-					'order_no' => 0,
-					'group_no' => 1,
-				),
-			),
-			array (
-				array (
-					'param' => 'page_template',
-					'operator' => '==',
-					'value' => 'template-stott.php',
-					'order_no' => 0,
-					'group_no' => 1,
-				),
-			),
-			array (
-				array (
-					'param' => 'page_template',
-					'operator' => '==',
-					'value' => 'template-gotomeloy.php',
-					'order_no' => 0,
-					'group_no' => 1,
-				),
-			),
-		),
-		'options' => array (
-			'position' => 'normal',
-			'layout' => 'default',
-			'hide_on_screen' => array (
-			),
-		),
-		'menu_order' => 0,
-	));
-	register_field_group(array (
-		'id' => 'acf_project-details',
-		'title' => 'Project Details',
-		'fields' => array (
-			array (
-				'key' => 'field_5627e2fd3d55c',
-				'label' => 'Portfolio Page',
-				'name' => 'portfolio_page',
-				'type' => 'page_link',
-				'required' => 1,
-				'post_type' => array (
-					0 => 'page',
-				),
-				'allow_null' => 1,
-				'multiple' => 0,
-			),
-			array (
-				'key' => 'field_5627f51b74d37',
-				'label' => 'Custom URL',
-				'name' => 'project_custom_url',
-				'type' => 'text',
-				'default_value' => '',
-				'placeholder' => 'http://www.example.com',
-				'prepend' => '',
-				'append' => '',
-				'formatting' => 'html',
-				'maxlength' => '',
-			),
-			array (
-				'key' => 'field_5627dc2e2c2cf',
-				'label' => 'Thumbnail Dimension',
-				'name' => 'project_thumb_dimension',
-				'type' => 'checkbox',
-				'choices' => array (
-					'w2' => '2x Thumbnail Width',
-					'h2' => '2x Thumbnail Height',
-				),
-				'default_value' => '',
-				'layout' => 'vertical',
-			),
-		),
-		'location' => array (
-			array (
-				array (
-					'param' => 'post_type',
-					'operator' => '==',
-					'value' => 'portfolio',
-					'order_no' => 0,
-					'group_no' => 0,
-				),
-			),
-		),
-		'options' => array (
-			'position' => 'normal',
-			'layout' => 'default',
-			'hide_on_screen' => array (
-			),
-		),
-		'menu_order' => 0,
-	));
-}
 
 if( function_exists('acf_add_local_field_group') ):
 
 acf_add_local_field_group(array(
 	'key' => 'group_5c6276ae9a29e',
-	'title' => 'Hero Carousel',
+	'title' => 'Hero Header',
 	'fields' => array(
+		array(
+			'key' => 'field_5c6e848773524',
+			'label' => 'Enable Hero Header',
+			'name' => 'hero_additional_options',
+			'type' => 'checkbox',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array(
+				'is_hero' => 'Enable Hero Header',
+			),
+			'allow_custom' => 0,
+			'default_value' => array(
+			),
+			'layout' => 'vertical',
+			'toggle' => 0,
+			'return_format' => 'value',
+			'save_custom' => 0,
+		),
+		array(
+			'key' => 'field_5c6e841473523',
+			'label' => 'Hero Height',
+			'name' => 'hero_height',
+			'type' => 'select',
+			'instructions' => '',
+			'required' => 1,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array(
+				'small' => 'Small',
+				'medium' => 'Medium',
+				'big' => 'Big',
+				'full' => 'Full',
+			),
+			'default_value' => array(
+				0 => 'small',
+			),
+			'allow_null' => 0,
+			'multiple' => 0,
+			'ui' => 0,
+			'return_format' => 'value',
+			'ajax' => 0,
+			'placeholder' => '',
+		),
+		array(
+			'key' => 'field_5c6e87e8f710f',
+			'label' => 'Default Hero',
+			'name' => '',
+			'type' => 'accordion',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => array(
+				array(
+					array(
+						'field' => 'field_5c6276f509ff0',
+						'operator' => '!=',
+						'value' => 'is_carousel',
+					),
+				),
+			),
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'open' => 1,
+			'multi_expand' => 0,
+			'endpoint' => 0,
+		),
+		array(
+			'key' => 'field_5c6e83b273520',
+			'label' => 'Title',
+			'name' => 'hero_title',
+			'type' => 'text',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'maxlength' => '',
+		),
+		array(
+			'key' => 'field_5c6e83c773521',
+			'label' => 'Subtitle',
+			'name' => 'hero_subtitle',
+			'type' => 'text',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'maxlength' => '',
+		),
+		array(
+			'key' => 'field_5c6e83d473522',
+			'label' => 'Hero Image',
+			'name' => 'hero_bg_img',
+			'type' => 'image',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'return_format' => 'url',
+			'preview_size' => 'medium',
+			'library' => 'all',
+			'min_width' => '',
+			'min_height' => '',
+			'min_size' => '',
+			'max_width' => '',
+			'max_height' => '',
+			'max_size' => '',
+			'mime_types' => '',
+		),
+		array(
+			'key' => 'field_5c6e836b7351f',
+			'label' => 'Default Hero',
+			'name' => '',
+			'type' => 'accordion',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'open' => 1,
+			'multi_expand' => 0,
+			'endpoint' => 1,
+		),
 		array(
 			'key' => 'field_5c6276f509ff0',
 			'label' => 'Enable Carousel',
 			'name' => 'enable_carousel',
 			'type' => 'checkbox',
-			'instructions' => '',
+			'instructions' => 'Only enabled for front page',
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
@@ -1679,7 +1373,7 @@ acf_add_local_field_group(array(
 		array(
 			'key' => 'field_5c63fe1ec0db9',
 			'label' => 'Button 1 URL',
-			'name' => 'slide_5_button_1_url',
+			'name' => 'slide_4_button_1_url',
 			'type' => 'link',
 			'instructions' => '',
 			'required' => 0,
@@ -1694,7 +1388,7 @@ acf_add_local_field_group(array(
 		array(
 			'key' => 'field_5c6bef92ebdb6',
 			'label' => 'Button 1 Fancybox',
-			'name' => 'slide_5_button_1_fancybox',
+			'name' => 'slide_4_button_1_fancybox',
 			'type' => 'true_false',
 			'instructions' => '',
 			'required' => 0,
@@ -1830,6 +1524,22 @@ acf_add_local_field_group(array(
 			'ui_on_text' => '',
 			'ui_off_text' => '',
 		),
+		array(
+			'key' => 'field_5c6e8dd208b0b',
+			'label' => '',
+			'name' => '',
+			'type' => 'tab',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'placement' => 'top',
+			'endpoint' => 1,
+		),
 	),
 	'location' => array(
 		array(
@@ -1841,37 +1551,37 @@ acf_add_local_field_group(array(
 		),
 		array(
 			array(
-				'param' => 'page_type',
+				'param' => 'post_type',
 				'operator' => '==',
-				'value' => 'front_page',
+				'value' => 'page',
 			),
 		),
 		array(
 			array(
-				'param' => 'post_template',
+				'param' => 'post_type',
 				'operator' => '==',
-				'value' => 'template-stott.php',
+				'value' => 'portfolio',
 			),
 		),
 		array(
 			array(
-				'param' => 'post_template',
+				'param' => 'post_type',
 				'operator' => '==',
-				'value' => 'template-ornes.php',
+				'value' => 'offers',
 			),
 		),
 		array(
 			array(
-				'param' => 'post_template',
+				'param' => 'post_type',
 				'operator' => '==',
-				'value' => 'template-gotomeloy.php',
+				'value' => 'tjeneste',
 			),
 		),
 		array(
 			array(
-				'param' => 'post_template',
+				'param' => 'post_type',
 				'operator' => '==',
-				'value' => 'template-glomfjord.php',
+				'value' => 'meny-modal',
 			),
 		),
 		array(
@@ -1888,7 +1598,7 @@ acf_add_local_field_group(array(
 	'label_placement' => 'top',
 	'instruction_placement' => 'label',
 	'hide_on_screen' => '',
-	'active' => 1,
+	'active' => true,
 	'description' => '',
 ));
 
@@ -3125,8 +2835,303 @@ acf_add_local_field_group(array(
 	'label_placement' => 'top',
 	'instruction_placement' => 'label',
 	'hide_on_screen' => '',
-	'active' => 1,
+	'active' => true,
+	'description' => '',
+));
+
+acf_add_local_field_group(array(
+	'key' => 'group_5c6e823d712c5',
+	'title' => 'Ingress',
+	'fields' => array(
+		array(
+			'key' => 'field_5c6e828b37aae',
+			'label' => 'Post ingress',
+			'name' => 'post_ingress',
+			'type' => 'textarea',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'maxlength' => '',
+			'rows' => 2,
+			'new_lines' => '',
+		),
+	),
+	'location' => array(
+		array(
+			array(
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'portfolio',
+			),
+		),
+		array(
+			array(
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'offers',
+			),
+		),
+		array(
+			array(
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'page',
+			),
+		),
+		array(
+			array(
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'meny-modal',
+			),
+		),
+		array(
+			array(
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'post',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'acf_after_title',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+	'active' => true,
+	'description' => '',
+));
+
+acf_add_local_field_group(array(
+	'key' => 'group_5c6e8a133d287',
+	'title' => 'Portfolio Details',
+	'fields' => array(
+		array(
+			'key' => 'field_5c6e8a76543eb',
+			'label' => 'Portfolio Category',
+			'name' => 'portfolio_category',
+			'type' => 'taxonomy',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'taxonomy' => 'portfolio_category',
+			'field_type' => 'select',
+			'allow_null' => 0,
+			'add_term' => 1,
+			'save_terms' => 0,
+			'load_terms' => 0,
+			'return_format' => 'id',
+			'multiple' => 0,
+		),
+		array(
+			'key' => 'field_5c6e8adf543ec',
+			'label' => 'Portfolio Columns',
+			'name' => 'portfolio_columns',
+			'type' => 'select',
+			'instructions' => '',
+			'required' => 1,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array(
+				1 => 'One Column',
+				2 => 'Two Columns',
+				3 => 'Three Columns',
+				4 => 'Four Columns',
+				5 => 'Five Columns',
+				6 => 'Six Columns',
+			),
+			'default_value' => array(
+				0 => 3,
+			),
+			'allow_null' => 0,
+			'multiple' => 0,
+			'ui' => 0,
+			'return_format' => 'value',
+			'ajax' => 0,
+			'placeholder' => '',
+		),
+		array(
+			'key' => 'field_5c6e8b41543ed',
+			'label' => 'Additional Options',
+			'name' => 'portfolio_additional_options',
+			'type' => 'checkbox',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array(
+				'is_filtration' => 'Enable Filteration',
+				'is_masonry' => 'Enable Masonry',
+			),
+			'allow_custom' => 0,
+			'default_value' => array(
+				0 => 'is_filtration',
+				1 => 'is_masonry',
+			),
+			'layout' => 'vertical',
+			'toggle' => 0,
+			'return_format' => 'value',
+			'save_custom' => 0,
+		),
+	),
+	'location' => array(
+		array(
+			array(
+				'param' => 'post_template',
+				'operator' => '==',
+				'value' => 'archive-portfolio.php',
+			),
+		),
+		array(
+			array(
+				'param' => 'post_template',
+				'operator' => '==',
+				'value' => 'template-stott.php',
+			),
+		),
+		array(
+			array(
+				'param' => 'post_template',
+				'operator' => '==',
+				'value' => 'template-gotomeloy.php',
+			),
+		),
+		array(
+			array(
+				'param' => 'post_template',
+				'operator' => '==',
+				'value' => 'template-ornes.php',
+			),
+		),
+		array(
+			array(
+				'param' => 'post_template',
+				'operator' => '==',
+				'value' => 'template-glomfjord.php',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'normal',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+	'active' => true,
+	'description' => '',
+));
+
+acf_add_local_field_group(array(
+	'key' => 'group_5c6e8bb1d9e38',
+	'title' => 'Project Details',
+	'fields' => array(
+		array(
+			'key' => 'field_5c6e8bd1cdab0',
+			'label' => 'Portfolio Page',
+			'name' => 'portfolio_page',
+			'type' => 'page_link',
+			'instructions' => '',
+			'required' => 1,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'post_type' => array(
+				0 => 'page',
+			),
+			'taxonomy' => '',
+			'allow_null' => 1,
+			'allow_archives' => 1,
+			'multiple' => 0,
+		),
+		array(
+			'key' => 'field_5c6e8c16cdab1',
+			'label' => 'Custom URL',
+			'name' => 'project_custom_url',
+			'type' => 'text',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => 'http://www.example.com',
+			'prepend' => '',
+			'append' => '',
+			'maxlength' => '',
+		),
+		array(
+			'key' => 'field_5c6e8c45cdab2',
+			'label' => 'Thumbnail Dimension',
+			'name' => 'project_thumb_dimension',
+			'type' => 'checkbox',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array(
+				'w2' => '2x Thumbnail Width',
+				'h2' => '2x Thumbnail Height',
+			),
+			'allow_custom' => 0,
+			'default_value' => array(
+			),
+			'layout' => 'vertical',
+			'toggle' => 0,
+			'return_format' => 'value',
+			'save_custom' => 0,
+		),
+	),
+	'location' => array(
+		array(
+			array(
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'portfolio',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'normal',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+	'active' => true,
 	'description' => '',
 ));
 
 endif;
+
+
+?>
