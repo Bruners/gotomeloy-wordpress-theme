@@ -69,37 +69,36 @@ Template Name: Pakketur Stott
 </style>
 <?php
 	$hero_title = !empty($hero_title) ? $hero_title : get_the_title();
-	if ( function_exists( 'types_render_field' ) ) {
-		$bokun_widget = types_render_field("bokun-widget", array('raw' => true));
-		$map_marker_1 = types_render_field("map-marker-1", array('raw' => false));
-		$map_marker_2 = types_render_field("map-marker-2", array('raw' => false));
-		$map_marker_3 = types_render_field("map-marker-3", array('raw' => false));
-		$map_custom = types_render_field("custom-map", array('raw' => false));
+	$post_ID = get_the_ID();
 
-		if ($map_custom == 1) {
-			$map_latlng = types_render_field("custom-map-latlng", array('raw' => false));
-			$map_zoom = types_render_field("custom-map-zoom", array('raw' => false));
-		} else {
-			$map_latlng = "67.0120865,13.8881624";
-			$map_zoom = "8";
-		}
+	$is_custom_map = get_post_meta($post_ID, 'custom_map', true);
 
-		if ($map_marker_1 == 1) {
-			$marker1_title = types_render_field("map-marker-1-title", array('raw' => false));
-			$marker1_latlng = types_render_field("map-marker-1-latlng", array('raw' => false));
-			$marker1_desc = types_render_field("map-marker-1-desc", array('raw' => false));
-		}
-		if ($map_marker_2 == 1) {
-			$marker2_title = types_render_field("map-marker-2-title", array('raw' => false));
-			$marker2_latlng = types_render_field("map-marker-2-latlng", array('raw' => false));
-			$marker2_desc = types_render_field("map-marker-2-desc", array('raw' => false));
-		}
-		if ($map_marker_3 == 1) {
-			$marker3_title = types_render_field("map-marker-3-title", array('raw' => false));
-			$marker3_latlng = types_render_field("map-marker-3-latlng", array('raw' => false));
-			$marker3_desc = types_render_field("map-marker-3-desc", array('raw' => false));
-		}
-	}
+    if ($is_custom_map == true) {
+    	$map_latlng = get_post_meta($post_ID, 'custom_map_latlng', true);
+    	$map_zoom = get_post_meta($post_ID, 'custom_map_zoom', true);
+
+    	$map_marker_1 = get_post_meta($post_ID, 'map_marker_1_enable', true);
+    	$map_marker_2 = get_post_meta($post_ID, 'map_marker_2_enable', true);
+    	$map_marker_3 = get_post_meta($post_ID, 'map_marker_3_enable', true);
+
+    	if ($map_marker_1 == true) {
+    		$marker1_title = get_post_meta($post_ID, 'map_marker_1_title', true);
+			$marker1_latlng = get_post_meta($post_ID, 'map_marker_1_latlng', true);
+			$marker1_desc = get_post_meta($post_ID, 'map_marker_1_description', true);
+    	}
+
+    	if ($map_marker_2 == true) {
+    		$marker2_title = get_post_meta($post_ID, 'map_marker_2_title', true);
+			$marker2_latlng = get_post_meta($post_ID, 'map_marker_2_latlng', true);
+			$marker2_desc = get_post_meta($post_ID, 'map_marker_2_description', true);
+    	}
+
+    	if ($map_marker_3 == true) {
+    		$marker3_title = get_post_meta($post_ID, 'map_marker_3_title', true);
+			$marker3_latlng = get_post_meta($post_ID, 'map_marker_3_latlng', true);
+			$marker3_desc = get_post_meta($post_ID, 'map_marker_3_description', true);
+    	}
+    }
 ?>
 
 <!-- BEGIN: SITE BODY -->
@@ -446,13 +445,20 @@ Template Name: Pakketur Stott
 <section class="sections project maps">
 	<div class="container-fluid">
         <div id="contact-us" class="kontakt-oss">
-        	<?php
-	        	if ( function_exists( 'types_render_field' ) ) {
-	    	        $kontaktskjema_bunn = types_render_field("kontaktskjema-bunn", array('raw' => false));
-		            $kontaktskjema_logo = types_render_field("kontaktskjema-logo", array('raw' => true));
-	            	$kontaktskjema_adresse = types_render_field("kontaktskjema-adress", array('raw' => false));
-	            }
-        	?>
+			<?php
+                $options = get_option( 'gotomeloy_theme_options' );
+                $contact_form_logo = $options['contact-form-logo'];
+                $contact_form_adresse = $options['contact-form-adresse'];
+                                         
+                if(!empty($contact_form_logo)) {
+                    echo ('<p><img src="' . $contact_form_logo . '" /><br /></p>');
+                }
+
+                if(!empty($contact_form_adresse))
+                {
+                    echo ('<p>' . html_entity_decode($contact_form_adresse) . '</p>');
+                }
+            ?>
         	<?php get_template_part( 'parts/contact-form-page.inc' ); ?>
         </div>
     </div>

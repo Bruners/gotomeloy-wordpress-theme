@@ -302,6 +302,7 @@ if (typeof jQuery === "undefined") {
             $("html, body").animate({
                 scrollTop: $("#contact-us").offset().top
             }, "slow", "swing");
+            fbq('track', 'Contact');
         });
         $(".scroll-booking").click(function() {
             event.preventDefault();
