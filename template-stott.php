@@ -178,7 +178,6 @@ Template Name: Portfolio Stott
         </section>
         <section class="sections padding-size-s container-bunn">
             <div id="contact-us" class="kontakt-oss">
-            <div class="fb-like" data-href="https://www.facebook.com/StottBrygge/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
             <?php get_template_part( 'parts/contact-form-large.inc' ); ?>
             <style>
                 #map-container { height: 300px; }

@@ -8,6 +8,8 @@
 	$have_olders_posts = get_adjacent_post(false,'',true) ? '' : 'no-more-posts';
 	$have_newer_posts = get_adjacent_post(false,'',false) ? '' : 'no-more-posts';
 	$hero_title = !empty($hero_title) ? $hero_title : get_the_title();
+  	$map_latlng = "67.0120865, 13.8881624";
+   	$map_zoom = "8";
 
     $is_custom_map = get_post_meta($post_ID, 'custom_map', true);
 
@@ -417,9 +419,7 @@
 </section>
 <section class="section project copyright">
 	<div class="container-fluid">
-		<div class="project project-copyright text-center">
     	<?php echo get_theme_mod('gotomeloy_copyright_text', esc_html__('Copyright © GO TO MELØY 2016', 'gotomeloy') ); ?> | <?php echo(esc_html__( 'Utviklet av', 'gotomeloy' )); ?> <a href="https://www.github.com/bruners/" target="_blank">Lasse Brun</a><br />
-	</div>
 	</div>
 </section>
 

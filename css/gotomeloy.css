@@ -6776,13 +6776,7 @@ video {
     color: #fff;
 }
 
-.project-copyright {
-    background-color: #202223;
-    color: #fff;
-    font-size: 0.6em;
-}
-
-.project-copyright a {
+.project a {
     color: #fff;
     text-transform: none;
 }
@@ -6948,6 +6942,10 @@ video {
    border-color: #363838;
    -webkit-box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.05), 0 1px 0 rgba(0, 0, 0, 0.1);
    box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.05), 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+a.btn {
+    margin: 5px;
 }
 
 .single-header {
@@ -8625,7 +8623,6 @@ ul.language-selector li a.lang-en {
     padding-top: 20px;
     font-size: small;
     text-align: center;
-    color: grey;
 }
 
 .iBG {
