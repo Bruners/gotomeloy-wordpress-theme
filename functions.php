@@ -249,10 +249,10 @@ function wsds_defer_scripts( $tag, $handle, $src )
 
         wp_register_script('isotope', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js', 'jquery', '3.0.6', true );
         wp_enqueue_script('isotope');
-      }
 
-      wp_register_script('touchswipe', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js', 'jquery', '1.6.19', true );
-      wp_enqueue_script('touchswipe');
+        wp_register_script('touchswipe', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js', 'jquery', '1.6.19', true );
+        wp_enqueue_script('touchswipe');
+      }
 
       wp_register_script('fancybox', 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.6/jquery.fancybox.min.js', 'jquery', '3.5.6', true );
       wp_enqueue_script('fancybox');

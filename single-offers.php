@@ -11,7 +11,7 @@
   	$map_latlng = "67.0120865, 13.8881624";
    	$map_zoom = "8";
 
-	$is_custom_map = get_post_meta($post_ID, 'custom_map', true);
+    $is_custom_map = get_post_meta($post_ID, 'custom_map', true);
 
     if ($is_custom_map == true) {
     	$map_latlng = get_post_meta($post_ID, 'custom_map_latlng', true);
@@ -84,7 +84,7 @@
 	<div class="container">
 		<div class="single-header-title"><?php echo(esc_html__( 'Relaterte aktiviteter', 'gotomeloy' )); ?></div>
 		<br />
-		<?php get_portfolio_posts(); ?>
+		<?php get_portfolio_posts(''); ?>
 	</div>
 </section>
 <!-- END: RELATED POSTS -->

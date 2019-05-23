@@ -397,6 +397,22 @@
     });
 })(jQuery);
 
++function($) {
+    "use strict";
+
+    $(window).load(function() {
+        // Add swipe functionality on carousel for touch devices.
+        $(".carousel").swipe({
+            swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
+                if (direction == "left") $(this).carousel("next");
+                if (direction == "right") $(this).carousel("prev");
+            },
+            allowPageScroll: "vertical"
+        });
+    });
+}(jQuery);
+
+
 document.addEventListener("DOMContentLoaded", function() {
     if (document.querySelectorAll("#map-container").length > 0) {
         if (document.querySelector("html").lang) lang = document.querySelector("html").lang; else lang = "en";

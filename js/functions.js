@@ -358,14 +358,7 @@ if (typeof jQuery === "undefined") {
                 that.addClass("player").append('<iframe width="560" height="315" src="https://player.vimeo.com/video/' + VMid + '" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
             }, 400);
         });
-        // Add swipe functionality on carousel for touch devices.
-        $(".carousel").swipe({
-            swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
-                if (direction == "left") $(this).carousel("next");
-                if (direction == "right") $(this).carousel("prev");
-            },
-            allowPageScroll: "vertical"
-        });
+        
         // Fix Instagram Feed Version 1.10.2 (Smash Balloon) not working with latest fontawesome 
         jQuery(".fa.fa-instagram").removeClass("fa").addClass("fab");
     });

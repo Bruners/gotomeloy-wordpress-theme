@@ -140,7 +140,7 @@ Template Name: Portfolio Meloy
         		<div id="map-container" class="col-md-8"></div>
       		</div><!-- /map-outer -->
   		</div> <!-- /row -->
-        <script src="http://maps.google.com/maps/api/js"></script>
+        <script src="http://maps.google.com/maps/api/js?key=AIzaSyD83jfwynHOgUcKgi-zI9wtO15cXSz8gHQ"></script>
     	<script>
     	  	function init_map() {
     	  		var enable_stott = true;
