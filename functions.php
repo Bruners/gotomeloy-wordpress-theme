@@ -207,6 +207,8 @@ function wsds_defer_scripts( $tag, $handle, $src )
       wp_enqueue_style('gotomeloy', GOTOMELOY_CSS_URI . '/gotomeloy.min.css', array('gotomeloy-style'), 1.9 );
       wp_enqueue_style('gotomeloy-style', get_template_directory_uri() . '/style.css');
 
+      wp_enqueue_style('cookieconsent', GOTOMELOY_JS_URI . '/cookieconsent/cookieconsent.min.css', null, '3.1.1', all );
+
       wp_enqueue_style('fontawesome', 'https://use.fontawesome.com/releases/v5.0.13/css/all.css', null, '5.0.13', 'all' );
       wp_enqueue_style('fancybox', 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.6/jquery.fancybox.min.css', null, '3.5.6', 'all' );
 
@@ -242,6 +244,9 @@ function wsds_defer_scripts( $tag, $handle, $src )
 
       // Enqueue
       wp_enqueue_script('jquery');
+
+      wp_register_script('cookieconsent', GOTOMELOY_JS_URI . '/cookieconsent/cookieconsent.min.js', 'jquery', '3.1.1', true );
+      wp_enqueue_script('cookieconsent');
 
       if( is_front_page() )
       {
@@ -601,13 +606,13 @@ function gotomeloy_menu_modal_1143( $atts, $item, $args )
 add_filter( 'nav_menu_link_attributes', 'gotomeloy_menu_modal_18145', 10, 3 );
 function gotomeloy_menu_modal_18145( $atts, $item, $args )
 {
-  // Provide the id of the targeted menu item
+  // Provide the id of the targeted menu item # Komme seg hit
   $menu_target = 18145;
 
   // inspect $item
 
   if ($item->ID == $menu_target) {
-    $atts['data-target'] = '#meny-modal-18140';
+    $atts['data-target'] = '#meny-modal-49900';
   }
   return $atts;
 }
@@ -675,7 +680,7 @@ function gotomeloy_menu_modal_22544( $atts, $item, $args )
   // inspect $item
 
   if ($item->ID == $menu_target) {
-    $atts['data-target'] = '#meny-modal-22519';
+    $atts['data-target'] = '#meny-modal-49907';
   }
   return $atts;
 }

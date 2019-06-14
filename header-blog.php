@@ -20,16 +20,18 @@
         <?php wp_head(); ?>
         <link href="https://fonts.googleapis.com/css?family=Oswald:400|Roboto:400,700" rel="stylesheet">
 
+        <?php include_once("gdpr.php") ?>
+
     </head>
 
     <body <?php body_class(); ?>>
         <?php include_once("facebooktracking.php") ?>
 
         <!-- BEGIN: MAIN STRUCTURE -->
-        <main id="main-structure">
+        <main id="wrapper">
 
             <!-- BEGIN: SITE HEADER -->
-            <div id="wrapper">
+            
             <header id="site-header">
                 <a id="logo" title="<?php echo esc_attr( get_bloginfo('name') ); ?>" href="<?php echo esc_url( home_url('/') ); ?>"></a>
                 <?php
@@ -55,4 +57,3 @@
             <!-- END: SITE HEADER -->
 
             <?php get_template_part( 'parts/hero-module.inc' ); ?>
-            </div>

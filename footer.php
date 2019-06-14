@@ -1,14 +1,14 @@
             <!-- BEGIN: MENY MODALS -->
             
             <?php
-                $args = array('post_type' => 'meny-modal');
+                $args = array('post_type' => 'meny');
                 $query = new WP_Query($args);
                 while($query -> have_posts()) : $query -> the_post();
 
                 $post_id = get_the_ID();
             ?>
 
-                <?php if ($post_id == 18140 || $post_id == 22519) { ?>
+                <?php if ($post_id == 49900 || $post_id == 49907) { ?>
                     <!-- Modal -->
                     <div id="meny-modal-<?php echo(get_the_ID()); ?>" role="dialog" aria-labeledby="<?php the_title(); ?>" class="modal fade" tabindex="-1">
                         <div class="modal-dialog" role="document">
@@ -18,7 +18,7 @@
                                     <h5 class="modal-title"><?php the_title(); ?></h5>
                                 </div>
                                 <div class="modal-body">
-                                    <?php if ( function_exists( 'types_render_field' ) ) { echo(types_render_field( "meny-modal-body", array( 'raw' => false) )); } ?>
+                                    <?php echo (get_post_meta(get_the_ID(), 'meny-modal-body', true)); ?>
                                     <br />
                                     <?php if ( function_exists( 'add_social_share_icons' ) ) { echo add_social_share_icons(); } ?>
                                 </div>

@@ -20,6 +20,8 @@
         <?php wp_head(); ?>
         <link href="https://fonts.googleapis.com/css?family=Oswald:400|Roboto:400,700" rel="stylesheet">
 
+        <?php include_once("gdpr.php") ?>
+
     </head>
 
     <body <?php body_class(); ?>>
