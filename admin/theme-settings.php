@@ -177,6 +177,35 @@ class SocialShareSettings
             'gotomeloy-theme-settings', // Page
             'contact-form-header' // Section
         );
+        add_settings_section(
+            'gdpr-header', // ID setting_section_id
+            __('GDPR'), // Title My Custom Settings
+            array( $this, 'print_section_info_gdpr()' ), // Callback
+            'gotomeloy-theme-settings' // Page
+        );
+
+        add_settings_field(
+            'gdpr-facebook-pixel', // ID id_number
+            __('Facebook Pixel ID', 'gotomeloy'), // Title
+            array( $this, 'gdpr_facebook_pixel' ), // Callback id_number_callback
+            'gotomeloy-theme-settings', // Page
+            'gdpr-header' // Section
+        );
+        add_settings_field(
+            'gdpr-google-analytics', // ID id_number
+            __('Google Analytics ID', 'gotomeloy'), // Title
+            array( $this, 'gdpr_google_analytics' ), // Callback id_number_callback
+            'gotomeloy-theme-settings', // Page
+            'gdpr-header' // Section
+        );
+
+        add_settings_field(
+            'ga-displayfeatures', // ID id_number
+            __('Aktiver demografi- og interesserapporter for remarketing og annonsering'), // Title
+            array( $this, 'ga_displayfeatures_checked' ), // Callback id_number_callback
+            'gotomeloy-theme-settings', // Page
+            'gdpr-header' // Section
+        );
     }
 
 
@@ -220,6 +249,15 @@ class SocialShareSettings
 
         if( isset( $input['contact-form-adresse'] ) )
             $new_input['contact-form-adresse'] = esc_html( $input['contact-form-adresse'] );
+
+        if( isset( $input['gdpr-facebook-pixel'] ) )
+            $new_input['gdpr-facebook-pixel'] = esc_textarea( $input['gdpr-facebook-pixel'] );
+
+        if( isset( $input['gdpr-google-analytics'] ) )
+            $new_input['gdpr-google-analytics'] = esc_textarea( $input['gdpr-google-analytics'] );
+        
+        if( isset( $input['ga-displayfeatures'] ) )
+            $new_input['ga-displayfeatures'] = esc_attr( $input['ga-displayfeatures'] );
 
         return $new_input;
     }
@@ -346,6 +384,46 @@ class SocialShareSettings
             '<textarea class="social-share-input-form form-textarea textarea" id="contact-form-adresse" name="gotomeloy_theme_options[contact-form-adresse]" rows="5" cols="1">%s</textarea>',
             isset( $this->options['contact-form-adresse'] ) ? html_entity_decode( $this->options['contact-form-adresse'] ) : ''
         );
+    }
+
+    public function print_section_info_gdpr()
+    {
+        $text_section_info_gdpr = __('ID for Google Analytics og Facebook pixel');
+
+        print $text_section_info_gdpr;
+    }
+
+    public function gdpr_facebook_pixel()
+    {
+        printf(
+            '<input class="social-share-input-form" type="text" id="gdpr-facebook-pixel" name="gotomeloy_theme_options[gdpr-facebook-pixel]" value="%s" />',
+            isset( $this->options['gdpr-facebook-pixel'] ) ? esc_textarea( $this->options['gdpr-facebook-pixel'] ) : ''
+        );
+
+    }
+
+    public function print_ga_displayfeatures()
+    {
+        $text_ga_displayfeatures = __('Aktiver demografi- og interesserapporter for remarketing og annonsering');
+
+        print $text_ga_displayfeatures;
+    }
+
+    public function ga_displayfeatures_checked()
+    {
+        printf(
+            '<input type="checkbox" id="ga-displayfeatures" name="gotomeloy_theme_options[ga-displayfeatures]" value="1" %s />',
+            isset( $this->options['ga-displayfeatures'] ) ? checked(1, $this->options['ga-displayfeatures'], false) : ''
+        );
+    }
+
+    public function gdpr_google_analytics()
+    {
+        printf(
+            '<input class="social-share-input-form" type="text" id="gdpr-google-analytics" name="gotomeloy_theme_options[gdpr-google-analytics]" value="%s" />',
+            isset( $this->options['gdpr-google-analytics'] ) ? esc_textarea( $this->options['gdpr-google-analytics'] ) : ''
+        );
+
     }
 }
 

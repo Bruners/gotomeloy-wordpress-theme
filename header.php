@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 
+<?php 
+    $options = get_option( 'gotomeloy_theme_options' );
+    $gdpr_google_analtyics = '';
+
+
+    if( isset( $options['gdpr-google-analytics'] ) ) {
+        $gdpr_google_analtyics = $options['gdpr-google-analytics'];
+    }
+?>
+
     <head>
 
         <!-- Basic Page Needs
@@ -10,6 +20,8 @@
         <!-- Mobile Specific Metas
         ================================================== -->
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <meta name="google-site-verification" content="<?php echo $gdpr_google_analtyics ?>">
 
         <!-- Pingback
         ================================================== -->
@@ -25,7 +37,6 @@
     </head>
 
     <body <?php body_class(); ?>>
-        <?php include_once("facebooktracking.php") ?>
 
         <!-- BEGIN: MAIN STRUCTURE -->
         <main id="wrapper">
