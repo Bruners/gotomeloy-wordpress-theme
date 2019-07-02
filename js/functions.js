@@ -1,11 +1,11 @@
 /*!
- * Bootstrap v3.3.7 (http://getbootstrap.com)
- * Copyright 2011-2018 Twitter, Inc.
+ * Bootstrap v3.4.1 (https://getbootstrap.com/)
+ * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*!
- * Generated using the Bootstrap Customizer (http://getbootstrap.com/docs/3.3/customize/?id=43828ce99abdf17a1aaa76304722438c)
- * Config saved to config.json and https://gist.github.com/43828ce99abdf17a1aaa76304722438c
+ * Generated using the Bootstrap Customizer (https://getbootstrap.com/docs/3.4/customize/))
+ * Config saved to config.json
  */
 if (typeof jQuery === "undefined") {
     throw new Error("Bootstrap's JavaScript requires jQuery");
@@ -20,10 +20,10 @@ if (typeof jQuery === "undefined") {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: carousel.js v3.3.7
- * http://getbootstrap.com/javascript/#carousel
+ * Bootstrap: carousel.js v3.4.1
+ * https://getbootstrap.com/docs/3.4/javascript/#carousel
  * ========================================================================
- * Copyright 2011-2016 Twitter, Inc.
+ * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 +function($) {
@@ -42,7 +42,7 @@ if (typeof jQuery === "undefined") {
         this.options.keyboard && this.$element.on("keydown.bs.carousel", $.proxy(this.keydown, this));
         this.options.pause == "hover" && !("ontouchstart" in document.documentElement) && this.$element.on("mouseenter.bs.carousel", $.proxy(this.pause, this)).on("mouseleave.bs.carousel", $.proxy(this.cycle, this));
     };
-    Carousel.VERSION = "3.3.7";
+    Carousel.VERSION = "3.4.1";
     Carousel.TRANSITION_DURATION = 600;
     Carousel.DEFAULTS = {
         interval: 5e3,
@@ -140,8 +140,9 @@ if (typeof jQuery === "undefined") {
         // yes, "slid"
         if ($.support.transition && this.$element.hasClass("slide")) {
             $next.addClass(type);
-            $next[0].offsetWidth;
-            // force reflow
+            if (typeof $next === "object" && $next.length) {
+                $next[0].offsetWidth;
+            }
             $active.addClass(direction);
             $next.addClass(direction);
             $active.one("bsTransitionEnd", function() {
@@ -185,10 +186,13 @@ if (typeof jQuery === "undefined") {
     // CAROUSEL DATA-API
     // =================
     var clickHandler = function(e) {
-        var href;
         var $this = $(this);
-        var $target = $($this.attr("data-target") || (href = $this.attr("href")) && href.replace(/.*(?=#[^\s]+$)/, ""));
-        // strip for ie7
+        var href = $this.attr("href");
+        if (href) {
+            href = href.replace(/.*(?=#[^\s]+$)/, "");
+        }
+        var target = $this.attr("data-target") || href;
+        var $target = $(document).find(target);
         if (!$target.hasClass("carousel")) return;
         var options = $.extend({}, $target.data(), $this.data());
         var slideIndex = $this.attr("data-slide-to");
@@ -272,17 +276,17 @@ if (typeof jQuery === "undefined") {
         /** DEPRECATED **/
         // Move portfolio items
         /**
-	    jQuery(function ($) {
-	        var header = jQuery('.single-header');
-	        var ingress = jQuery('.single-header .ingress');
-	        if ( header.length ) {
-	            jQuery('.single-header-ingress').html(ingress.html());
-	            ingress.css('display', 'none');
-	        }
-	        jQuery('.single-header h5.sb-title').css('display', 'none');
-	        jQuery('.single-header .clearfix').css('padding-top', '30px');
-	    });
-	    **/
+        jQuery(function ($) {
+            var header = jQuery('.single-header');
+            var ingress = jQuery('.single-header .ingress');
+            if ( header.length ) {
+                jQuery('.single-header-ingress').html(ingress.html());
+                ingress.css('display', 'none');
+            }
+            jQuery('.single-header h5.sb-title').css('display', 'none');
+            jQuery('.single-header .clearfix').css('padding-top', '30px');
+        });
+        **/
         // Resize image containers using background-image
         $(".iBG").each(function() {
             $(this).css("background-image", "url(" + $(this).attr("data-img") + ")");
@@ -302,7 +306,7 @@ if (typeof jQuery === "undefined") {
             $("html, body").animate({
                 scrollTop: $("#contact-us").offset().top
             }, "slow", "swing");
-            fbq('track', 'Contact');
+            fbq("track", "Contact");
         });
         $(".scroll-booking").click(function() {
             event.preventDefault();
@@ -358,7 +362,6 @@ if (typeof jQuery === "undefined") {
                 that.addClass("player").append('<iframe width="560" height="315" src="https://player.vimeo.com/video/' + VMid + '" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
             }, 400);
         });
-        
         // Fix Instagram Feed Version 1.10.2 (Smash Balloon) not working with latest fontawesome 
         jQuery(".fa.fa-instagram").removeClass("fa").addClass("fab");
     });
@@ -377,10 +380,10 @@ if (typeof jQuery === "undefined") {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: modal.js v3.3.7
- * http://getbootstrap.com/javascript/#modals
+ * Bootstrap: modal.js v3.4.1
+ * https://getbootstrap.com/docs/3.4/javascript/#modals
  * ========================================================================
- * Copyright 2011-2016 Twitter, Inc.
+ * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 +function($) {
@@ -397,13 +400,14 @@ if (typeof jQuery === "undefined") {
         this.originalBodyPad = null;
         this.scrollbarWidth = 0;
         this.ignoreBackdropClick = false;
+        this.fixedContent = ".navbar-fixed-top, .navbar-fixed-bottom";
         if (this.options.remote) {
             this.$element.find(".modal-content").load(this.options.remote, $.proxy(function() {
                 this.$element.trigger("loaded.bs.modal");
             }, this));
         }
     };
-    Modal.VERSION = "3.3.7";
+    Modal.VERSION = "3.4.1";
     Modal.TRANSITION_DURATION = 300;
     Modal.BACKDROP_TRANSITION_DURATION = 150;
     Modal.DEFAULTS = {
@@ -563,10 +567,23 @@ if (typeof jQuery === "undefined") {
     Modal.prototype.setScrollbar = function() {
         var bodyPad = parseInt(this.$body.css("padding-right") || 0, 10);
         this.originalBodyPad = document.body.style.paddingRight || "";
-        if (this.bodyIsOverflowing) this.$body.css("padding-right", bodyPad + this.scrollbarWidth);
+        var scrollbarWidth = this.scrollbarWidth;
+        if (this.bodyIsOverflowing) {
+            this.$body.css("padding-right", bodyPad + scrollbarWidth);
+            $(this.fixedContent).each(function(index, element) {
+                var actualPadding = element.style.paddingRight;
+                var calculatedPadding = $(element).css("padding-right");
+                $(element).data("padding-right", actualPadding).css("padding-right", parseFloat(calculatedPadding) + scrollbarWidth + "px");
+            });
+        }
     };
     Modal.prototype.resetScrollbar = function() {
         this.$body.css("padding-right", this.originalBodyPad);
+        $(this.fixedContent).each(function(index, element) {
+            var padding = $(element).data("padding-right");
+            $(element).removeData("padding-right");
+            element.style.paddingRight = padding ? padding : "";
+        });
     };
     Modal.prototype.measureScrollbar = function() {
         // thx walsh
@@ -602,8 +619,9 @@ if (typeof jQuery === "undefined") {
     $(document).on("click.bs.modal.data-api", '[data-toggle="modal"]', function(e) {
         var $this = $(this);
         var href = $this.attr("href");
-        var $target = $($this.attr("data-target") || href && href.replace(/.*(?=#[^\s]+$)/, ""));
+        var target = $this.attr("data-target") || href && href.replace(/.*(?=#[^\s]+$)/, "");
         // strip for ie7
+        var $target = $(document).find(target);
         var option = $target.data("bs.modal") ? "toggle" : $.extend({
             remote: !/#/.test(href) && href
         }, $target.data(), $this.data());
@@ -620,10 +638,10 @@ if (typeof jQuery === "undefined") {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: collapse.js v3.3.7
- * http://getbootstrap.com/javascript/#collapse
+ * Bootstrap: collapse.js v3.4.1
+ * https://getbootstrap.com/docs/3.4/javascript/#collapse
  * ========================================================================
- * Copyright 2011-2016 Twitter, Inc.
+ * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 /* jshint latedef: false */
@@ -643,7 +661,7 @@ if (typeof jQuery === "undefined") {
         }
         if (this.options.toggle) this.toggle();
     };
-    Collapse.VERSION = "3.3.7";
+    Collapse.VERSION = "3.4.1";
     Collapse.TRANSITION_DURATION = 350;
     Collapse.DEFAULTS = {
         toggle: true
@@ -701,7 +719,7 @@ if (typeof jQuery === "undefined") {
         this[this.$element.hasClass("in") ? "hide" : "show"]();
     };
     Collapse.prototype.getParent = function() {
-        return $(this.options.parent).find('[data-toggle="collapse"][data-parent="' + this.options.parent + '"]').each($.proxy(function(i, element) {
+        return $(document).find(this.options.parent).find('[data-toggle="collapse"][data-parent="' + this.options.parent + '"]').each($.proxy(function(i, element) {
             var $element = $(element);
             this.addAriaAndCollapsedClass(getTargetFromTrigger($element), $element);
         }, this)).end();
@@ -715,7 +733,7 @@ if (typeof jQuery === "undefined") {
         var href;
         var target = $trigger.attr("data-target") || (href = $trigger.attr("href")) && href.replace(/.*(?=#[^\s]+$)/, "");
         // strip for ie7
-        return $(target);
+        return $(document).find(target);
     }
     // COLLAPSE PLUGIN DEFINITION
     // ==========================
@@ -751,15 +769,15 @@ if (typeof jQuery === "undefined") {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: transition.js v3.3.7
- * http://getbootstrap.com/javascript/#transitions
+ * Bootstrap: transition.js v3.4.1
+ * https://getbootstrap.com/docs/3.4/javascript/#transitions
  * ========================================================================
- * Copyright 2011-2016 Twitter, Inc.
+ * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 +function($) {
     "use strict";
-    // CSS TRANSITION SUPPORT (Shoutout: http://www.modernizr.com/)
+    // CSS TRANSITION SUPPORT (Shoutout: https://modernizr.com/)
     // ============================================================
     function transitionEnd() {
         var el = document.createElement("bootstrap");
@@ -778,7 +796,7 @@ if (typeof jQuery === "undefined") {
         }
         return false;
     }
-    // http://blog.alexmaccaw.com/css-transitions
+    // https://blog.alexmaccaw.com/css-transitions
     $.fn.emulateTransitionEnd = function(duration) {
         var called = false;
         var $el = this;
