@@ -48,8 +48,12 @@ var loadGA = function()
 
   <?php if( $gdpr_google_analtyics != null) { ?>
     ga('create', '<?php echo $gdpr_google_analtyics; ?>', 'auto');
+    ga('set', 'forceSSL', true);
     <?php if($options['ga-displayfeatures'] == 1) {
       echo ("ga('require', 'displayfeatures');");
+    } ?>
+    <?php if($options['ga-anonymizeip'] == 1) {
+      echo ("ga('set', 'anonymizeIp', true);");
     } ?>
     ga('send', 'pageview');
 

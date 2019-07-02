@@ -201,8 +201,16 @@ class SocialShareSettings
 
         add_settings_field(
             'ga-displayfeatures', // ID id_number
-            __('Aktiver demografi- og interesserapporter for remarketing og annonsering'), // Title
+            __('Aktiver demografi- og interesserapporter for remarketing og annonsering <a href="https://support.google.com/analytics/answer/2444872?hl=en_US" target="_blank">Read More</a>'), // Title
             array( $this, 'ga_displayfeatures_checked' ), // Callback id_number_callback
+            'gotomeloy-theme-settings', // Page
+            'gdpr-header' // Section
+        );
+
+        add_settings_field(
+            'ga-anonymizeip', // ID id_number
+            __('Anonymize IP Addresses <a href="https://developers.google.com/analytics/devguides/collection/analyticsjs/ip-anonymization" target="_blank">Read More</a>'), // Title
+            array( $this, 'ga_anonymizeip_checked' ), // Callback id_number_callback
             'gotomeloy-theme-settings', // Page
             'gdpr-header' // Section
         );
@@ -259,7 +267,11 @@ class SocialShareSettings
         if( isset( $input['ga-displayfeatures'] ) )
             $new_input['ga-displayfeatures'] = esc_attr( $input['ga-displayfeatures'] );
 
+        if( isset( $input['ga-anonymizeip'] ) )
+            $new_input['ga-anonymizeip'] = esc_attr( $input['ga-anonymizeip'] );
+
         return $new_input;
+
     }
 
     public function print_section_info()
@@ -399,14 +411,6 @@ class SocialShareSettings
             '<input class="social-share-input-form" type="text" id="gdpr-facebook-pixel" name="gotomeloy_theme_options[gdpr-facebook-pixel]" value="%s" />',
             isset( $this->options['gdpr-facebook-pixel'] ) ? esc_textarea( $this->options['gdpr-facebook-pixel'] ) : ''
         );
-
-    }
-
-    public function print_ga_displayfeatures()
-    {
-        $text_ga_displayfeatures = __('Aktiver demografi- og interesserapporter for remarketing og annonsering');
-
-        print $text_ga_displayfeatures;
     }
 
     public function ga_displayfeatures_checked()
@@ -417,14 +421,23 @@ class SocialShareSettings
         );
     }
 
+    public function ga_anonymizeip_checked()
+    {
+        printf(
+            '<input type="checkbox" id="ga-anonymizeip" name="gotomeloy_theme_options[ga-anonymizeip]" value="1" %s />',
+            isset( $this->options['ga-anonymizeip'] ) ? checked(1, $this->options['ga-anonymizeip'], false) : ''
+        );
+    }
+
     public function gdpr_google_analytics()
     {
         printf(
             '<input class="social-share-input-form" type="text" id="gdpr-google-analytics" name="gotomeloy_theme_options[gdpr-google-analytics]" value="%s" />',
             isset( $this->options['gdpr-google-analytics'] ) ? esc_textarea( $this->options['gdpr-google-analytics'] ) : ''
         );
-
     }
+
+
 }
 
 
