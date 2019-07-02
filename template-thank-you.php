@@ -36,6 +36,9 @@ Template Name: Takk for bestilling
 			$marker3_latlng = get_post_meta($post_ID, 'map_marker_3_latlng', true);
 			$marker3_desc = get_post_meta($post_ID, 'map_marker_3_description', true);
     	}
+    } else {
+    	$map_latlng = '67.0120865, 13.8881624';
+    	$map_zoom = '8';
     }
 ?>
 
@@ -71,12 +74,12 @@ Template Name: Takk for bestilling
 	    </div>
 	</section>
 	<style>
-	    #map-container { height: 400px; }
+	    #map-container-portfolio { height: 400px; }
 	</style>
 	<section class="sections padding-size-m">
 		<div class="row">
 			<div class="col-md-12">
-				<div id="map-container" class="google-maps"></div>
+				<div id="map-container-portfolio" class="google-maps"></div>
 		    </div>
 		</div>
 		<script>
@@ -84,7 +87,7 @@ Template Name: Takk for bestilling
 
 	    	function initMap() {
 
-			    var map = new google.maps.Map(document.getElementById("map-container"), {
+			    var map = new google.maps.Map(document.getElementById("map-container-portfolio"), {
 			        center: new google.maps.LatLng(<?php echo $map_latlng; ?>),
 			        zoom: <?php echo $map_zoom; ?>,
 			        mapTypeControl: false,
@@ -152,9 +155,6 @@ Template Name: Takk for bestilling
 	  		};
 		</script>
 		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3&amp;key=AIzaSyAWe_W4EBKsLh6r582q_xyP-GbY7Am761E&callback=initMap" async defer></script>
-		<div class="copyright text-center">
-	    	<?php echo get_theme_mod('gotomeloy_copyright_text', esc_html__('Copyright © GO TO MELØY 2016', 'gotomeloy') ); echo date("Y"); ?> | <?php echo(esc_html__( 'Utviklet av', 'gotomeloy' )); ?> <a href="https://www.github.com/bruners/" target="_blank">Lasse Brun</a><br />
-		</div>
 	</section>
 
 <?php get_footer(); ?>

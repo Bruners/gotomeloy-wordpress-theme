@@ -1,5 +1,19 @@
+            <section class="sections project padding-size-m">
+                <ul class="affiliates">
+                <a href="https://www.reisegarantifondet.no/" rel="nofollow" target="_blank"><li class="affiliates_li"><div class="affiliates_img affiliates_reisegarantifondet"></div><span class="affiliates_txt">Reisegarantifondet</span ></li></a>
+                <a href="https://www.nhoreiseliv.no/" rel="nofollow" target="_blank"><li class="affiliates_li"><div class="affiliates_img affiliates_nho-reiseliv"></div><span class="affiliates_txt">NHO Reiseliv</span ></li></a>
+                <a href="http://www.visitbodo.no/" rel="nofollow" target="_blank"><li class="affiliates_li"><div class="affiliates_img affiliates_visit-bodo"></div><span class="affiliates_txt">Visit Bodø</span ></li></a>
+                <a href="https://visithelgeland.com/" rel="nofollow" target="_blank"><li class="affiliates_li"><div class="affiliates_img affiliates_visit-helgeland"></div><span class="affiliates_txt">Visit Helgeland</span ></li></a>
+                </ul>
+
+                
+                
+                <div class="copyright text-center">
+                    <?php echo get_theme_mod('gotomeloy_copyright_text', esc_html__('Copyright © GO TO MELØY 2016', 'gotomeloy') ); echo date("Y"); ?> | <?php echo(esc_html__( 'Utviklet av', 'gotomeloy' )); ?> <a href="https://www.github.com/bruners/" target="_blank">Lasse Brun</a> | <i class="fa fa-user-secret fa-w-14"></i> <a href='<?php echo __("https://www.stott.no/personvernerklaering/"); ?>' target='__blank'><?php echo __("Personvernerklæring", "gotomeloy"); ?></a>
+                </div>
+            </section>
+
             <!-- BEGIN: MENY MODALS -->
-            
             <?php
                 $args = array('post_type' => 'meny');
                 $query = new WP_Query($args);

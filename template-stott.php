@@ -206,9 +206,6 @@ Template Name: Portfolio Stott
                 </div><!-- /map-outer -->
             </div> <!-- /row -->
             </div>
-            <div class="copyright">
-                <?php echo get_theme_mod('gotomeloy_copyright_text', esc_html__('Copyright © GO TO MELØY 2016', 'gotomeloy') ); echo date("Y"); ?> | <?php echo(esc_html__( 'Utviklet av', 'gotomeloy' )); ?> <a href="https://www.github.com/bruners/" target="_blank">Lasse Brun</a><br />
-            </div>
         </section>
     </div>
 </section>

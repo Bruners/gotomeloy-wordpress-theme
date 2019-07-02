@@ -98,6 +98,9 @@ Template Name: Pakketur Stott
 			$marker3_latlng = get_post_meta($post_ID, 'map_marker_3_latlng', true);
 			$marker3_desc = get_post_meta($post_ID, 'map_marker_3_description', true);
     	}
+    } else {
+    	$map_latlng = '67.0120865, 13.8881624';
+    	$map_zoom = '8';
     }
 ?>
 
