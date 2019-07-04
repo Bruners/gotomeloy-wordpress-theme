@@ -270,7 +270,8 @@ if (typeof jQuery === "undefined") {
         }
     }
     /** LOAD */
-    $(window).load(function() {
+    
+    $(window).on('load', function(){
         fix();
         sticky_navigation();
         /** DEPRECATED **/
@@ -287,6 +288,9 @@ if (typeof jQuery === "undefined") {
             jQuery('.single-header .clearfix').css('padding-top', '30px');
         });
         **/
+
+
+
         // Resize image containers using background-image
         $(".iBG").each(function() {
             $(this).css("background-image", "url(" + $(this).attr("data-img") + ")");
@@ -321,11 +325,6 @@ if (typeof jQuery === "undefined") {
         });
         /* Apply fancybox to multiple items */
         $("a[href$='.jpg'],a[href$='.png'],a[href$='.gif'],a.iframe,a#webcam-url").fancybox({
-            openEffect: "none",
-            closeEffect: "none",
-            autoSize: true,
-            width: "95%",
-            height: "95%",
             iframe: {
                 preload: false
             }

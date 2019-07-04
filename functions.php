@@ -127,6 +127,7 @@ function wsds_defer_scripts( $tag, $handle, $src )
     }
 
     // Register and Enqueue Frontend CSS
+
     add_action('wp_enqueue_scripts', 'gotomeloy_frontend_styles');
     add_action('wp_enqueue_scripts', 'gotomeloy_child_frontend_styles', 20);
 
@@ -242,32 +243,31 @@ function wsds_defer_scripts( $tag, $handle, $src )
   {
     if ( !is_admin() ) {
 
-      // Enqueue
-      wp_enqueue_script('jquery');
+		// Enqueue
+		wp_enqueue_script('jquery');
 
-      wp_register_script('cookieconsent', GOTOMELOY_JS_URI . '/cookieconsent/cookieconsent.min.js', 'jquery', '3.1.1', true );
-      wp_enqueue_script('cookieconsent');
+		wp_register_script('cookieconsent', GOTOMELOY_JS_URI . '/cookieconsent/cookieconsent.min.js', 'jquery', '3.1.1', true );
+		wp_enqueue_script('cookieconsent');
 
-      if( is_front_page() )
-      {
-        wp_enqueue_script('gotomeloy-theme-functions', GOTOMELOY_JS_URI . '/gotomeloy.min.js', array('jquery'), 1.7, true);
+		if( is_front_page() ) {
+			wp_enqueue_script('gotomeloy-theme-functions', GOTOMELOY_JS_URI . '/gotomeloy.min.js', array('jquery'), 1.7, true);
 
-        wp_register_script('isotope', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js', 'jquery', '3.0.6', true );
-        wp_enqueue_script('isotope');
+			wp_register_script('isotope', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js', 'jquery', '3.0.6', true );
+			wp_enqueue_script('isotope');
 
-        wp_register_script('touchswipe', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js', 'jquery', '1.6.19', true );
-        wp_enqueue_script('touchswipe');
-      }
+			wp_register_script('touchswipe', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js', 'jquery', '1.6.19', true );
+			wp_enqueue_script('touchswipe');
+		}
 
-      wp_register_script('fancybox', 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.6/jquery.fancybox.min.js', 'jquery', '3.5.6', true );
-      wp_enqueue_script('fancybox');
+		wp_register_script('fancybox', 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js', 'jquery', '3.5.7', true );
+		wp_enqueue_script('fancybox');
 
-      wp_enqueue_script('gotomeloy-site-functions', GOTOMELOY_JS_URI . '/functions.min.js', array('jquery'), 2.0, true);
+		wp_enqueue_script('gotomeloy-site-functions', GOTOMELOY_JS_URI . '/functions.min.js', array('jquery'), 2.0, true);
 
-      // Enqueue (conditional)
-      if ( is_singular() ) {
-        wp_enqueue_script( 'comment-reply' );
-      }
+		// Enqueue (conditional)
+		if ( is_singular() ) {
+		wp_enqueue_script( 'comment-reply' );
+		}
 
     }
   }

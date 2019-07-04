@@ -400,7 +400,7 @@
 +function($) {
     "use strict";
 
-    $(window).load(function() {
+    $(window).on('load', function(){
         // Add swipe functionality on carousel for touch devices.
         $(".carousel").swipe({
             swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
