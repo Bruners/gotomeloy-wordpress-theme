@@ -13,7 +13,7 @@
 
     <head>
 
-        <!-- Basic Page Needs
+        <!-- Basic Blog Needs
         ================================================== -->
         <meta charset="<?php bloginfo( 'charset' ); ?>" />
 
@@ -26,11 +26,11 @@
         <!-- Pingback
         ================================================== -->
         <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+        <link href="https://fonts.googleapis.com/css?family=Oswald:400|Roboto:400,700" rel="stylesheet">
 
         <!-- WP Head
         ================================================== -->
         <?php wp_head(); ?>
-        <link href="https://fonts.googleapis.com/css?family=Oswald:400|Roboto:400,700" rel="stylesheet">
 
         <?php include_once("gdpr.php") ?>
 
