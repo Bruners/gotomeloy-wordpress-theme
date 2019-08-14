@@ -32,7 +32,7 @@
                                     <h5 class="modal-title"><?php the_title(); ?></h5>
                                 </div>
                                 <div class="modal-body">
-                                    <?php echo (get_post_meta(get_the_ID(), 'meny-modal-body', true)); ?>
+                                    <?php the_content(); ?>
                                     <br />
                                     <?php if ( function_exists( 'add_social_share_icons' ) ) { echo add_social_share_icons(); } ?>
                                 </div>

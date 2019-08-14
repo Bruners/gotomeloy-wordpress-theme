@@ -198,12 +198,15 @@
                             <h1><?php echo $slide_1_title; ?></h1>
                             <h5><?php echo $slide_1_subtitle; ?></h5>
                         </hgroup>
+                        <?php if (get_field('slide_1_button_1_enable')) { ?>
                         <a class="btn <?php echo $slide_1_button_1_class; ?>" id="<?php echo $slide_1_button_1_id; ?>" role="button" href="<?php echo $slide_1_button_1_url; ?>" <?php if (get_field('slide_1_button_1_fancybox')) { echo ' data-fancybox'; } ?>>
                             <i class="<?php echo $slide_1_button_1_ikon; ?>"></i> <?php echo $slide_1_button_1_tekst; ?>
                         </a>&nbsp;
+                        <?php } if (get_field('slide_1_button_2_enable')) { ?>
                         <a class="btn <?php echo $slide_1_button_2_class; ?>" id="<?php echo $slide_1_button_2_id; ?>" role="button" href="<?php echo $slide_1_button_2_url; ?>" <?php if (get_field('slide_1_button_2_fancybox')) { echo ' data-fancybox'; } ?>>
                             <i class="<?php echo $slide_1_button_2_ikon; ?>"></i> <?php echo $slide_1_button_2_tekst; ?>
                         </a>
+                        <?php } ?>
                     </div>
                 </div>
                 <?php } ?>
@@ -217,12 +220,15 @@
                             <h1><?php echo $slide_2_title; ?></h1>
                             <h5><?php echo $slide_2_subtitle; ?></h5>
                         </hgroup>
+                        <?php if (get_field('slide_2_button_1_enable')) { ?>
                         <a class="btn <?php echo $slide_2_button_1_class; ?>" id="<?php echo $slide_2_button_1_id; ?>" role="button" href="<?php echo $slide_2_button_1_url; ?>" <?php if (get_field('slide_2_button_1_fancybox')) { echo ' data-fancybox'; } ?>>
                             <i class="<?php echo $slide_2_button_1_ikon; ?>"></i> <?php echo $slide_2_button_1_tekst; ?>
                         </a>&nbsp;
+                        <?php } if (get_field('slide_2_button_2_enable')) { ?>
                         <a class="btn <?php echo $slide_2_button_2_class; ?>" id="<?php echo $slide_2_button_2_id; ?>" role="button" href="<?php echo $slide_2_button_2_url; ?>" <?php if (get_field('slide_2_button_2_fancybox')) { echo ' data-fancybox'; } ?>>
                             <i class="<?php echo $slide_2_button_2_ikon; ?>"></i> <?php echo $slide_2_button_2_tekst; ?>
                         </a>
+                        <?php } ?>
                     </div>
                 </div>
                 <?php } ?>
@@ -236,12 +242,15 @@
                             <h1><?php echo $slide_3_title; ?></h1>
                             <h5><?php echo $slide_3_subtitle; ?></h5>
                         </hgroup>
+                        <?php if (get_field('slide_3_button_1_enable')) { ?>
                         <a class="btn <?php echo $slide_3_button_1_class; ?>" id="<?php echo $slide_3_button_1_id; ?>" role="button" href="<?php echo $slide_3_button_1_url; ?>" <?php if (get_field('slide_3_button_1_fancybox')) { echo ' data-fancybox'; } ?>>
                             <i class="<?php echo $slide_3_button_1_ikon; ?>"></i> <?php echo $slide_3_button_1_tekst; ?>
                         </a>&nbsp;
+                        <?php } if (get_field('slide_3_button_2_enable')) { ?>
                         <a class="btn <?php echo $slide_3_button_2_class; ?>" id="<?php echo $slide_3_button_2_id; ?>" role="button" href="<?php echo $slide_3_button_2_url; ?>" <?php if (get_field('slide_3_button_2_fancybox')) { echo ' data-fancybox'; } ?>>
                             <i class="<?php echo $slide_3_button_2_ikon; ?>"></i> <?php echo $slide_3_button_2_tekst; ?>
                         </a>
+                        <?php } ?>
                     </div>
                 </div>
                 <?php } ?>
@@ -255,12 +264,15 @@
                             <h1><?php echo $slide_4_title; ?></h1>
                             <h5><?php echo $slide_4_subtitle; ?></h5>
                         </hgroup>
+                        <?php if (get_field('slide_4_button_1_enable')) { ?>
                         <a class="btn <?php echo $slide_4_button_1_class; ?>" id="<?php echo $slide_4_button_1_id; ?>" role="button" href="<?php echo $slide_4_button_1_url; ?>" <?php if (get_field('slide_4_button_1_fancybox')) { echo ' data-fancybox'; } ?>>
                             <i class="<?php echo $slide_4_button_1_ikon; ?>"></i> <?php echo $slide_4_button_1_tekst; ?>
                         </a>&nbsp;
+                        <?php } if (get_field('slide_4_button_2_enable')) { ?>
                         <a class="btn <?php echo $slide_4_button_2_class; ?>" id="<?php echo $slide_4_button_2_id; ?>" role="button" href="<?php echo $slide_4_button_2_url; ?>" <?php if (get_field('slide_4_button_2_fancybox')) { echo ' data-fancybox'; } ?>>
                             <i class="<?php echo $slide_4_button_2_ikon; ?>"></i> <?php echo $slide_4_button_2_tekst; ?>
                         </a>
+                        <?php } ?>
                     </div>
                 </div>
                 <?php } ?>
