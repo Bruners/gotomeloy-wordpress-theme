@@ -253,7 +253,7 @@ Template Name: Portfolio Stott
                                             $time = DateTime::createFromFormat('Y-m-d\TH:i:s+P',$level['time'])->format('H:i');
                                             $datetime = DateTime::createFromFormat('Y-m-d\TH:i:s+P',$level['time'])->format('d.m');
                                             if ($tdtime != $datetime) {
-                                                echo "<tr><th>".$datetime."</th><th>Tid</th><th>Beregnet vannstand</th></tr>";
+                                                echo "<tr><th>".$datetime."</th><th>" . __('Time', 'gotomeloy') . "</th><th>" . __('Tidal forecast', 'gotomeloy') . "</th></tr>";
                                                 $tdtime = $datetime;
                                             };
                                             $value = round($level['value']);
@@ -261,10 +261,10 @@ Template Name: Portfolio Stott
                                         endforeach;
                                     };
                                 } catch (Exception $e) {
-                                    echo "<tr><td align='center'>Kunne ikke laste inn Vannstandsdata</td></tr>";
+                                    echo "<tr><td align='center'>" . __('Unable to load tide data', 'gotomeloy') . "</td></tr>";
                                 }
                             ?>
-                            <tr class="copyright" align="right">Vannstandsdata © Kartverket <a href='http://www.sehavniva.no'>sehavniva.no</a></tr>
+                            <tr class="copyright" align="right"><?php echo __('Tidal forecast © Kartverket', 'gotomeloy');?> <a href='http://www.sehavniva.no'>sehavniva.no</a></tr>
                         </table>
                     </div>
                     <br />

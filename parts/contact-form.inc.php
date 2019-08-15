@@ -20,17 +20,17 @@
                     <div class="form-group">
                         <input type="hidden" name="action" value="contact_send" />
                         <label class="control-label" for="message_name"><?php echo(esc_html__( 'Navn:', 'gotomeloy' )); ?></label>
-                        <input type="text" class="form-control" id="message_name" name="message_name" placeholder=" Navn" value="<?php echo esc_attr($_POST['message_name']); ?>" required>
+                        <input type="text" class="form-control" id="message_name" name="message_name" placeholder=" <?php echo __('Name', 'gotomeloy');?>" value="<?php echo esc_attr($_POST['message_name']); ?>" required>
                     </div>
                     <div class="form-group">
                         <label class="control-label" for="message_email"><?php echo(esc_html__( 'Epost:', 'gotomeloy' )); ?></label>
-                        <input type="email" class="form-control" id="message_email" name="message_email" placeholder=" Epost" value="<?php echo esc_attr($_POST['message_email']); ?>" required>
+                        <input type="email" class="form-control" id="message_email" name="message_email" placeholder=" <?php echo __('Email', 'gotomeloy');?>" value="<?php echo esc_attr($_POST['message_email']); ?>" required>
                     </div>
                 </div>
                 <div class="col-xs-12">
                     <div class="form-group">
                         <label class="control-label" for="message_text"><?php echo(esc_html__( 'Din melding:', 'gotomeloy' )); ?></label>
-                        <textarea class="form-control" id="message_text" name="message_text" placeholder="Melding.." required><?php echo esc_textarea($_POST['message_text']); ?></textarea>
+                        <textarea class="form-control" id="message_text" name="message_text" placeholder="<?php echo __('Message..', 'gotomeloy');?>" required><?php echo esc_textarea($_POST['message_text']); ?></textarea>
                     </div>
                     <div class="col-xs-6">
                         <div class="form-group form-inline">
