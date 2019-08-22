@@ -48,7 +48,7 @@ add_action('wp_default_scripts', 'remove_jquery_migrate');
 function disable_comment_reply_js()
 {
   wp_deregister_script( 'comment-reply' );
-         }
+}
 add_action('init','disable_comment_reply_js');
 
 
@@ -142,6 +142,17 @@ function wsds_defer_scripts( $tag, $handle, $src )
 
     // Suport for Post Thumbnails
     add_theme_support( 'post-thumbnails' );
+
+	  // Support for Post Formats
+    add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat' ) );
+
+    add_post_type_support( 'page', 'post-formats' );
+    add_post_type_support( 'offers', 'post-formats' );
+    add_post_type_support( 'portfolio', 'post-formats' );
+
+    // Support for HTML5 markup for search forms, comment forms, comment lists, gallery and caption.
+
+    add_theme_support( 'html5', array( 'gallery', 'caption' ) );
 
     // Register WP3.0+ Menus
     add_action('init', 'gotomeloy_register_menu');
