@@ -24,7 +24,7 @@
 	<!-- FEATURED PORTFOLIO ENTRY -->
 <?php if ( !$is_project_featured ) { ?>
 <?php if ( $is_hero_module ) { ?>
-	<div id="post-<?php the_ID(); ?>" <?php post_class("featured__item $project_class $project_cats_slug"); ?>>
+	<div id="post-<?php the_ID(); ?>" <?php post_class("column featured__item $project_class $project_cats_slug"); ?>>
 
 	    <a href="<?php echo $project_url; ?>" title="<?php the_title(); ?>">
 			<img class="portfolio__item-image lazy-bg" data-src="<?php echo $thumbnail_data['src']; ?>">
@@ -35,7 +35,7 @@
 
 <?php } else { ?>
 
-	<div id="post-<?php the_ID(); ?>" <?php post_class("featured__item $project_class $project_cats_slug"); ?>>
+	<div id="post-<?php the_ID(); ?>" <?php post_class("column featured__item $project_class $project_cats_slug"); ?>>
 
 	    <a href="#portfolio-modal-<?php the_ID(); ?>" title="<?php the_title(); ?>" data-toggle="modal">
 			<div class="portfolio__item-image lazy-bg" data-src="<?php echo $thumbnail_data['src']; ?>">

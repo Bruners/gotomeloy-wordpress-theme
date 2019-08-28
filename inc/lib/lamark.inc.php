@@ -136,7 +136,8 @@
 	      $cat_slug = esc_attr( $category->slug );
 	      $cat_slug = apply_filters( 'list_cats', $cat_slug, $category );
 		  
-	      $link = '<li><a href="#" data-filter=".'.strtolower(preg_replace('/\s+/', '-', $cat_slug)).'">';
+	      //$link = '<li><a href="#" data-filter=".'.strtolower(preg_replace('/\s+/', '-', $cat_slug)).'">';
+	      $link = '<li><a href="#" onclick="filterSelection(\''.strtolower($cat_slug).'\')">';
 		  
 		  $cat_name = esc_attr( $category->name );
 	      $cat_name = apply_filters( 'list_cats', $cat_name, $category );
