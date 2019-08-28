@@ -257,14 +257,17 @@ function wsds_defer_scripts( $tag, $handle, $src )
 		// Enqueue
 		wp_enqueue_script('jquery');
 
+    wp_register_script('yall', GOTOMELOY_JS_URI . '/lib/yall.min.js', 'jquery', '3.1.5', true );
+    wp_enqueue_script('yall');
+
 		wp_register_script('cookieconsent', GOTOMELOY_JS_URI . '/cookieconsent/cookieconsent.min.js', 'jquery', '3.1.1', true );
 		wp_enqueue_script('cookieconsent');
 
+    //wp_register_script('fontawesome', 'https://kit.fontawesome.com/aefcfafeba.js', '', '5.0', false );
+    //wp_enqueue_script('fontawesome');
+
 		if( is_front_page() ) {
 			wp_enqueue_script('gotomeloy-theme-functions', GOTOMELOY_JS_URI . '/gotomeloy.min.js', array('jquery'), 1.7, true);
-
-			wp_register_script('isotope', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js', 'jquery', '3.0.6', true );
-			wp_enqueue_script('isotope');
 
 			wp_register_script('touchswipe', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js', 'jquery', '1.6.19', true );
 			wp_enqueue_script('touchswipe');
@@ -365,7 +368,7 @@ function cats_related_post() {
       <div class="post__card">
         <a href="<?php echo get_permalink( $_post->ID ); ?>" title="<?php esc_attr( $_post->post_title ); ?>">
           <div class="post__card-body">
-            <img class="post__card-img img-responsive" src="<?php echo $thumbnail_data['src']; ?>" />
+            <img class="post__card-img img-responsive lazy" data-src="<?php echo $thumbnail_data['src']; ?>" />
             <div class="post__card-img-overlay text">
               <div class="post__card-title"><?php the_title(); ?></div>
             </div>
@@ -415,7 +418,7 @@ function get_portfolio_posts( $args ) {
       <div class="post__card">
         <a href="<?php echo get_permalink( $_post->ID ); ?>" title="<?php esc_attr( $_post->post_title ); ?>">
           <div class="post__card-body">
-            <img class="post__card-img img-responsive" src="<?php echo $thumbnail_data['src']; ?>" />
+            <img class="post__card-img img-responsive lazy" data-src="<?php echo $thumbnail_data['src']; ?>" />
             <div class="post__card-img-overlay text">
               <div class="post__card-title"><?php the_title(); ?></div>
             </div>
@@ -494,7 +497,7 @@ function related_posts( $args ) {
         <div class="post__card">
           <a href="<?php echo get_permalink( $_post->ID ); ?>" title="<?php esc_attr( $_post->post_title ); ?>">
             <div class="card-body">
-              <img class="post__card-img img-responsive" src="<?php echo $thumbnail_data['src']; ?>" />
+              <img class="post__card-img img-responsive lazy" src="<?php echo $thumbnail_data['src']; ?>" />
               <div class="post__card-img-overlay text">
                 <div class="post__card-title"><?php the_title(); ?></div>
               </div>

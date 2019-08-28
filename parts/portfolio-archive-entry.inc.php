@@ -18,36 +18,34 @@
 	$hero_opts = get_post_meta(get_the_ID(), 'hero_additional_options', true);
     $is_hero_module = is_array($hero_opts) && in_array('is_hero', $hero_opts) ? true : false;
 
-    $is_project_featured = get_post_meta(get_the_ID(), 'project_featued', true)
+    $is_project_featured = get_post_meta(get_the_ID(), 'project_featured', true)
 ?>
-
-<!-- PORTFOLIO ENTRY -->
-<?php if ( !$is_project_featured ) { ?>
+	<!-- FEATURED PORTFOLIO ENTRY -->
 <?php if ( $is_hero_module ) { ?>
-	<article id="post-<?php the_ID(); ?>" <?php post_class("$project_class $project_cats_slug"); ?>>
+	<div id="post-<?php the_ID(); ?>" <?php post_class("featured__item $project_class $project_cats_slug"); ?>>
 
 	    <a href="<?php echo $project_url; ?>" title="<?php the_title(); ?>">
-			<div class="entry-image iBG" data-img="<?php echo $thumbnail_data['src']; ?>">
-				<div class="entry-bottomtext">
+			<div class="featured__item-image iBG" data-img="<?php echo $thumbnail_data['src']; ?>">
+				<div class="featured__item-text">
 					<?php the_title(); ?>
 				</div>
 			</div>
 		</a>
 
-	</article>
+	</div>
 
 <?php } else { ?>
 
-	<article id="post-<?php the_ID(); ?>" <?php post_class("$project_class $project_cats_slug"); ?>>
+	<div id="post-<?php the_ID(); ?>" <?php post_class("featured__item $project_class $project_cats_slug"); ?>>
 
 	    <a href="#portfolio-modal-<?php the_ID(); ?>" title="<?php the_title(); ?>" data-toggle="modal">
-			<div class="entry-image iBG" data-img="<?php echo $thumbnail_data['src']; ?>">
-				<div class="entry-bottomtext">
+			<div class="featured__item-image iBG" data-img="<?php echo $thumbnail_data['src']; ?>">
+				<div class="featured__item-text">
 					<?php the_title(); ?>
 				</div>
 			</div>
 		</a>
 
-	</article>
+	</div>
 
-<?php } } ?>
+<?php } ?>

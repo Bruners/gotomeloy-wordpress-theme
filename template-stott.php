@@ -57,8 +57,8 @@ Template Name: Portfolio Stott
             <?php endwhile; ?>
         </section>
         
-        <section class="sections padding-size-s offers__center-wrapper">
-            <div class="offers__container">
+        <section class="sections padding-size-s">
+            <div class="offers__featured">
                 <?php
                     // WP_QUERY Arguments
                     $offers_args = array(
@@ -70,14 +70,21 @@ Template Name: Portfolio Stott
 
                     if ( $offers_query->have_posts() ) : while ( $offers_query->have_posts() ) : $offers_query->the_post();
 
-                        get_template_part( 'parts/offers-index-entry.inc' );
+                        get_template_part( 'parts/offers-featured-entry.inc' );
                     endwhile; wp_reset_postdata(); endif;
                 ?>
             </div>
         </section>
 
-        <section id="opplevelser" class="sections padding-size-s portfolio">
-        
+        <section class="sections padding-size-s">
+            <div class="portfolio__featured">
+                <?php if ( $portfolio_query->have_posts() ) : while ( $portfolio_query->have_posts() ) : $portfolio_query->the_post(); ?>
+                <?php get_template_part( 'parts/portfolio-featured-entry.inc' ); ?>
+                <?php endwhile; wp_reset_postdata(); endif; ?>
+            </div>
+        </section>
+
+        <section class="sections padding-size-s">
             <?php if ( $is_filtration ) { ?>
 
             <!-- BEGIN: FILTERATION -->
@@ -90,17 +97,14 @@ Template Name: Portfolio Stott
             <!-- END: FILTERATION -->
             <?php } ?>
 
+            <div class="portfolio__grid">
             <!-- BEGIN: PORTFOLIO GRID -->
-            <article class="grid clearfix" data-col="<?php echo get_post_meta(get_the_ID(), 'portfolio_columns', true); ?>" data-margin="25" data-height="0.8" data-double-height="1.6" data-masonry="<?php echo $is_masonry; ?>">
-
-            <?php if ( $portfolio_query->have_posts() ) : while ( $portfolio_query->have_posts() ) : $portfolio_query->the_post(); ?>
-            <?php get_template_part( 'parts/portfolio-index-entry.inc' ); ?>
-            <?php endwhile; wp_reset_postdata(); else: ?>
-
-                <p class="entry"><?php printf( esc_html__( 'Ready to publish your first entry? <a href="%1$s">Get started here</a>.', 'gotomeloy' ), esc_url( admin_url() ) ); ?></p>
-            <?php endif; ?>
-
-            </article>
+                <?php if ( $portfolio_query->have_posts() ) : while ( $portfolio_query->have_posts() ) : $portfolio_query->the_post(); ?>
+                <?php get_template_part( 'parts/portfolio-grid-entry.inc' ); ?>
+                <?php endwhile; wp_reset_postdata(); else: ?>
+                    <p class="entry"><?php printf( esc_html__( 'Ready to publish your first entry? <a href="%s">Get started here</a>.', 'gotomeloy' ), esc_url( admin_url() ) ); ?></p>
+                <?php endif; ?>
+            </div>
             <!-- END: PORTFOLIO GRID -->
         </section>
     </div>
@@ -128,7 +132,7 @@ Template Name: Portfolio Stott
                 <div id="video-slider" class="carousel-inner" role="listbox">
                     <div class="item active">
                         <div class="video-carousel yt-video embed-responsive embed-responsive-16by9" data-yt_id="ZlQM7-BJagM">
-                            <img src="https://www.stott.no/wp-content/uploads/2019/01/placeholder_2x2_trans.jpg" class="iBG" data-img="https://i.ytimg.com/vi/ZlQM7-BJagM/maxresdefault.jpg" width="560" height="315" />
+                            <img src="https://www.stott.no/wp-content/uploads/2019/01/placeholder_2x2_trans.jpg" class="lazy" data-src="https://i.ytimg.com/vi/ZlQM7-BJagM/maxresdefault.jpg" width="560" height="315" />
                         </div>
                         <div class="carousel-caption">
                             <h5 class="text-center">Skattejakten LIVE</h5>
@@ -137,7 +141,7 @@ Template Name: Portfolio Stott
                     </div>
                     <div class="item">
                         <div class="video-carousel yt-video embed-responsive embed-responsive-16by9" data-yt_id="xM7d2HHvAR0">
-                            <img src="https://www.stott.no/wp-content/uploads/2019/01/placeholder_2x2_trans.jpg" class="iBG" data-img="https://i.ytimg.com/vi/xM7d2HHvAR0/maxresdefault.jpg" width="560" height="315" />
+                            <img src="https://www.stott.no/wp-content/uploads/2019/01/placeholder_2x2_trans.jpg" class="lazy" data-src="https://i.ytimg.com/vi/xM7d2HHvAR0/maxresdefault.jpg" width="560" height="315" />
                         </div>
                         <div class="carousel-caption">
                             <h5 class="text-center">Go to Meløy</h5>
@@ -146,7 +150,7 @@ Template Name: Portfolio Stott
                     </div>
                     <div class="item">
                         <div class="video-carousel vm-video embed-responsive embed-responsive-16by9" data-vm_id="199325238">
-                            <img src="https://www.stott.no/wp-content/uploads/2019/01/placeholder_2x2_trans.jpg" class="iBG" data-img="https://i.vimeocdn.com/video/695381075_1280x720.jpg" width="560" height="315" />
+                            <img src="https://www.stott.no/wp-content/uploads/2019/01/placeholder_2x2_trans.jpg" class="lazy" data-src="https://i.vimeocdn.com/video/695381075_1280x720.jpg" width="560" height="315" />
                         </div>
                         <div class="carousel-caption">
                             <h5 class="text-center">Go to Meløy</h5>
@@ -155,7 +159,7 @@ Template Name: Portfolio Stott
                     </div>
                     <div class="item">
                         <div class="video-carousel yt-video embed-responsive embed-responsive-16by9" data-yt_id="CkxmJ592_TY">
-                            <img src="https://www.stott.no/wp-content/uploads/2019/01/placeholder_2x2_trans.jpg" class="iBG" data-img="https://i.ytimg.com/vi/CkxmJ592_TY/maxresdefault.jpg" width="560" height="315" />
+                            <img src="https://www.stott.no/wp-content/uploads/2019/01/placeholder_2x2_trans.jpg" class="lazy" data-src="https://i.ytimg.com/vi/CkxmJ592_TY/maxresdefault.jpg" width="560" height="315" />
                         </div>
                         <div class="carousel-caption">
                             <h5 class="text-center">Støtt Brygge Promo 2018</h5>
@@ -192,7 +196,7 @@ Template Name: Portfolio Stott
                                 $contact_form_adresse = $options['contact-form-adresse'];
                                                          
                                 if(!empty($contact_form_logo)) {
-                                    echo ('<p><img src="' . $contact_form_logo . '" /><br /></p>');
+                                    echo ('<p><img class="image-lazy lazy" src="" data-src="' . $contact_form_logo . '" /><br /></p>');
                                 }
 
                                 if(!empty($contact_form_adresse))
@@ -220,7 +224,7 @@ Template Name: Portfolio Stott
                 </div>
                 <div class="modal-body aligncenter">
                     <a href="" id="webcam-url" rel="attachment" data-fancybox="images" data-width="1280" data-height="800">
-                        <img class="alignnone size-full" src="" id="webcam-img" alt="Webkamera" width="568" height="355" />
+                        <img class="alignnone size-full lazy" src="" id="webcam-img" alt="Webkamera" width="568" height="355" />
                     </a>
                     <br />
                     <div class="table-responsive">
@@ -257,7 +261,7 @@ Template Name: Portfolio Stott
                                                 $tdtime = $datetime;
                                             };
                                             $value = round($level['value']);
-                                            echo "<tr><td align='center'><img src='",$dir, $flag,".png' alt='",$flag,"' height='26' width='26'></td><td>",$time,"</td><td>",$value," cm</td></tr>";
+                                            echo "<tr><td align='center'><img class='lazy' src='' data-src='",$dir, $flag,".png' alt='",$flag,"' height='26' width='26'></td><td>",$time,"</td><td>",$value," cm</td></tr>";
                                         endforeach;
                                     };
                                 } catch (Exception $e) {

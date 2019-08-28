@@ -1,3 +1,8 @@
+
+document.addEventListener("DOMContentLoaded", function () {
+  yall({});
+});
+
 /*!
  * Bootstrap v3.4.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 Twitter, Inc.
@@ -375,6 +380,16 @@ if (typeof jQuery === "undefined") {
     // and run it again every time you scroll
     $(window).scroll(function() {
         sticky_navigation();
+    });
+    // Load facebook customer chat
+    $(document).ready(function() {
+        $.ajaxSetup({ cache: true });
+        $.getScript('https://connect.facebook.net/nb_NO/sdk/xfbml.customerchat.js', function(){
+            FB.init({
+                xfbml            : true,
+                version          : 'v3.3'
+            });
+        });
     });
 }(jQuery);
 

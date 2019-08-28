@@ -5999,16 +5999,10 @@ article.portfolio {
     margin: 12px;
 }
 
-
-
-/* Stott aktiviteter */
-/*#post-22234 .entry-image {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1' viewBox='0 0 586 478'%3E %3Cpath d='M94 249c0 3 0 3 1 1 1-1 2-2 5-2 4 0 4 0 1 1s-4 3-2 6c2 2 11 4 12 3l4-1 6-2h4l7-4c2-2 2-2 0-3-2-2-6-2-20-2H94v3z'/%3E %3Cpath d='M74 248c-10 0-12 1-12 3s0 2-1 1c-2-2-11-2-12 0h-2c0-2-1-2-3-2h-6l-1 1v-1c1-2-11 0-12 1l-3 2v1l2 1-2 1-8-2c-6-1-9-2-7-3l-2-1c-4 1-5 2-1 3 4 0 5 2 2 2l-3-1c-2-3-3 0-3 10v10h65a8299 8299 0 0 1 79-1l12-1 17-2 9-1c6-1 7 0 7 1h1c1-2 2-2 11-2l4-1h5c1 0 4 2 4 4h-1l-4-1c-2 0-3 0-3 2 1 1 0 1-3 1-5 0-5 2-2 3 4 1 4 2 1 1-7-1-7-1-4 1 1 1 3 2 16 1l15-1-1-2c-1-1 0-1 17-1l9-1-28-2c-6 0-10-1-10-3s7-1 8 0l29 1a428 428 0 0 0 23-1l-10-2-10-1-11-2c-6-1-8-2-9-1-1 2-8 2-8 1l1-1v-1l-1 1h-5c-3 0-3 0-2 1s-1 1-7 1l-13 1-5-1-1-1-2 1h-3l-3 1h-9l-9 1-3 1c-2 0-3-1-3-2l-2-1-3 1c0 2-1 2-7 1l-8-1-4-3h-2v2c-1 0-2-1-2-3 0-3 1-4 3-2 4 3 5 2 2 0-4-3-7-4-10-3-2 0-2 1-1 1l1 1-6 1c-4 0-6 0-5-1h-6v1l2 1 8 3h5l1-1 1-1 1 2c0 2 0 2-2 2h-9l-1 1-1-2-1 1c-2 2-3 3-2 0l-2 1c-1 2-5 3-5 1l-4-1H86l-1 1 1-4v-3l-1 2c0 2-2 3-2 1h-2l1 3c1 1 1 1-1 1l-2-1v-1l-1-1v-1l4-2c3-3 3-3 1-5v-1l2-1 2-1c2 0 2-1 2-4s0-3-4-3l-11 1zm243 16l-10 1c-7 0-11 1-8 2v2c-1 2 0 3 2 0h4a273 273 0 0 0 52 0c0-2-38-8-40-5zm242 5l2 2c0 2-1 2-7 2-9-1-9-1-8-2l-1-1-1 3c1 2 0 2-5 3-4 0-5 0-5-2h-1c0 2-2 2-4 0-1-1-3-2-2 0h-2c-3 0-5 1-2 2 1 1 4 2 8 1 5 0 6 0 6 2l3 2 8 3 4 1v-1l-1-1 4-1c3 1 5 1 6 3s2 2 4 1h9c5 0 6 0 7-2l3-1h3l-3-2c-2-1-2-1 0-1h2l-2-1-2-1h2c2 0 2-1 2-5s0-5-2-5l-2 2c-1 2-1 2 1 2 1 1 0 1-1 1l-3-1c0-2-1-3-5-3-4-1-7 0-5 2 2 1 2 1-3 1-2 1-3 0-3-1 0-2-2-3-5-3l1 1z'/%3E %3Cpath d='M582 285l-2 3h-16v1l1 1-2 1h-1c-1-1-2-2-5-1l-3-1c1-1 0-1-4-1-3 0-5 0-5 2v1c1-1 14 1 15 2s0 1-2 1c-3-1-4 0-2 1h-2l-4-1h-2c-2 0-2 0 0 1 1 1 1 1-1 1h-3l3 1c2 1 2 1-1 1l-3-1-1-1h-3c-3-1-5 0-5 1l-1 1h-2v-2c-1-1-1-1 1-1v-1c-3-1-7 0-7 2 0 1-2 2-2 0h-4l-4 2h5c4 0 5 0 5 2l-1 1-1 1h3l2 1h1c3 0 2 1-1 2l-2 2c1 1 1 1-1 1s-2-2-1-3 0-1-1-1c-2 0-3 1-3 2l-4 1-4-1h4l2-1-2-1c-2 0-2 0 0-1h4c3 1 0-2-3-3h-13l-1-1v1l-4 1-6-1c-1-1-6 1-6 3l1 1h4c4 0 1 1-4 2-4 0-5 0-6-2l-2-2h-9l3-1 3-2-3 1-3-1h-6l3 1c4 1 3 1-5 2-3 0-2 2 2 2l2 1 1 1v-2l1-1h2v2c1 1 5 0 5-1l1-1c2 0 0 3-3 4h-3l3 1 3 1h-3l-4 2h3c1 0 2 0 1 1l6-1 4-1h6c0 1 13 2 15 0s0-2-7-2l-6-1h3v-1l1-1c2 1 2 0 0-1v-2l3 2c0 3 2 3 2 0l1-2c2 1 2 3 0 4l1 1 1-2 1-1 1 1 2 1c2 0 3 2 0 2-1 1 2 1 7 1h11l2-2 4-1c2 0 3 0 2-1-3 0-2-2 1-2l2-1 4 1h8l-2 1-1 1-2 1h-1l3 1h2c-1 2 0 3 2 1v-2l-1-1 1-1h2l-1-1c-2 0-1-4 0-5l3-1-1 1-1 2c0 2 1 3 4 2l4 1v2c-2 1-4 0-4-1h-3l2 1c3 1 3 3 0 2-2 0-2 0-1 1h10l5 2 3 1-2 1 7 1c4 0 5 0 2-1l-4-2h2l4-1c3 0 4 1 3 2v1l2-2c0-1-1-2-3-2h-3l3-1c3-1 3-2 3-8 0-5 0-7-2-8v-1c1 0 2 0 2-3 0-2 0-3-2-3l-2 1z'/%3E %3Cpath d='M344 290v1c1 0 1 1-1 1-1 1-1 1 1 1 7 0 9 1 5 4-2 3-9 3-9 2 0-2-5 4-5 6l-2 2 1 1c1 1 1 1-1 1-2-1-3-1-3 1h1l4 1-2 3c-1 1-1 1 1 1h1l-3 1c-4 0-5 0-4 1l-1 1-2-1v-2l1-1h-1l-1-4h-1l-2-1h-3l-2 3v2l-1 2 2 1h3l-5 2-2 1 2 1v1l-1 1v4l-1 3c1 3 1 3-1 2-3-1-3-1-3 1 0 1 1 2 2 1l1 1c-1 1 2 4 4 4v2h7c1-1 2-1 3 1l4 1c2-1 2-1 0-1v-1c1-1 1-1-1-1h-2c1-2 1-2-1-4-2-1-3-2-2-3s4-2 5-1v1c-1-1-2 0-2 1h1l1 1c-1 1 0 3 2 4l1 4 1 1 1-1h1v2l-1 2v3c0 3 0 3 1 1l1-3v3c0 2-1 3-4 4h-4l1-1 1-3-1-2c-1-1-1-1 1-1s3-2 1-4l-1 1-1 1c-2-1-4 2-4 4h2l2 1h-2l-2 1c-1 3 1 13 2 12l1 2c0 1 0 2-1 1v1c1 2 1 2-1 2l-16-2-2-1-1-1-1-2 2-1c1 1 1 1 1-1l-1-2h-2c-2 0-2 0 0-1s2-1 0-1-6 3-6 4h3c2 0 2 0 3 3l-1 3-1-1c0-2-12-2-14 0h-2c-2-2-6-3-6-2h-2c-1-1-1-1 0 0 2 2 1 4-1 3s-2-1-3 1c0 2 0 2-2 1l-3-3-3 1c-2 1-2 1-2-1l-6-1h-7l-2-1c1-1 0-1-2-1l-11-1 3-1 3-1 3-1c1 1 2 0 2-1 1-2 1-2 1 0s0 2 2 2h4v-1l1-2c1 1 2 0 2-1l1-2 2-1c1-2 4-1 4 1 0 1-1 2-3 1l-2 1 1 1 1 1h-1v4l1 2 1-2 1-2 1 1v-1c1-2 3-3 2 0h1l3-1c2 1 3 0 5-1l3-1h1l5-1c3-1 4 0 5 1h1c-1-1 0-2 2-2s3 1 2 3v2l1-2 2-4c2-1 2-1 2 1v3l1-4c1-5 2-6 2-2 0 3 3 6 4 3h2v-1c-1-5-1-6 1-7 2 0 2 0 2 3-1 3 0 4 1 2h1c0 2 0 2 1 0l1-1c0 3 4 4 4 1l1 1c2 1 2 1 2-1l-2-2c-2 0-4-3-2-3l-1-1h-3l-2-1-4-3v-2l1-2v-2c0-2-2-1-2 1h-1l-1 1v1h-4v-1c2-2-2-2-5 0-3 1-4 2-4 5-1 3-1 3-1-1l-1-4-2 2c-1 1-1 0-1-1 1-2-2-5-3-3h-3l-1-1-2-1-4-2-6-1-9 2c-5 0-5 0-5 3 1 2 0 3-2 2l-4-1c-1-2-1-2-2-1l-2 5-1 2v-2c1-3 0-3-1-2h-4c-2-1-2-1-2 1 1 3-1 5-3 3l-1 1-2 1-1-2h-4l1-1v-1h1c3 0 3 0 2-1-3-3-5-2-6 1 0 4-2 4-2 0-2-5-1-6 9-5l8-1-5-1-5-1-7-1c-3 0-5-1-4-2h-2l-3 2c0 2-3 3-3 1l1-1h1-2c-2 0-2 1-1 2l3 1v1h-6c-2 0-3 1-3 2 0 3-1 6-3 7v-4l1-3c1-1 1-1-1-1-3 1-3 0 0-2l2-3-2 1h-3c-1 0-2 1-2 3s-1 2-2 2v1c1 2 1 2-1 3l-3 1-2 2c-1 2-4 2-4 1l-1 1c-1 3-4 3-4-1 0-3-1-5-3-5l-1-2h-1l-1 1-2 1h-1c0-1 0-2-1-1v2h-1l-3-1h-2l-2-1-1-1 1-4h2l2-2 2 2 1 1 1-3c0-2 0-2 2-2h2l-1-1c1-1 5-1 5 1l2 1 2-1-1-2c-2-3-3-5-1-5l1 1c-1 1 2 7 4 7l1-4c0-4 0-4-4-5l-7-2h-2c0 1-2 1-10-1l-3 1c1 2 0 2-2 1l-5-1h-6l-3-1h6l-3-1-6-1c-4 0-10-2-10-3l2-1 16 1c16 1 29 3 27 4v1l2-1c1-1 9 0 10 1 2 2 6 2 7 0l-2-1-3-1c0-2-4-3-16-3l-11-1h-3l-2-1-3-1-6-1c-1-1-1-1 1-1l3-1c0-1-11 0-13 2h-2l-1-2-1-1h-2c-2 0-2 0 0 1 4 2 2 2-3 2l-7-1-3-1-3-1-4-1v-1c1-1 0-1-2-1l-4-1 2-1 2-1h-4c-5 0-6 1-4 1s2 0 1 2c-1 1-1 1 5 3 3 1 2 1-6 1l-10-2-3-1v1c1 1 1 1-1 1-4 0-4 0-3 2a94 94 0 0 0 39 3c2 1 3 1 1 1l-2 2c0 2 1 3 4 2v1c-2 1-2 2 0 4l1 4h1l3 2c1 1 8 2 7 0l-2-1-3-1-2-1-1-1-2-1v-2l-2-1h6c3-1 6-1 9 1l2 1-3-1-4 1-2 1v1h6c2 1 3 4 1 4l-1 1 3 1 2-2 1-1 2 1 1 1 1-2h-1l-2-2c0-2-1-2-2-2h-1 7c3 1 7 2 8 1 4-1 2 1-3 3-2 0-3 1-3 2l-3 1-4 2-3 2h-2l-1 1h-1l-2 1-7 1-1 1c-1-1-1 0-1 1 0 2 0 2-2 2h-6l-5-1c-1 1-1 1 0 0 0-2 0-2-2-1l-3 1h-1l-1 2h-1l-2-1c-1 1-1 0-1-2 0-1 0-2-1-1h-3l-3-1-2 1-1 1-2-2c-1-1-1-1-1 1l-1 2-1 1v1l-5 2-1 3h1l2-1h1l1-1 2 1c0 2-1 3-3 2-1-1-2-1-2 1h-3l-1 1c0 1 0 2-2 2v-1c1-1 2-5 1-6h-1l-3 2c-3 0-4 1-1 1h3l-2 5-1 6h2c2 0 2 0 1 1l-2 2h-1l-2 1c-1 1-5 3-6 2v-2l1-2c-1-2-2-2-6-1l-6 1h-5l-2-3-1-2v-1c-2 0-3-2-3-4h4c3-2 5-1 3 1s-2 6 0 6h1c1-2 2-2 4-1l4 1-1-7c-1-2 0-2 7-2 3 0 4-1 1-2s-3-3 0-3v-2h-4l-2 1-2 1c1-2 1-2-2 0l-2 3-2-3h2l-2-2-1-2c0-2 0-2-1-1-2 1-5 2-5 0h-4c-3 0-4 1-4 2-1 2 0 2 2 2l6 1h5v2c-2 3-2 3-4 2h-2c1 1 0 1-2 1l-1 4c0 2 0 3 1 2h1l-1 3-3 1-2 1-2 1c-2 0-3-1-3-3s0-2 1-1c0 3 3 2 4-1l1-1 1-1h-2c-2 1-2-2 0-4 2-3 3-3 1-4l-4 2h1v2l-1 3-2 2-2-1 1-1 1-1v-1c-1 1-1 0-2-2l-2-3v8h-1c-1-1-2 0-2 1h-5c-2-2-3-1-2 1v1c-1-1-2 0-3 1-3 2-4 3-4 1h-4l1-2 2-2 2-3v-1l-1-2c0-2-1-2-3-1-1 0-2 0-1-1v-2c2 1 5-1 5-3h-2l-5 1H5l3-2h12l-2 1c-1 0-2 2 0 2 1 1 3 0 5-1l1-2h-3l3-1 4-1-2-1h-6l-5-1h-5c0-1 6-3 7-2s1 1 2-1l1-2v2c0 2 0 3 2 2 2 0 3-1 3-2h1l1 1h1c2-2 2-2 3 0h2c0-2 0-2 1 0 2 4 2 4-1 4h-4c-1 2 0 4 2 4 5-1 6-2 6-7v-5l1 1c0 1 1 2 3 2l4 1 2 1h7l4-1c2 0 2 0 0-2l-3-2-1-1 2-1c2 0 2 0 2-2l-1-3h-2l1-1c4-2 6-2 8-1h1v-1c2 0-10-5-13-5l-3-1v-1l6-3h-1l-14 2-7 1-1 1-4 1c-1 2-2 1-1-1 1-1 2-2 3-1v-1l1-1 1-1c0-1-5-3-6-2l-1-1v-2h-8l3 1 3 1 1 1c1 1 0 2-1 2v1l1 1-1 1h-4l-3-1h-1v1l-1 1c1 1-1 2-3 2v-1l1-1-3 1-2 1 2-3 2-2-2-1-4-2-4-1-1 15 1 13h2l-1 1v2c2 2 2 2 2 0h1l-1 3c-2 0-1 4 0 4s2 1 2 3v5l-2-1-1-3v-2l-1-5-1-2v31l1-1 2-1 2-1c1-1 1 0 1 1l-2 2c-3 0-5 2-4 5 0 1 1 2 3 2s2 0 1-1l-1-1h2l3-1v-1l-4-1H4l4-1c2 0 3 0 2-1-2 0-2-1-1-1 2-1 3 1 2 4h18c8 0 10 0 9-2l1-1 1 2c0 1 4 0 4-2h10c1-2 2-2 2-1s2 1 6-1a116 116 0 0 1 11-4l11-2 10-1-2-1c-2 0-2 0-1-1h7c1 1 0 1-1 2s-1 1 2 1l4-1h-1c-1 0-2 0-2-2l-1-1 16-1c0 1-3 3-6 3-4 1-3 3 0 2 2 0 2 0 1 1s3 2 8 2c2 0 3 0 2 1l1 1v-2l3-1v1c0 2 5 0 8-2l2-1-1 1v1l1-1 2-1v1l1 1 1-3 1-1 1 1h2l-1 2c-2 1-2 2-1 2l3-2c3-2 4-3 3 0 0 2-8 4-17 5-8 0-13 3-9 6l1-1h8l16 1c-1 1-8 2-9 0h-3v1c2 0 3 2 0 2l-3 2c-2 1-3 2-2 5l2-2 3-2 2-1c0-1 4-2 5-1h2l3-2 1-2 24 1 6 1 2 1h1c0-1 12-1 13 1h2c0-1 2-1 2 1l2 2 6 1 3 1-2 1-4 1h-5l-5-1h-2l1 1c1-1 2 0 1 1h-3c-2 0-2 0-2 2s0 2 2 2c2-1 2-1 1 1-2 2-2 2-2 5 0 2-1 3-2 3s-3-3-2-4l1 1 1 1 1-4-1-3-1-1-1-3c-2 0-2 0-1 2 1 3 1 4-1 4l-1-1-4-1c-3 0-3 0-2 1l2 3c0 2 2 4 3 2l1-1c2 0 3 4 1 4h-1l-2-1-1 1h-3c-3 0-4 1-2 3v2c-1 1-1 1-2-2l-1-3-1-2h-1c-2 3-3 2-1-1 1-2 2-2 3-1s2 2 3 1h2l1-2h-1l-3-4v-1l-4-1h-3l2 1v1h-3l1 1c2 2 3 4 1 3h-1v3h-1c-1-1-1-1-1 1-1 1-1-1-1-4l-1-7c-2-2-3-2-3 0l1 1 1 2-1 2v2l1 2h-4l-2 3h-1v-6l-2-4v9l-1 2-1-2-2-2-1 1 2 2-1 1c-1-2-3 1-2 4l-1 3-1-1h-5c-1 1-3-1-4-4-1-5-1-5-3-4h-3l-2 1h-1v-1l-1 1h-2l-1-1-1-1v2l-3 1-4-1c-1-2-5-2-10 0l-4 3v2l-1-1c0-3-4-2-5 0h-4l-3-1-2 2v3l-1-3c-1-1-2-2-3-1l-2 1-1 2h-1c1-2 0-3-5-4-3 0-3 0-3 2l-1 2-1-1-1-3-1 2-1 2-1-1-2-1c-1-1-2 0-2 1l-1 2v-1l-1-2-2-1h1c0 2 2 0 2-2 0-1 0-2 1-1v1l1 1c1 0 2-5 1-6v2h-1c-1-2-8-3-8-1l1 1h2l-2 1-2 1-3 1h-5l-14-1c-10 0-14-1-15-2h-1c-1 2-5 3-5 2l1-1v-1l-2 1-2 3H2v-4c-1-1-2 0-2 4 0 3 0 4 2 5l1 1 1 1c1 0 2 0 1-1l3-1 4 1c2 0 2 0 1 2v3l-3-1-2-3-2 2-3 1c0-1-1-2-2-1l-1 32v31h14c12 0 14 0 14-2h1c0 2 5 2 87 2a469 469 0 0 0 90-2c0 2 1 2 8 2 8 0 8 0 8-2v-2l1 2c0 2 1 2 5 2l6-1h1l7 1c6 0 8 0 9-2h1c0 2 1 2 8 2l8-1 1-3c1-1 2-2 1-3l1-1 2-4c1-2 2-3 2-1 1 1 1 1 1-1 0-3 0-3 1-2l2 4v2l-1 4c-1 3-1 3-1 0l-1-3-1 6-1 2c-1 1-1 1 1 1l2-1 2-2c1 0 2-1 2-3 1-2 1-2 1 0 1 2 1 2 3 0 2-1 2-1 1 1l-2 3c-2 1-1 2 2 2 2 0 2-1 2-3l2-2c3-2 4-2 4 1l1 2v-4c0-2 0-2 1-1 2 2 2 2 3-1l2-3v3c1 2 0 4-1 6s-1 2 4 2c4 0 6 0 7-2l3-1 1-1 3-2c3 0 5-1 5-4 0-2 2-5 3-4h1v-3c0-2 0-2 1-1h1c0-1 0-2 1-1l2-1 3-1c2 0 2-1 1-3v-1c2 1 3 0 4-2 2-6 1-6-3-4-4 1-5 1-6-1h-4v-2c1-1 0-1-1-1l-3-1h-1l-3-1v-1l1-2h-3l-2 2-2-1h-4c0-2-1-2-4 0l-1 2c2 0 2 0 0 2s-5 1-3-1v-4c0-3 0-3 6-3l5-1 4-1 2-1 2-1 2-1h2c0 1 1 1 1-1 1-1 0-1-2-1l-4-1 1-1c1 1 2 0 3-1 1-2 0-3-2-3v1c2 1 2 1 0 1-2-1-3 0-3 1l-2 2h-3l2-1v-1l-1-2v-1c-1 0-2 1-1 2l-1 2c-1-1-1-1-1 1v1h-1l-2-1-3-1c-2 0-3-1-2-4l-2-1v5l-1 1c0 2-1 2-1 1l-3-1c-1 0-5-3-3-3l-1-1c-2-2-2-2-1-4l2-4v-10c-1-9 0-12 3-10v-1c-1-2-5-1-4 1 0 1-1 2-3 2-4 1-6 0-6-1h1l1-2 1-2c1-1 2 0 2 1 0 3 1 3 3 0s2-4 0-4l-1-1h2l2 2c-1 2 3 2 8 1l1-1c0-2-7-3-7-1h-1c-1-2 0-2 2-2h2l-3-1 14-1 14 1-3 1h3l3-1 3-1c3 0 3 0 1-1l-4-1h-2l-2-2c-1-1 1-1 4-1h6l5-1c4 0 5 1 3 1-3 1-3 2 1 2h9c3 0 4 0 3 1-2 1-2 1 2 2h7v-2h1v4c0 2 0 2 2 2s2 0 1-1v-2l1-2v1l1 2v1l2 1 3-1 2-1h10c1-1 2-2 1-3l1-2 1 1 3 4 2 1v-2l2-2c1-1 2-2 3-1v-4l1-1c1-1 0-2-1-2h-1l-1 1-1-1c1-1 0-1-1-1l-3 2h-3c-2-2-2-2-4 0-1 2-1 2-3 0l-2-2h2c4-1 6-1 8 1v-1l-1-4h-8c0 1-6 3-7 2l-1-1h1c0 2 2 1 2-1v-1h2l5-1 3-3c0-2 0-2 1 0h1c0-2 0-2 2-1h4l3-3c1-2 1-2 0 0 0 2 0 2 2 2 1-1 2 0 3 1h1l1 1-1 1c-1 1 0 1 2 1 3 0 4 0 3-1l1-1c2 0 2 0 1 2l-3 2c-2-1-6 3-6 7l1 5v-1c0-1 1-2 6-1h7v-6l1 3 1 2 2 1h1c-1-1 0-1 3-1l4 1h-2l-1 1v1l-2 1h-2c-2-1-2-1-4 1s-2 2-1 0c0-2-1-3-2-1h-1c0-2-2-1-2 2l-1 6c-1 2-1 2-1 0 1-3 0-3-1-3h-2v-3c-1-2-5 2-4 6 0 2 0 2 1 1 1-2 1-2 2-1h2c1-1 1-1 1 2v3l1 2 1 2c1 4 3 0 3-5l1-4v4l1 5h2l1-1h2v1c-3 4-3 5 1 4l3-2h1v2c1 2 1 2-1 1-1-1-7 0-7 2h-1c-1-1-1-1-1 2s0 3 1 2c1-2 1-2 1 0 0 5 2 6 5 3h1c0 2 0 2 1 1v2l-1 4 3-3 1-5v3l1 3 1-1 1-2 1-3 1-2 1-2h1c0 4 1 2 1-2s1-5 2-5l2-1h1v1l1 3c1 1 1 1 1-1l-3-7-2 2c-1 2-1 2-1-1 1-4 2-5 3-3l3 2 1 1v3c0 3 3 5 5 3v-1l-1-3c0-2 0-2 1 0h1l2-4c2-1 3-2 2-4 0-3 2-9 3-7v4l-1 7c1 5 3 4 3 0v-2l1 2c1 3 4 4 4 1l2-2 1-1-1-2h-1l1-3 1-2 1-1v-2l1 3c1 2 1 3 2 2l1 2v3l1-3c0-2 0-2 2-1 2 0 2 0 2-3s0-3 1-2h2c1-2 3 3 3 6-1 2-2 2-3 1l-4 1c-2 1-3 4-1 4v2l1 2 2 1v1l-1 1c2 2 4 0 3-2l1-2 3 1-1 1 2 3h3v-4c0-2 0-3 1-2v2l1 1 1 2 2 1c1 0 2 0 1-1l-1-1h1c1 0 2-4 1-7v-5c0-3 0-3-1-2l-2 2h-1l1 2c1 1 0 1-1 1l-2-1v-4c-1-2 0-3 1-1h2c2 0 2-2 2-6v-5l1 7 2 9v6l1 4-2 3v3h-1l-1 1-1 1h-2v1c1 2 1 2 2 0l3-1h1c1-1 1 0 1 1l-1 2-1 1h1l1 1h1c2-2 2-3 1-3v-2h1l2 2 1-1c-1-1 1-8 2-8v1c-2 3-1 11 2 10v-3c-1 1-2 0-2-3 0-2 1-3 3-4 2 0 2 0 1-1-3-1-7-1-9 2h-1v-3l3-2-2-2-1-4c1-1 4 2 4 4h2l-1 2c-1 1-1 1 1 1l2-1h2c3 0 3 0 3-5 0-4 0-5 3-8s3-3 1-3l-3-1h-3c0-1 2-2 5-2 4 0 4-1 2-2-3-2-3-3 1-3 1 1 3 0 4-1h2l3 1c0-1 3 1 2 2l2 1 3 1 2-2-2-3c-2 0-3-2-1-2h9l2-1 1 2h-2l-3 1h-2v1l1 2h1l2-1 4-2h4c2-1 1-2-2-2-1-1-2-1-2-3h7l1-1 2-1c1-1 4-1 3 1l3 1c3-1 4 0 1 1l-1 2c0 1 1 2 6 1 7 0 9-1 6-2-2-1 5-1 10 1h3v-20c0-19 0-21-2-21-1 1-1 1 0 0l2-5c0-3 0-4-2-4s-2 0-1 1 1 1-1 1l-2-1-1-1h-3l2 1c1 1 0 1-2 1-3 0-4 1-4 2l-2 1h-3l3 2c2 2 2 2 0 2l-6 1-6 2 8-1c9-1 15 0 15 3h-1l-1-1-1 1-1 1-1 1c0 2-5 1-14-1-5-1-10-2-13-1l-6-1-7-2c-2 0-2 0-2-3 1-2 1-3-1-4-2-2-3-2-2 0l1 1 1 2-1 1-1-1h-1l-6 1h-3v1l-1 3h1c0-2 2-1 1 1l-2 2h-1c1-1 0-1-2-1s-2 0-1-1l2-2v-1l1-1h-2l-3-1c-1-1-2-1-2 1l2 1 1 1-21-1h-5c-3 0-4 0-3-1l1-1c-3-1-4-1-3 1 0 2-1 1-3-1h-5l-4-1-2-1h7l10-1h4l3-1c2-2 3-3 2-4l4-1h-7l-11-1-2 1h-1c1-1-2-2-5-1l-3 2h22c3 1 1 3-4 3h-14c3 0 3-2-1-2h-8c-5-1-5-1-4 1l1 1-3-1h-13l-4 2c-2 1-2 1 4 1l6 1 2-1h6c7 0 7 0 6 1h-32c-4-1-8 0-5 1 6 3 10 3 13 2h3l2 1 2 1h2c2 0 2 0 2 2v3c1 0 1 1-1 1-3 1-3 1-2-1 1-1 1-1-2-1h-3l1-1 1-1c0-1-3 0-5 2l-4 1-3 1-2 1h-1l2 1v2h-11c-1-1-1 0-1 1l-5 1c-2 0-3 0-3 2l1 2c1-1 2 0 3 1h2l2-1v2h-3c-3-2-5 0-5 3 0 2-1 3-2 3-3 0-2 5 1 6s3 3 1 3h-2c-1 1-1 1-1-1 1-2 1-2-1-2l-4 1h-2l1-1 1-2v-4l1-1c0-1 1-2 3-1 3 0 4-2 1-3l-1-2 1-1c2 1 2-1 1-5 0-2-1-2-1-1-1 1-1 0-1-2v-2l-1-1h-1c0 3 0 4-2 4h-1v1l-1 2c1 1-1 3-1 1h-6l2 2 1 1c-2 0-3 2-1 2v1l-2 3c0 2-3 4-5 2v-2l-2 2v3h-1l-1-2h-1l-2 1-5 1-4 1h-3c-2 0-3 1-3 2l-2-1-3-2c-2 1-6 3-4 3v2l1 1v1c-2 1-3 6-1 7l1 1h-2l-1 2v-2c1-1 0-5-2-5h-1c0-3-2-2-3 0s-2 2-3 1l-5-1c-2 0-3 0-3-2s-4-3-5 0c0 1-1 2-4 2-4 0-6-2-5-6v-2l1 2c0 2 1 3 2 3l2-1 1-3c1-2 1-2 2-1 2 2 4 2 4 1l1-2 1-2h1c0 2 1 2 2 0l1-2-2-1h-1v-6l-1-2c0-4 2-4 3 0l3 6h1c-1-2 2-3 3-1h2l5-3 6-3c2-1 2 0 0 1v2c1 1 0 1-2 1-3 1-6 5-4 8 2 1 7 0 7-1l2-1c4 0 6-1 3-2-1-1-1-1 2-1l8-2 3-3h-3l-4 1-1 1-1-1h-2l-4 1c-2 0-2 0-1-1 2 0 2-1 1-1l-1-4c0-2 0-3-1-2-1 0-2-1-1-5l1-6-1-1-2-1 1-1h2c2-2 3-2 3 0-1 2 6 1 13-2l4-2h-4l-6-1 1 1 2 1-4 1h-3l-1 1-1-1 1-2 1-2c1-2 1-2 9-2h4c-2 0-2-1-1-1l7-1c4 0 5 0 3 1l-3 1h3l4-1h21l4-1h-7l-11-1c-7 0-10 0-9-1s1-1-2-1l-3 1-4 1-7 1h-5c-1-1-1-1 1-3 3-2 3-6 0-5l-1-1c0-2 0-2 2-1 2 0 2 0 1-1l-4-1c-4 0-5-2-1-2l3-2 3-2v-1l1-1 1-1 1-2c1-1 0-1-1-1-5 0-5 0-4-1l4-2-1-1h-3l-1 1c-2 0-2 0-2 2 1 2 0 2-1 3-2 0-2 1-1 2s1 1-2 1l-4 2-1 1c0-2 0-2-1-1s-1 1-1-2v-2h-3l1-1v-1l-4-2c-2 0-4 3-1 3v1l-3-1-2-1c-1 0-2 0-1-2h2v-2l-1-2h-3l-3-1c0-2-3-3-4-1zm158 51l2 1 4 1h6l-1 1-2 2h-1c-1-1-1-1-1 1h-3c-2 1-9 1-8-1 0-1-2-2-4-1v1l1 1h-2l-3 1c0 2-2 1-5-2-2-3-3-4-1-4l1-1h17zm-24 24l1 1v2h1l1 1 1 1h1l-1-2-1-3h1c2 2 2 2 2 0l1 2v5l1-4c0-3 0-4 1-3v2l1 1 1-2 1 1c2 1 2 1 1-2l1 2c2 5 2 6 0 4-2-1-2-1-4 1s-7 2-7 1c-1-1-1-1 0 0 0 3-1 5-2 4l-1 2-1 1-1 1h-1v-5l-1-2-1-3c-1 0-1-1 1-1l1-3v-4l1 1c1 1 1 2 2 1zm-243 15l7 1 1 2h1c0-2 2-2 11-2 8 0 10 1 10 2v3l1 2-1-1-1-1-1 1h-5c0 2-1 2-1 1l-7-1c-1 0-2 1-2 3s0 2-1 1-1 0-2 2v4l-1 1h-2l1 1c1-1 1 1-1 7v3l1 1h-1l-1 1v9c1 2 1 2 1 0 0-3 2-7 4-6l2-2h2l-1 2-1 2c0 2 0 2-1 1-1-2-2 1-1 4v4l-3-1c-4-1-4-1-4-5v-4l-2 5-4 3-3 3-2 1c-1 0-1-1 2-2l3-3-7 1h-3l-2-2h-2v1c-2-1-2-3-1-4h1l1 1v-2c-1-1-1-1-4 2l-2 1v-2l-1-3c0-1 0-2 1-1l2-2 2-2 3-1-1-1c-1 0-2-1-2-4 0-5-3-7-3-3 0 2 0 2-1 1h-2v8c0 4 0 5-1 4s-1-1-1 1l-1 3-2 5-1 5v-1c1-5 0-16-2-15l-2-2c-1-2-1-2 2-1 2 1 2 1 2-1l-1-4c-1-1-1-1 1-2 1-1 2-2 3-1l2-2-2-2-1 1h-2l-1-1h-1l-3 2c-3-1-4 0-2 3v3l-1-1-1-1-2-2c-1-2-1-2-3-2-1 1-1 1 0 0 2-2 1-4-1-2l-1-1 2-1 3 4 2 3 1-1-1-5c0-2 0-3-3-2-2 0-2 0 0-2v-1h-1 5c4 1 4 1 2 2l-2 3h2l4-1c2 1 3 0 3-1l1-2 3-1c1 0 1-1-1-1-3 0-3-1-2-2 2-2 2-2 0-3s-2-1 1-3c2-1 2-1-3-1-4 1-6 0-6-1l2-1c3-1 21 0 33 1zm47 16l-2 7c-3 2-2 8 0 10h2l1-2 1 1v5c2 3 2 3 2 1l1-3v9l2 1v2l1-1h1c3 0 2 2-1 2-1 0-2 0-1 1l-2-1-2-4h-2l-1 2v-2c2-4 2-6 1-7-2-1-2-1-3 1l-1 4v1l2-3v2l-1 4v7c-1-1-1-1 0 0 0 2 2 3 2 1l1-1v3c0 2 0 3 2 4 1 1 2 1 3-1l2-1v-2c0-3 1-4 4-2 2 1 3 2 2 3l-3 1-3 2c-2 2-5 2-7 1-1-2-2-2-3 0l-3 1-2 1 1 1v1l-1 2c1 1 0 2-1 1v-2c0-2 0-2-4-2l-5 1c-4 2-5 1-6-1l-2-2v5l1 1c2 1 2 1 0 1-1 0-2 0-1 1h-2l-1-3-2-1h-3l2-1c3 0 5-2 3-3v-1l4-1c3-1 5 0 3 1v2c1 1 2-3 1-4l1-2h2c1 2 1 2 2 1h2l1-1 4-3 4-4h-2c-1 1-1 1 0 0l2-1v-3l-2-2h-1v2l-2 3-1 3-1-1 1-4 2-6 1-2-1 1h-2l-2-1 2-1h3l1-3 1-7-1-5-1 1c1 1 0 2-1 2v8l-1 1c0-2 0-2-1-1v-1c1-2 1-3-1-2l-2 4-1 5-1-3v-4c1 0 2-1 1-3l-1-3c-1-1-4 0-4 1-1 1-1 1-1-1l1-3 1 1h2c3-2 5-1 4 1-1 1 0 4 1 4l1-2 1-2c2 0 1-2-1-2l2-2c3-1 4-2 3-3l1 1c2 1 2 1 2-2v-4l1-2 1-2v6zM25 409l1 2v1l1-1c0-2 0-2 1-1l8 1c12 0 14 0 12 1-3 1-3 2 0 1l4-1c2-2 2-2 2 0l2 1h1l6 2c5 1 5 1 4-1-2-1-2-1 2-1l7 2h4l3 1c1 1-3 1-9 1H64c0 1 7 2 8 1l1 1c-1 1-3 2-7 2-5 0-5 0-2 1h6v1H57l-1-1c-1-3-1-3-3-2v1l2 1c0 1-2 3-4 2l-1 1-1 4-1-3 1-3 1-1v-1l-1-1h-1l-2 1c-4 0-5 0-7 3h-2l-3-1-2-1c0-1 0-2-2-1l-1-1 16-2 5-1h-7a300 300 0 0 1-20 0v-4h-1l-2 3h-2l-2-1-1-2c0-2 0-2-2-2s-3-1-1-2h13zm145 22l-2 3-1-1v-1l-1 2-1 1-2 1c-1 1-1 1-1-1l-1-3-1 2c1 1 0 2-2 3h-2l-4-1-4 1 1 1v2l3 3c3 0 4 3 2 3l-1 1c0 1 5 0 7-2h7l3 2h1c0-2 3-1 5 1h2l4-1c3 0 4 0 3-1l1-3 1 1c-1 1 0 2 1 3s1 1-1 2l-5 1c-3 0-3 0-3 2v2c-1-1-1-1-1 1 1 2-2 5-4 4h-1l-3 1c-3 1-3 1-3-1l2-1 3-2c1-2 1-2-3 0l-4 1-1-3c0-3-3-5-4-3v1c1-1 3 2 3 3v2l-1 2-1-3c0-2 0-2-3-1l-5 1h1c2 0 2 0 1 1l2 1c1-1 2 0 2 1 0 2-2 3-2 1l-2-1-2 1v1l-1-1-12 1-3 1 1-4h-1l-6 3-4-1 1-2 1-2h-2c-2 3-2 2-2-1v-3h-3l-3 1c-1 2-1 3 1 3l-1 2h-4v-2c2 0 3-1 1-4v-3l1-1 1-2c1-2 2-2 2-1v1h4l1 1-2 2c-1 2 0 2 1 2 1-1 2 0 3 1v1l-1 1h2l3-2 2-2-1-2-3 2c-2 0-2 0-2-2s1-2 4-2c4 1 5 0 4-2 0-2 1-2 1-1 2 2 7 2 6 0l1-3 2-5c0-4 3-6 6-3l2 2v-4c1 2 1 2 3 0h1c0 2 1 2 3 1h6c3 0 4-1 3-5h1v5z'/%3E %3Cpath d='M37 297c0 2-5 2-5 1l-1-1-1 1c0 2-5 3-12 3l-5 1H9c-2 0-3 0-2 1 1 0 1 1-1 1-3 1-4 3-2 3v1c-1 3 9 2 12-1 1-1 3-2 4-1l2-1c0-1 5-3 12-4l6-1-1-1v-3l-2 1zm509 13h-3l2 2c2 1 3 1 2 3l1 1c1-1 1-1 0 0-2 2-2 2 5 1 18-1 18-1 16 1l-1 2-1 1h-1c0 1-3 1-6-1h-2c1 2 0 2-2 1-1-1-2-2-5-1h-6l-1 1h5l5 1 4 1 4 1h-4l-6-1h-1l-2 1c-2 0-2 1-2 3l-1 2-1-2-2-1h-3c-2-1-4 1-4 3h7v-2l1 2c-1 2 0 2 1 2l3-1 2-1c-1-1 1-1 3-2 5 0 10-2 10-3l2-1 2 1 3 1 5-2 4-2c4 0 7-1 6-2l-4-1-4-1h5c3 0 4 0 4-2s-2-3-3-1h-17c-2 0-3 0-3-2-1-1-4-3-4-1s-1 2-5 3c-6 0-7-2-1-3 3 0 3 0 2-1h-9zm-461 6c3 2 3 3 0 2-2-1-2-1-2 1v3h-3c-2-1-2-1-2 1 1 1 0 2-2 2-4 0-4 0-3-3 0-2 0-2-1-1l-1 3-1 1c-1-1-4 1-5 2 0 2 0 3-1 1h-1c0 2 3 3 3 1v-2c0-2 2-1 3 1h2l5-2 5-1h3c-1-2 2-4 4-4l4 1v1h-5v-1l-1 3c1 2 0 2-1 2-4-2-5-1-5 2l2 2v-2l3-1 3 2 2 1 1 3c0 2 0 2 1 1l1-1c0 3 1 2 2 0s3-2 5-3c3 0 3 0 3 2s0 3 2 3 2-1 2-2c0-2 1-2 5-2h3l1 1c1 0 2-1 1-2l3-1h4c0-1 2-1 2 1l2 1c2 0 1-2-2-3l-2-3c0-1-3-2-4-1h-1l-3 1c-1 2-1 2-1 0-1-1 0-2 4-3 6-1 7-3 3-3h-2l-3 1c-2 0-6 3-5 4l-10-1c-2-1-3-2-3-4-1-3-1-3-6-3l-7-2-2-1 1 2zm414 2l-2 1v-2l-5 1-3 1c1 1 3 2 13 2 5 0 5 0 4 1l-3 2-6 4-3 4c3 0 7-3 6-3h2c2 1 13 1 15-1l4-1c1 0 1-3-1-4 0-1-1-1-1 1-1 2-3 3-4 1h-4c-3-1-4-2-3-4 0-3 0-3-2-3l-2 1-2 1c-3 0 1-2 5-3l4-1h-5l-7 1zm-286 4l-7 2h-4l-4-2c-3 0-4 0-4 2h-1c-2-2-3-1-3 2v2l-1-2-2-2-1 4c-1 2-1 3 1 3l2-1 1-1 2-1 2-1 2-1c2-2 2-2 1 3 0 4 0 4 1 3l3-1 2-2 3-3 2-2v5c0-1 1-2 3-2h10l1 1c1-1 1 0 1 2s0 2 1 0 2-3 2-1 0 3 2 2l2 1 3 1c3 0 4 0 5-2 2-1 2-1 2 1v2l1-1v-3c0-2-1-2-5-1l-6 1-2-2c-2-2-2-2 0-2v-1l-2 1h-2c-1-1 0-2 4-2h7v-1l-7-1h-6c-3-2-4-2-9-1zm200 3c1 1-2 2-7 1h-4c0 2 2 2 9 2 5 0 6 1 3 1l-4 2 2 1c2-2 7-2 6-1l-2 1-3 3-1 1c-1 0-2 0-1-1l-2-1c-2 0-3 1-2 2v2h2c2-1 5 1 5 3s7 1 9 0c1-2 5-3 4-1s2 1 5-2c2-1 4-3 5-2l1-1c0-2-8-1-9 1h-6l-6-2h6c5 0 6 0 5-1l-4-1c-2 0-3-1-1-2 1-1 4-2 7-1l6-1-8-2-10-1h-5zm-306 49l1 2 1 2h-2c-1-2-2-2-5-2l-5 2-4 1-5 1h-5l-4 1-6 2-5 2-1 1h-2v-1c1-1 0-1-1-1-3 0-3 0-2 2h-1c-4-2-5-3-7-1-1 2-1 2-3 0-2-3-4-2-2 1v1c-1-1-1 0-1 1l1 3h-1l-1 2c0 1 1 2 4 2l3-1 1 1h1l2-1 1 1h2l5-4c1-2 1-2 0 0 0 2 0 2 6 1a459 459 0 0 1 22-2c1-2 3-4 6-4h3l-4 1c-2 0-3 0-2 1l-1 1-1 1 6 1h4c-1 1-4 2-10 2l-2 2c-1 2-1 2-1 0s0-2-4-2l-6 1c-4 1-8 2-7 3 0 1-3 2-7 2l-3 1-1 3 5 1c7-1 12-3 12-4h5c3 0 3-1 3-3 0-3 0-3 1-2v3c0 1 4 1 6-1h2l4 1h3c-1-2 5-2 8 0l4 1v-1h-2l2-1c1-1 1-1-1-1h-3l2-2 5-2 3-1 1-1v3l-2 1-3 2h3c3 0 3 0 3-2l1-4v-3l1-4 1-4v2h1l1-3c-1-1-4 0-5 3-1 2-5 3-5 0 0-1 0-2-2-1-1 0-2 0-1-2 0-3 0-3-2-2h-2l-2 1h-1v-2l-1-1h-2zm463 4l-2 1c-2 0-3 1-3 2l-2 4v1h6l4-2c3-1 3-1 3 2 0 2-1 3-2 3l-1 1c0 2 3 1 4-1l1-1c0 2 1 2 3 1 2-2 3-4 1-3h-1l3-1 2-4-1-2-1-1h-6l-7-1-1 1zm-174 9l-1 3c1 1 0 2-2 1l-4 1 1 1c1-1 1 0 1 1l-2 3-1-1-2 1c-2 0-3 2-2 2l-1 2c0 2-1 2-2 1-2-2-2-2 0-3 1-1 2-4 0-4l-1-3-1-3v3l-1 3h-8c-2-1-3 3-3 8l-1 7-1 4c1 1 1 1 1-2 0-2 0-2 1-1 1 2 1 2 1 0l1-3 1 3 2 1 1 1-1 1v4c-1 0-2 0-2 2 0 3 0 3 1 1l1-3v3c0 2 1 2 4 2 3 1 3 0 3-2l1-3 1 2c-1 2-1 2 1 1l2-1-2 3v3c0 1 3-3 3-5h1c1 1 1-1 1-5l-1-8v-2l1-2c0-1 0-2-1-1l-1-1 1-3 1-1c2 0 3 11 2 13-1 1-1 1 1 1h1l-2 1-1 4c0 3 1 4 2 3l2-1 2 2 3 3h2v-1c1 1 2 0 2-1 0-2 1-1 3 1v-1c-1-3-1-4 1-3l1-1v-5l-1 2v2c-1 0-2-1-1-2l-1-2-1 2-1 2c-2 0-2 0-1-2l1-5c0-4-1-5-3-4l-1-2c-1-2-1-2 1-1 1 1 3 0 3-1h-2v-2l-1-2-2 2c0 1-1 1 0 0l-1-3v-1c1 0 2-1 2-3l1-2v-5l-2 1zm-74 4c-4 1-2 2 2 2 1 0 2 2 0 4l-1 2c0 2-2 2-9 2l-4 2 1 1h2c0 3-1 3-3 2l-2-2v1c2 1 1 2-2 1-1 0-2-1-1-2l-1-2c-1 1-4-1-2-2l1-3c0-3-3-5-4-3v4c1 0 1 1 0 0-2 0-3 2-1 4v1c-2-2-1 0 1 3s6 4 6 2l1-1 1 1c-1 2 1 2 7 2 3 0 3 0 2 1l-5 1-3 1v8c-1 2-1 2 1 0s6-3 6-1l2 1 1-1c-1-1 0-1 3-1l1-2h1l1 1c-1 1 0 1 0 0 2 0 2 0 2 2l-1 1h-1l1 1 2 1v-1l1-3h1c0-1 0-2-1-1l-1-1h3l2 2 1 1 1-4c0-3 0-4-2-5-1-1-1-1 1-1s2-1 2-5c1-8-1-9-2-2-1 1-1-1-1-5 1-4 0-6-1-6l-1 1v4c-1 3-1 3-1 1l-2-4v-1h2c0-2-2-3-3-2h-4zm234 3h-3l-4 1-2 1 2 1c2 1 2 1 1 2v1l2 5 1 4c1-1 1-1 1 1l2 1c1 0 2 1 1 3 0 1 0 2 1 1l1-2 4-9c0-1 0-2-1-1-1 2-2 1-1-1 0-2 0-2-1-1s-1 1-1-1c-1-1-1-1-2 1 0 2-2 2-2-1 0-2 2-3 4-3v-3c0-2-1-2-3 0z'/%3E %3Cpath d='M579 393c-4 1-5 3-3 6 2 1 1 6-1 5-1 0 0 11 2 14s3 4 3 1h1c1 1 0 2-1 3-2 2-1 3 1 3h2c-3 5-3 6-4 5l-1 1v3c-1 1-2 1-4-2l-4-3h-1l-3-1-3 4c0 3-2 5-3 6-3 2-3 2-5-1l-3-1-2-1c-2-3-3-4-5-3-1 0-2 1-1 3 0 3 0 3-1 2-2-3-3-2-3 0 1 4-1 4-3-1l-2-3-3-4-3-3c-1 1-2 0-3-1-3-2-6-1-8 1 0 2-2 3-4 3-3 0-5-2-5-6 1-2 1-3-1-4s-4 0-4 3l-1 2-1 2c0 2-1 3-3 3h-10l-1 1c-1 1-1 1-5-1-3-2-4-2-6-1h-5c-3-1-10 0-15 2h-10l-4-1c-2-3-4-2-9 2-2 2-4 3-5 2s-1-1-2 1c-1 4-4 5-6 2l-1-2c0-1-4-2-6-1l-4 1c-3 1-5 4-4 10 0 3 0 4-2 4l-3-1-5-1c-5 0-7-1-10-5 0-2-1-2-4 0l-10 5c-3 1-3 1-1 4 1 3 1 3-1 6-1 2-2 4-1 7l-1 4c-2 0-1 3 1 6l2 4 87 1h88l2-5c2-3 3-6 2-7-1-2 0-8 2-8 1 0 3 5 3 8l-2 1c-2 0-1 2 2 4l2 5c0 2 1 2 8 2 9 0 9 0 7-5-2-4-2-10-1-10 2 0 3 4 3 7v1c2-1 3 0 3 5 0 2 0 2 5 2h4v-4l-2-5-2-6 2-4c2 0 2-1 2-21 0-18-1-23-2-19h-1l1-3c2-1 2-9 1-11v-1l1-2-1-2-1-1 1-2 1-3c0-2-1-2-7-1zm-229 1v4c0 2 0 3-1 2-1 0-2-1-1-2l-1-1-2 2c0 2 0 2-1 0l-2-3-1-1-1 3c-2 2-3 15-2 15l1 2c-1 2 0 3 1 2 2 0 2-1 1-1l-1-1h1c2 0 2 0 1-2 0-2 0-2 1-1l1 4 1 2h1c1 1 1 0 1-1v-2l1 2 1 3v-3l1-4 1-4v-2c0 2 2 1 2-1h1v6c-1-1-2 0-2 1l3 1c2-1 3-1 3 1l-1 1c-2-1-4 1-4 2h4c1 0 2-3 1-6v-3l-1-1v-1c1-1 2-2 1-5 0-3 0-3 2-2v-1c-1-2-1-2 1-2v-2c-1-2-1-2-2 0h-4l-3-1h-2z'/%3E %3Cpath d='M533 401h-2l-2 1v5l2 4c1 2 5 1 5-1v2l1 4h1c0 2 3 6 4 5v-9l-1-7c0-3 0-3-1-1-1 1-1 1-1-1 0-3-3-4-6-2zm-189 70c-2 3-5 4-8 4-9 2-5 3 11 3 17 0 18 0 12-3l-4-4-2-2h-3c-2-1-2-1-6 2z'/%3E %3C/svg%3E");
-}
-*/
-
 .entry-image,
-.offers__item-image {
+.offers__item-image,
+.post__card-img,
+.image-lazy {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1' viewBox='0 0 586 478'%3E %3Cpath d='M299 109c-1 14-1 14-6 13-4 0-4 2 0 2l3 1v6l-2 7c-1 2-17-2-25-5-2-1-2-1-2 2 0 2 1 3 2 3 4 2 17 4 20 4 6 0 8 1 8 4 0 2-1 3-2 3h-19c-11-2-11-2-11 0 0 3 2 3 18 4l14 1v5c0 6 1 6-15 4l-11-1 16 8 7 1v15l-4 44-6 1-5 1c-1 2 2 3 7 3h4v11h-16c-5-1-7-1-12-5-6-4-11-12-11-17 0-4 1-4 5 0 6 4 17 9 17 6l-3-5-3-7c0-4-9-12-12-11l-3 1-4 18-6 20c-1 2-2 5 0 3l7 5c6 6 12 9 17 10 3 1 4 0 1-1-4-2-14-10-17-15-3-4-4-10-2-11l5 4 8 7c5 2 7 3 17 3h12l-1 4c0 4-1 5-8 7l-7 2h11c3-1 3-1 4 1 0 3 2 2 3-2l2-3v10c0 2-2 3-2 1 0-3-2-1-4 2 0 2-2 3-6 5-12 4-21 2-30-8-5-5-6-5-7-2-3 10 2 13 24 15 5 0 8 0 13-2l8-2 2-1c1-2 2 0 3 5v5h-8l-20 1-10 1h19l19 2-1 3c-1 2-57-2-69-5l-16-6 8 2c12 3 17 4 17 2l-2-2c-4 0-23-5-29-8-6-2-7-3-4 0l1 2-2-2-1-2-1-1c-2-3-2-10-1-13 2-4 2-4 6-4 3 1 3 0 2-1h-6c-4 1-5 1-7-1-1-2-2-2-3-1-2 2-2 2-4 1-4-2-11-2-13 1l-5 2c-2 1 4 1 12 1l16-1-1 3-1 5c-1 3-2 53-1 55h15l34-1a1615 1615 0 0 0 129 2c18 1 24 2 24 3l-7 11c-6 7-4 6-27 8a798 798 0 0 1-186-7c-5-3-6-4-3-5 1-1 2-5 0-5v-1l-1-4-4-6-2-4v10c0 16 1 20 4 21 4 2 3 3-1 3-9 0-14 20-8 31 4 9 3 9 38 7l34-2 97-1h95l2-3c4-4 4-5-1-7-6-2-6-3 0-3 8 0 9-1 9-8 0-5 0-6-3-7l-3-1 3-1h3v-26l-6-1-5-1 5-1 6-1-3-10-2-16-1-9c0-2-1-2-4-1-3 0-3 0-3-3 1-2 1-2 3-2l3-1-1-4-1-9-1-5-9 1c-5 0-8 0-7-1l6-2c2-1 3-1 2-2v-3c0-2-2-3-4 0-2 2-2 1-3-4l-1-7-1-3-2-5-2-4-3 5c-3 6-4 6-4 3s-3-6-6-6c-4 0-7 13-3 15 1 0 2 3 0 4-1 1-4-2-4-4l-1-2-1 3-1 2-1 2-2 2v2c1 4 1 5-4 5l-4-1c1-2 0-2-2-1-18 3-19 3 16 3h32l-1 4-2 6-28 1h-27l-1-5-1-5v4l-1 5-9 2c-8 0-11 2-5 2s7 1 7 6v4h-15v-3a699 699 0 0 1 0-104 123 123 0 0 1-17 23c1 0 6-5 11-12 3-3 3-3 2-1-2 8-17 27-24 31-2 1-2 1-2-1v-48l5-3c5-2 6-3 10-3l2-1-7-1-9-1-1-6c0-4 1-5 3-7l3-2h-3c-2 0-2 0-2-12 0-10 0-11 2-13v-1c-2 0-2-1-2-12V99l-1 10zm15 130c-6 15-13 28-15 28l-1-4c0-4 1-5 3-8 5-5 5-7 1-4s-4 3-4-1c0-3 1-4 5-8l10-9c2-3 5-5 5-4l-4 10zm3 18l-4 12-4 8 3-2c4-3 6-2 7 4 0 3 0 4-2 6-2 3-3 3-10 3l-9-1c-1-1 0-13 1-13 1 1 5-5 9-12 4-8 6-11 8-10l1 5zm95 22c0 2-9 11-15 14s-16 6-29 7a558 558 0 0 1-145-5c-2-1-2-1 0-1 29 6 46 7 85 7 35 0 54-1 68-4 10-2 20-5 23-8l1-1c-13 4-34 7-57 7h-17-1l-15 1-12-1v-5l10 1h27c19 0 41-1 52-4 8-1 15-4 21-8 3-2 4-2 4 0zm-223 64c2 3 18 6 32 6 8 0 22 2 23 3l6 1 6 1h47c2-2 7-1 11 1 5 4 8 4 10 0l2-3h24a1579 1579 0 0 1 53 1 539 539 0 0 1-79 8c-4-2-4-2-7-1-3 2-5 2-7 2h-4a1020 1020 0 0 1-115-3c3-1 2-1-2-3-1 0-2-1-2-3v-3h12l-7-1c-5 0-5 0-7-4l-2-4 2 1 4 1z'/%3E %3C/svg%3E");
 }
 
@@ -6102,53 +6096,6 @@ article.portfolio {
         -ms-flex-pack: center;
         justify-content: center;
     }
-}
-
-.tjeneste-post:hover,
-.tjeneste-post:focus {
-    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#a7dfeb, EndColorStr=#53c1d9);
-    background-image: linear-gradient(to bottom, #a7dfeb 0, #53c1d9 100%);
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-}
-
-.tjeneste-post:active {
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#7dd0e2, EndColorStr=#68c9de);
-    background-image: linear-gradient(to bottom, #7dd0e2 0, #68c9de 100%);
-}
-
-.tjeneste-post {
-    min-height: 170px;
-    overflow: auto;
-    border-radius: 2px;
-    background-color: #68c8dd;
-    background-image: linear-gradient(to bottom, #92d8e7 0, #3eb9d4 100%);
-    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#92d8e7, EndColorStr=#3eb9d4);
-    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    max-width: 100%;
-    vertical-align: bottom;
-}
-
-.tjeneste-tittel {
-    font-weight: 700;
-    font-size: 1.2em;
-    text-align: center;
-    text-decoration: none;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, .6);
-    color: #fff;
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
-
-.tjeneste-kort {
-    font-weight: 400;
-    font-size: .9em;
-    text-align: center;
-    text-decoration: none;
-    color: #505050;
-    padding-left: 10px;
-    padding-right: 10px
 }
 
 .container-promo-video,
@@ -6659,53 +6606,14 @@ video {
     padding-bottom: 40px;
 }
 
-.container-offers {
-    margin-top: 25px;
-    padding: 20px;
-}
-
-.offers__center-wrapper {
-    margin: 0 auto;
-    width: fit-content;
-}
-
-.offers__container {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-gap: 10px;
-    grid-column-gap: 10px;
-    grid-row-gap: 15px;
-}
-
-.offers__item {
-    width: 300px;
-    height: 200px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-}
-
-.offers__item:hover .offers__item-image {
-    opacity: 0.85;
-}
-
-.offers__item a:hover,
-.offers__item a:focus,
-.offers__item a:hover,
-.offers__item a:focus {
-    text-decoration: none;
-}
-
 .offers__item-icon {
     position: absolute;
 }
 
 .offers__item-image {
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: flex-end;
+    height: 200px;
     width: 100%;
-    height: auto;
-    min-height: 100%;
+    object-fit: cover;
     transition: .4s;
     z-index: 1;
     border-radius: .25rem!important;
@@ -6713,59 +6621,104 @@ video {
     -moz-transition: .4s;
     -o-transition: .4s;
     -ms-transition: .4s;
+    display: block;
 }
 
-.offers__item-text {
-    width: 100%;
-    font-weight: 700;
-    text-align: center;
+.offers__featured {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 30px;
+    padding: 20px;
+}
+
+.offers__featured {
+    max-width: 960px;
+    margin: 0 auto 30px;
+}
+
+.portfolio__featured,
+.portfolio__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 30px;
+    padding: 20px;
+}
+
+.portfolio__featured {
+  max-width: 960px;
+  margin: 0 auto 30px;
+  background: #eee;
+}
+
+.portfolio__grid {
+  margin: 0 auto 30px;
+}
+
+.portfolio__item-image {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+  transition: .4s;
+  z-index: 1;
+  border-radius: .25rem!important;
+  -webkit-transition: .4s;
+  -moz-transition: .4s;
+  -o-transition: .4s;
+  -ms-transition: .4s;
+  display: block;  
+}
+
+.featured__item {
+  position: relative;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.featured__item-image {
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
+  transition: .4s;
+  z-index: 1;
+  border-radius: .25rem!important;
+  -webkit-transition: .4s;
+  -moz-transition: .4s;
+  -o-transition: .4s;
+  -ms-transition: .4s;
+  display: block;
+}
+
+.featured__item-text {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, .6);
+  color: #fff;
+  font-size: 1.2em;
+  background: -moz-linear-gradient(top, transparent 0, transparent 5%, rgba(0, 0, 0, .1) 23%, rgba(0, 0, 0, .75) 100%);
+  background: -webkit-linear-gradient(top, transparent 0, transparent 5%, rgba(0, 0, 0, .1) 23%, rgba(0, 0, 0, .75) 100%);
+  background: linear-gradient(to bottom, transparent 0, transparent 5%, rgba(0, 0, 0, .1) 23%, rgba(0, 0, 0, .75) 100%);
+}
+
+.featured__item:hover .featured__item-image,
+.featured__item:hover .offers__item-image,
+.featured__item:hover .portfolio__item-image {
+    opacity: 0.85;
+}
+
+.featured__item a:hover,
+.featured__item a:focus,
+.featured__item a:hover,
+.featured__item a:focus {
     text-decoration: none;
-    text-transform: uppercase;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, .6);
-    color: #fff;
-    font-size: 1.2em;
-    margin: 0;
-    background: -moz-linear-gradient(top, transparent 0, transparent 5%, rgba(0, 0, 0, .1) 23%, rgba(0, 0, 0, .75) 100%);
-    background: -webkit-linear-gradient(top, transparent 0, transparent 5%, rgba(0, 0, 0, .1) 23%, rgba(0, 0, 0, .75) 100%);
-    background: linear-gradient(to bottom, transparent 0, transparent 5%, rgba(0, 0, 0, .1) 23%, rgba(0, 0, 0, .75) 100%);
 }
 
-@media (min-width: 1281px) {
-    /* Device = Desktops
-    Screen = 1281px to higher resolution desktops */
-    .offers__container {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (min-width: 1025px) and (max-width: 1280px) {
-    /* Device = Laptops, Desktops
-       Screen = B/w 1025px to 1280px */
-    .offers__container {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (min-width: 768px) and (max-width: 1024px) {
-    /* Device = Tablets, Ipads (portrait)
-       Screen = B/w 768px to 1024px */
-    .offers__container {
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 10px;
-        grid-column-gap: 10px;
-        grid-row-gap: 15px;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-    /* Device = Tablets, Ipads (landscape)
-       Screen = B/w 768px to 1024px */
-    .offers__container {
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 10px;
-        grid-column-gap: 10px;
-        grid-row-gap: 15px;
-    }
+.featured__item-icon {
+    position: absolute;
 }
 
 .offers-template-default .project,
@@ -7414,23 +7367,14 @@ div.hero-header.text-center:hover .scroll-down-icon {
     background-position: center center;
     background-repeat: no-repeat;
 }
-/*
-.fade-carousel .slides .slide-1 {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://www.stott.no/wp-content/uploads/2019/01/hero_slide4_stottgjestehavn_1280x894_60op.jpg);
+
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
 }
 
-.fade-carousel .slides .slide-2 {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://www.stott.no/wp-content/uploads/2018/12/hero_slide1_IMG_9329_1280x894_60op.jpg);
-}
-
-.fade-carousel .slides .slide-3 {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://www.stott.no/wp-content/uploads/2018/12/hero_slide2_konferansemuseum4_1280x894_60op.jpg);
-}
-
-.fade-carousel .slides .slide-4 {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://www.stott.no/wp-content/uploads/2018/12/hero_slide3_lwb3553_1280x894_60op.jpg);
-}
-*/
 .sections {
     position: relative;
 }
@@ -7445,11 +7389,6 @@ div.hero-header.text-center:hover .scroll-down-icon {
 
 .sections.padding-size-l {
     padding: 75px 0;
-}
-
-.sections img {
-    max-width: 100%;
-    height: auto;
 }
 
 .filters {
@@ -7612,19 +7551,6 @@ div.hero-header.text-center:hover .scroll-down-icon {
     margin: 0 auto;
 }
 
-.tjenester-gotomeloy {
-    width: 100%;
-    margin: auto;
-    padding: 0 0 20px 0;
-}
-
-.tjeneste-gotomeloy a:hover,
-.tjeneste-gotomeloy a:focus,
-.tjeneste-gotomeloy a:hover,
-.tjeneste-gotomeloy a:focus {
-    text-decoration: none;
-}
-
 .page-template-template-contact [id^="post-"] {
     margin-bottom: 40px;
 }
@@ -7643,11 +7569,6 @@ div.hero-header.text-center:hover .scroll-down-icon {
 
 .blog .entry .entry-thumbnail img {
     width: 100%;
-    height: auto;
-}
-
-.entry img {
-    max-width: 100%;
     height: auto;
 }
 
@@ -8338,29 +8259,29 @@ footer {
     max-width: 100%;
 }
 
-.affiliates_reisegarantifondet {
+.affiliates_reisegarantifondet.lazy-bg-loaded {
     background: url("../img/reisegarantifondet_80x64_black.png") no-repeat center center;
     background-size: contain;
 }
 
-.affiliates_nho-reiseliv {
+.affiliates_nho-reiseliv.lazy-bg-loaded {
     background: url("../img/nho-reiseliv_87x80.png") no-repeat center center;
     background-size: contain;
 }
 
-.affiliates_visit-bodo {
+.affiliates_visit-bodo.lazy-bg-loaded {
     background: url("../img/visit-bodo_80x80.png") no-repeat center center;
     background-size: contain;
 }
 
-.affiliates_visit-helgeland {
+.affiliates_visit-helgeland.lazy-bg-loaded {
     background: url("../img/visit-helgeland_79x80.png") no-repeat center center;
     background-size: contain;
 }
 
-.offers-template-default .affiliates_reisegarantifondet,
-.portfolio-template-default .affiliates_reisegarantifondet,
-.meny-template-default .affiliates_reisegarantifondet {
+.offers-template-default .affiliates_reisegarantifondet.lazy-bg-loaded,
+.portfolio-template-default .affiliates_reisegarantifondet.lazy-bg-loaded,
+.meny-template-default .affiliates_reisegarantifondet.lazy-bg-loaded {
     background: url("../img/reisegarantifondet_80x64_white.png") no-repeat center center;
     background-size: contain;
 }

@@ -1,9 +1,9 @@
             <section class="sections project padding-size-m">
                 <ul class="affiliates">
-                <a href="https://www.reisegarantifondet.no/" rel="nofollow" target="_blank"><li class="affiliates_li"><div class="affiliates_img affiliates_reisegarantifondet"></div><span class="affiliates_txt">Reisegarantifondet</span ></li></a>
-                <a href="https://www.nhoreiseliv.no/" rel="nofollow" target="_blank"><li class="affiliates_li"><div class="affiliates_img affiliates_nho-reiseliv"></div><span class="affiliates_txt">NHO Reiseliv</span ></li></a>
-                <a href="http://www.visitbodo.no/" rel="nofollow" target="_blank"><li class="affiliates_li"><div class="affiliates_img affiliates_visit-bodo"></div><span class="affiliates_txt">Visit Bodø</span ></li></a>
-                <a href="https://visithelgeland.com/" rel="nofollow" target="_blank"><li class="affiliates_li"><div class="affiliates_img affiliates_visit-helgeland"></div><span class="affiliates_txt">Visit Helgeland</span ></li></a>
+                <a href="https://www.reisegarantifondet.no/" rel="nofollow" target="_blank"><li class="affiliates_li"><div class="affiliates_img affiliates_reisegarantifondet lazy-bg"></div><span class="affiliates_txt">Reisegarantifondet</span ></li></a>
+                <a href="https://www.nhoreiseliv.no/" rel="nofollow" target="_blank"><li class="affiliates_li"><div class="affiliates_img affiliates_nho-reiseliv lazy-bg"></div><span class="affiliates_txt">NHO Reiseliv</span ></li></a>
+                <a href="http://www.visitbodo.no/" rel="nofollow" target="_blank"><li class="affiliates_li"><div class="affiliates_img affiliates_visit-bodo lazy-bg"></div><span class="affiliates_txt">Visit Bodø</span ></li></a>
+                <a href="https://visithelgeland.com/" rel="nofollow" target="_blank"><li class="affiliates_li"><div class="affiliates_img affiliates_visit-helgeland lazy-bg"></div><span class="affiliates_txt">Visit Helgeland</span ></li></a>
                 </ul>
 
                 
@@ -96,25 +96,9 @@
         </script>
         <!-- Load Facebook SDK for JavaScript -->
         <div id="fb-root"></div>
-        <script>
-          window.fbAsyncInit = function() {
-            FB.init({
-              xfbml            : true,
-              version          : 'v3.3'
-            });
-          };
-
-          (function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s); js.id = id;
-          js.src = 'https://connect.facebook.net/nb_NO/sdk/xfbml.customerchat.js';
-          fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script>
-
         <!-- Your customer chat code -->
         <div class="fb-customerchat"
-          attribution=setup_tool
+          greeting_dialog_delay="10"
           page_id="314547331970935"
           theme_color="#0084ff">
         </div>
