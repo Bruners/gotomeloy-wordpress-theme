@@ -13,56 +13,6 @@
 
 ?>
 
-<!-- Facebook Pixel Code -->
-<script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('consent', 'revoke');
-  <?php if( $gdpr_facebook_pixel != null) { ?>
-    fbq('init', '<?php echo $gdpr_facebook_pixel; ?>');
-  <?php } else { ?>
-    console.log('Facebook pixel not set');
-  <?php } ?>
-</script>
-
-
-<script>
-var loadGA = function()
-{
-  if (typeof ga !== 'undefined') 
-  {
-    return false;
-  }
-
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-
-  <?php if( $gdpr_google_analtyics != null) { ?>
-    ga('create', '<?php echo $gdpr_google_analtyics; ?>', 'auto');
-    ga('set', 'forceSSL', true);
-    <?php if($options['ga-displayfeatures'] == 1) {
-      echo ("ga('require', 'displayfeatures');");
-    } ?>
-    <?php if($options['ga-anonymizeip'] == 1) {
-      echo ("ga('set', 'anonymizeIp', true);");
-    } ?>
-    ga('send', 'pageview');
-
-  <?php } else { ?>
-    console.log('Google Anaylitcs not set');
-  <?php } ?>
-}
-</script>
-
 <script>
 <?php
   // Strings
@@ -83,7 +33,61 @@ var loadGA = function()
     }
 ?>
 
-  window.addEventListener("load", function() {
+window.addEventListener("load", function() {
+  // Google Analytics
+  var loadGA = function()
+  {
+  if (typeof ga !== 'undefined') 
+  {
+    return false;
+  }
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  <?php if( $gdpr_google_analtyics != null) { ?>
+    ga('create', '<?php echo $gdpr_google_analtyics; ?>', 'auto');
+    ga('set', 'forceSSL', true);
+    <?php if($options['ga-displayfeatures'] == 1) {
+      echo ("ga('require', 'displayfeatures');");
+    } ?>
+    <?php if($options['ga-anonymizeip'] == 1) {
+      echo ("ga('set', 'anonymizeIp', true);");
+    } ?>
+    ga('send', 'pageview');
+
+  <?php } else { ?>
+    console.log('Google Anaylitcs not set');
+  <?php } ?>
+}
+
+  // Facebook Pixel Code
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('consent', 'revoke');
+  <?php if( $gdpr_facebook_pixel != null) { ?>
+    fbq('init', '<?php echo $gdpr_facebook_pixel; ?>');
+  <?php } else { ?>
+    console.log('Facebook pixel not set');
+  <?php } ?>
+
+  // Load facebook customer chat
+  jQuery.ajaxSetup({ cache: true });
+  jQuery.getScript('https://connect.facebook.net/nb_NO/sdk/xfbml.customerchat.js', function(){
+    FB.init({
+      xfbml            : true,
+      version          : 'v3.3'
+    });
+  });
+
   window.cookieconsent.initialise({
      "palette": {
       "popup": {

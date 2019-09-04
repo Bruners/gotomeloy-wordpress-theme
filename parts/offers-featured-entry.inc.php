@@ -1,7 +1,7 @@
 <?php
 	// Helper Variable(s)
-	$project_cats_slug = implode(' ', lamark_get_term_fields('portfolio_category', 'slug'));
-	$project_cats_name = implode(', ', lamark_get_term_fields('portfolio_category', 'name'));
+	$project_cats_slug = implode(' ', lamark_get_term_fields('offers_category', 'slug'));
+	$project_cats_name = implode(', ', lamark_get_term_fields('offers_category', 'name'));
 
 	$thumbnail_data = lamark_get_attachment_meta( get_post_thumbnail_id() );
 

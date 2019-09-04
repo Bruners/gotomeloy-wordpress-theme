@@ -279,23 +279,10 @@ if (typeof jQuery === "undefined") {
     $(window).on('load', function(){
         fix();
         sticky_navigation();
-        /** DEPRECATED **/
-        // Move portfolio items
-        /**
-        jQuery(function ($) {
-            var header = jQuery('.single-header');
-            var ingress = jQuery('.single-header .ingress');
-            if ( header.length ) {
-                jQuery('.single-header-ingress').html(ingress.html());
-                ingress.css('display', 'none');
-            }
-            jQuery('.single-header h5.sb-title').css('display', 'none');
-            jQuery('.single-header .clearfix').css('padding-top', '30px');
+
+        $('.map').lazymap({
+            apiKey: 'AIzaSyAWe_W4EBKsLh6r582q_xyP-GbY7Am761E'
         });
-        **/
-
-
-
         // Resize image containers using background-image
         $(".iBG").each(function() {
             $(this).css("background-image", "url(" + $(this).attr("data-img") + ")");
@@ -380,16 +367,6 @@ if (typeof jQuery === "undefined") {
     // and run it again every time you scroll
     $(window).scroll(function() {
         sticky_navigation();
-    });
-    // Load facebook customer chat
-    $(document).ready(function() {
-        $.ajaxSetup({ cache: true });
-        $.getScript('https://connect.facebook.net/nb_NO/sdk/xfbml.customerchat.js', function(){
-            FB.init({
-                xfbml            : true,
-                version          : 'v3.3'
-            });
-        });
     });
 }(jQuery);
 

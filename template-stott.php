@@ -184,7 +184,7 @@ Template Name: Portfolio Stott
             <div id="contact-us" class="kontakt-oss">
             <?php get_template_part( 'parts/contact-form-large.inc' ); ?>
             <style>
-                #map-container { height: 300px; }
+                .map { height: 300px; }
             </style>
             <div class="row">
                 <div id="map-outer" class="col-md-12">
@@ -206,7 +206,8 @@ Template Name: Portfolio Stott
                             ?>
                         </address>
                     </div>
-                    <div id="map-container" class="col-md-8"></div>
+                    
+                    <div class="map col-md-8" data-locations="[66.925775, 13.43798]" data-zoom="8"></div>
                 </div><!-- /map-outer -->
             </div> <!-- /row -->
             </div>
