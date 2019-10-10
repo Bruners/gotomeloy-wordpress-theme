@@ -52,13 +52,13 @@
 		}
 
 	}
-	
+
 	add_filter('pre_get_posts','lamark_search_filter');
-	
+
 
 #-----------------------------------------------------------------#
 # Get Attachment Meta Value
-#-----------------------------------------------------------------# 
+#-----------------------------------------------------------------#
 
 	if ( !function_exists('lamark_get_attachment_meta') ) {
 
@@ -126,32 +126,42 @@
 
 #-----------------------------------------------------------------#
 # Taxonomy Walker for Portfolio Filter
-#-----------------------------------------------------------------# 
+#-----------------------------------------------------------------#
 
 	class Lamark_Walker_Portfolio_Filter extends Walker_Category {
-		
+
 	   function start_el(&$output, $category, $depth = 0, $args = array(), $current_object_id = 0) {
 
 	      extract($args);
 	      $cat_slug = esc_attr( $category->slug );
 	      $cat_slug = apply_filters( 'list_cats', $cat_slug, $category );
-		  
-	      //$link = '<li><a href="#" data-filter=".'.strtolower(preg_replace('/\s+/', '-', $cat_slug)).'">';
-	      $link = '<li><a href="#" onclick="filterSelection(\''.strtolower($cat_slug).'\')">';
-		  
+
+		  if($cat_slug == 'summer' || $cat_slug == 'sommer') {
+		  		$link = '<li><a href="#" onclick="filterSelection(\''.strtolower($cat_slug).'\')"><i class="fas fa-sun">&nbsp;</i>';
+		  } elseif ($cat_slug == 'winter' || $cat_slug == 'vinter') {
+		  		$link = '<li><a href="#" onclick="filterSelection(\''.strtolower($cat_slug).'\')"><i class="fas fa-snowflake">&nbsp;</i>';
+		  } elseif ($cat_slug == 'autumn' || $cat_slug == 'host') {
+		  		$link = '<li><a href="#" onclick="filterSelection(\''.strtolower($cat_slug).'\')"><i class="fab fa-canadian-maple-leaf">&nbsp;</i>';
+		  } elseif ($cat_slug == 'spring' || $cat_slug == 'vaar') {
+		  		$link = '<li><a href="#" onclick="filterSelection(\''.strtolower($cat_slug).'\')"><i class="fas fa-dove">&nbsp;</i>';
+		  } else {
+		        //$link = '<li><a href="#" data-filter=".'.strtolower(preg_replace('/\s+/', '-', $cat_slug)).'">';
+	        	$link = '<li><a href="#" onclick="filterSelection(\''.strtolower($cat_slug).'\')">';
+	  	  }
+
 		  $cat_name = esc_attr( $category->name );
 	      $cat_name = apply_filters( 'list_cats', $cat_name, $category );
-		  	
+
 	      $link .= $cat_name;
-		  
+
 	      if(!empty($category->description)) {
 	         $link .= ' <span>'.$category->description.'</span>';
 	      }
-		  
+
 	      $link .= '</a></li>';
-	     
+
 	      $output .= $link;
-	       
+
 	   }
 	}
 
@@ -161,7 +171,7 @@
 #-----------------------------------------------------------------#
 
 
-	// Get array of term attr(s) of any taxonomy   
+	// Get array of term attr(s) of any taxonomy
 	if ( !function_exists('lamark_get_term_fields') ) {
 
 		function lamark_get_term_fields($taxonomy, $field) {
@@ -211,7 +221,7 @@
 	if ( !function_exists('lamark_comments') ) {
 
 		function lamark_comments($comment, $args, $depth) {
-		
+
 	        $isByAuthor = false;
 
 	        if($comment->comment_author_email == get_the_author_meta('email')) {
@@ -241,7 +251,7 @@
 						</div>
 					</div>
 
-				</header>	        
+				</header>
 
                 <div class="comment-content">
                     <?php comment_text() ?>
@@ -263,7 +273,7 @@
 		function lamark_list_pings($comment, $args, $depth) {
 		    $GLOBALS['comment'] = $comment; ?>
 			<li id="comment-<?php comment_ID(); ?>"><?php comment_author_link(); ?>
-			<?php 
+			<?php
 		}
 
 	}

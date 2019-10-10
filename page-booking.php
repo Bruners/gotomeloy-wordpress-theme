@@ -15,7 +15,7 @@
 						<?php the_content( esc_html__( 'Read More', 'gotomeloy' ) ); ?>
 					</div>
 
-					<div class="entry-content clearfix">
+					<div id="contact-us" class="entry-content clearfix">
 						<?php get_template_part( 'parts/contact-form-large.inc' ); ?>
 					</div>
 				</article>

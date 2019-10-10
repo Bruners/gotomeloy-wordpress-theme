@@ -39,7 +39,7 @@ function remove_jquery_migrate($scripts)
 {
     if (!is_admin() && isset($scripts->registered['jquery'])) {
         $script = $scripts->registered['jquery'];
-        
+
         if ($script->deps) { // Check whether the script has any dependencies
             $script->deps = array_diff($script->deps, array(
                 'jquery-migrate'
@@ -238,7 +238,7 @@ function gotomeloy_frontend_styles()
 
         //wp_enqueue_style('cookieconsent', GOTOMELOY_JS_URI . '/cookieconsent/cookieconsent.min.css', null, '3.1.1', 'all' );
 
-        wp_enqueue_style('fontawesome', 'https://use.fontawesome.com/releases/v5.0.13/css/all.css', null, '5.0.13', 'all' );
+        wp_enqueue_style('fontawesome', 'https://use.fontawesome.com/releases/v5.11.2/css/all.css', null, '5.11.2', 'all' );
         wp_enqueue_style('fancybox', 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.6/jquery.fancybox.min.css', null, '3.5.6', 'all' );
 
         wp_add_inline_style('gotomeloy-style', get_theme_mod('gotomeloy_custom_css'));
@@ -260,7 +260,7 @@ function gotomeloy_backend_styles()
 {
     // Enqueue
     wp_enqueue_style( 'gotomeloy-backend-style', GOTOMELOY_ADMIN_URI . '/style.css');
-    wp_enqueue_style('fontawesome', 'https://use.fontawesome.com/releases/v5.0.13/css/all.css', null, '5.0.13', 'all' );
+    wp_enqueue_style('fontawesome', 'https://use.fontawesome.com/releases/v5.11.2/css/all.css', null, '5.11.2', 'all' );
 }
 
 #-----------------------------------------------------------------#
@@ -549,7 +549,7 @@ function related_posts( $args )
 #-----------------------------------------------------------------#
 add_filter( 'nav_menu_link_attributes', 'gotomeloy_menu_atts', 10, 3 );
 function gotomeloy_menu_atts( $atts, $item, $args )
-{   
+{
     // Provide the id of the targeted menu item
     $menu_target = array(23,24,959,1141,1142,1143,1144,18145,18146,1533,1534,1535,22544,22545);
 
