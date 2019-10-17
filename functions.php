@@ -458,14 +458,15 @@ function get_portfolio_posts( $args )
 
 
 // Creates shortcode realtedposts to insert post of selected category id's defaulting to values 4 posts and null
-// [realtedposts posts=3 cats='33,55']
+// [realtedposts posts=3 cats='33,55' tax='portfolio_category']
 
 add_shortcode( 'relatedposts', 'related_posts' );
 function related_posts( $args )
 {
     $args = shortcode_atts( array(
        'posts' => 4,
-        'cats' => 'null'
+       'cats'  => 'null',
+       'tax'  => 'portfolio_category'
     ), $args );
 
     $post_id = get_the_ID();
@@ -484,6 +485,12 @@ function related_posts( $args )
         $cats = explode( ',', $args['cats'] );
     }
 
+    if ( $args['tax'] == '' || $args['tax'] == 'portfolio_category' ) {
+        $tax = 'portfolio_category';
+    } else {
+        $tax = $args['tax'];
+    }
+
     ob_start();
     ?>
 
@@ -495,12 +502,12 @@ function related_posts( $args )
     $query_args = array(
         'post_type'      => $current_post_type,
         'post__not_in'   => array($post_id),
-        'posts_per_page' => '-1',
+        'posts_per_page' => $posts,
         'orderby'        => 'rand',
         'no_found_rows'  => true, // We don't ned pagination so this speeds up the query
         'tax_query' => array(
             array(
-                'taxonomy'  => 'portfolio_category',
+                'taxonomy'  => $tax,
                 'field'     => 'term_id',
                 'terms'     => $cats,
             )

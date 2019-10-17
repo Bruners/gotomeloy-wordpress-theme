@@ -56,7 +56,7 @@ Template Name: Portfolio Stott
                 </article>
             <?php endwhile; ?>
         </section>
-        
+
         <section class="sections padding-size-s">
             <div class="offers__featured">
                 <?php
@@ -91,7 +91,7 @@ Template Name: Portfolio Stott
             <div class="filters-wrap">
                 <ul class="filters nostyle">
                     <li><a data-filter="*" class="active" onclick="filterSelection('all')"><?php esc_html_e('Alle', 'gotomeloy'); ?></a></li>
-                    <?php wp_list_categories(array('child_of' => $taxonomy_term_ID, 'title_li' => '', 'exclude' => '68','style' => 'none', 'taxonomy' => $taxonomy, 'show_option_none'   => '', 'walker' => new Lamark_Walker_Portfolio_Filter())); ?>
+                    <?php wp_list_categories(array('child_of' => $taxonomy_term_ID, 'title_li' => '', 'exclude' => '68,81,99,100','style' => 'none', 'taxonomy' => $taxonomy, 'show_option_none'   => '', 'walker' => new Lamark_Walker_Portfolio_Filter())); ?>
                  </ul>
             </div>
             <!-- END: FILTERATION -->
@@ -108,7 +108,7 @@ Template Name: Portfolio Stott
             <!-- END: PORTFOLIO GRID -->
         </section>
     </div>
-    
+
     <div class="container-fluid clearfix">
         <section class="sections padding-size-s container-bunn">
             <!-- BEGIN: BOTTOM WIDGETS -->
@@ -194,7 +194,7 @@ Template Name: Portfolio Stott
                                 $options = get_option( 'gotomeloy_theme_options' );
                                 $contact_form_logo = $options['contact-form-logo'];
                                 $contact_form_adresse = $options['contact-form-adresse'];
-                                                         
+
                                 if(!empty($contact_form_logo)) {
                                     echo ('<p><img class="image-lazy lazy" src="" data-src="' . $contact_form_logo . '" /><br /></p>');
                                 }
@@ -206,7 +206,7 @@ Template Name: Portfolio Stott
                             ?>
                         </address>
                     </div>
-                    
+
                     <div class="map col-md-8" data-locations="[66.925775, 13.43798]" data-zoom="8"></div>
                 </div><!-- /map-outer -->
             </div> <!-- /row -->

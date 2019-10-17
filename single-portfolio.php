@@ -3,6 +3,7 @@
 <?php
 	$post_ID = get_the_ID();
 	$post_ingress = get_post_meta($post_ID, 'post_ingress', true);
+	$project_cats_slug = lamark_get_term_fields('portfolio_category', 'slug');
 
 	// Pagination Variables
 	$have_olders_posts = get_adjacent_post(false,'',true) ? '' : 'no-more-posts';
@@ -59,7 +60,9 @@
 				</div>
 			</div>
 			<br />
-			<a class="btn btn-success link_nounderline scroll-booking" href="#book-now"><?php echo(esc_html__( 'Bestill nå', 'gotomeloy' )); ?></a>
+			<?php if (in_array('booking', $project_cats_slug)) { ?>
+    			<a class="btn btn-success link_nounderline scroll-booking" href="#book-now"><?php echo(esc_html__( 'Bestill nå', 'gotomeloy' )); ?></a>
+    		<?php }; ?>
 			<a class="btn btn-info link_nounderline scroll-contact" href="#contact-us"><?php echo(esc_html__( 'Kontakt oss', 'gotomeloy' )); ?></a><br />
 			<br />
 			<?php get_template_part( 'parts/post-meta-icons.inc' ); ?>
