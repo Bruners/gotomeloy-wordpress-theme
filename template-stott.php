@@ -44,8 +44,7 @@ Template Name: Portfolio Stott
 ?>
 
 <!-- BEGIN: SITE BODY -->
-<section id="site-body" class="sections padding-size-m">
-    <div class="container clearfix">
+    <div id="site-body" class="container clearfix padding-size-m">
         <section class="sections padding-size-s">
             <?php while( have_posts() ) : the_post(); ?>
                 <!-- PAGE CONTENT -->
@@ -112,75 +111,83 @@ Template Name: Portfolio Stott
     <div class="container-fluid clearfix">
         <section class="sections padding-size-s container-bunn">
             <!-- BEGIN: BOTTOM WIDGETS -->
-            <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("widgetized-page-bottom") ) : ?>
+            <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("widgetized-page-bottom-portfolio") ) : ?>
             <?php endif; ?>
             <!-- END: BOTTOM WIDGETS -->
         </section>
 
-        <section class="container-promo-video">
-            <div class="textwidget text-center"><h4><i class="fas fa-video">Video</i></h4></div>
-            <div id="carousel-promo-video" class="carousel slide" data-interval="false" data-ride="carousel">
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    <li data-target="#carousel-promo-video" data-slide-to="0" class="active"></li>
-                    <li data-target="#carousel-promo-video" data-slide-to="1"></li>
-                    <li data-target="#carousel-promo-video" data-slide-to="2"></li>
-                    <li data-target="#carousel-promo-video" data-slide-to="3"></li>
-                </ol>
+        <section class="sections padding-size-s">
+            <div class="container-promo-video">
+                <div class="textwidget text-center"><h4><i class="fas fa-video"> Video</i></h4></div>
+                <div id="carousel-promo-video" class="carousel slide" data-interval="false" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-promo-video" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-promo-video" data-slide-to="1"></li>
+                        <li data-target="#carousel-promo-video" data-slide-to="2"></li>
+                        <li data-target="#carousel-promo-video" data-slide-to="3"></li>
+                    </ol>
 
-                <!-- Wrapper for slides -->
-                <div id="video-slider" class="carousel-inner" role="listbox">
-                    <div class="item active">
-                        <div class="video-carousel yt-video embed-responsive embed-responsive-16by9" data-yt_id="ZlQM7-BJagM">
-                            <img src="https://www.stott.no/wp-content/uploads/2019/01/placeholder_2x2_trans.jpg" class="lazy" data-src="https://i.ytimg.com/vi/ZlQM7-BJagM/maxresdefault.jpg" width="560" height="315" />
+                    <!-- Wrapper for slides -->
+                    <div id="video-slider" class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <div class="video-carousel yt-video embed-responsive embed-responsive-16by9" data-yt_id="ZlQM7-BJagM">
+                                <img src="https://www.stott.no/wp-content/uploads/2019/01/placeholder_2x2_trans.jpg" class="lazy" data-src="https://i.ytimg.com/vi/ZlQM7-BJagM/maxresdefault.jpg" width="560" height="315" />
+                            </div>
+                            <div class="carousel-caption">
+                                <h5 class="text-center">Skattejakten LIVE</h5>
+                                <p>Benedicte forteller om hvorfor hun gjerne vil bo på Støtt, et fiskevær med bare 25 innbyggere.</p>
+                            </div>
                         </div>
-                        <div class="carousel-caption">
-                            <h5 class="text-center">Skattejakten LIVE</h5>
-                            <p>Benedicte forteller om hvorfor hun gjerne vil bo på Støtt, et fiskevær med bare 25 innbyggere.</p>
+                        <div class="item">
+                            <div class="video-carousel yt-video embed-responsive embed-responsive-16by9" data-yt_id="xM7d2HHvAR0">
+                                <img src="https://www.stott.no/wp-content/uploads/2019/01/placeholder_2x2_trans.jpg" class="lazy" data-src="https://i.ytimg.com/vi/xM7d2HHvAR0/maxresdefault.jpg" width="560" height="315" />
+                            </div>
+                            <div class="carousel-caption">
+                                <h5 class="text-center">Go to Meløy</h5>
+                                <p>Visit Meløy and experience the coast in Helgaland, the gateway to Lofoten. Together with Meløy Adventure, Glomfjord Hotell, Ørnes Hotell, Støtt Brygge and Rocks'n Rivers we can give you amazing experiences in unique locations in Norway.</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="video-carousel vm-video embed-responsive embed-responsive-16by9" data-vm_id="199325238">
+                                <img src="https://www.stott.no/wp-content/uploads/2019/01/placeholder_2x2_trans.jpg" class="lazy" data-src="https://i.vimeocdn.com/video/695381075_1280x720.jpg" width="560" height="315" />
+                            </div>
+                            <div class="carousel-caption">
+                                <h5 class="text-center">Go to Meløy</h5>
+                                <p><a href="https://vimeo.com/199325238">Go to Mel&oslash;y </a>by <a href="https://vimeo.com/user39330606">Mel&oslash;y Adventure</a></p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="video-carousel yt-video embed-responsive embed-responsive-16by9" data-yt_id="CkxmJ592_TY">
+                                <img src="https://www.stott.no/wp-content/uploads/2019/01/placeholder_2x2_trans.jpg" class="lazy" data-src="https://i.ytimg.com/vi/CkxmJ592_TY/maxresdefault.jpg" width="560" height="315" />
+                            </div>
+                            <div class="carousel-caption">
+                                <h5 class="text-center">Støtt Brygge Promo 2018</h5>
+                                <p></p>
+                            </div>
                         </div>
                     </div>
-                    <div class="item">
-                        <div class="video-carousel yt-video embed-responsive embed-responsive-16by9" data-yt_id="xM7d2HHvAR0">
-                            <img src="https://www.stott.no/wp-content/uploads/2019/01/placeholder_2x2_trans.jpg" class="lazy" data-src="https://i.ytimg.com/vi/xM7d2HHvAR0/maxresdefault.jpg" width="560" height="315" />
-                        </div>
-                        <div class="carousel-caption">
-                            <h5 class="text-center">Go to Meløy</h5>
-                            <p>Visit Meløy and experience the coast in Helgaland, the gateway to Lofoten. Together with Meløy Adventure, Glomfjord Hotell, Ørnes Hotell, Støtt Brygge and Rocks'n Rivers we can give you amazing experiences in unique locations in Norway.</p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="video-carousel vm-video embed-responsive embed-responsive-16by9" data-vm_id="199325238">
-                            <img src="https://www.stott.no/wp-content/uploads/2019/01/placeholder_2x2_trans.jpg" class="lazy" data-src="https://i.vimeocdn.com/video/695381075_1280x720.jpg" width="560" height="315" />
-                        </div>
-                        <div class="carousel-caption">
-                            <h5 class="text-center">Go to Meløy</h5>
-                            <p><a href="https://vimeo.com/199325238">Go to Mel&oslash;y </a>by <a href="https://vimeo.com/user39330606">Mel&oslash;y Adventure</a></p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="video-carousel yt-video embed-responsive embed-responsive-16by9" data-yt_id="CkxmJ592_TY">
-                            <img src="https://www.stott.no/wp-content/uploads/2019/01/placeholder_2x2_trans.jpg" class="lazy" data-src="https://i.ytimg.com/vi/CkxmJ592_TY/maxresdefault.jpg" width="560" height="315" />
-                        </div>
-                        <div class="carousel-caption">
-                            <h5 class="text-center">Støtt Brygge Promo 2018</h5>
-                            <p></p>
-                        </div>
-                    </div>
+
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#carousel-promo-video" role="button" data-slide="prev">
+                        <span class="fa fa-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-promo-video" role="button" data-slide="next">
+                        <span class="fa fa-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
-
-                <!-- Controls -->
-                <a class="left carousel-control" href="#carousel-promo-video" role="button" data-slide="prev">
-                    <span class="fa fa-chevron-left" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#carousel-promo-video" role="button" data-slide="next">
-                    <span class="fa fa-chevron-right" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
+                <div class="new-caption-area"></div>
             </div>
-            <div class="new-caption-area"></div>
         </section>
         <section class="sections padding-size-s container-bunn">
+            <!-- BEGIN: BOTTOM WIDGETS -->
+            <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("widgetized-page-bottom") ) : ?>
+            <?php endif; ?>
+            <!-- END: BOTTOM WIDGETS -->
+        </section>
+        <section class="sections padding-size-s">
             <div id="contact-us" class="kontakt-oss">
             <?php get_template_part( 'parts/contact-form-large.inc' ); ?>
             <style>
@@ -213,7 +220,6 @@ Template Name: Portfolio Stott
             </div>
         </section>
     </div>
-</section>
 
     <!-- Modal -->
     <div id="action-button-webcam-modal" role="dialog" aria-labeledby="Støtt Brygge Webcam" class="modal fade" tabindex="-1">

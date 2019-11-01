@@ -213,10 +213,18 @@ function gotomeloy_register_sidebar()
         ));
 
         register_sidebars( 1, array(
-            'name' => 'widgetized-page-bottom',
+            'name' => 'widgetized-page-bottom-portfolio',
             'before_widget' => '<div id="%1$s" class="widget %2$s">',
             'after_widget' => '</div>',
-            'before_title' => '<h4 class="kontakt-oss widgettitle">',
+            'before_title' => '<h4 class="widgettitle">',
+            'after_title' => '</h4>'
+        ));
+
+        register_sidebars( 2, array(
+            'name' => 'widgetized-page-bottom-video',
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget' => '</div>',
+            'before_title' => '<h4 class="widgettitle">',
             'after_title' => '</h4>'
         ));
     }
@@ -386,7 +394,7 @@ function cats_related_post()
         while($related_cats_post->have_posts()): $related_cats_post->the_post();
         $thumbnail_data = lamark_get_attachment_meta( get_post_thumbnail_id() );
         ?>
-            <div class="col-xs-12 col-md-2">
+            <div class="col-xs-6 col-md-3">
               <div class="post__card">
                 <a href="<?php echo get_permalink( $_post->ID ); ?>" title="<?php esc_attr( $_post->post_title ); ?>">
                   <div class="post__card-body">
@@ -436,7 +444,7 @@ function get_portfolio_posts( $args )
         while($portfolio_posts->have_posts()): $portfolio_posts->the_post();
         $thumbnail_data = lamark_get_attachment_meta( get_post_thumbnail_id() );
     ?>
-        <div class="col-xs-12 col-md-2">
+        <div class="col-xs-6 col-md-3">
             <div class="post__card">
                 <a href="<?php echo get_permalink( $_post->ID ); ?>" title="<?php esc_attr( $_post->post_title ); ?>">
                 <div class="post__card-body">
@@ -478,6 +486,10 @@ function related_posts( $args )
     }
 
     $cols = 12/$posts;
+
+    if ( $cols <= 3) {
+      $cols = 3;
+    }
 
     if ( $args['cats'] == 'null') {
         $cats = array('');
@@ -522,7 +534,7 @@ function related_posts( $args )
         while($related_cats_post->have_posts()): $related_cats_post->the_post();
             $thumbnail_data = lamark_get_attachment_meta( get_post_thumbnail_id() );
         ?>
-        <div class="col-xs-12 col-md-<?php echo $cols; ?>">
+        <div class="col-xs-6 col-md-<?php echo $cols; ?>">
             <div class="post__card">
                 <a href="<?php echo get_permalink( $_post->ID ); ?>" title="<?php esc_attr( $_post->post_title ); ?>">
                 <div class="card-body">

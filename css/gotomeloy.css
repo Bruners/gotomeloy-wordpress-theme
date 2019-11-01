@@ -99,7 +99,8 @@ mark {
     color: #000;
 }
 
-small {
+small,
+.small {
     font-size: 80%;
 }
 
@@ -509,11 +510,6 @@ p {
     .lead {
         font-size: 2.25em;
     }
-}
-
-small,
-.small {
-    font-size: 133%;
 }
 
 mark,
@@ -6678,7 +6674,7 @@ video {
   -moz-transition: .4s;
   -o-transition: .4s;
   -ms-transition: .4s;
-  display: block;  
+  display: block;
 }
 
 .featured__item {
@@ -6753,20 +6749,25 @@ video {
 .post__card {
     position: relative;
     text-align: center;
+    margin-bottom: 5px;
 }
 
 .post__card:hover .post__card-img {
     opacity: 0.85;
 }
 
+.post__card-img {
+    width: 100%;
+}
+
 .post__card-title {
     position: absolute;
     bottom: 0;
     width: 100%;
-    font-size: 1em;
-    font-weight: 500;
+    font-size: 0.8em;
+    font-weight: 400;
+    text-transform: initial;
     text-decoration: none;
-    text-transform: uppercase;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, .6);
     color: #fff;
     padding: 2em 1em 0 1em;
@@ -6774,6 +6775,23 @@ video {
     background: -webkit-linear-gradient(top, transparent 0%, transparent 5%, rgba(0, 0, 0, 0.1) 23%, rgba(0, 0, 0, 0.75) 100%);
     background: linear-gradient(to bottom, transparent 0%, transparent 5%, rgba(0, 0, 0, 0.1) 23%, rgba(0, 0, 0, 0.75) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#bf000000', GradientType=0);
+}
+
+@media (min-width: 1024px) {
+    .post__card-title {
+        font-size: 1em;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .post__card-title {
+        font-size: 1em;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
 }
 
 .quote-card {
@@ -6959,7 +6977,7 @@ a.btn {
 .single-header-title {
     font-size: 2em;
     font-family: 'Oswald', sans-serif;
-    
+
 }
 
 .single-heading {
@@ -7263,7 +7281,6 @@ div.hero-header.text-center:hover .scroll-down-icon {
     backface-visibility: hidden;
     perspective: 1000px;
 }
-
 
 @media (min-width: 1281px) {
     /* Device = Desktops
