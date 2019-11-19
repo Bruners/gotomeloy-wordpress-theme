@@ -4,10 +4,11 @@
                 <a href="https://www.nhoreiseliv.no/" rel="nofollow" target="_blank"><li class="affiliates_li"><div class="affiliates_img affiliates_nho-reiseliv lazy-bg"></div><span class="affiliates_txt">NHO Reiseliv</span ></li></a>
                 <a href="http://www.visitbodo.no/" rel="nofollow" target="_blank"><li class="affiliates_li"><div class="affiliates_img affiliates_visit-bodo lazy-bg"></div><span class="affiliates_txt">Visit Bodø</span ></li></a>
                 <a href="https://visithelgeland.com/" rel="nofollow" target="_blank"><li class="affiliates_li"><div class="affiliates_img affiliates_visit-helgeland lazy-bg"></div><span class="affiliates_txt">Visit Helgeland</span ></li></a>
+                <a href="https://saltenfly.no/" rel="nofollow" target="_blank"><li class="affiliates_li"><div class="affiliates_img affiliates_saltenfly lazy-bg"></div><span class="affiliates_txt">Saltenfly Bodø</span ></li></a>
                 </ul>
 
-                
-                
+
+
                 <div class="copyright text-center">
                     <?php echo get_theme_mod('gotomeloy_copyright_text', esc_html__('Copyright © GO TO MELØY 2016', 'gotomeloy') ); echo date("Y"); ?> | <?php echo(esc_html__( 'Utviklet av', 'gotomeloy' )); ?> <a href="https://www.github.com/bruners/" target="_blank">Lasse Brun</a> | <i class="fa fa-user-secret fa-w-14"></i> <a href='<?php echo __("https://www.stott.no/personvernerklaering/"); ?>' target='__blank'><?php echo __("Personvernerklæring", "gotomeloy"); ?></a>
                 </div>
@@ -45,7 +46,7 @@
 
                 <?php } ?>
             <?php endwhile; wp_reset_postdata(); ?>
-            
+
             <!-- BEGIN: SITE FOOTER -->
             <?php
 

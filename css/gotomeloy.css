@@ -8301,6 +8301,11 @@ footer {
     background-size: contain;
 }
 
+.affiliates_saltenfly.lazy-bg-loaded {
+    background: url("../img/saltenfly_logo-01_100x80.png") no-repeat center center;
+    background-size: contain;
+}
+
 .affiliates_nho-reiseliv.lazy-bg-loaded {
     background: url("../img/nho-reiseliv_87x80.png") no-repeat center center;
     background-size: contain;

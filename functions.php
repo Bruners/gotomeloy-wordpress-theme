@@ -563,6 +563,21 @@ function related_posts( $args )
     return $output;
 }
 
+
+#-----------------------------------------------------------------#
+# WP Admin login page misc
+#-----------------------------------------------------------------#
+function custom_login_logo() {
+    echo '<style type="text/css">h1 a { background: url('.get_bloginfo('template_directory').'/img/stottbrygge_logo_110x110.png) 50% 50% no-repeat !important; width:110px !important;height:110px !important; }</style>';
+}
+add_action('login_head', 'custom_login_logo');
+
+function change_wp_login_url() {
+    return "https://www.stott.no/";
+}
+add_filter('login_headerurl', 'change_wp_login_url');
+
+
 #-----------------------------------------------------------------#
 # Legg til atributter for å åpne modals fra menyene
 #-----------------------------------------------------------------#
