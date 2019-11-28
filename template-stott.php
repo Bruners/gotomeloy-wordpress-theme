@@ -183,7 +183,7 @@ Template Name: Portfolio Stott
         </section>
         <section class="sections padding-size-s container-bunn">
             <!-- BEGIN: BOTTOM WIDGETS -->
-            <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("widgetized-page-bottom") ) : ?>
+            <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("widgetized-page-bottom-video") ) : ?>
             <?php endif; ?>
             <!-- END: BOTTOM WIDGETS -->
         </section>

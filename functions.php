@@ -140,7 +140,7 @@ if ( ! function_exists('gotomeloy_theme_features') )
         add_post_type_support( 'portfolio', 'post-formats' );
 
         // Add theme support for Featured Images
-        add_theme_support( 'post-thumbnails', array( 'post', ' page', ' portfolio', ' offers' ) );
+        add_theme_support( 'post-thumbnails', array( 'post', 'page', 'portfolio', 'offers' ) );
 
         // Set custom thumbnail dimensions
         set_post_thumbnail_size( 586, 478, true );
@@ -244,8 +244,6 @@ function gotomeloy_frontend_styles()
         wp_enqueue_style('gotomeloy', GOTOMELOY_CSS_URI . '/gotomeloy.min.css', array('gotomeloy-style'), 1.9 );
         wp_enqueue_style('gotomeloy-style', get_template_directory_uri() . '/style.css');
 
-        //wp_enqueue_style('cookieconsent', GOTOMELOY_JS_URI . '/cookieconsent/cookieconsent.min.css', null, '3.1.1', 'all' );
-
         wp_enqueue_style('fontawesome', 'https://use.fontawesome.com/releases/v5.11.2/css/all.css', null, '5.11.2', 'all' );
         wp_enqueue_style('fancybox', 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.6/jquery.fancybox.min.css', null, '3.5.6', 'all' );
 
@@ -289,9 +287,6 @@ function gotomeloy_frontend_js()
         wp_register_script('cookieconsent', GOTOMELOY_JS_URI . '/cookieconsent/cookieconsent.min.js', 'jquery', '3.1.1', true );
         wp_enqueue_script('cookieconsent');
 
-        //wp_register_script('fontawesome', 'https://kit.fontawesome.com/aefcfafeba.js', '', '5.0', false );
-        //wp_enqueue_script('fontawesome');
-
         if( is_front_page() )
         {
             wp_enqueue_script('gotomeloy-theme-functions', GOTOMELOY_JS_URI . '/gotomeloy.min.js', array('jquery'), 1.7, true);
@@ -319,8 +314,6 @@ function gotomeloy_frontend_js()
 #-----------------------------------------------------------------#
 
 // require ADMIN resources
-require_once GOTOMELOY_ADMIN . '/customizer/functions.php';
-require_once GOTOMELOY_ADMIN . '/plugins/functions.php';
 require_once GOTOMELOY_ADMIN . '/metaboxes/functions.php';
 require_once GOTOMELOY_ADMIN . '/theme-settings.php';
 
