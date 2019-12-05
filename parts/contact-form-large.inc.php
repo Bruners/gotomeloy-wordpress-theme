@@ -77,14 +77,17 @@
                 data: $this.serialize(), // One-liner form data prep.
                 beforeSend: function () {
                     is_sending = true;
-                    // You could do an animation here.
+                    jQuery("#ContactFormResponeLarge").fadeIn('slow', function(){
+                        jQuery("#ContactFormResponeLarge").html('<div class="alert alert-info" role="alert">'+message_sending+'</div>');
+                    });
+                    fbq('track', 'SubmitApplication');
                 },
                 error: handleFormError,
                 success: function (data) {
                     if (data.status === 'success') {
                         jQuery("#ContactFormResponeLarge").fadeIn('slow', function(){
-                            jQuery("#ContactFormResponeLarge").html('<div class="alert alert-success">'+message_sent+'</div>');
-                            jQuery("#ContactFormResponeLarge").delay(3000).fadeOut();
+                            jQuery("#ContactFormResponeLarge").html('<div class="alert alert-success" role="alert">'+message_sent+'</div>');
+                            jQuery("#ContactFormResponeLarge").delay(10000).fadeOut();
                         });
                         jQuery('#ContactFormLarge')[0].reset();
                         jQuery("#message_human_large").closest('div').removeClass('has-error');
@@ -101,7 +104,7 @@
             is_sending = false;
 
             jQuery("#ContactFormResponeLarge").fadeIn('slow', function(){
-                jQuery("#ContactFormResponeLarge").html('<div class="alert alert-danger">'+failure_message+'</div>');
+                jQuery("#ContactFormResponeLarge").html('<div class="alert alert-danger" role="alert">'+failure_message+'</div>');
             });
         }
 
@@ -113,13 +116,13 @@
                 $message = jQuery('#message_text_large').val();
             if ($human != "2") {
                 jQuery("#ContactFormResponeLarge").fadeIn('slow', function(){
-                    jQuery("#ContactFormResponeLarge").html('<div class="alert alert-danger">'+not_human+'</div>');
+                    jQuery("#ContactFormResponeLarge").html('<div class="alert alert-danger" role="alert">'+not_human+'</div>');
                     jQuery("#message_human_large").closest('div').addClass('has-error');
                 });
                 return false;
             } else if (!$name || !$email || !$message) {
                 jQuery("#ContactFormResponeLarge").fadeIn('slow', function(){
-                    jQuery("#ContactFormResponeLarge").html('<div class="alert alert-warning">'+missing_content+'</div>');
+                    jQuery("#ContactFormResponeLarge").html('<div class="alert alert-warning" role="alert">'+missing_content+'</div>');
                 });
                 return false;
             }

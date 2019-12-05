@@ -1,14 +1,14 @@
-<?php 
+<?php
   $options = get_option( 'gotomeloy_theme_options' );
   $gdpr_facebook_pixel = null;
-  $gdpr_google_analtyics = null;
+  $gdpr_google_analytics = null;
 
   if( isset( $options['gdpr-facebook-pixel'] ) ) {
     $gdpr_facebook_pixel = $options['gdpr-facebook-pixel'];
   }
 
   if( isset( $options['gdpr-google-analytics'] ) ) {
-    $gdpr_google_analtyics = $options['gdpr-google-analytics'];
+    $gdpr_google_analytics = $options['gdpr-google-analytics'];
   }
 
 ?>
@@ -37,7 +37,7 @@ window.addEventListener("load", function() {
   // Google Analytics
   var loadGA = function()
   {
-  if (typeof ga !== 'undefined') 
+  if (typeof ga !== 'undefined')
   {
     return false;
   }
@@ -47,8 +47,8 @@ window.addEventListener("load", function() {
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  <?php if( $gdpr_google_analtyics != null) { ?>
-    ga('create', '<?php echo $gdpr_google_analtyics; ?>', 'auto');
+  <?php if( $gdpr_google_analytics != null) { ?>
+    ga('create', '<?php echo $gdpr_google_analytics; ?>', 'auto');
     ga('set', 'forceSSL', true);
     <?php if($options['ga-displayfeatures'] == 1) {
       echo ("ga('require', 'displayfeatures');");
@@ -125,4 +125,3 @@ window.addEventListener("load", function() {
   })
   });
 </script>
-
