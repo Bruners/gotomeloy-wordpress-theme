@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 
-<?php 
+<?php
     $options = get_option( 'gotomeloy_theme_options' );
     $gdpr_google_analtyics = '';
 
@@ -20,12 +20,14 @@
         <!-- Mobile Specific Metas
         ================================================== -->
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-
         <meta name="google-site-verification" content="<?php echo $gdpr_google_analtyics ?>">
 
         <!-- Pingback
         ================================================== -->
         <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+        <link href="//www.google-analytics.com" rel="dns-prefetch">
+        <link href="//connect.facebook.net" rel="dns-prefetch">
+
         <style>
             /* latin */
             @font-face {
@@ -69,7 +71,7 @@
         <main id="wrapper">
 
             <!-- BEGIN: SITE HEADER -->
-            
+
             <header id="site-header">
                 <a id="logo" title="<?php echo esc_attr( get_bloginfo('name') ); ?>" href="<?php echo esc_url( home_url('/') ); ?>"></a>
                 <?php

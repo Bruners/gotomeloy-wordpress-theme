@@ -66,6 +66,28 @@ Template Name: Takk for bestilling
 		</div>
 	</section>
 
+    <section id="receiept" class="sections padding-size-s">
+        <div class="container">
+            <div id="bokun-w14937_b221772e_ab3e_42cc_8fef_e52a95f85a7e">Loading...</div>
+            <script type="text/javascript">
+                var w14937_b221772e_ab3e_42cc_8fef_e52a95f85a7e;
+                (function(d, t) {
+                  var host = 'widgets.bokun.io';
+                  var frameUrl = 'https://' + host + '/widgets/14937?bookingChannelUUID=1ea3435f-2544-407b-ba7d-3015c739e2d9&amp;lang=no&amp;ccy=NOK&amp;hash=w14937_b221772e_ab3e_42cc_8fef_e52a95f85a7e';
+                  var s = d.createElement(t), options = {'host': host, 'frameUrl': frameUrl, 'widgetHash':'w14937_b221772e_ab3e_42cc_8fef_e52a95f85a7e', 'autoResize':true,'height':'','width':'100%', 'minHeight': 0,'async':true, 'ssl':true, 'affiliateTrackingCode': '', 'transientSession': true, 'cookieLifetime': 43200 };
+                  s.src = 'https://' + host + '/assets/javascripts/widgets/embedder.js';
+                  s.onload = s.onreadystatechange = function() {
+                    var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
+                    try {
+                      w14937_b221772e_ab3e_42cc_8fef_e52a95f85a7e = new BokunWidgetEmbedder(); w14937_b221772e_ab3e_42cc_8fef_e52a95f85a7e.initialize(options); w14937_b221772e_ab3e_42cc_8fef_e52a95f85a7e.display();
+                    } catch (e) {}
+                  };
+                  var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+                })(document, 'script');
+            </script>
+        </div>
+    </section>
+
 	<section class="sections">
 		<div class="container-fluid">
 	        <div id="contact-us" class="kontakt-oss">
