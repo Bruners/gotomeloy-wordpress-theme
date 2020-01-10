@@ -138,19 +138,7 @@ window.addEventListener("load", function() {
     },
     onStatusChange: function(status, chosenBefore) {
       if (this.hasConsented()) {
-        if(typeof fbq !== 'undefined') {
-          fbq('consent', 'grant');
-          fbq('track', 'PageView');
-          location.reload();
-        } else {
-          console.log('Facebook pixel is undefined');
-        }
-
-        if(typeof ga !== 'undefined') {
-          ga('send', 'pageview');
-        } else {
-          console.log('Google analytics is undefined');
-        }
+        location.reload();
       }
     },
     onRevokeChoice: function() {
