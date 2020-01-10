@@ -242,15 +242,16 @@ Template Name: Portfolio Stott
                                 $lat = 66.925775;
                                 $lon = 13.437980;
                                 $fromtime = new DateTime('NOW');
+                                $fromtime->modify('-1 day');
                                 $fromtime->format("Y-m-d");
 
                                 $totime = clone $fromtime;
-                                $totime->modify('+2 day');
+                                $totime->modify('+3 day');
 
                                 $tdtime = clone $fromtime;
                                 $tdtime->format('d.m');
 
-                                $feed = "http://api.sehavniva.no/tideapi.php?lat=".$lat."&lon=".$lon."&fromtime=".$fromtime->format("Y-m-d\T00:00:00P")."&totime=".$totime->format("Y-m-d\T00:00:00P")."&datatype=tab&refcode=cd&place=St%C3%B8tt&file=&lang=nb&interval=10&dst=1&tzone=&tide_request=locationdata";
+                                $feed = "https://api.sehavniva.no/tideapi.php?lat=".$lat."&lon=".$lon."&fromtime=".$fromtime->format("Y-m-d\T00:00:00P")."&totime=".$totime->format("Y-m-d\T00:00:00P")."&datatype=tab&refcode=cd&place=St%C3%B8tt&file=&lang=nb&interval=10&dst=1&tzone=&tide_request=locationdata";
 
                                 $dir = get_stylesheet_directory_uri() . "/img/";
 
@@ -275,7 +276,7 @@ Template Name: Portfolio Stott
                                     echo "<tr><td align='center'>" . __('Unable to load tide data', 'gotomeloy') . "</td></tr>";
                                 }
                             ?>
-                            <tr class="copyright" align="right"><?php echo __('Tidal forecast © Kartverket', 'gotomeloy');?> <a href='http://www.sehavniva.no'>sehavniva.no</a></tr>
+                            <tr class="copyright" align="right"><?php echo __('Tidal forecast © Kartverket', 'gotomeloy');?> <a href='https://www.kartverket.no/sehavniva/'>sehavniva.no</a></tr>
                         </table>
                     </div>
                     <br />

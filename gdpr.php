@@ -61,7 +61,7 @@ window.addEventListener("load", function() {
         "background": "#14a7d0"
       }
     },
-    "position": "top",
+    "position": "bottom-left",
     "content": {
       "message": message_txt,
       "dismiss": dismiss_txt,
@@ -70,9 +70,7 @@ window.addEventListener("load", function() {
     },
     onInitialise: function(status)
     {
-      if(typeof fbq !== 'undefined') {
-        fbq('consent', 'revoke');
-      } else {
+      if(typeof fbq == 'undefined') {
         console.log('Facebook pixel is undefined');
       }
 
@@ -143,6 +141,7 @@ window.addEventListener("load", function() {
         if(typeof fbq !== 'undefined') {
           fbq('consent', 'grant');
           fbq('track', 'PageView');
+          location.reload();
         } else {
           console.log('Facebook pixel is undefined');
         }
